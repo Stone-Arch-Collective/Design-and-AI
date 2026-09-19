@@ -1,0 +1,9 @@
+{
+  "title": "SEIS 201 Learning Graph",
+  "description": "Concept dependency graph for SEIS 201 (AI for CE/ME Engineers), University of St Thomas, derived from the course syllabus text.",
+  "creator": "Shannon Seaver (draft generated with Claude)",
+  "date": "2026-09-18",
+  "version": "0.1-draft",
+  "format": "Learning Graph JSON (McCreary learning-graph-generator layout: metadata, groups, nodes, edges)",
+  "license": "TBD"
+}

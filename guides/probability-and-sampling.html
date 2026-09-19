@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Probability and Sampling: a 35-minute primer</title>
+<style>
+:root{--bg:#f9f9f7;--surface:#fcfcfb;--ink:#0b0b0b;--ink2:#52514e;--muted:#6b6a66;--grid:#e1e0d9;--acc:#2a78d6;--ok:#1baf7a;--bad:#eb6834;--codebg:#f0efe9}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d0d0d;--surface:#1a1a19;--ink:#fff;--ink2:#c3c2b7;--muted:#a09f98;--grid:#2c2c2a;--acc:#3987e5;--ok:#199e70;--bad:#d95926;--codebg:#111110}}
+:root[data-theme="dark"]{--bg:#0d0d0d;--surface:#1a1a19;--ink:#fff;--ink2:#c3c2b7;--muted:#a09f98;--grid:#2c2c2a;--acc:#3987e5;--ok:#199e70;--bad:#d95926;--codebg:#111110}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px 64px}
+header{padding:24px 0 8px}
+h1{font-size:24px;margin:0 0 6px;line-height:1.25}
+.sub{color:var(--ink2);margin:0 0 6px}
+.meta{color:var(--muted);font-size:14px}
+.prog{position:sticky;top:0;z-index:5;background:var(--bg);padding:10px 0;border-bottom:1px solid var(--grid);margin-bottom:8px}
+.prog .row{display:flex;justify-content:space-between;font-size:14px;color:var(--ink2);margin-bottom:6px}
+.track{height:8px;background:var(--grid);border-radius:4px;overflow:hidden}
+.fill{height:100%;width:0;background:var(--acc);transition:width .25s}
+section{margin:28px 0;padding-top:4px}
+h2{font-size:19px;margin:0 0 8px;line-height:1.3}
+h2 .n{display:inline-block;min-width:26px;height:26px;border-radius:13px;background:var(--acc);color:#fff;font-size:14px;text-align:center;line-height:26px;margin-right:8px}
+h3{font-size:16px;margin:16px 0 4px}
+p{margin:8px 0}
+code,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px}
+code{background:var(--codebg);padding:1px 5px;border-radius:4px}
+pre{background:var(--codebg);border:1px solid var(--grid);border-radius:8px;padding:10px 12px;overflow-x:auto;margin:10px 0;line-height:1.45}
+pre code{background:none;padding:0}
+.card{background:var(--surface);border:1px solid var(--grid);border-radius:12px;padding:12px 14px;margin:12px 0}
+.card.formula{border-left:4px solid var(--acc)}
+.card.worked{border-left:4px solid var(--ok)}
+.card.warn{border-left:4px solid var(--bad)}
+.card .lab{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:4px}
+table{border-collapse:collapse;width:100%;font-size:14px;margin:8px 0}
+th,td{text-align:left;padding:5px 8px;border-bottom:1px solid var(--grid);vertical-align:top}
+th{color:var(--ink2)}
+.q{background:var(--surface);border:1px solid var(--grid);border-radius:12px;padding:12px 14px;margin:14px 0}
+.q .qt{font-weight:600;margin-bottom:8px}
+.q .qn{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px}
+.opt{display:block;width:100%;text-align:left;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--grid);border-radius:8px;padding:9px 12px;margin:6px 0;cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--acc)}
+.opt:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--bg))}
+.opt.wrong{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 16%,var(--bg))}
+.opt:disabled{cursor:default}
+.numrow{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.numrow input{font:inherit;width:140px;padding:8px 10px;border:1px solid var(--grid);border-radius:8px;background:var(--bg);color:var(--ink)}
+.unit{color:var(--ink2)}
+button.go,button.sec{font:inherit;padding:8px 14px;border-radius:8px;cursor:pointer;border:1px solid var(--acc)}
+button.go{background:var(--acc);color:#fff}
+button.sec{background:var(--surface);color:var(--ink);border-color:var(--grid)}
+.fb{margin-top:8px;padding:8px 10px;border-radius:8px;font-size:15px;display:none}
+.fb.show{display:block}
+.fb.ok{background:color-mix(in srgb,var(--ok) 16%,var(--bg));border:1px solid var(--ok)}
+.fb.no{background:color-mix(in srgb,var(--bad) 16%,var(--bg));border:1px solid var(--bad)}
+.done{border:2px solid var(--ok);border-radius:12px;padding:16px;margin:28px 0;display:none;background:var(--surface)}
+.done.show{display:block}
+.codebox{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:18px;background:var(--codebg);border:1px solid var(--grid);border-radius:8px;padding:10px 12px;margin:10px 0;word-break:break-all}
+.simctl{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;margin:8px 0}
+.simctl input[type=range]{width:200px}
+svg text{fill:var(--ink2);font:11px system-ui,sans-serif}
+svg .bar{fill:var(--acc)}
+svg .axis{stroke:var(--grid)}
+footer{color:var(--muted);font-size:13px;margin-top:32px;border-top:1px solid var(--grid);padding-top:12px}
+@media print{.prog{position:static}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<h1 id="ttl"></h1>
+<p class="sub" id="intro"></p>
+<p class="meta" id="meta"></p>
+</header>
+<div class="prog"><div class="row"><span id="pl">0 of 0 questions done</span><span id="pp">0%</span></div><div class="track"><div class="fill" id="pf"></div></div></div>
+<main id="main"></main>
+<div class="done" id="done" role="status" aria-live="polite"></div>
+<footer id="foot"></footer>
+</div>
+<script>
+const G={"code": "PROB", "title": "Probability and Sampling: a 35-minute primer", "minutes": 35, "intro": "Six ideas you need before the statistics sessions: probability, sample vs. population, random sampling, sampling variability, standard error, and the t multiplier. No prior statistics assumed. Use a calculator; every answer can be checked with one.", "footer": "Draft for SEIS 201 (Spring 2027), written with Claude for Shannon Seaver. Not yet reviewed by a subject-matter expert. This is a self-check: it teaches and gives instant feedback, but the completion code is honor-system and can be shared.", "steps": [{"title": "Probability basics", "body": "<p>Probability is the long-run fraction of times something happens. It runs from <b>0<\/b> (never) to <b>1<\/b> (always).<\/p><div class=\"card formula\"><div class=\"lab\">Rules you need<\/div><p style=\"margin:0\">Not A: <code>P(not A) = 1 &minus; P(A)<\/code><br>Both A and B, when they do not affect each other (independent): <code>P(A and B) = P(A) &times; P(B)<\/code><br>At least one: <code>1 &minus; P(none)<\/code><\/p><\/div><div class=\"card worked\"><div class=\"lab\">Worked example<\/div><p style=\"margin:0\">A sensor fails with probability 0.02 on a test. It works with probability 1 &minus; 0.02 = 0.98. Three independent sensors all work: 0.98 &times; 0.98 &times; 0.98 = <b>0.941<\/b>.<\/p><\/div>", "qs": [{"type": "num", "q": "4% of bolts in a lot are defective. If you pick one bolt at random, what is the probability it is good?", "answer": 0.96, "tol": 0.001, "why": "1 &minus; 0.04 = 0.96.", "unit": "", "hint": "Use P(not A) = 1 &minus; P(A). Write 4% as 0.04."}, {"type": "num", "q": "Two independent sensors each fail with probability 0.1. What is the probability that both fail?", "answer": 0.01, "tol": 0.0005, "why": "0.1 &times; 0.1 = 0.01.", "unit": "", "hint": "Independent events multiply."}, {"type": "num", "q": "Same two sensors: what is the probability that at least one works?", "answer": 0.99, "tol": 0.0005, "why": "&ldquo;At least one works&rdquo; is the opposite of &ldquo;both fail&rdquo;: 1 &minus; 0.01 = 0.99.", "unit": "", "hint": "Find the probability of the opposite event (both fail) and subtract from 1."}, {"type": "mc", "q": "Which of these cannot be a probability?", "options": ["0.35", "1.2", "0", "1"], "answer": 1, "why": "A probability can never exceed 1.", "hints": {}}]}, {"title": "Sample vs. population", "body": "<p>The <b>population<\/b> is everything you want to know about. The <b>sample<\/b> is the part you actually measured. A number describing the population is a <b>parameter<\/b> (usually unknown). A number computed from the sample is a <b>statistic<\/b> (what you actually have).<\/p><div class=\"card formula\"><div class=\"lab\">Notation<\/div><p style=\"margin:0\">Population mean: <code>&mu;<\/code> (unknown). Sample mean: <code>x&#772;<\/code> (computed). Sample standard deviation: <code>s<\/code>. Sample size: <code>n<\/code>.<\/p><\/div>", "qs": [{"type": "mc", "q": "A lab tests 25 cylinders from a 2,000-cylinder concrete pour and reports a mean compressive strength of 32.1 MPa. What is the population?", "options": ["The 25 cylinders tested", "All 2,000 cylinders in the pour", "The number 32.1 MPa", "The lab"], "answer": 1, "why": "The population is everything you want to know about: the whole pour.", "hints": {}}, {"type": "mc", "q": "In that example, 32.1 MPa is a:", "options": ["Parameter", "Statistic", "Population", "Probability"], "answer": 1, "why": "It is computed from the sample, so it is a statistic. It estimates the parameter (the true mean of the pour).", "hints": {}}, {"type": "mc", "q": "True or false: the mean of 25 specimens equals the true mean of the whole pour.", "options": ["True, 25 is enough", "False. It is an estimate that will usually be off by some amount", "True if the specimens were tested carefully"], "answer": 1, "why": "Careful testing removes measurement error, not the sample-to-sample difference. That difference is the subject of the next two steps.", "hints": {}}]}, {"title": "Random sampling", "body": "<p>A <b>random sample<\/b> gives every unit in the population an equal chance of being picked, with no human preference in the choice. Picking what is easy to reach (top of the pallet, first parts off the line, the ones that look suspicious) is <b>convenience sampling<\/b>. It can be biased in a direction you cannot see.<\/p><div class=\"card warn\"><div class=\"lab\">The trap<\/div><p style=\"margin:0\">A bigger sample reduces random noise. It does <b>not<\/b> fix bias from how you picked. A thousand top-of-pallet parts are still top-of-pallet parts.<\/p><\/div>", "qs": [{"type": "mc", "q": "You must estimate the defect rate among 10,000 parts. Which method gives a random sample of 50?", "options": ["The first 50 off the line at the start of the shift", "The 50 that the operator thinks look suspicious", "50 serial numbers chosen by a random-number generator", "50 parts from the bin nearest the door"], "answer": 2, "why": "A random-number generator on the full list of serial numbers gives every part the same chance.", "hints": {}}, {"type": "mc", "q": "You sampled 50 parts from the top of the pallet and worry about bias. You sample 1,000 from the top instead. Is the bias fixed?", "options": ["Yes, bigger samples cancel bias", "No. A larger sample reduces random noise, not bias from how the parts were chosen"], "answer": 1, "why": "Bias comes from the selection method. Change the method, not just the size.", "hints": {}}]}, {"title": "Sampling variability", "widget": "sim", "body": "<p>Take two different random samples from the same population and you get two different sample means. Nothing is wrong with your measuring; that is what sampling does. How much the means wobble depends on the sample size <b>n<\/b> and on how spread out the population is.<\/p>", "qs": [{"type": "mc", "q": "Use the simulator. When you go from n = 5 to n = 20 (four times as many specimens), the spread of the sample means roughly:", "options": ["Stays the same", "Halves", "Drops to a quarter", "Doubles"], "answer": 1, "why": "It halves. Four times the data cuts the wobble by the square root of 4, which is 2. You will see that written as a formula next.", "hints": {"0": "Try it: set n = 5, draw, then n = 20, draw, and compare the reported spreads.", "2": "Compare the two spreads the simulator reports. Is the second a quarter of the first?", "3": "More data does not make the means wobble more."}}, {"type": "mc", "q": "Which statement is true?", "options": ["Two samples of the same size from the same population always give the same mean", "Sample means differ from sample to sample even when the measuring is perfect", "A sample mean is always exactly the population mean if n is at least 30"], "answer": 1, "why": "Sample-to-sample difference is built into sampling.", "hints": {}}]}, {"title": "Standard error", "body": "<p>The <b>standard deviation (SD)<\/b> describes how spread out individual specimens are. The <b>standard error (SE)<\/b> describes how uncertain your <i>sample mean<\/i> is. Same units, different question.<\/p><div class=\"card formula\"><div class=\"lab\">Formula card<\/div><p style=\"margin:0\"><code>SE = s / &radic;n<\/code><br>s = sample standard deviation, n = number of specimens. SE has the same units as s.<\/p><\/div><div class=\"card worked\"><div class=\"lab\">Worked example<\/div><p style=\"margin:0\">s = 20 MPa, n = 25. &radic;25 = 5. SE = 20 / 5 = <b>4 MPa<\/b>.<\/p><\/div>", "qs": [{"type": "num", "q": "s = 8 MPa, n = 16. What is the SE (MPa)?", "answer": 2, "tol": 0.01, "why": "&radic;16 = 4, so 8 / 4 = 2.", "unit": "MPa", "hint": "Divide s by the square root of n, not by n."}, {"type": "num", "q": "s = 30 MPa, n = 36. What is the SE (MPa)?", "answer": 5, "tol": 0.01, "why": "&radic;36 = 6, so 30 / 6 = 5.", "unit": "MPa", "hint": "&radic;36 = 6."}, {"type": "mc", "q": "To cut the SE in half, you need:", "options": ["Twice as many specimens", "Four times as many specimens", "Half as many specimens", "Ten times as many specimens"], "answer": 1, "why": "SE depends on &radic;n. To halve it, &radic;n must double, so n must quadruple.", "hints": {}}, {"type": "mc", "q": "A batch has SD = 20 MPa and SE = 4 MPa. Which number describes how far a single specimen is likely to be from the batch mean?", "options": ["SD, 20 MPa", "SE, 4 MPa"], "answer": 0, "why": "SD is about individuals. SE is about the uncertainty of the mean.", "hints": {}}]}, {"title": "The t multiplier and a 95% interval", "body": "<p>A 95% confidence interval for the true mean is <b>x&#772; &plusmn; t* &times; SE<\/b>. The multiplier <b>t*<\/b> is close to 2 for large samples and bigger for small samples, because with few specimens even your estimate of the SD is shaky.<\/p><div class=\"card formula\"><div class=\"lab\">t* for a 95% interval (degrees of freedom = n &minus; 1)<\/div><table><tr><th>n<\/th><th>df<\/th><th>t*<\/th><\/tr><tr><td>5<\/td><td>4<\/td><td>2.776<\/td><\/tr><tr><td>10<\/td><td>9<\/td><td>2.262<\/td><\/tr><tr><td>15<\/td><td>14<\/td><td>2.145<\/td><\/tr><tr><td>30<\/td><td>29<\/td><td>2.045<\/td><\/tr><tr><td>very large<\/td><td>&infin;<\/td><td>1.960<\/td><\/tr><\/table><\/div><div class=\"card worked\"><div class=\"lab\">Worked example<\/div><p style=\"margin:0\">n = 10, x&#772; = 400 MPa, s = 20. SE = 20/&radic;10 = 6.32. t* = 2.262. Margin = 2.262 &times; 6.32 = 14.3. Interval: <b>385.7 to 414.3 MPa<\/b>.<\/p><\/div>", "qs": [{"type": "num", "q": "n = 5 specimens, s = 10 MPa. Using the table, what is the margin of error, t* &times; SE (MPa)?", "answer": 12.415, "tol": 0.1, "why": "SE = 10/&radic;5 = 4.47. Margin = 2.776 &times; 4.47 = 12.4.", "unit": "MPa", "hint": "SE first (s divided by &radic;5), then multiply by t* for n = 5, which is 2.776."}, {"type": "mc", "q": "Why is t* larger when n is small?", "options": ["Small samples are always biased", "With few specimens the SD estimate is itself unreliable, so the interval has to be wider to stay honest", "Because the units change", "It is not larger; it is always 1.96"], "answer": 1, "why": "Less data means less certainty about the spread, so the interval widens.", "hints": {}}, {"type": "mc", "q": "A 95% interval for mean strength is 385.7 to 414.3 MPa. Which reading is correct?", "options": ["95% of individual specimens fall in this range", "If we repeated the whole sampling process many times, about 95% of intervals built this way would contain the true mean", "There is a 95% chance the next specimen falls in this range", "The true mean is definitely in this range"], "answer": 1, "why": "The 95% describes the method, not the individual specimens. It is about the mean, not about single parts.", "hints": {"0": "That would be a statement about individuals. The interval is about the mean.", "3": "Nothing is definite; 95% describes how often the method works."}}]}]};
+const $=id=>document.getElementById(id);
+function hash(s){let h=7;for(const c of s)h=(h*31+c.charCodeAt(0))%65521;return h.toString(16).toUpperCase().padStart(4,'0')}
+const WIDGETS={
+sim(el){
+ el.innerHTML=`<div class="card"><div class="lab">Try it: sampling variability</div>
+ <p style="margin-top:0">Imagine tensile strength of one steel grade: the true population mean is <b>400 MPa</b>, and individual specimens vary with a standard deviation of <b>20 MPa</b>. Each press of the button takes <b>300 separate samples</b> of size n and plots the mean of each.</p>
+ <div class="simctl"><label>Sample size n = <b id="nv">5</b> <input type="range" id="ns" min="2" max="50" value="5" aria-label="Sample size n"></label><button class="go" id="draw" type="button">Draw 300 samples</button></div>
+ <svg id="hist" viewBox="0 0 600 200" width="100%" role="img" aria-label="Histogram of 300 sample means"></svg>
+ <p id="simout" class="meta" style="margin-bottom:0">Press the button, then change n and press again. The x-axis stays fixed so you can compare.</p></div>`;
+ const ns=el.querySelector('#ns'),nv=el.querySelector('#nv');
+ ns.oninput=()=>nv.textContent=ns.value;
+ const gauss=()=>{let u=0,v=0;while(!u)u=Math.random();v=Math.random();return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v)};
+ el.querySelector('#draw').onclick=()=>{
+  const n=+ns.value,means=[];
+  for(let i=0;i<300;i++){let s=0;for(let j=0;j<n;j++)s+=400+20*gauss();means.push(s/n)}
+  const lo=340,hi=460,B=24,w=(hi-lo)/B,cnt=new Array(B).fill(0);
+  means.forEach(m=>{let b=Math.floor((m-lo)/w);if(b<0)b=0;if(b>=B)b=B-1;cnt[b]++});
+  const mx=Math.max(...cnt),W=600,H=200,L=30,Bt=170,pw=(W-L-10)/B;
+  let svg=`<line class="axis" x1="${L}" y1="${Bt}" x2="${W-10}" y2="${Bt}"/>`;
+  cnt.forEach((c,i)=>{const h=c/mx*(Bt-12);svg+=`<rect class="bar" x="${L+i*pw+1}" y="${Bt-h}" width="${pw-2}" height="${h}"/>`});
+  for(let v=340;v<=460;v+=20){const x=L+(v-lo)/(hi-lo)*(W-L-10);svg+=`<text x="${x}" y="188" text-anchor="middle">${v}</text>`}
+  const x400=L+(400-lo)/(hi-lo)*(W-L-10);svg+=`<line x1="${x400}" y1="6" x2="${x400}" y2="${Bt}" stroke="currentColor" stroke-dasharray="4 3" style="color:var(--ink2)"/>`;
+  el.querySelector('#hist').innerHTML=svg;
+  const mu=means.reduce((a,b)=>a+b)/300,sd=Math.sqrt(means.reduce((a,b)=>a+(b-mu)**2,0)/299);
+  el.querySelector('#simout').innerHTML=`n = ${n}: the 300 sample means have a spread (standard deviation) of <b>${sd.toFixed(1)} MPa</b>. The formula 20 / &radic;${n} predicts <b>${(20/Math.sqrt(n)).toFixed(1)} MPa</b>. One run will be close to the formula, not identical; press again to see it vary. Dashed line = true mean, 400 MPa.`;
+ };
+}};
+const state=[];let total=0;
+function render(){
+ document.title=G.title;$('ttl').textContent=G.title;$('intro').innerHTML=G.intro;
+ total=G.steps.reduce((a,s)=>a+(s.qs||[]).length,0);
+ $('meta').textContent=`About ${G.minutes} minutes · ${total} self-check questions · nothing you enter leaves this page`;
+ $('foot').innerHTML=G.footer;
+ const main=$('main');let qi=0;
+ G.steps.forEach((s,si)=>{
+  const sec=document.createElement('section');sec.id='s'+si;
+  sec.innerHTML=`<h2><span class="n">${si+1}</span>${s.title}</h2>${s.body||''}<div class="widget"></div>`;
+  if(s.widget)WIDGETS[s.widget](sec.querySelector('.widget'));
+  (s.qs||[]).forEach(q=>{const i=qi++;state[i]={done:false,first:false,tries:0};sec.appendChild(qEl(q,i))});
+  main.appendChild(sec)});
+ upd();
+}
+function fb(box,ok,html){box.className='fb show '+(ok?'ok':'no');box.innerHTML=(ok?'<b>Correct.</b> ':'<b>Not quite.</b> ')+html}
+function finish(i,first){state[i].done=true;state[i].first=first;upd()}
+function qEl(q,i){
+ const d=document.createElement('div');d.className='q';
+ d.innerHTML=`<div class="qn">Check ${i+1}</div><div class="qt">${q.q}</div>`;
+ const box=document.createElement('div');
+ if(q.type==='mc'){
+  q.options.forEach((o,k)=>{const b=document.createElement('button');b.type='button';b.className='opt';b.innerHTML=o;
+   b.onclick=()=>{if(state[i].done)return;state[i].tries++;
+    if(k===q.answer){b.classList.add('right');finish(i,state[i].tries===1);d.querySelectorAll('.opt').forEach(x=>x.disabled=true);fb(box,true,q.why)}
+    else{b.classList.add('wrong');b.disabled=true;fb(box,false,(q.hints&&q.hints[k])||'Look at the options again.')}};
+   d.appendChild(b)});
+ }else{
+  const r=document.createElement('div');r.className='numrow';
+  r.innerHTML=`<input type="text" inputmode="decimal" aria-label="Your answer" placeholder="your answer"><span class="unit">${q.unit||''}</span><button class="go" type="button">Check</button>`;
+  const inp=r.querySelector('input'),go=r.querySelector('.go');
+  const reveal=document.createElement('button');reveal.type='button';reveal.className='sec';reveal.textContent='Show the answer';reveal.style.display='none';r.appendChild(reveal);
+  const lock=()=>{inp.disabled=true;go.disabled=true;reveal.style.display='none'};
+  const check=()=>{if(state[i].done)return;const v=parseFloat(inp.value.replace(/,/g,''));
+   if(isNaN(v)){fb(box,false,'Enter a number.');return}
+   state[i].tries++;
+   if(Math.abs(v-q.answer)<=q.tol){lock();finish(i,state[i].tries===1);fb(box,true,q.why)}
+   else{fb(box,false,q.hint||'Check your arithmetic and units.');if(state[i].tries>=2)reveal.style.display=''}};
+  go.onclick=check;inp.onkeydown=e=>{if(e.key==='Enter')check()};
+  reveal.onclick=()=>{lock();inp.value=q.answer;finish(i,false);fb(box,true,'Answer shown (not counted as first-try). '+q.why)};
+  d.appendChild(r);
+ }
+ d.appendChild(box);return d;
+}
+function upd(){
+ const n=state.filter(s=>s.done).length;
+ $('pl').textContent=`${n} of ${total} questions done`;
+ const pct=Math.round(n/total*100);$('pp').textContent=pct+'%';$('pf').style.width=pct+'%';
+ if(n===total){
+  const first=state.filter(s=>s.first).length;
+  const code=`SEIS201-${G.code}-${String(first).padStart(2,'0')}of${String(total).padStart(2,'0')}-${hash(G.code+'|'+first+'|'+total)}`;
+  const el=$('done');
+  el.innerHTML=`<h2 style="margin-top:0">Guide complete</h2><p>You got <b>${first} of ${total}</b> on the first try. Copy this completion code into the course site (LMS):</p><div class="codebox" id="cc">${code}</div><button class="sec" type="button" id="cp">Copy code</button> <span id="cpm" class="meta"></span><p class="meta">The code is generated in your browser. Nothing was sent anywhere. Reloading the page resets your progress.</p>`;
+  el.classList.add('show');
+  $('cp').onclick=()=>{try{navigator.clipboard.writeText(code).then(()=>$('cpm').textContent='Copied.',()=>$('cpm').textContent='Select the code and copy it by hand.')}catch(e){$('cpm').textContent='Select the code and copy it by hand.'}};
+ }
+}
+render();
+</script>
+</body>
+</html>

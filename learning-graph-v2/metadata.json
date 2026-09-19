@@ -1,0 +1,9 @@
+{
+  "title": "SEIS 201 Learning Graph (Spring 2027 fit)",
+  "description": "Concept dependency graph for SEIS 201 trimmed to the 28 Tue/Thu meetings of Spring 2027.",
+  "creator": "Shannon Seaver (draft generated with Claude)",
+  "date": "2026-09-18",
+  "version": "0.2-draft",
+  "format": "Learning Graph JSON (metadata, groups, nodes, edges; edges run dependent -> prerequisite)",
+  "license": "TBD"
+}

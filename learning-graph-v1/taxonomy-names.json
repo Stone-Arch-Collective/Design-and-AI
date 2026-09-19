@@ -1,0 +1,16 @@
+{
+  "FOUND": "Assumed Foundations",
+  "AIF": "AI Fundamentals",
+  "LLM": "Large Language Models",
+  "AGT": "Agentic AI",
+  "STAT": "Measurement and Descriptive Statistics",
+  "INF": "Inference and Regression",
+  "BIAS": "Bias and Overconfidence",
+  "DATA": "Data Pipelines and Visualization",
+  "CODE": "Programming and Code Generation",
+  "VER": "Verification and Testing",
+  "DBG": "Debugging",
+  "ENG": "Engineering Applications",
+  "DES": "Design Tools and Research",
+  "ETH": "Ethics, Risk and Licensure"
+}

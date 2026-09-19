@@ -1,0 +1,164 @@
+ConceptID,ConceptLabel,Meeting,Unit,Status,TaxonomyID,OldSession,Prerequisites
+1,Algebra Fundamentals,A0,0,assumed,FOUND,A0,
+2,Units and Dimensional Analysis,A0,0,assumed,FOUND,A0,
+3,Significant Figures,A0,0,assumed,FOUND,A0,
+4,Ratios and Percentages,A0,0,assumed,FOUND,A0,
+5,Reading Plots and Graphs,A0,0,assumed,FOUND,A0,
+6,Static Equilibrium,A0,0,supplied,FOUND,A0,
+7,Stress and Strain Basics,A0,0,supplied,FOUND,A0,
+8,Beam Bending Basics,A0,0,supplied,FOUND,A0,
+9,Spreadsheet Basics,A0,0,assumed,FOUND,A0,
+10,Tables and CSV Files,A0,0,assumed,FOUND,A0,
+11,Using a Chat Assistant,A0,0,assumed,FOUND,A0,
+12,Engineering Codes and Standards,A0,0,assumed,FOUND,A0,
+13,Artificial Intelligence,M01,1,taught,AIF,W1Tu,Using a Chat Assistant
+14,Rule-Based Systems,M01,1,taught,AIF,W1Tu,Algebra Fundamentals
+15,Machine Learning,M01,1,taught,AIF,W1Tu,Artificial Intelligence
+16,Training Data,M01,1,taught,AIF,W1Tu,Machine Learning
+17,Learned Patterns,M01,1,taught,AIF,W1Tu,Machine Learning; Training Data
+18,Rules Versus Learned Patterns,M01,1,taught,AIF,W1Tu,Rule-Based Systems; Learned Patterns
+19,Measurement and Why It Matters,M02,1,taught,STAT,W1Th,Units and Dimensional Analysis; Ratios and Percentages
+20,Repeated Measurements,M02,1,taught,STAT,W1Th,Measurement and Why It Matters
+21,Range of Readings,M02,1,taught,STAT,W1Th,Repeated Measurements
+22,Systematic Error and Accuracy,M02,1,taught,STAT,W1Th,Range of Readings; Measurement and Why It Matters
+23,Uncertainty Propagation,M02,1,taught,STAT,W1Th,Range of Readings; Algebra Fundamentals
+24,Instrument Resolution,M02,1,taught,STAT,W1Th,Measurement and Why It Matters; Significant Figures
+25,Large Language Models and Tokens,M03,1,taught,LLM,W2Tu,Artificial Intelligence; Machine Learning
+26,Probability Basics,M03,1,filled,STAT,W2Tu,Ratios and Percentages
+27,Next-Token Prediction,M03,1,taught,LLM,W2Tu,Large Language Models and Tokens; Probability Basics
+28,Sampling and Temperature,M03,1,taught,LLM,W2Tu,Next-Token Prediction
+29,Prompts,M03,1,taught,LLM,W2Tu,Large Language Models and Tokens; Using a Chat Assistant
+30,Hallucination,M03,1,taught,LLM,W2Tu,Next-Token Prediction
+31,Checking Output Against Source,M03,1,taught,VER,W2Tu,Hallucination; Engineering Codes and Standards
+32,Data Sets and Variables,M04,1,taught,STAT,W2Th,Tables and CSV Files; Spreadsheet Basics
+33,Mean,M04,1,taught,STAT,W2Th,Data Sets and Variables; Algebra Fundamentals
+34,Variance and Standard Deviation,M04,1,taught,STAT,W2Th,Mean
+35,Coefficient of Variation,M04,1,taught,STAT,W2Th,Variance and Standard Deviation; Mean; Ratios and Percentages
+36,Sample Versus Population,M04,1,filled,STAT,W2Th,Data Sets and Variables
+37,Uncertainty From Spread,M04,1,taught,STAT,W2Th,Variance and Standard Deviation; Uncertainty Propagation
+38,AI Agent,M05,1,taught,AGT,W3Tu,Large Language Models and Tokens; Prompts
+39,Tool Use,M05,1,taught,AGT,W3Tu,AI Agent
+40,Multi-Step Planning,M05,1,taught,AGT,W3Tu,AI Agent
+41,Agent Action Loop,M05,1,taught,AGT,W3Tu,Tool Use; Multi-Step Planning
+42,Sensor Data Stream,M05,1,taught,DATA,W3Tu,Data Sets and Variables
+43,Threshold Check,M05,1,taught,DATA,W3Tu,Rule-Based Systems; Sensor Data Stream
+44,Distribution,M06,1,taught,STAT,W3Th,Data Sets and Variables; Probability Basics
+45,Histogram,M06,1,taught,STAT,W3Th,Distribution; Reading Plots and Graphs
+46,Normal Distribution,M06,1,taught,STAT,W3Th,Distribution; Mean; Variance and Standard Deviation
+47,Skewed Distribution,M06,1,taught,STAT,W3Th,Distribution; Mean
+48,Outliers,M06,1,taught,STAT,W3Th,Distribution; Variance and Standard Deviation
+49,Auditing an Agent's Analysis,M06,1,taught,VER,W3Th,Agent Action Loop; Distribution; Hallucination
+50,AI Bias,M07,2,taught,BIAS,W4Tu,Machine Learning; Training Data
+51,Training Data Bias,M07,2,taught,BIAS,W4Tu,AI Bias; Training Data
+52,Representative Sample,M07,2,taught,BIAS,W4Tu,Training Data; Sample Versus Population
+53,Distribution Shift,M07,2,taught,BIAS,W4Tu,Distribution; Training Data Bias
+54,Out-of-Domain Use,M07,2,taught,BIAS,W4Tu,Distribution Shift
+55,Training Coverage Gap,M07,2,taught,BIAS,W4Tu,Learned Patterns; Training Data; Representative Sample
+56,Scatter Plot,M08,2,taught,INF,W4Th,Reading Plots and Graphs; Data Sets and Variables
+57,Correlation Coefficient,M08,2,taught,INF,W4Th,Scatter Plot; Variance and Standard Deviation
+58,Linear Regression,M08,2,taught,INF,W4Th,Correlation Coefficient; Algebra Fundamentals
+59,R-Squared,M08,2,taught,INF,W4Th,Correlation Coefficient; Linear Regression
+60,Correlation Versus Causation,M08,2,taught,INF,W4Th,Correlation Coefficient
+61,Spurious Correlation,M08,2,taught,INF,W4Th,Correlation Versus Causation; Distribution
+62,AI Overconfidence,M09,2,taught,BIAS,W5Tu,Hallucination; Next-Token Prediction
+63,False Precision,M09,2,taught,BIAS,W5Tu,Significant Figures; AI Overconfidence; Instrument Resolution
+64,Statistical Basis for a Claim,M09,2,taught,BIAS,W5Tu,Variance and Standard Deviation; False Precision
+65,Random Sampling,M09,2,filled,INF,W5Th,Sample Versus Population; Probability Basics
+66,Sampling Variability,M09,2,filled,INF,W5Th,Random Sampling; Variance and Standard Deviation
+67,Standard Error,M10,2,filled,INF,W5Th,Sampling Variability
+68,The t Multiplier,M10,2,filled,INF,W5Th,Standard Error; Normal Distribution
+69,Confidence Interval,M10,2,taught,INF,W5Th,Mean; Standard Error; The t Multiplier
+70,Confidence Level,M10,2,taught,INF,W5Th,Confidence Interval
+71,Significance and P-Values,M10,2,taught,INF,W5Th,Confidence Interval; Probability Basics
+72,Dashboard and Metrics,M11,2,taught,DATA,W6Tu,Reading Plots and Graphs; Data Sets and Variables; Mean
+73,Time Series Data,M11,2,taught,DATA,W6Tu,Data Sets and Variables; Sensor Data Stream
+74,Agent-Built Report,M11,2,taught,AGT,W6Tu,Agent Action Loop; Dashboard and Metrics
+75,Agent Autonomy,M11,2,taught,AGT,W6Tu,Agent Action Loop
+76,Human Review Checkpoint,M11,2,taught,AGT,W6Tu,Agent Autonomy; Auditing an Agent's Analysis
+77,Chart Type Selection,M12,2,taught,DATA,W6Th,Reading Plots and Graphs; Data Sets and Variables
+78,Axis Scales and Baselines,M12,2,taught,DATA,W6Th,Reading Plots and Graphs
+79,Misleading Charts,M12,2,taught,DATA,W6Th,Axis Scales and Baselines; Chart Type Selection
+80,Critiquing AI-Generated Charts,M12,2,taught,DATA,W6Th,Misleading Charts; Agent-Built Report
+81,Data Pipeline,M13,2,taught,DATA,W7Tu,Data Sets and Variables; Agent Action Loop
+82,Data Ingestion,M13,2,taught,DATA,W7Tu,Data Pipeline; Sensor Data Stream
+83,Unit and Format Mismatch,M13,2,taught,DATA,W7Tu,Data Ingestion; Units and Dimensional Analysis
+84,Data Cleaning,M13,2,taught,DATA,W7Tu,Data Sets and Variables; Outliers
+85,Missing and Bad Data,M13,2,taught,DATA,W7Tu,Data Cleaning
+86,Errors Through a Pipeline,M13,2,taught,DATA,W7Tu,Data Pipeline; Uncertainty Propagation
+87,Variables and Data Types,ASYNC,3,async,CODE,W7pre,Algebra Fundamentals
+88,Functions and Imports,ASYNC,3,async,CODE,W7pre,Variables and Data Types
+89,Conditionals and Loops,ASYNC,3,async,CODE,W7pre,Variables and Data Types
+90,Reading Error Messages,ASYNC,3,async,CODE,W7pre,Functions and Imports
+91,AI Code Generation Internals,M15,3,taught,CODE,W8Tu,Large Language Models and Tokens; Functions and Imports; Next-Token Prediction; Training Data
+92,Plausible but Wrong Code,M15,3,taught,CODE,W8Tu,Hallucination; AI Code Generation Internals
+93,Python Script,M15,3,taught,CODE,W8Tu,Functions and Imports; Variables and Data Types
+94,Prompting for Code,M15,3,taught,CODE,W8Tu,Prompts; AI Code Generation Internals
+95,Running a Script,M15,3,taught,CODE,W8Tu,Python Script
+96,Vibe Coding,M16,3,taught,CODE,W8Th,AI Code Generation Internals; Prompting for Code
+97,Plain-Language Specification,M16,3,taught,CODE,W8Th,Prompting for Code; Algebra Fundamentals
+98,Describe-Generate-Test Loop,M16,3,taught,CODE,W8Th,Vibe Coding; Running a Script; Prompting for Code
+99,Test Case,M16,3,taught,VER,W8Th,Running a Script; Algebra Fundamentals
+100,Reading AI-Generated Code,M16,3,taught,CODE,W8Th,Python Script; Conditionals and Loops
+101,Agentic Coding Tool,M17,3,taught,AGT,W9Tu,AI Agent; AI Code Generation Internals; Running a Script
+102,Unit Tests and Test Runner,M17,3,taught,VER,W9Tu,Test Case; Functions and Imports
+103,Agent-Written Tests,M17,3,taught,VER,W9Tu,Agentic Coding Tool; Unit Tests and Test Runner
+104,Analytical Solution,M17,3,taught,VER,W9Tu,Beam Bending Basics; Algebra Fundamentals
+105,Numerical Tolerance,M17,3,taught,VER,W9Tu,Significant Figures; Unit Tests and Test Runner
+106,Tests Written by the Same AI,M17,3,taught,VER,W9Tu,Agent-Written Tests; AI Overconfidence
+107,Known-Answer Check,M18,3,taught,VER,W9Th,Analytical Solution; Test Case
+108,Hand Calculation Check,M18,3,taught,VER,W9Th,Algebra Fundamentals; Units and Dimensional Analysis
+109,Unit and Dimension Check,M18,3,taught,VER,W9Th,Units and Dimensional Analysis; Python Script
+110,Order-of-Magnitude Check,M18,3,taught,VER,W9Th,Algebra Fundamentals; Units and Dimensional Analysis
+111,Edge Cases and Limits,M18,3,taught,VER,W9Th,Test Case; Algebra Fundamentals
+112,Investigating a Discrepancy,M18,3,taught,VER,W9Th,Known-Answer Check; Hand Calculation Check
+113,Software Bug,M19,3,taught,DBG,W10Tu,Python Script
+114,Debugging,M19,3,taught,DBG,W10Tu,Software Bug; Reading Error Messages
+115,Isolating a Failing Step,M19,3,taught,DBG,W10Tu,Debugging; Multi-Step Planning
+116,Multi-Step Agent Workflow,M19,3,taught,AGT,W10Tu,Agent Action Loop; Multi-Step Planning; Data Pipeline
+117,Tracing an Agent Failure,M19,3,taught,DBG,W10Tu,Multi-Step Agent Workflow; Reading Error Messages
+118,Compounding Workflow Errors,M19,3,taught,DBG,W10Tu,Multi-Step Agent Workflow; Errors Through a Pipeline
+119,Debugging With AI,M20,3,taught,DBG,W10Th,Debugging; Prompts; Plausible but Wrong Code
+120,Giving AI Error Context,M20,3,taught,DBG,W10Th,Debugging With AI; Reading Error Messages
+121,Root Cause Versus Symptom,M20,3,taught,DBG,W10Th,Debugging; Debugging With AI
+122,Re-Testing After a Fix,M20,3,taught,DBG,W10Th,Debugging With AI; Unit Tests and Test Runner
+123,Scoping a Design Tool,M20,3,taught,DES,W10Th,Plain-Language Specification; Describe-Generate-Test Loop
+124,Iterative Design Loop,M21,4,taught,DES,W11Tu,Multi-Step Agent Workflow; Plain-Language Specification
+125,Design Across Load Cases,M21,4,taught,DES,W11Tu,Iterative Design Loop; Static Equilibrium; Stress and Strain Basics
+126,Parameter Sweep,M21,4,taught,DES,W11Tu,Conditionals and Loops; Functions and Imports
+127,Design Convergence,M21,4,taught,DES,W11Tu,Iterative Design Loop; Agent Autonomy
+128,Agent Drift From Requirements,M21,4,taught,DES,W11Tu,Iterative Design Loop; Agent Autonomy; Plausible but Wrong Code
+129,Engineering Calculation Tool,M22,4,taught,DES,W11Th,Python Script; Plain-Language Specification; Unit and Dimension Check
+130,Inputs and Outputs,M22,4,taught,DES,W11Th,Engineering Calculation Tool
+131,Input Validation,M22,4,taught,DES,W11Th,Inputs and Outputs; Edge Cases and Limits
+132,Documented Assumptions,M22,4,taught,DES,W11Th,Engineering Calculation Tool; Inputs and Outputs
+133,Validating Against a Reference,M22,4,taught,DES,W11Th,Known-Answer Check; Engineering Calculation Tool
+134,AI Research Assistant,M23,4,taught,AGT,W12Tu,AI Agent; Tool Use
+135,Literature Summary,M23,4,taught,DES,W12Tu,AI Research Assistant; Prompts
+136,Citation and Source Verification,M23,4,taught,VER,W12Tu,Checking Output Against Source; Literature Summary; Hallucination
+137,Design Tradeoff and Objectives,M23,4,taught,DES,W12Th,Stress and Strain Basics; Design Across Load Cases; Iterative Design Loop; Algebra Fundamentals
+138,AI-Assisted Tradeoff Analysis,M23,4,taught,DES,W12Th,Design Tradeoff and Objectives; Multi-Step Agent Workflow; Prompts
+139,Engineering Judgment,M23,4,taught,DES,W12Th,Design Tradeoff and Objectives; AI-Assisted Tradeoff Analysis
+140,Risk and Consequence,M24,5,taught,ETH,W13Tu,Probability Basics
+141,Failure Mode,M24,5,taught,ETH,W13Tu,Stress and Strain Basics
+142,Autonomous AI Systems,M24,5,taught,ETH,W13Tu,AI Agent; Agent Autonomy
+143,Human in the Loop,M24,5,taught,ETH,W13Tu,Autonomous AI Systems; Human Review Checkpoint
+144,Accountability for AI Decisions,M24,5,taught,ETH,W13Tu,Autonomous AI Systems; Human in the Loop
+145,AI Ethics,M24,5,taught,ETH,W13Tu,AI Bias; Autonomous AI Systems
+146,Explainability,M24,5,taught,ETH,W13Tu,AI Ethics; Learned Patterns
+147,Verifying Agent Output,M25,5,taught,VER,W14Tu,Auditing an Agent's Analysis; Known-Answer Check; Agent Autonomy
+148,Code Compliance Check,M25,5,taught,VER,W14Tu,Engineering Codes and Standards; Checking Output Against Source
+149,Independent Verification,M25,5,taught,VER,W14Tu,Verifying Agent Output; Tests Written by the Same AI
+150,Verification Checklist,M25,5,taught,VER,W14Tu,Verifying Agent Output; Order-of-Magnitude Check; Unit and Dimension Check
+151,Documenting and Tracing Checks,M25,5,taught,VER,W14Tu,Verification Checklist; Documented Assumptions; Multi-Step Agent Workflow; Tracing an Agent Failure
+152,Safety-Critical System,M26,5,taught,ETH,W14Th,Risk and Consequence; Failure Mode
+153,Licensure and the PE Stamp,M26,5,taught,ETH,W14Th,Engineering Codes and Standards
+154,Responsible Charge,M26,5,taught,ETH,W14Th,Licensure and the PE Stamp; Accountability for AI Decisions
+155,AI-Assisted Accountability,M26,5,taught,ETH,W14Th,Responsible Charge; Human in the Loop; Verifying Agent Output
+156,Disclosing AI Use,M26,5,taught,ETH,W14Th,AI-Assisted Accountability; Explainability
+157,Limits of AI,M27,5,taught,ETH,W15Tu,AI Overconfidence; Hallucination; Distribution Shift
+158,Missed Failure Modes and Codes,M27,5,taught,ETH,W15Tu,Failure Mode; Limits of AI; Code Compliance Check
+159,Conditions Beyond Training,M27,5,taught,ETH,W15Tu,Out-of-Domain Use; Limits of AI
+160,Tacit Knowledge and Physics Gaps,M27,5,taught,ETH,W15Tu,Limits of AI; Static Equilibrium
+161,Judgment Catching AI Errors,M27,5,taught,ETH,W15Tu,Engineering Judgment; Missed Failure Modes and Codes
+162,When Not to Use AI,M27,5,taught,ETH,W15Tu,Limits of AI; Risk and Consequence; Human in the Loop
+163,Reflecting on AI Use,FINALS,5,taught,ETH,W16,AI-Assisted Accountability; When Not to Use AI

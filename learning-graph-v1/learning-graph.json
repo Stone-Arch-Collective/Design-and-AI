@@ -1,0 +1,2933 @@
+{
+  "metadata": {
+    "title": "SEIS 201 Learning Graph",
+    "description": "Concept dependency graph for SEIS 201 (AI for CE/ME Engineers), University of St Thomas, derived from the course syllabus text.",
+    "creator": "Shannon Seaver (draft generated with Claude)",
+    "date": "2026-09-18",
+    "version": "0.1-draft",
+    "format": "Learning Graph JSON (McCreary learning-graph-generator layout: metadata, groups, nodes, edges)",
+    "license": "TBD"
+  },
+  "groups": {
+    "FOUND": {
+      "classifierName": "Assumed Foundations",
+      "color": "LightGray",
+      "font": {
+        "color": "black"
+      }
+    },
+    "AIF": {
+      "classifierName": "AI Fundamentals",
+      "color": "LightCoral",
+      "font": {
+        "color": "black"
+      }
+    },
+    "LLM": {
+      "classifierName": "Large Language Models",
+      "color": "Gold",
+      "font": {
+        "color": "black"
+      }
+    },
+    "AGT": {
+      "classifierName": "Agentic AI",
+      "color": "Orange",
+      "font": {
+        "color": "black"
+      }
+    },
+    "STAT": {
+      "classifierName": "Measurement and Descriptive Statistics",
+      "color": "LightSkyBlue",
+      "font": {
+        "color": "black"
+      }
+    },
+    "INF": {
+      "classifierName": "Inference and Regression",
+      "color": "SteelBlue",
+      "font": {
+        "color": "black"
+      }
+    },
+    "BIAS": {
+      "classifierName": "Bias and Overconfidence",
+      "color": "Plum",
+      "font": {
+        "color": "black"
+      }
+    },
+    "DATA": {
+      "classifierName": "Data Pipelines and Visualization",
+      "color": "MediumAquamarine",
+      "font": {
+        "color": "black"
+      }
+    },
+    "CODE": {
+      "classifierName": "Programming and Code Generation",
+      "color": "PaleGreen",
+      "font": {
+        "color": "black"
+      }
+    },
+    "VER": {
+      "classifierName": "Verification and Testing",
+      "color": "Khaki",
+      "font": {
+        "color": "black"
+      }
+    },
+    "DBG": {
+      "classifierName": "Debugging",
+      "color": "Salmon",
+      "font": {
+        "color": "black"
+      }
+    },
+    "ENG": {
+      "classifierName": "Engineering Applications",
+      "color": "Tan",
+      "font": {
+        "color": "black"
+      }
+    },
+    "DES": {
+      "classifierName": "Design Tools and Research",
+      "color": "LightSeaGreen",
+      "font": {
+        "color": "black"
+      }
+    },
+    "ETH": {
+      "classifierName": "Ethics, Risk and Licensure",
+      "color": "Violet",
+      "font": {
+        "color": "black"
+      }
+    }
+  },
+  "nodes": [
+    {
+      "id": 1,
+      "label": "Algebra Fundamentals",
+      "group": "FOUND"
+    },
+    {
+      "id": 2,
+      "label": "Units and Dimensional Analysis",
+      "group": "FOUND"
+    },
+    {
+      "id": 3,
+      "label": "Significant Figures",
+      "group": "FOUND"
+    },
+    {
+      "id": 4,
+      "label": "Ratios and Percentages",
+      "group": "FOUND"
+    },
+    {
+      "id": 5,
+      "label": "Reading Plots and Graphs",
+      "group": "FOUND"
+    },
+    {
+      "id": 6,
+      "label": "Static Equilibrium",
+      "group": "FOUND"
+    },
+    {
+      "id": 7,
+      "label": "Stress and Strain Basics",
+      "group": "FOUND"
+    },
+    {
+      "id": 8,
+      "label": "Beam Bending Basics",
+      "group": "FOUND"
+    },
+    {
+      "id": 9,
+      "label": "Spreadsheet Basics",
+      "group": "FOUND"
+    },
+    {
+      "id": 10,
+      "label": "Tables and CSV Files",
+      "group": "FOUND"
+    },
+    {
+      "id": 11,
+      "label": "Using a Chat Assistant",
+      "group": "FOUND"
+    },
+    {
+      "id": 12,
+      "label": "Engineering Codes and Standards",
+      "group": "FOUND"
+    },
+    {
+      "id": 13,
+      "label": "Artificial Intelligence",
+      "group": "AIF"
+    },
+    {
+      "id": 14,
+      "label": "Rule-Based Systems",
+      "group": "AIF"
+    },
+    {
+      "id": 15,
+      "label": "Machine Learning",
+      "group": "AIF"
+    },
+    {
+      "id": 16,
+      "label": "Training Data",
+      "group": "AIF"
+    },
+    {
+      "id": 17,
+      "label": "Learned Patterns",
+      "group": "AIF"
+    },
+    {
+      "id": 18,
+      "label": "Model Inputs and Outputs",
+      "group": "AIF"
+    },
+    {
+      "id": 19,
+      "label": "Rules Versus Learned Patterns",
+      "group": "AIF"
+    },
+    {
+      "id": 20,
+      "label": "Statistics for Engineers",
+      "group": "STAT"
+    },
+    {
+      "id": 21,
+      "label": "Measurement",
+      "group": "STAT"
+    },
+    {
+      "id": 22,
+      "label": "Repeated Measurements",
+      "group": "STAT"
+    },
+    {
+      "id": 23,
+      "label": "Range of Readings",
+      "group": "STAT"
+    },
+    {
+      "id": 24,
+      "label": "Random Versus Systematic Error",
+      "group": "STAT"
+    },
+    {
+      "id": 25,
+      "label": "Uncertainty Propagation",
+      "group": "STAT"
+    },
+    {
+      "id": 26,
+      "label": "Instrument Resolution",
+      "group": "STAT"
+    },
+    {
+      "id": 27,
+      "label": "Beam Deflection Measurement",
+      "group": "ENG"
+    },
+    {
+      "id": 28,
+      "label": "Large Language Model",
+      "group": "LLM"
+    },
+    {
+      "id": 29,
+      "label": "Tokens",
+      "group": "LLM"
+    },
+    {
+      "id": 30,
+      "label": "Probability Basics",
+      "group": "STAT"
+    },
+    {
+      "id": 31,
+      "label": "Next-Token Prediction",
+      "group": "LLM"
+    },
+    {
+      "id": 32,
+      "label": "Sampling and Temperature",
+      "group": "LLM"
+    },
+    {
+      "id": 33,
+      "label": "Prompts",
+      "group": "LLM"
+    },
+    {
+      "id": 34,
+      "label": "Hallucination",
+      "group": "LLM"
+    },
+    {
+      "id": 35,
+      "label": "Checking Output Against Source",
+      "group": "VER"
+    },
+    {
+      "id": 36,
+      "label": "Data Sets and Variables",
+      "group": "STAT"
+    },
+    {
+      "id": 37,
+      "label": "Mean",
+      "group": "STAT"
+    },
+    {
+      "id": 38,
+      "label": "Variance",
+      "group": "STAT"
+    },
+    {
+      "id": 39,
+      "label": "Standard Deviation",
+      "group": "STAT"
+    },
+    {
+      "id": 40,
+      "label": "Coefficient of Variation",
+      "group": "STAT"
+    },
+    {
+      "id": 41,
+      "label": "Sample Versus Population",
+      "group": "STAT"
+    },
+    {
+      "id": 42,
+      "label": "Uncertainty From Spread",
+      "group": "STAT"
+    },
+    {
+      "id": 43,
+      "label": "Concrete Cylinder Strength Data",
+      "group": "ENG"
+    },
+    {
+      "id": 44,
+      "label": "AI Agent",
+      "group": "AGT"
+    },
+    {
+      "id": 45,
+      "label": "Tool Use",
+      "group": "AGT"
+    },
+    {
+      "id": 46,
+      "label": "Multi-Step Planning",
+      "group": "AGT"
+    },
+    {
+      "id": 47,
+      "label": "Agent Action Loop",
+      "group": "AGT"
+    },
+    {
+      "id": 48,
+      "label": "Context Window",
+      "group": "LLM"
+    },
+    {
+      "id": 49,
+      "label": "Sensor Data Stream",
+      "group": "DATA"
+    },
+    {
+      "id": 50,
+      "label": "Threshold Check",
+      "group": "DATA"
+    },
+    {
+      "id": 51,
+      "label": "Agent-Drafted Inspection Flag",
+      "group": "AGT"
+    },
+    {
+      "id": 52,
+      "label": "Distribution",
+      "group": "STAT"
+    },
+    {
+      "id": 53,
+      "label": "Histogram",
+      "group": "STAT"
+    },
+    {
+      "id": 54,
+      "label": "Normal Distribution",
+      "group": "STAT"
+    },
+    {
+      "id": 55,
+      "label": "Skewed Distribution",
+      "group": "STAT"
+    },
+    {
+      "id": 56,
+      "label": "Outliers",
+      "group": "STAT"
+    },
+    {
+      "id": 57,
+      "label": "Fatigue Test Data",
+      "group": "ENG"
+    },
+    {
+      "id": 58,
+      "label": "Auditing an Agent's Analysis",
+      "group": "VER"
+    },
+    {
+      "id": 59,
+      "label": "AI Bias",
+      "group": "BIAS"
+    },
+    {
+      "id": 60,
+      "label": "Training Data Bias",
+      "group": "BIAS"
+    },
+    {
+      "id": 61,
+      "label": "Representative Sample",
+      "group": "BIAS"
+    },
+    {
+      "id": 62,
+      "label": "Distribution Shift",
+      "group": "BIAS"
+    },
+    {
+      "id": 63,
+      "label": "Out-of-Domain Use",
+      "group": "BIAS"
+    },
+    {
+      "id": 64,
+      "label": "Damage Detection Model",
+      "group": "ENG"
+    },
+    {
+      "id": 65,
+      "label": "Training Coverage Gap",
+      "group": "BIAS"
+    },
+    {
+      "id": 66,
+      "label": "Scatter Plot",
+      "group": "INF"
+    },
+    {
+      "id": 67,
+      "label": "Correlation Coefficient",
+      "group": "INF"
+    },
+    {
+      "id": 68,
+      "label": "Linear Regression",
+      "group": "INF"
+    },
+    {
+      "id": 69,
+      "label": "R-Squared",
+      "group": "INF"
+    },
+    {
+      "id": 70,
+      "label": "Concrete Mix Design Variables",
+      "group": "ENG"
+    },
+    {
+      "id": 71,
+      "label": "Multiple Regression",
+      "group": "INF"
+    },
+    {
+      "id": 72,
+      "label": "Correlation Versus Causation",
+      "group": "INF"
+    },
+    {
+      "id": 73,
+      "label": "Spurious Correlation",
+      "group": "INF"
+    },
+    {
+      "id": 74,
+      "label": "Confounding Variable",
+      "group": "INF"
+    },
+    {
+      "id": 75,
+      "label": "AI Overconfidence",
+      "group": "BIAS"
+    },
+    {
+      "id": 76,
+      "label": "False Precision",
+      "group": "BIAS"
+    },
+    {
+      "id": 77,
+      "label": "Model Calibration",
+      "group": "BIAS"
+    },
+    {
+      "id": 78,
+      "label": "Predicted Fatigue Life",
+      "group": "ENG"
+    },
+    {
+      "id": 79,
+      "label": "Precision Versus Accuracy",
+      "group": "STAT"
+    },
+    {
+      "id": 80,
+      "label": "Statistical Basis for a Claim",
+      "group": "BIAS"
+    },
+    {
+      "id": 81,
+      "label": "Random Sampling",
+      "group": "INF"
+    },
+    {
+      "id": 82,
+      "label": "Sampling Variability",
+      "group": "INF"
+    },
+    {
+      "id": 83,
+      "label": "Standard Error",
+      "group": "INF"
+    },
+    {
+      "id": 84,
+      "label": "The t Multiplier",
+      "group": "INF"
+    },
+    {
+      "id": 85,
+      "label": "Confidence Interval",
+      "group": "INF"
+    },
+    {
+      "id": 86,
+      "label": "Confidence Level",
+      "group": "INF"
+    },
+    {
+      "id": 87,
+      "label": "Statistical Significance",
+      "group": "INF"
+    },
+    {
+      "id": 88,
+      "label": "P-Value",
+      "group": "INF"
+    },
+    {
+      "id": 89,
+      "label": "Yield Strength From Coupons",
+      "group": "ENG"
+    },
+    {
+      "id": 90,
+      "label": "Dashboard",
+      "group": "DATA"
+    },
+    {
+      "id": 91,
+      "label": "Dashboard Metrics",
+      "group": "DATA"
+    },
+    {
+      "id": 92,
+      "label": "Time Series Data",
+      "group": "DATA"
+    },
+    {
+      "id": 93,
+      "label": "Agent-Built Report",
+      "group": "AGT"
+    },
+    {
+      "id": 94,
+      "label": "Agent Autonomy",
+      "group": "AGT"
+    },
+    {
+      "id": 95,
+      "label": "Human Review Checkpoint",
+      "group": "AGT"
+    },
+    {
+      "id": 96,
+      "label": "Stale Data",
+      "group": "DATA"
+    },
+    {
+      "id": 97,
+      "label": "Chart Type Selection",
+      "group": "DATA"
+    },
+    {
+      "id": 98,
+      "label": "Axis Scales and Baselines",
+      "group": "DATA"
+    },
+    {
+      "id": 99,
+      "label": "Logarithmic Scale",
+      "group": "DATA"
+    },
+    {
+      "id": 100,
+      "label": "Misleading Charts",
+      "group": "DATA"
+    },
+    {
+      "id": 101,
+      "label": "Critiquing AI-Generated Charts",
+      "group": "DATA"
+    },
+    {
+      "id": 102,
+      "label": "Frequency of a Signal",
+      "group": "DATA"
+    },
+    {
+      "id": 103,
+      "label": "Vibration Spectrum",
+      "group": "ENG"
+    },
+    {
+      "id": 104,
+      "label": "Data Pipeline",
+      "group": "DATA"
+    },
+    {
+      "id": 105,
+      "label": "Data Ingestion",
+      "group": "DATA"
+    },
+    {
+      "id": 106,
+      "label": "Unit and Format Mismatch",
+      "group": "DATA"
+    },
+    {
+      "id": 107,
+      "label": "Data Cleaning",
+      "group": "DATA"
+    },
+    {
+      "id": 108,
+      "label": "Missing and Bad Data",
+      "group": "DATA"
+    },
+    {
+      "id": 109,
+      "label": "Simple Engineering Model",
+      "group": "ENG"
+    },
+    {
+      "id": 110,
+      "label": "Errors Through a Pipeline",
+      "group": "DATA"
+    },
+    {
+      "id": 111,
+      "label": "Variables",
+      "group": "CODE"
+    },
+    {
+      "id": 112,
+      "label": "Data Types",
+      "group": "CODE"
+    },
+    {
+      "id": 113,
+      "label": "Functions in Code",
+      "group": "CODE"
+    },
+    {
+      "id": 114,
+      "label": "Conditionals",
+      "group": "CODE"
+    },
+    {
+      "id": 115,
+      "label": "Loops",
+      "group": "CODE"
+    },
+    {
+      "id": 116,
+      "label": "Libraries and Imports",
+      "group": "CODE"
+    },
+    {
+      "id": 117,
+      "label": "Reading Error Messages",
+      "group": "CODE"
+    },
+    {
+      "id": 118,
+      "label": "AI Code Generation",
+      "group": "CODE"
+    },
+    {
+      "id": 119,
+      "label": "Code as Predicted Text",
+      "group": "CODE"
+    },
+    {
+      "id": 120,
+      "label": "Code Training Data",
+      "group": "CODE"
+    },
+    {
+      "id": 121,
+      "label": "Plausible but Wrong Code",
+      "group": "CODE"
+    },
+    {
+      "id": 122,
+      "label": "Python Script",
+      "group": "CODE"
+    },
+    {
+      "id": 123,
+      "label": "Prompting for Code",
+      "group": "CODE"
+    },
+    {
+      "id": 124,
+      "label": "Running a Script",
+      "group": "CODE"
+    },
+    {
+      "id": 125,
+      "label": "Deflection Calculation Script",
+      "group": "ENG"
+    },
+    {
+      "id": 126,
+      "label": "Vibe Coding",
+      "group": "CODE"
+    },
+    {
+      "id": 127,
+      "label": "Plain-Language Specification",
+      "group": "CODE"
+    },
+    {
+      "id": 128,
+      "label": "Describe-Generate-Test Loop",
+      "group": "CODE"
+    },
+    {
+      "id": 129,
+      "label": "Iterative Prompt Refinement",
+      "group": "CODE"
+    },
+    {
+      "id": 130,
+      "label": "Test Case",
+      "group": "VER"
+    },
+    {
+      "id": 131,
+      "label": "Reading AI-Generated Code",
+      "group": "CODE"
+    },
+    {
+      "id": 132,
+      "label": "Truss Analysis Tool",
+      "group": "ENG"
+    },
+    {
+      "id": 133,
+      "label": "Gear Ratio Calculator",
+      "group": "ENG"
+    },
+    {
+      "id": 134,
+      "label": "Agentic Coding Tool",
+      "group": "AGT"
+    },
+    {
+      "id": 135,
+      "label": "Unit Test",
+      "group": "VER"
+    },
+    {
+      "id": 136,
+      "label": "Test Runner Pass and Fail",
+      "group": "VER"
+    },
+    {
+      "id": 137,
+      "label": "Agent-Written Tests",
+      "group": "VER"
+    },
+    {
+      "id": 138,
+      "label": "Analytical Solution",
+      "group": "VER"
+    },
+    {
+      "id": 139,
+      "label": "Cantilever Beam Deflection",
+      "group": "ENG"
+    },
+    {
+      "id": 140,
+      "label": "Numerical Tolerance",
+      "group": "VER"
+    },
+    {
+      "id": 141,
+      "label": "Tests Written by the Same AI",
+      "group": "VER"
+    },
+    {
+      "id": 142,
+      "label": "Known-Answer Check",
+      "group": "VER"
+    },
+    {
+      "id": 143,
+      "label": "Hand Calculation Check",
+      "group": "VER"
+    },
+    {
+      "id": 144,
+      "label": "Unit and Dimension Check",
+      "group": "VER"
+    },
+    {
+      "id": 145,
+      "label": "Order-of-Magnitude Check",
+      "group": "VER"
+    },
+    {
+      "id": 146,
+      "label": "Edge Cases and Limits",
+      "group": "VER"
+    },
+    {
+      "id": 147,
+      "label": "Flow or Stress Calculation Code",
+      "group": "ENG"
+    },
+    {
+      "id": 148,
+      "label": "Investigating a Discrepancy",
+      "group": "VER"
+    },
+    {
+      "id": 149,
+      "label": "Software Bug",
+      "group": "DBG"
+    },
+    {
+      "id": 150,
+      "label": "Debugging",
+      "group": "DBG"
+    },
+    {
+      "id": 151,
+      "label": "Isolating a Failing Step",
+      "group": "DBG"
+    },
+    {
+      "id": 152,
+      "label": "Multi-Step Agent Workflow",
+      "group": "AGT"
+    },
+    {
+      "id": 153,
+      "label": "Tracing an Agent Failure",
+      "group": "DBG"
+    },
+    {
+      "id": 154,
+      "label": "Compounding Workflow Errors",
+      "group": "DBG"
+    },
+    {
+      "id": 155,
+      "label": "Thermal Resistance",
+      "group": "ENG"
+    },
+    {
+      "id": 156,
+      "label": "Wall Heat Transfer Model",
+      "group": "ENG"
+    },
+    {
+      "id": 157,
+      "label": "Debugging With AI",
+      "group": "DBG"
+    },
+    {
+      "id": 158,
+      "label": "Giving AI Error Context",
+      "group": "DBG"
+    },
+    {
+      "id": 159,
+      "label": "Root Cause Versus Symptom",
+      "group": "DBG"
+    },
+    {
+      "id": 160,
+      "label": "Re-Testing After a Fix",
+      "group": "DBG"
+    },
+    {
+      "id": 161,
+      "label": "Scoping a Design Tool",
+      "group": "DES"
+    },
+    {
+      "id": 162,
+      "label": "Beam Sizing Tool",
+      "group": "ENG"
+    },
+    {
+      "id": 163,
+      "label": "HVAC Load Calculator",
+      "group": "ENG"
+    },
+    {
+      "id": 164,
+      "label": "Gear Design Checker",
+      "group": "ENG"
+    },
+    {
+      "id": 165,
+      "label": "Iterative Design Loop",
+      "group": "DES"
+    },
+    {
+      "id": 166,
+      "label": "Load Case",
+      "group": "ENG"
+    },
+    {
+      "id": 167,
+      "label": "Design Across Load Cases",
+      "group": "DES"
+    },
+    {
+      "id": 168,
+      "label": "Parameter Sweep",
+      "group": "DES"
+    },
+    {
+      "id": 169,
+      "label": "Factor of Safety",
+      "group": "ENG"
+    },
+    {
+      "id": 170,
+      "label": "Bracket Design Check",
+      "group": "ENG"
+    },
+    {
+      "id": 171,
+      "label": "Design Convergence",
+      "group": "DES"
+    },
+    {
+      "id": 172,
+      "label": "Agent Drift From Requirements",
+      "group": "DES"
+    },
+    {
+      "id": 173,
+      "label": "Engineering Calculation Tool",
+      "group": "DES"
+    },
+    {
+      "id": 174,
+      "label": "Inputs and Outputs",
+      "group": "DES"
+    },
+    {
+      "id": 175,
+      "label": "Input Validation",
+      "group": "DES"
+    },
+    {
+      "id": 176,
+      "label": "Documented Assumptions",
+      "group": "DES"
+    },
+    {
+      "id": 177,
+      "label": "Footing Size Calculator",
+      "group": "ENG"
+    },
+    {
+      "id": 178,
+      "label": "Heat Exchanger Sizing Tool",
+      "group": "ENG"
+    },
+    {
+      "id": 179,
+      "label": "Validating Against a Reference",
+      "group": "DES"
+    },
+    {
+      "id": 180,
+      "label": "AI Research Assistant",
+      "group": "AGT"
+    },
+    {
+      "id": 181,
+      "label": "Literature Summary",
+      "group": "DES"
+    },
+    {
+      "id": 182,
+      "label": "Citation Verification",
+      "group": "VER"
+    },
+    {
+      "id": 183,
+      "label": "Source Quality",
+      "group": "DES"
+    },
+    {
+      "id": 184,
+      "label": "Fabricated References",
+      "group": "LLM"
+    },
+    {
+      "id": 185,
+      "label": "Corroborating Across Sources",
+      "group": "DES"
+    },
+    {
+      "id": 186,
+      "label": "Materials Selection Question",
+      "group": "ENG"
+    },
+    {
+      "id": 187,
+      "label": "Design Tradeoff",
+      "group": "DES"
+    },
+    {
+      "id": 188,
+      "label": "Objective and Constraints",
+      "group": "DES"
+    },
+    {
+      "id": 189,
+      "label": "Weight Versus Strength",
+      "group": "ENG"
+    },
+    {
+      "id": 190,
+      "label": "Cost Versus Energy Efficiency",
+      "group": "ENG"
+    },
+    {
+      "id": 191,
+      "label": "Sensitivity Analysis",
+      "group": "DES"
+    },
+    {
+      "id": 192,
+      "label": "AI-Assisted Tradeoff Analysis",
+      "group": "DES"
+    },
+    {
+      "id": 193,
+      "label": "Uncertainty in Tradeoff Inputs",
+      "group": "DES"
+    },
+    {
+      "id": 194,
+      "label": "Engineering Judgment",
+      "group": "DES"
+    },
+    {
+      "id": 195,
+      "label": "Risk and Consequence",
+      "group": "ETH"
+    },
+    {
+      "id": 196,
+      "label": "Failure Mode",
+      "group": "ETH"
+    },
+    {
+      "id": 197,
+      "label": "Autonomous AI Systems",
+      "group": "ETH"
+    },
+    {
+      "id": 198,
+      "label": "Self-Monitoring Structure",
+      "group": "ENG"
+    },
+    {
+      "id": 199,
+      "label": "Human in the Loop",
+      "group": "ETH"
+    },
+    {
+      "id": 200,
+      "label": "Accountability for AI Decisions",
+      "group": "ETH"
+    },
+    {
+      "id": 201,
+      "label": "AI Ethics",
+      "group": "ETH"
+    },
+    {
+      "id": 202,
+      "label": "Explainability",
+      "group": "ETH"
+    },
+    {
+      "id": 203,
+      "label": "Verifying Agent Output",
+      "group": "VER"
+    },
+    {
+      "id": 204,
+      "label": "Code Compliance Check",
+      "group": "VER"
+    },
+    {
+      "id": 205,
+      "label": "AI-Suggested Design Change",
+      "group": "ENG"
+    },
+    {
+      "id": 206,
+      "label": "Independent Verification",
+      "group": "VER"
+    },
+    {
+      "id": 207,
+      "label": "Traceability of AI Steps",
+      "group": "VER"
+    },
+    {
+      "id": 208,
+      "label": "Verification Checklist",
+      "group": "VER"
+    },
+    {
+      "id": 209,
+      "label": "Documenting Verification",
+      "group": "VER"
+    },
+    {
+      "id": 210,
+      "label": "Safety-Critical System",
+      "group": "ETH"
+    },
+    {
+      "id": 211,
+      "label": "Professional Engineer Licensure",
+      "group": "ETH"
+    },
+    {
+      "id": 212,
+      "label": "PE Stamp",
+      "group": "ETH"
+    },
+    {
+      "id": 213,
+      "label": "Responsible Charge",
+      "group": "ETH"
+    },
+    {
+      "id": 214,
+      "label": "Standard of Care",
+      "group": "ETH"
+    },
+    {
+      "id": 215,
+      "label": "AI-Assisted Accountability",
+      "group": "ETH"
+    },
+    {
+      "id": 216,
+      "label": "Engineering Code of Ethics",
+      "group": "ETH"
+    },
+    {
+      "id": 217,
+      "label": "Disclosing AI Use",
+      "group": "ETH"
+    },
+    {
+      "id": 218,
+      "label": "Limits of AI",
+      "group": "ETH"
+    },
+    {
+      "id": 219,
+      "label": "Missed Failure Mode",
+      "group": "ETH"
+    },
+    {
+      "id": 220,
+      "label": "Conditions Beyond Training",
+      "group": "ETH"
+    },
+    {
+      "id": 221,
+      "label": "Physical Reasoning Gaps",
+      "group": "ETH"
+    },
+    {
+      "id": 222,
+      "label": "Missed Code Requirement",
+      "group": "ETH"
+    },
+    {
+      "id": 223,
+      "label": "Tacit and Site Knowledge",
+      "group": "ETH"
+    },
+    {
+      "id": 224,
+      "label": "Judgment Catching AI Errors",
+      "group": "ETH"
+    },
+    {
+      "id": 225,
+      "label": "When Not to Use AI",
+      "group": "ETH"
+    },
+    {
+      "id": 226,
+      "label": "Presenting Technical Work",
+      "group": "DES"
+    },
+    {
+      "id": 227,
+      "label": "Presenting Verification Evidence",
+      "group": "DES"
+    },
+    {
+      "id": 228,
+      "label": "Stating Tool Limits",
+      "group": "DES"
+    },
+    {
+      "id": 229,
+      "label": "Defending Design Choices",
+      "group": "DES"
+    },
+    {
+      "id": 230,
+      "label": "Reflecting on AI Use",
+      "group": "ETH"
+    }
+  ],
+  "edges": [
+    {
+      "from": 13,
+      "to": 11
+    },
+    {
+      "from": 14,
+      "to": 1
+    },
+    {
+      "from": 15,
+      "to": 13
+    },
+    {
+      "from": 16,
+      "to": 15
+    },
+    {
+      "from": 17,
+      "to": 15
+    },
+    {
+      "from": 17,
+      "to": 16
+    },
+    {
+      "from": 18,
+      "to": 15
+    },
+    {
+      "from": 19,
+      "to": 14
+    },
+    {
+      "from": 19,
+      "to": 17
+    },
+    {
+      "from": 20,
+      "to": 4
+    },
+    {
+      "from": 21,
+      "to": 2
+    },
+    {
+      "from": 21,
+      "to": 20
+    },
+    {
+      "from": 22,
+      "to": 21
+    },
+    {
+      "from": 23,
+      "to": 22
+    },
+    {
+      "from": 24,
+      "to": 23
+    },
+    {
+      "from": 24,
+      "to": 21
+    },
+    {
+      "from": 25,
+      "to": 23
+    },
+    {
+      "from": 25,
+      "to": 1
+    },
+    {
+      "from": 26,
+      "to": 21
+    },
+    {
+      "from": 26,
+      "to": 3
+    },
+    {
+      "from": 27,
+      "to": 8
+    },
+    {
+      "from": 27,
+      "to": 22
+    },
+    {
+      "from": 28,
+      "to": 13
+    },
+    {
+      "from": 28,
+      "to": 15
+    },
+    {
+      "from": 29,
+      "to": 28
+    },
+    {
+      "from": 30,
+      "to": 4
+    },
+    {
+      "from": 31,
+      "to": 29
+    },
+    {
+      "from": 31,
+      "to": 30
+    },
+    {
+      "from": 32,
+      "to": 31
+    },
+    {
+      "from": 33,
+      "to": 28
+    },
+    {
+      "from": 33,
+      "to": 11
+    },
+    {
+      "from": 34,
+      "to": 31
+    },
+    {
+      "from": 35,
+      "to": 34
+    },
+    {
+      "from": 35,
+      "to": 12
+    },
+    {
+      "from": 36,
+      "to": 10
+    },
+    {
+      "from": 36,
+      "to": 9
+    },
+    {
+      "from": 37,
+      "to": 36
+    },
+    {
+      "from": 37,
+      "to": 1
+    },
+    {
+      "from": 38,
+      "to": 37
+    },
+    {
+      "from": 39,
+      "to": 38
+    },
+    {
+      "from": 40,
+      "to": 39
+    },
+    {
+      "from": 40,
+      "to": 37
+    },
+    {
+      "from": 40,
+      "to": 4
+    },
+    {
+      "from": 41,
+      "to": 36
+    },
+    {
+      "from": 42,
+      "to": 39
+    },
+    {
+      "from": 42,
+      "to": 25
+    },
+    {
+      "from": 43,
+      "to": 36
+    },
+    {
+      "from": 43,
+      "to": 7
+    },
+    {
+      "from": 44,
+      "to": 28
+    },
+    {
+      "from": 44,
+      "to": 33
+    },
+    {
+      "from": 45,
+      "to": 44
+    },
+    {
+      "from": 46,
+      "to": 44
+    },
+    {
+      "from": 47,
+      "to": 45
+    },
+    {
+      "from": 47,
+      "to": 46
+    },
+    {
+      "from": 48,
+      "to": 29
+    },
+    {
+      "from": 49,
+      "to": 36
+    },
+    {
+      "from": 50,
+      "to": 14
+    },
+    {
+      "from": 50,
+      "to": 49
+    },
+    {
+      "from": 51,
+      "to": 47
+    },
+    {
+      "from": 51,
+      "to": 50
+    },
+    {
+      "from": 52,
+      "to": 36
+    },
+    {
+      "from": 52,
+      "to": 30
+    },
+    {
+      "from": 53,
+      "to": 52
+    },
+    {
+      "from": 53,
+      "to": 5
+    },
+    {
+      "from": 54,
+      "to": 52
+    },
+    {
+      "from": 54,
+      "to": 37
+    },
+    {
+      "from": 54,
+      "to": 39
+    },
+    {
+      "from": 55,
+      "to": 52
+    },
+    {
+      "from": 55,
+      "to": 37
+    },
+    {
+      "from": 56,
+      "to": 52
+    },
+    {
+      "from": 56,
+      "to": 39
+    },
+    {
+      "from": 57,
+      "to": 36
+    },
+    {
+      "from": 57,
+      "to": 7
+    },
+    {
+      "from": 58,
+      "to": 47
+    },
+    {
+      "from": 58,
+      "to": 52
+    },
+    {
+      "from": 58,
+      "to": 34
+    },
+    {
+      "from": 59,
+      "to": 15
+    },
+    {
+      "from": 59,
+      "to": 16
+    },
+    {
+      "from": 60,
+      "to": 59
+    },
+    {
+      "from": 60,
+      "to": 16
+    },
+    {
+      "from": 61,
+      "to": 16
+    },
+    {
+      "from": 61,
+      "to": 41
+    },
+    {
+      "from": 62,
+      "to": 52
+    },
+    {
+      "from": 62,
+      "to": 60
+    },
+    {
+      "from": 63,
+      "to": 62
+    },
+    {
+      "from": 64,
+      "to": 17
+    },
+    {
+      "from": 64,
+      "to": 16
+    },
+    {
+      "from": 65,
+      "to": 64
+    },
+    {
+      "from": 65,
+      "to": 61
+    },
+    {
+      "from": 66,
+      "to": 5
+    },
+    {
+      "from": 66,
+      "to": 36
+    },
+    {
+      "from": 67,
+      "to": 66
+    },
+    {
+      "from": 67,
+      "to": 39
+    },
+    {
+      "from": 68,
+      "to": 67
+    },
+    {
+      "from": 68,
+      "to": 1
+    },
+    {
+      "from": 69,
+      "to": 67
+    },
+    {
+      "from": 69,
+      "to": 68
+    },
+    {
+      "from": 70,
+      "to": 43
+    },
+    {
+      "from": 71,
+      "to": 68
+    },
+    {
+      "from": 71,
+      "to": 70
+    },
+    {
+      "from": 72,
+      "to": 67
+    },
+    {
+      "from": 73,
+      "to": 72
+    },
+    {
+      "from": 73,
+      "to": 52
+    },
+    {
+      "from": 74,
+      "to": 72
+    },
+    {
+      "from": 75,
+      "to": 34
+    },
+    {
+      "from": 75,
+      "to": 31
+    },
+    {
+      "from": 76,
+      "to": 3
+    },
+    {
+      "from": 76,
+      "to": 75
+    },
+    {
+      "from": 76,
+      "to": 26
+    },
+    {
+      "from": 77,
+      "to": 75
+    },
+    {
+      "from": 77,
+      "to": 30
+    },
+    {
+      "from": 78,
+      "to": 17
+    },
+    {
+      "from": 78,
+      "to": 57
+    },
+    {
+      "from": 79,
+      "to": 24
+    },
+    {
+      "from": 79,
+      "to": 23
+    },
+    {
+      "from": 80,
+      "to": 39
+    },
+    {
+      "from": 80,
+      "to": 76
+    },
+    {
+      "from": 81,
+      "to": 41
+    },
+    {
+      "from": 81,
+      "to": 30
+    },
+    {
+      "from": 82,
+      "to": 81
+    },
+    {
+      "from": 82,
+      "to": 39
+    },
+    {
+      "from": 83,
+      "to": 82
+    },
+    {
+      "from": 84,
+      "to": 83
+    },
+    {
+      "from": 84,
+      "to": 54
+    },
+    {
+      "from": 85,
+      "to": 37
+    },
+    {
+      "from": 85,
+      "to": 83
+    },
+    {
+      "from": 85,
+      "to": 84
+    },
+    {
+      "from": 86,
+      "to": 85
+    },
+    {
+      "from": 87,
+      "to": 85
+    },
+    {
+      "from": 87,
+      "to": 30
+    },
+    {
+      "from": 88,
+      "to": 87
+    },
+    {
+      "from": 89,
+      "to": 7
+    },
+    {
+      "from": 89,
+      "to": 36
+    },
+    {
+      "from": 89,
+      "to": 85
+    },
+    {
+      "from": 90,
+      "to": 5
+    },
+    {
+      "from": 90,
+      "to": 36
+    },
+    {
+      "from": 91,
+      "to": 90
+    },
+    {
+      "from": 91,
+      "to": 37
+    },
+    {
+      "from": 92,
+      "to": 36
+    },
+    {
+      "from": 92,
+      "to": 49
+    },
+    {
+      "from": 93,
+      "to": 47
+    },
+    {
+      "from": 93,
+      "to": 90
+    },
+    {
+      "from": 94,
+      "to": 47
+    },
+    {
+      "from": 95,
+      "to": 94
+    },
+    {
+      "from": 95,
+      "to": 58
+    },
+    {
+      "from": 96,
+      "to": 92
+    },
+    {
+      "from": 96,
+      "to": 90
+    },
+    {
+      "from": 97,
+      "to": 5
+    },
+    {
+      "from": 97,
+      "to": 36
+    },
+    {
+      "from": 98,
+      "to": 5
+    },
+    {
+      "from": 99,
+      "to": 98
+    },
+    {
+      "from": 99,
+      "to": 1
+    },
+    {
+      "from": 100,
+      "to": 98
+    },
+    {
+      "from": 100,
+      "to": 97
+    },
+    {
+      "from": 101,
+      "to": 100
+    },
+    {
+      "from": 101,
+      "to": 93
+    },
+    {
+      "from": 102,
+      "to": 92
+    },
+    {
+      "from": 103,
+      "to": 102
+    },
+    {
+      "from": 103,
+      "to": 92
+    },
+    {
+      "from": 104,
+      "to": 36
+    },
+    {
+      "from": 104,
+      "to": 47
+    },
+    {
+      "from": 105,
+      "to": 104
+    },
+    {
+      "from": 105,
+      "to": 49
+    },
+    {
+      "from": 106,
+      "to": 105
+    },
+    {
+      "from": 106,
+      "to": 2
+    },
+    {
+      "from": 107,
+      "to": 36
+    },
+    {
+      "from": 107,
+      "to": 56
+    },
+    {
+      "from": 108,
+      "to": 107
+    },
+    {
+      "from": 109,
+      "to": 6
+    },
+    {
+      "from": 109,
+      "to": 7
+    },
+    {
+      "from": 110,
+      "to": 104
+    },
+    {
+      "from": 110,
+      "to": 25
+    },
+    {
+      "from": 111,
+      "to": 1
+    },
+    {
+      "from": 112,
+      "to": 111
+    },
+    {
+      "from": 113,
+      "to": 111
+    },
+    {
+      "from": 114,
+      "to": 111
+    },
+    {
+      "from": 115,
+      "to": 114
+    },
+    {
+      "from": 116,
+      "to": 113
+    },
+    {
+      "from": 117,
+      "to": 113
+    },
+    {
+      "from": 118,
+      "to": 28
+    },
+    {
+      "from": 118,
+      "to": 113
+    },
+    {
+      "from": 119,
+      "to": 31
+    },
+    {
+      "from": 119,
+      "to": 118
+    },
+    {
+      "from": 120,
+      "to": 16
+    },
+    {
+      "from": 120,
+      "to": 118
+    },
+    {
+      "from": 121,
+      "to": 34
+    },
+    {
+      "from": 121,
+      "to": 118
+    },
+    {
+      "from": 122,
+      "to": 113
+    },
+    {
+      "from": 122,
+      "to": 116
+    },
+    {
+      "from": 122,
+      "to": 112
+    },
+    {
+      "from": 123,
+      "to": 33
+    },
+    {
+      "from": 123,
+      "to": 118
+    },
+    {
+      "from": 124,
+      "to": 122
+    },
+    {
+      "from": 125,
+      "to": 122
+    },
+    {
+      "from": 125,
+      "to": 8
+    },
+    {
+      "from": 126,
+      "to": 118
+    },
+    {
+      "from": 126,
+      "to": 123
+    },
+    {
+      "from": 127,
+      "to": 123
+    },
+    {
+      "from": 127,
+      "to": 1
+    },
+    {
+      "from": 128,
+      "to": 126
+    },
+    {
+      "from": 128,
+      "to": 124
+    },
+    {
+      "from": 129,
+      "to": 123
+    },
+    {
+      "from": 129,
+      "to": 128
+    },
+    {
+      "from": 130,
+      "to": 124
+    },
+    {
+      "from": 130,
+      "to": 1
+    },
+    {
+      "from": 131,
+      "to": 122
+    },
+    {
+      "from": 131,
+      "to": 114
+    },
+    {
+      "from": 131,
+      "to": 115
+    },
+    {
+      "from": 132,
+      "to": 6
+    },
+    {
+      "from": 132,
+      "to": 122
+    },
+    {
+      "from": 132,
+      "to": 127
+    },
+    {
+      "from": 133,
+      "to": 122
+    },
+    {
+      "from": 133,
+      "to": 127
+    },
+    {
+      "from": 134,
+      "to": 44
+    },
+    {
+      "from": 134,
+      "to": 118
+    },
+    {
+      "from": 134,
+      "to": 124
+    },
+    {
+      "from": 135,
+      "to": 130
+    },
+    {
+      "from": 135,
+      "to": 113
+    },
+    {
+      "from": 136,
+      "to": 135
+    },
+    {
+      "from": 137,
+      "to": 134
+    },
+    {
+      "from": 137,
+      "to": 135
+    },
+    {
+      "from": 138,
+      "to": 8
+    },
+    {
+      "from": 138,
+      "to": 1
+    },
+    {
+      "from": 139,
+      "to": 138
+    },
+    {
+      "from": 139,
+      "to": 125
+    },
+    {
+      "from": 140,
+      "to": 3
+    },
+    {
+      "from": 140,
+      "to": 135
+    },
+    {
+      "from": 141,
+      "to": 137
+    },
+    {
+      "from": 141,
+      "to": 75
+    },
+    {
+      "from": 142,
+      "to": 138
+    },
+    {
+      "from": 142,
+      "to": 130
+    },
+    {
+      "from": 143,
+      "to": 1
+    },
+    {
+      "from": 143,
+      "to": 2
+    },
+    {
+      "from": 144,
+      "to": 2
+    },
+    {
+      "from": 144,
+      "to": 122
+    },
+    {
+      "from": 145,
+      "to": 1
+    },
+    {
+      "from": 145,
+      "to": 2
+    },
+    {
+      "from": 146,
+      "to": 130
+    },
+    {
+      "from": 146,
+      "to": 1
+    },
+    {
+      "from": 147,
+      "to": 7
+    },
+    {
+      "from": 147,
+      "to": 122
+    },
+    {
+      "from": 147,
+      "to": 142
+    },
+    {
+      "from": 148,
+      "to": 142
+    },
+    {
+      "from": 148,
+      "to": 143
+    },
+    {
+      "from": 149,
+      "to": 122
+    },
+    {
+      "from": 150,
+      "to": 149
+    },
+    {
+      "from": 150,
+      "to": 117
+    },
+    {
+      "from": 151,
+      "to": 150
+    },
+    {
+      "from": 151,
+      "to": 46
+    },
+    {
+      "from": 152,
+      "to": 47
+    },
+    {
+      "from": 152,
+      "to": 46
+    },
+    {
+      "from": 152,
+      "to": 104
+    },
+    {
+      "from": 153,
+      "to": 152
+    },
+    {
+      "from": 153,
+      "to": 117
+    },
+    {
+      "from": 154,
+      "to": 152
+    },
+    {
+      "from": 154,
+      "to": 110
+    },
+    {
+      "from": 155,
+      "to": 1
+    },
+    {
+      "from": 155,
+      "to": 2
+    },
+    {
+      "from": 156,
+      "to": 155
+    },
+    {
+      "from": 156,
+      "to": 109
+    },
+    {
+      "from": 157,
+      "to": 150
+    },
+    {
+      "from": 157,
+      "to": 33
+    },
+    {
+      "from": 157,
+      "to": 121
+    },
+    {
+      "from": 158,
+      "to": 157
+    },
+    {
+      "from": 158,
+      "to": 117
+    },
+    {
+      "from": 159,
+      "to": 150
+    },
+    {
+      "from": 159,
+      "to": 157
+    },
+    {
+      "from": 160,
+      "to": 157
+    },
+    {
+      "from": 160,
+      "to": 135
+    },
+    {
+      "from": 161,
+      "to": 127
+    },
+    {
+      "from": 161,
+      "to": 128
+    },
+    {
+      "from": 162,
+      "to": 8
+    },
+    {
+      "from": 162,
+      "to": 122
+    },
+    {
+      "from": 162,
+      "to": 125
+    },
+    {
+      "from": 163,
+      "to": 155
+    },
+    {
+      "from": 163,
+      "to": 2
+    },
+    {
+      "from": 164,
+      "to": 133
+    },
+    {
+      "from": 164,
+      "to": 122
+    },
+    {
+      "from": 165,
+      "to": 152
+    },
+    {
+      "from": 165,
+      "to": 127
+    },
+    {
+      "from": 166,
+      "to": 6
+    },
+    {
+      "from": 166,
+      "to": 7
+    },
+    {
+      "from": 167,
+      "to": 166
+    },
+    {
+      "from": 167,
+      "to": 165
+    },
+    {
+      "from": 168,
+      "to": 115
+    },
+    {
+      "from": 168,
+      "to": 113
+    },
+    {
+      "from": 169,
+      "to": 7
+    },
+    {
+      "from": 169,
+      "to": 166
+    },
+    {
+      "from": 170,
+      "to": 166
+    },
+    {
+      "from": 170,
+      "to": 8
+    },
+    {
+      "from": 170,
+      "to": 125
+    },
+    {
+      "from": 170,
+      "to": 169
+    },
+    {
+      "from": 171,
+      "to": 165
+    },
+    {
+      "from": 171,
+      "to": 94
+    },
+    {
+      "from": 172,
+      "to": 165
+    },
+    {
+      "from": 172,
+      "to": 94
+    },
+    {
+      "from": 172,
+      "to": 121
+    },
+    {
+      "from": 173,
+      "to": 122
+    },
+    {
+      "from": 173,
+      "to": 127
+    },
+    {
+      "from": 173,
+      "to": 144
+    },
+    {
+      "from": 174,
+      "to": 173
+    },
+    {
+      "from": 175,
+      "to": 174
+    },
+    {
+      "from": 175,
+      "to": 146
+    },
+    {
+      "from": 176,
+      "to": 173
+    },
+    {
+      "from": 176,
+      "to": 174
+    },
+    {
+      "from": 177,
+      "to": 173
+    },
+    {
+      "from": 177,
+      "to": 7
+    },
+    {
+      "from": 177,
+      "to": 169
+    },
+    {
+      "from": 178,
+      "to": 173
+    },
+    {
+      "from": 178,
+      "to": 155
+    },
+    {
+      "from": 179,
+      "to": 142
+    },
+    {
+      "from": 179,
+      "to": 173
+    },
+    {
+      "from": 180,
+      "to": 44
+    },
+    {
+      "from": 180,
+      "to": 45
+    },
+    {
+      "from": 181,
+      "to": 180
+    },
+    {
+      "from": 181,
+      "to": 33
+    },
+    {
+      "from": 182,
+      "to": 35
+    },
+    {
+      "from": 182,
+      "to": 181
+    },
+    {
+      "from": 182,
+      "to": 34
+    },
+    {
+      "from": 183,
+      "to": 182
+    },
+    {
+      "from": 184,
+      "to": 34
+    },
+    {
+      "from": 184,
+      "to": 182
+    },
+    {
+      "from": 185,
+      "to": 183
+    },
+    {
+      "from": 185,
+      "to": 182
+    },
+    {
+      "from": 186,
+      "to": 7
+    },
+    {
+      "from": 186,
+      "to": 181
+    },
+    {
+      "from": 187,
+      "to": 169
+    },
+    {
+      "from": 187,
+      "to": 165
+    },
+    {
+      "from": 188,
+      "to": 187
+    },
+    {
+      "from": 188,
+      "to": 1
+    },
+    {
+      "from": 189,
+      "to": 187
+    },
+    {
+      "from": 189,
+      "to": 7
+    },
+    {
+      "from": 190,
+      "to": 187
+    },
+    {
+      "from": 190,
+      "to": 155
+    },
+    {
+      "from": 191,
+      "to": 187
+    },
+    {
+      "from": 191,
+      "to": 168
+    },
+    {
+      "from": 192,
+      "to": 187
+    },
+    {
+      "from": 192,
+      "to": 152
+    },
+    {
+      "from": 192,
+      "to": 33
+    },
+    {
+      "from": 193,
+      "to": 187
+    },
+    {
+      "from": 193,
+      "to": 85
+    },
+    {
+      "from": 194,
+      "to": 187
+    },
+    {
+      "from": 194,
+      "to": 192
+    },
+    {
+      "from": 195,
+      "to": 30
+    },
+    {
+      "from": 196,
+      "to": 7
+    },
+    {
+      "from": 197,
+      "to": 44
+    },
+    {
+      "from": 197,
+      "to": 94
+    },
+    {
+      "from": 198,
+      "to": 49
+    },
+    {
+      "from": 198,
+      "to": 197
+    },
+    {
+      "from": 199,
+      "to": 197
+    },
+    {
+      "from": 199,
+      "to": 95
+    },
+    {
+      "from": 200,
+      "to": 197
+    },
+    {
+      "from": 200,
+      "to": 199
+    },
+    {
+      "from": 201,
+      "to": 59
+    },
+    {
+      "from": 201,
+      "to": 197
+    },
+    {
+      "from": 202,
+      "to": 201
+    },
+    {
+      "from": 202,
+      "to": 17
+    },
+    {
+      "from": 203,
+      "to": 58
+    },
+    {
+      "from": 203,
+      "to": 142
+    },
+    {
+      "from": 203,
+      "to": 94
+    },
+    {
+      "from": 204,
+      "to": 12
+    },
+    {
+      "from": 204,
+      "to": 35
+    },
+    {
+      "from": 205,
+      "to": 165
+    },
+    {
+      "from": 205,
+      "to": 204
+    },
+    {
+      "from": 206,
+      "to": 203
+    },
+    {
+      "from": 206,
+      "to": 141
+    },
+    {
+      "from": 207,
+      "to": 152
+    },
+    {
+      "from": 207,
+      "to": 153
+    },
+    {
+      "from": 208,
+      "to": 203
+    },
+    {
+      "from": 208,
+      "to": 145
+    },
+    {
+      "from": 208,
+      "to": 144
+    },
+    {
+      "from": 209,
+      "to": 208
+    },
+    {
+      "from": 209,
+      "to": 176
+    },
+    {
+      "from": 210,
+      "to": 195
+    },
+    {
+      "from": 210,
+      "to": 196
+    },
+    {
+      "from": 211,
+      "to": 12
+    },
+    {
+      "from": 212,
+      "to": 211
+    },
+    {
+      "from": 213,
+      "to": 212
+    },
+    {
+      "from": 213,
+      "to": 200
+    },
+    {
+      "from": 214,
+      "to": 211
+    },
+    {
+      "from": 214,
+      "to": 210
+    },
+    {
+      "from": 215,
+      "to": 213
+    },
+    {
+      "from": 215,
+      "to": 199
+    },
+    {
+      "from": 215,
+      "to": 203
+    },
+    {
+      "from": 216,
+      "to": 201
+    },
+    {
+      "from": 216,
+      "to": 211
+    },
+    {
+      "from": 217,
+      "to": 215
+    },
+    {
+      "from": 217,
+      "to": 202
+    },
+    {
+      "from": 218,
+      "to": 75
+    },
+    {
+      "from": 218,
+      "to": 34
+    },
+    {
+      "from": 218,
+      "to": 62
+    },
+    {
+      "from": 219,
+      "to": 196
+    },
+    {
+      "from": 219,
+      "to": 218
+    },
+    {
+      "from": 220,
+      "to": 63
+    },
+    {
+      "from": 220,
+      "to": 218
+    },
+    {
+      "from": 221,
+      "to": 218
+    },
+    {
+      "from": 221,
+      "to": 6
+    },
+    {
+      "from": 222,
+      "to": 204
+    },
+    {
+      "from": 222,
+      "to": 218
+    },
+    {
+      "from": 223,
+      "to": 218
+    },
+    {
+      "from": 224,
+      "to": 194
+    },
+    {
+      "from": 224,
+      "to": 219
+    },
+    {
+      "from": 225,
+      "to": 218
+    },
+    {
+      "from": 225,
+      "to": 195
+    },
+    {
+      "from": 225,
+      "to": 199
+    },
+    {
+      "from": 226,
+      "to": 173
+    },
+    {
+      "from": 226,
+      "to": 176
+    },
+    {
+      "from": 227,
+      "to": 226
+    },
+    {
+      "from": 227,
+      "to": 209
+    },
+    {
+      "from": 227,
+      "to": 179
+    },
+    {
+      "from": 228,
+      "to": 226
+    },
+    {
+      "from": 228,
+      "to": 218
+    },
+    {
+      "from": 228,
+      "to": 217
+    },
+    {
+      "from": 229,
+      "to": 226
+    },
+    {
+      "from": 229,
+      "to": 194
+    },
+    {
+      "from": 230,
+      "to": 215
+    },
+    {
+      "from": 230,
+      "to": 225
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Algebra Fundamentals,,FOUND
+2,Units and Dimensional Analysis,,FOUND
+3,Significant Figures,,FOUND
+4,Ratios and Percentages,,FOUND
+5,Reading Plots and Graphs,,FOUND
+6,Static Equilibrium,,FOUND
+7,Stress and Strain Basics,,FOUND
+8,Beam Bending Basics,,FOUND
+9,Spreadsheet Basics,,FOUND
+10,Tables and CSV Files,,FOUND
+11,Using a Chat Assistant,,FOUND
+12,Engineering Codes and Standards,,FOUND
+13,Artificial Intelligence,11,AIF
+14,Rule-Based Systems,1,AIF
+15,Machine Learning,13,AIF
+16,Training Data,15,AIF
+17,Learned Patterns,15|16,AIF
+18,Rules Versus Learned Patterns,14|17,AIF
+19,Measurement and Why It Matters,2|4,STAT
+20,Repeated Measurements,19,STAT
+21,Range of Readings,20,STAT
+22,Systematic Error and Accuracy,21|19,STAT
+23,Uncertainty Propagation,21|1,STAT
+24,Instrument Resolution,19|3,STAT
+25,Large Language Models and Tokens,13|15,LLM
+26,Probability Basics,4,STAT
+27,Next-Token Prediction,25|26,LLM
+28,Sampling and Temperature,27,LLM
+29,Prompts,25|11,LLM
+30,Hallucination,27,LLM
+31,Checking Output Against Source,30|12,VER
+32,Data Sets and Variables,10|9,STAT
+33,Mean,32|1,STAT
+34,Variance and Standard Deviation,33,STAT
+35,Coefficient of Variation,34|33|4,STAT
+36,Sample Versus Population,32,STAT
+37,Uncertainty From Spread,34|23,STAT
+38,AI Agent,25|29,AGT
+39,Tool Use,38,AGT
+40,Multi-Step Planning,38,AGT
+41,Agent Action Loop,39|40,AGT
+42,Sensor Data Stream,32,DATA
+43,Threshold Check,14|42,DATA
+44,Distribution,32|26,STAT
+45,Histogram,44|5,STAT
+46,Normal Distribution,44|33|34,STAT
+47,Skewed Distribution,44|33,STAT
+48,Outliers,44|34,STAT
+49,Auditing an Agent's Analysis,41|44|30,VER
+50,AI Bias,15|16,BIAS
+51,Training Data Bias,50|16,BIAS
+52,Representative Sample,16|36,BIAS
+53,Distribution Shift,44|51,BIAS
+54,Out-of-Domain Use,53,BIAS
+55,Training Coverage Gap,17|16|52,BIAS
+56,Scatter Plot,5|32,INF
+57,Correlation Coefficient,56|34,INF
+58,Linear Regression,57|1,INF
+59,R-Squared,57|58,INF
+60,Correlation Versus Causation,57,INF
+61,Spurious Correlation,60|44,INF
+62,AI Overconfidence,30|27,BIAS
+63,False Precision,3|62|24,BIAS
+64,Statistical Basis for a Claim,34|63,BIAS
+65,Random Sampling,36|26,INF
+66,Sampling Variability,65|34,INF
+67,Standard Error,66,INF
+68,The t Multiplier,67|46,INF
+69,Confidence Interval,33|67|68,INF
+70,Confidence Level,69,INF
+71,Significance and P-Values,69|26,INF
+72,Dashboard and Metrics,5|32|33,DATA
+73,Time Series Data,32|42,DATA
+74,Agent-Built Report,41|72,AGT
+75,Agent Autonomy,41,AGT
+76,Human Review Checkpoint,75|49,AGT
+77,Chart Type Selection,5|32,DATA
+78,Axis Scales and Baselines,5,DATA
+79,Misleading Charts,78|77,DATA
+80,Critiquing AI-Generated Charts,79|74,DATA
+81,Data Pipeline,32|41,DATA
+82,Data Ingestion,81|42,DATA
+83,Unit and Format Mismatch,82|2,DATA
+84,Data Cleaning,32|48,DATA
+85,Missing and Bad Data,84,DATA
+86,Errors Through a Pipeline,81|23,DATA
+87,Variables and Data Types,1,CODE
+88,Functions and Imports,87,CODE
+89,Conditionals and Loops,87,CODE
+90,Reading Error Messages,88,CODE
+91,AI Code Generation Internals,25|88|27|16,CODE
+92,Plausible but Wrong Code,30|91,CODE
+93,Python Script,88|87,CODE
+94,Prompting for Code,29|91,CODE
+95,Running a Script,93,CODE
+96,Vibe Coding,91|94,CODE
+97,Plain-Language Specification,94|1,CODE
+98,Describe-Generate-Test Loop,96|95|94,CODE
+99,Test Case,95|1,VER
+100,Reading AI-Generated Code,93|89,CODE
+101,Agentic Coding Tool,38|91|95,AGT
+102,Unit Tests and Test Runner,99|88,VER
+103,Agent-Written Tests,101|102,VER
+104,Analytical Solution,8|1,VER
+105,Numerical Tolerance,3|102,VER
+106,Tests Written by the Same AI,103|62,VER
+107,Known-Answer Check,104|99,VER
+108,Hand Calculation Check,1|2,VER
+109,Unit and Dimension Check,2|93,VER
+110,Order-of-Magnitude Check,1|2,VER
+111,Edge Cases and Limits,99|1,VER
+112,Investigating a Discrepancy,107|108,VER
+113,Software Bug,93,DBG
+114,Debugging,113|90,DBG
+115,Isolating a Failing Step,114|40,DBG
+116,Multi-Step Agent Workflow,41|40|81,AGT
+117,Tracing an Agent Failure,116|90,DBG
+118,Compounding Workflow Errors,116|86,DBG
+119,Debugging With AI,114|29|92,DBG
+120,Giving AI Error Context,119|90,DBG
+121,Root Cause Versus Symptom,114|119,DBG
+122,Re-Testing After a Fix,119|102,DBG
+123,Scoping a Design Tool,97|98,DES
+124,Iterative Design Loop,116|97,DES
+125,Design Across Load Cases,124|6|7,DES
+126,Parameter Sweep,89|88,DES
+127,Design Convergence,124|75,DES
+128,Agent Drift From Requirements,124|75|92,DES
+129,Engineering Calculation Tool,93|97|109,DES
+130,Inputs and Outputs,129,DES
+131,Input Validation,130|111,DES
+132,Documented Assumptions,129|130,DES
+133,Validating Against a Reference,107|129,DES
+134,AI Research Assistant,38|39,AGT
+135,Literature Summary,134|29,DES
+136,Citation and Source Verification,31|135|30,VER
+137,Design Tradeoff and Objectives,7|125|124|1,DES
+138,AI-Assisted Tradeoff Analysis,137|116|29,DES
+139,Engineering Judgment,137|138,DES
+140,Risk and Consequence,26,ETH
+141,Failure Mode,7,ETH
+142,Autonomous AI Systems,38|75,ETH
+143,Human in the Loop,142|76,ETH
+144,Accountability for AI Decisions,142|143,ETH
+145,AI Ethics,50|142,ETH
+146,Explainability,145|17,ETH
+147,Verifying Agent Output,49|107|75,VER
+148,Code Compliance Check,12|31,VER
+149,Independent Verification,147|106,VER
+150,Verification Checklist,147|110|109,VER
+151,Documenting and Tracing Checks,150|132|116|117,VER
+152,Safety-Critical System,140|141,ETH
+153,Licensure and the PE Stamp,12,ETH
+154,Responsible Charge,153|144,ETH
+155,AI-Assisted Accountability,154|143|147,ETH
+156,Disclosing AI Use,155|146,ETH
+157,Limits of AI,62|30|53,ETH
+158,Missed Failure Modes and Codes,141|157|148,ETH
+159,Conditions Beyond Training,54|157,ETH
+160,Tacit Knowledge and Physics Gaps,157|6,ETH
+161,Judgment Catching AI Errors,139|158,ETH
+162,When Not to Use AI,157|140|143,ETH
+163,Reflecting on AI Use,155|162,ETH

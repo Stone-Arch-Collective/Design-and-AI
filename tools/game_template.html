@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SEIS 201 Vocab Lab</title>
+<style>
+:root{--bg:#f9f9f7;--surface:#fcfcfb;--ink:#0b0b0b;--ink2:#52514e;--muted:#6b6a66;--grid:#e1e0d9;--acc:#2a78d6;--ok:#1baf7a;--bad:#eb6834;--gold:#eda100;--codebg:#f0efe9}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d0d0d;--surface:#1a1a19;--ink:#fff;--ink2:#c3c2b7;--muted:#a09f98;--grid:#2c2c2a;--acc:#3987e5;--ok:#199e70;--bad:#d95926;--gold:#c98500;--codebg:#111110}}
+:root[data-theme="dark"]{--bg:#0d0d0d;--surface:#1a1a19;--ink:#fff;--ink2:#c3c2b7;--muted:#a09f98;--grid:#2c2c2a;--acc:#3987e5;--ok:#199e70;--bad:#d95926;--gold:#c98500;--codebg:#111110}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{max-width:820px;margin:0 auto;padding:0 16px 56px}
+h1{font-size:22px;margin:20px 0 2px}
+.sub{color:var(--ink2);margin:0 0 12px}
+h2{font-size:17px;margin:20px 0 8px}
+.hud{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--grid);padding:8px 0;margin-bottom:8px}
+.hudrow{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:14px;color:var(--ink2)}
+.hudrow b{color:var(--ink)}
+.track{height:6px;background:var(--grid);border-radius:3px;overflow:hidden;margin-top:6px}
+.fill{height:100%;background:var(--gold);width:0;transition:width .3s}
+.card{background:var(--surface);border:1px solid var(--grid);border-radius:12px;padding:12px 14px;margin:10px 0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:inherit;font-size:14px;padding:7px 12px;border-radius:20px;border:1px solid var(--grid);background:var(--surface);color:var(--ink);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--acc);border-color:var(--acc);color:#fff}
+.modes{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px}
+.mode{text-align:left;font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--grid);border-radius:12px;padding:12px 14px;cursor:pointer}
+.mode:hover:not(:disabled){border-color:var(--acc)}
+.mode:disabled{opacity:.5;cursor:not-allowed}
+.mode b{display:block;font-size:16px}
+.mode span{display:block;color:var(--ink2);font-size:14px}
+.mode i{display:block;font-style:normal;color:var(--muted);font-size:13px;margin-top:4px}
+button:focus-visible,input:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.map{display:flex;flex-wrap:wrap;gap:3px;margin-top:6px}
+.dot{width:20px;height:20px;line-height:20px;text-align:center;font-size:15px;color:var(--muted);cursor:default}
+.dot.l{color:var(--gold)}.dot.m{color:var(--ok)}
+.maplab{font-size:14px;color:var(--ink2);margin-top:10px}
+.prompt{font-size:18px;font-weight:600;margin:6px 0 12px}
+.qmeta{display:flex;justify-content:space-between;color:var(--muted);font-size:13px;margin-bottom:4px;gap:8px;flex-wrap:wrap}
+.opt{display:block;width:100%;text-align:left;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--grid);border-radius:10px;padding:10px 12px;margin:8px 0;cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--acc)}
+.opt kbd{display:inline-block;min-width:20px;color:var(--muted);font:12px ui-monospace,monospace;margin-right:8px}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 18%,var(--bg))}
+.opt.wrong{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 18%,var(--bg))}
+.opt:disabled{cursor:default}
+.fb{margin-top:10px;padding:10px 12px;border-radius:10px;font-size:15px}
+.fb.ok{background:color-mix(in srgb,var(--ok) 16%,var(--bg));border:1px solid var(--ok)}
+.fb.no{background:color-mix(in srgb,var(--bad) 16%,var(--bg));border:1px solid var(--bad)}
+.go,.sec{font:inherit;padding:9px 16px;border-radius:10px;cursor:pointer;border:1px solid var(--acc);margin:10px 8px 0 0}
+.go{background:var(--acc);color:#fff}
+.sec{background:var(--surface);color:var(--ink);border-color:var(--grid)}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row input{font:inherit;flex:1;min-width:200px;padding:10px 12px;border:1px solid var(--grid);border-radius:10px;background:var(--bg);color:var(--ink)}
+.hint{font:15px ui-monospace,monospace;letter-spacing:.08em;color:var(--ink2);margin:6px 0}
+.bar{height:10px;background:var(--grid);border-radius:5px;overflow:hidden;margin:6px 0 10px}
+.bar>div{height:100%;transition:width .25s}
+.bar.time>div{background:var(--acc)}.bar.boss>div{background:var(--bad)}
+.hearts{letter-spacing:.2em;color:var(--bad)}
+.mult{display:inline-block;padding:1px 8px;border-radius:10px;background:var(--gold);color:#111;font-weight:700;font-size:13px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:560px){.two{grid-template-columns:1fr}}
+.pair{display:block;width:100%;text-align:left;font:inherit;font-size:14px;color:var(--ink);background:var(--bg);border:1px solid var(--grid);border-radius:10px;padding:9px 11px;margin:6px 0;cursor:pointer}
+.pair.sel{border-color:var(--acc);box-shadow:0 0 0 2px var(--acc)}
+.pair.gone{visibility:hidden}
+.pair.shake{animation:shake .3s;border-color:var(--bad)}
+@keyframes shake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+@media(prefers-reduced-motion:reduce){.pair.shake{animation:none}.fill,.bar>div{transition:none}}
+.stat{display:flex;gap:18px;flex-wrap:wrap;margin:8px 0}
+.stat div{min-width:90px}.stat b{display:block;font-size:22px}.stat span{color:var(--muted);font-size:13px}
+.missed li{margin:6px 0}
+.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:24px;font-size:15px;opacity:0;pointer-events:none;transition:opacity .25s;max-width:90vw;text-align:center}
+.toast.show{opacity:1}
+details{margin:14px 0;color:var(--ink2)}summary{cursor:pointer}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;border:1px solid var(--gold);font-size:13px;margin:0 6px 6px 0}
+footer{color:var(--muted);font-size:13px;margin-top:28px;border-top:1px solid var(--grid);padding-top:10px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>SEIS 201 Vocab Lab</h1>
+<p class="sub">Learn the course vocabulary by playing. Pick a word set, pick a mode, beat your own best.</p>
+<div class="hud"><div class="hudrow"><span>Rank: <b id="rank"></b></span><span>Points: <b id="pts">0</b></span><span id="nextr"></span></div><div class="track"><div class="fill" id="rf"></div></div></div>
+<main id="app"></main>
+<footer>Definitions are drafts, not yet reviewed by a licensed engineer. Nothing you do here is saved or sent anywhere; reloading the page starts over.</footer>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+const DATA=/*DATA*/{};
+const C=DATA.concepts,TAX=DATA.tax,UN=DATA.units;
+const byId=new Map(C.map(c=>[c.id,c]));
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+/* confusable pairs: manual list plus automatic word-overlap check, never shown together as options */
+const STOP=new Set('a an the of to in on for and or is are be by with that this it its as at from so such than when where which who how into not no can will may their they them there has have been being was were'.split(' '));
+const toks=s=>new Set(s.toLowerCase().replace(/[^a-z ]/g,' ').split(/\s+/).filter(w=>w.length>2&&!STOP.has(w)));
+const CONF=new Set(DATA.confusable.map(p=>[...p].sort((a,b)=>a-b).join('-')));
+{const T=C.map(c=>toks(c.def));for(let i=0;i<C.length;i++)for(let j=i+1;j<C.length;j++){let k=0;T[i].forEach(w=>{if(T[j].has(w))k++});const u=T[i].size+T[j].size-k;if(u&&k/u>0.4)CONF.add(C[i].id+'-'+C[j].id)}}
+const isConf=(a,b)=>CONF.has([a,b].sort((x,y)=>x-y).join('-'));
+const RANKS=[[0,'Apprentice'],[2500,'Technician'],[7000,'Engineer'],[15000,'Senior Engineer'],[30000,'Principal']];
+const BOSS={0:'The Unit Mixup',1:'The Confident Guess',2:'The Spurious Trend',3:'The Plausible Bug',4:'The Silent Drift',5:'The Unchecked Stamp'};
+const S={pts:0,sel:new Set([1]),mst:{},best:{},badges:new Map(),bestStreak:0};
+let run=null,timer=null,keyHandler=null;
+const M=id=>S.mst[id]||(S.mst[id]={box:0,seen:0,ok:0});
+const pool=()=>C.filter(c=>S.sel.has(c.unit));
+const rankIdx=p=>{let r=0;RANKS.forEach((x,i)=>{if(p>=x[0])r=i});return r};
+function toast(t){const e=$('toast');e.textContent=t;e.classList.add('show');clearTimeout(toast.h);toast.h=setTimeout(()=>e.classList.remove('show'),2200)}
+function hud(){const r=rankIdx(S.pts);$('rank').textContent=RANKS[r][1];$('pts').textContent=S.pts.toLocaleString();
+ const n=RANKS[r+1];$('nextr').textContent=n?`${(n[0]-S.pts).toLocaleString()} to ${n[1]}`:'Top rank';
+ $('rf').style.width=(n?Math.round((S.pts-RANKS[r][0])/(n[0]-RANKS[r][0])*100):100)+'%'}
+function addPts(n){const b=rankIdx(S.pts);S.pts+=n;hud();const a=rankIdx(S.pts);if(a>b)toast('Rank up: '+RANKS[a][1])}
+function badge(k,label){if(!S.badges.has(k)){S.badges.set(k,label);toast('Badge: '+label)}}
+function upd(id,ok,inc=1){const m=M(id);m.seen++;if(ok){m.ok++;m.box=Math.min(3,m.box+inc)}else m.box=Math.max(0,m.box-1)}
+function clearRun(){clearInterval(timer);timer=null;keyHandler=null}
+/* ---------- question building ---------- */
+function targets(n,avoid=[]){const p=pool().filter(c=>!avoid.includes(c.id));return p.map(c=>[M(c.id).box+Math.random()*1.2,c]).sort((a,b)=>a[0]-b[0]).slice(0,n).map(x=>x[1])}
+function distractors(t){
+ const inPool=new Set(pool().map(c=>c.id)),rel=(DATA.rel[t.id]||[]).map(id=>byId.get(id)).filter(c=>!isConf(c.id,t.id));
+ const out=[],fits=c=>c&&c.id!==t.id&&!out.includes(c)&&!out.some(o=>isConf(o.id,c.id));
+ const near=rel.filter(c=>inPool.has(c.id));
+ for(const c of shuffle(near.slice(0,3))){if(out.length<2&&fits(c))out.push(c)}
+ for(const c of shuffle(near.slice(3,7))){if(out.length<3&&fits(c))out.push(c)}
+ for(const c of near){if(out.length<3&&fits(c))out.push(c)}
+ for(const c of rel.filter(c=>!inPool.has(c.id))){if(out.length<3&&fits(c))out.push(c)}
+ const rest=shuffle(C.filter(c=>c.tax===t.tax&&!isConf(c.id,t.id)));for(const c of rest){if(out.length<3&&fits(c))out.push(c)}
+ return out}
+/* answer-leak masking: hide words that appear in a term's own name so the wording cannot give the answer away */
+const GEN=new Set(['basics','basic','using','use','versus','and','the','with','from','for','use']);
+const stem=w=>{w=w.toLowerCase();return w.length>=6?w.slice(0,5):w.replace(/s$/,'')};
+const keyStems=labels=>{const k=new Set();labels.forEach(l=>(l.match(/[A-Za-z]+/g)||[]).forEach(w=>{if(w.length>=4&&!STOP.has(w.toLowerCase())&&!GEN.has(w.toLowerCase()))k.add(stem(w))}));return k};
+const maskText=(text,labels)=>{const k=keyStems(labels);return text.replace(/[A-Za-z]+/g,w=>w.length>=4&&k.has(stem(w))?'_____':w)};
+function mcQ(t,dir){const opts=shuffle([t,...distractors(t)]);return{type:'mc',t,dir,opts,ans:opts.indexOf(t)}}
+/* ---------- home ---------- */
+function home(){clearRun();run=null;const p=pool(),mastered=p.filter(c=>M(c.id).box>=3).length;
+ const units=Object.keys(UN).map(Number);
+ const chips=units.map(u=>`<button class="chip" aria-pressed="${S.sel.has(u)}" data-u="${u}">${esc(UN[u].short)} (${C.filter(c=>c.unit===u).length})</button>`).join('')+`<button class="chip" data-all="1" aria-pressed="${S.sel.size===units.length}">Everything (${C.length})</button>`;
+ const map=units.filter(u=>S.sel.has(u)).map(u=>{const cs=C.filter(c=>c.unit===u);return`<div class="maplab">${esc(UN[u].name)}</div><div class="map" role="img" aria-label="${cs.filter(c=>M(c.id).box>=3).length} of ${cs.length} mastered">${cs.map(c=>{const b=M(c.id).box;return`<span class="dot ${b>=3?'m':b>=1?'l':''}" title="${esc(c.label)}">${b>=3?'&#9679;':b>=1?'&#9680;':'&#9675;'}</span>`}).join('')}</div>`}).join('');
+ const mode=(k,name,desc,extra)=>`<button class="mode" data-m="${k}" ${p.length<6?'disabled':''}><b>${name}</b><span>${desc}</span><i>${extra}</i></button>`;
+ const bs=k=>S.best[k]?`Best: ${S.best[k].toLocaleString()}`:'No score yet';
+ $('app').innerHTML=`<h2>1. Word set</h2><div class="chips" id="chips">${chips}</div>
+ <div class="card"><b>${mastered} of ${p.length}</b> words mastered in this set<div>${map||'<span class="maplab">Pick at least one unit.</span>'}</div><div class="maplab">&#9675; new &nbsp; &#9680; learning &nbsp; &#9679; mastered (answer right three times)</div></div>
+ <h2>2. Mode</h2><div class="modes">
+ ${mode('learn','Learn','10 questions, both directions. Missed words come back sooner.',bs('learn'))}
+ ${mode('match','Match','Pair 6 terms with their definitions, fast and clean.',bs('match'))}
+ ${mode('speed','Speed round','60 seconds. Wrong answers cost 3 seconds, so no guessing.',bs('speed'))}
+ ${mode('recall','Recall','See a definition, type the term. Hardest, worth double.',bs('recall'))}
+ ${mode('boss','Boss round','12 questions, 3 lives. Beat it for a badge.',bs('boss'))}
+ </div>
+ ${S.badges.size?`<h2>Badges</h2><div>${[...S.badges.values()].map(b=>`<span class="badge">${esc(b)}</span>`).join('')}</div>`:''}
+ <details><summary>How points work</summary><p>Every right answer earns 100 points. Each run of three right answers in a row raises your multiplier (up to x4). A wrong answer resets it. Points are only for correct answers. Hard-to-remember words come up more often.</p></details>`;
+ $('chips').onclick=e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.all){if(S.sel.size===units.length)S.sel=new Set([units[1]]);else S.sel=new Set(units)}else{const u=+b.dataset.u;S.sel.has(u)?S.sel.delete(u):S.sel.add(u)}home()};
+ document.querySelectorAll('.mode').forEach(b=>b.onclick=()=>start(b.dataset.m))}
+/* ---------- run control ---------- */
+function start(mode){clearRun();const n=pool().length;
+ run={mode,q:0,score:0,streak:0,ok:0,bad:0,missed:[],re:[],last:[],start:Date.now(),lives:3,total:mode==='learn'?10:mode==='boss'?Math.min(12,n):mode==='recall'?10:null,t:60,queue:[]};
+ if(mode==='match')return matchRound();
+ if(mode==='speed'){timer=setInterval(()=>{run.t-=0.1;if(run.t<=0){run.t=0;endRun()}else{const e=$('tbar');if(e)e.style.width=(run.t/60*100)+'%';const l=$('tlab');if(l)l.textContent=Math.ceil(run.t)+'s'}},100)}
+ if(mode==='boss')run.queue=targets(run.total).sort(()=>Math.random()-.5);
+ nextQ()}
+function mult(){return 1+Math.min(3,Math.floor((run.streak-1)/3))}
+function nextQ(){if(!run)return;
+ if(run.total&&run.q>=run.total)return endRun();
+ let t;
+ if(run.mode==='boss')t=run.queue[run.q];
+ else{const due=run.re.findIndex(r=>r.at<=run.q);if(due>=0)t=byId.get(run.re.splice(due,1)[0].id);else t=targets(1,run.last.slice(-3))[0]}
+ if(!t)return endRun();
+ run.last.push(t.id);
+ if(run.mode==='recall'||(run.mode==='boss'&&run.q===run.total-1))run.cur={type:'recall',t,tries:0,hint:false};
+ else run.cur=mcQ(t,run.mode==='speed'?'d2t':Math.random()<.6?'d2t':'t2d');
+ draw()}
+function frame(inner){const r=run,m=r.streak>=1?`<span class="mult">x${mult()}</span>`:'';
+ let top=`<span>${r.total?`Question ${Math.min(r.q+1,r.total)} of ${r.total}`:'Speed round'}</span><span>Score ${r.score.toLocaleString()} ${m} Streak ${r.streak}</span>`;
+ let extra='';
+ if(r.mode==='speed')extra=`<div class="bar time" aria-hidden="true"><div id="tbar" style="width:${r.t/60*100}%"></div></div><div class="qmeta"><span id="tlab">${Math.ceil(r.t)}s</span></div>`;
+ if(r.mode==='boss')extra=`<div class="qmeta"><span><b>${esc(BOSS[bossUnit()])}</b></span><span class="hearts" aria-label="${r.lives} lives">${'&#9829;'.repeat(r.lives)}${'&#9825;'.repeat(3-r.lives)}</span></div><div class="bar boss" aria-hidden="true"><div style="width:${(1-r.ok/r.total)*100}%"></div></div>`;
+ $('app').innerHTML=`<div class="card"><div class="qmeta">${top}</div>${extra}${inner}</div><button class="sec" id="quit">Quit to menu</button>`;
+ $('quit').onclick=()=>{clearRun();if(run&&run.q>0)endRun();else home()}}
+function bossUnit(){return S.sel.size===1?[...S.sel][0]:-1}
+BOSS[-1]='The Final Audit';
+function draw(){const q=run.cur;run.locked=false;
+ if(q.type==='mc'){
+  const prompt=q.dir==='d2t'?`Which term matches this definition?<br><span style="font-weight:400">${esc(maskText(q.t.def,q.opts.map(o=>o.label)))}</span>`:`What is the definition of <b>${esc(q.t.label)}</b>?`;
+  frame(`<div class="prompt">${prompt}</div><div id="opts">${q.opts.map((o,i)=>`<button class="opt" data-i="${i}"><kbd>${i+1}</kbd>${esc(q.dir==='d2t'?o.label:maskText(o.def,[q.t.label]))}</button>`).join('')}</div><div id="fb"></div>`);
+  document.querySelectorAll('.opt').forEach(b=>b.onclick=()=>answerMC(+b.dataset.i));
+  keyHandler=e=>{if(e.key>='1'&&e.key<='4'&&!$('nx')&&document.activeElement.tagName!=='INPUT')answerMC(+e.key-1);else if((e.key==='Enter'||e.key===' ')&&$('nx')){e.preventDefault();$('nx').click()}};
+ }else{
+  frame(`<div class="prompt">Type the term for this definition:<br><span style="font-weight:400">${esc(maskText(q.t.def,[q.t.label]))}</span></div><div class="hint" id="hint">${q.hint?hintText(q.t.label):'&nbsp;'}</div><div class="row"><input id="ans" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Your answer"><button class="go" id="chk" style="margin:0">Check</button><button class="sec" id="hb" style="margin:0">Hint (half points)</button><button class="sec" id="sk" style="margin:0">Give up</button></div><div id="fb"></div>`);
+  $('chk').onclick=answerRecall;$('hb').onclick=()=>{q.hint=true;$('hint').textContent=hintText(q.t.label);$('ans').focus()};$('sk').onclick=()=>finish(false,q.t,'');
+  $('ans').onkeydown=e=>{if(e.key==='Enter')answerRecall()};$('ans').focus();
+  keyHandler=e=>{if((e.key==='Enter')&&$('nx')){e.preventDefault();$('nx').click()}};
+ }}
+const hintText=l=>l.split(' ').map(w=>w[0]+'_'.repeat(Math.max(0,w.length-1))).join('  ');
+const norm=s=>s.toLowerCase().replace(/\bversus\b/g,'vs').replace(/&/g,'and').replace(/[^a-z0-9]/g,'');
+function lev(a,b){const m=a.length,n=b.length;let p=[...Array(n+1).keys()];for(let i=1;i<=m;i++){const c=[i];for(let j=1;j<=n;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));p=c}return p[n]}
+function answerRecall(){const q=run.cur;if($('nx'))return;const a=norm($('ans').value);if(!a)return;q.tries++;
+ const t=norm(q.t.label);if(lev(a,t)<=Math.max(1,Math.floor(t.length*0.12)))return finish(true,q.t,'');
+ $('fb').innerHTML=`<div class="fb no">Not quite. ${q.tries>=2?'Use the hint or give up to see the answer.':'Try again.'}</div>`}
+function answerMC(i){const q=run.cur;if($('nx')||run.locked)return;run.locked=true;const ok=i===q.ans;
+ document.querySelectorAll('.opt').forEach((b,k)=>{b.disabled=true;if(k===q.ans)b.classList.add('right');else if(k===i)b.classList.add('wrong')});
+ finish(ok,q.t,'mc')}
+function finish(ok,t,kind){const q=run.cur;let msg;
+ if(ok){run.streak++;run.ok++;const w=q.type==='recall'?(q.hint?1:2):1;const g=100*mult()*w;run.score+=g;addPts(g);upd(t.id,true,q.type==='recall'?2:1);S.bestStreak=Math.max(S.bestStreak,run.streak);if(run.streak>=10)badge('streak10','Ten in a row');
+  msg=`<div class="fb ok"><b>Correct, +${g}.</b> ${esc(t.label)}: ${esc(t.def)}</div>`}
+ else{run.streak=0;run.bad++;run.missed.push(t);upd(t.id,false);run.re.push({id:t.id,at:run.q+3});if(run.mode==='speed')run.t=Math.max(0,run.t-3);if(run.mode==='boss')run.lives--;
+  msg=`<div class="fb no"><b>Not this time.</b> ${esc(t.label)}: ${esc(t.def)}</div>`}
+ run.q++;
+ if(run.mode==='speed'){if(run.t<=0)return endRun();$('fb').innerHTML=msg;setTimeout(()=>{if(run&&run.mode==='speed'&&run.q>0)nextQ()},ok?350:1400);return}
+ const last=(run.total&&run.q>=run.total)||(run.mode==='boss'&&run.lives<=0);
+ $('fb').innerHTML=msg+`<button class="go" id="nx">${last?'See results':'Next'}</button>`;
+ $('nx').onclick=()=>last?endRun():nextQ();$('nx').focus()}
+/* ---------- match ---------- */
+function themed(n){const seed=targets(1)[0];if(!seed)return[];const ids=new Set(pool().map(c=>c.id)),ts=[seed];
+ for(const id of (DATA.rel[seed.id]||[])){if(ts.length>=n)break;const c=byId.get(id);if(ids.has(id)&&!ts.some(x=>isConf(x.id,id)))ts.push(c)}
+ if(ts.length<n)for(const c of targets(n,ts.map(x=>x.id))){if(ts.length<n&&!ts.some(x=>isConf(x.id,c.id)))ts.push(c)}
+ return ts}
+function matchRound(){clearRun();const ts=themed(6);if(ts.length<2)return home();
+ const m=run.m={ts,L:shuffle(ts),R:shuffle(ts),gone:new Set(),sl:null,sr:null,miss:new Set(),t0:Date.now(),streak:0,pts:0};
+ m.iv=setInterval(()=>{const e=$('mt');if(e)e.textContent=Math.floor((Date.now()-m.t0)/1000)+'s'},500);timer=m.iv;mdraw()}
+function mdraw(){const m=run.m;
+ $('app').innerHTML=`<div class="card"><div class="qmeta"><span>Tap a term, then its definition</span><span>Time <b id="mt">${Math.floor((Date.now()-m.t0)/1000)}s</b> &nbsp; Score ${run.score.toLocaleString()} ${m.streak?`<span class="mult">x${Math.min(4,1+Math.floor((m.streak-1)/3))}</span>`:''}</span></div>
+ <div class="two"><div>${m.L.map(c=>`<button class="pair ${m.gone.has(c.id)?'gone':''} ${m.sl===c.id?'sel':''}" data-s="l" data-id="${c.id}">${esc(c.label)}</button>`).join('')}</div><div>${m.R.map(c=>`<button class="pair ${m.gone.has(c.id)?'gone':''} ${m.sr===c.id?'sel':''}" data-s="r" data-id="${c.id}">${esc(maskText(c.def,m.ts.map(x=>x.label)))}</button>`).join('')}</div></div></div><button class="sec" id="quit">Quit to menu</button>`;
+ $('quit').onclick=()=>{clearRun();home()};
+ document.querySelectorAll('.pair').forEach(b=>b.onclick=()=>mpick(b.dataset.s,+b.dataset.id,b))}
+function mpick(side,id,btn){const m=run.m;if(side==='l')m.sl=m.sl===id?null:id;else m.sr=m.sr===id?null:id;
+ if(m.sl!==null&&m.sr!==null){
+  if(m.sl===m.sr){const first=!m.miss.has(id);m.streak++;const g=100*Math.min(4,1+Math.floor((m.streak-1)/3));run.score+=g;m.pts+=g;addPts(g);upd(id,true,first?1:0);run.ok++;m.gone.add(id);m.sl=m.sr=null;
+   if(m.gone.size===m.ts.length){clearRun();const sec=(Date.now()-m.t0)/1000,bonus=Math.max(0,Math.round(300-sec*5));run.score+=bonus;addPts(bonus);run.bonus=bonus;run.sec=sec;return endRun()}
+   mdraw()}
+  else{m.streak=0;run.bad++;m.miss.add(m.sl);m.miss.add(m.sr);upd(m.sl,false);const a=m.sl,b=m.sr;m.sl=m.sr=null;mdraw();
+   document.querySelectorAll('.pair').forEach(x=>{if(+x.dataset.id===a&&x.dataset.s==='l'||+x.dataset.id===b&&x.dataset.s==='r')x.classList.add('shake')})}
+ }else mdraw()}
+/* ---------- end ---------- */
+function endRun(){clearRun();const r=run;if(!r)return;
+ const key=r.mode,newBest=r.score>(S.best[key]||0)&&r.score>0;if(newBest)S.best[key]=r.score;
+ let title='Round complete',extra='';
+ if(r.mode==='boss'){const won=r.lives>0&&r.q>=r.total;if(won){const bonus=500;r.score+=bonus;addPts(bonus);badge('boss'+bossUnit(),BOSS[bossUnit()]+' defeated');title=`${BOSS[bossUnit()]} defeated (+500)`;if(r.bad===0)badge('flawless','Flawless boss')}else title=`${BOSS[bossUnit()]} won this time`}
+ if(r.mode==='speed')title='Time';
+ if(r.mode==='match')extra=`<div>Cleared in ${Math.round(r.sec||0)}s${r.bonus?`, speed bonus +${r.bonus}`:''}.</div>`;
+ const p=pool();if(p.length&&p.every(c=>M(c.id).box>=3))badge('set'+[...S.sel].sort().join(''),'Set mastered');
+ const total=r.ok+r.bad,acc=total?Math.round(r.ok/total*100):0;
+ const miss=[...new Map(r.missed.map(c=>[c.id,c])).values()];
+ $('app').innerHTML=`<div class="card"><h2 style="margin-top:0">${esc(title)}</h2><div class="stat"><div><b>${r.score.toLocaleString()}</b><span>score${newBest?' (new best)':''}</span></div><div><b>${r.ok}</b><span>correct</span></div><div><b>${acc}%</b><span>accuracy</span></div><div><b>${S.bestStreak}</b><span>best streak</span></div></div>${extra}
+ ${miss.length?`<h2>Words to revisit</h2><ul class="missed">${miss.map(c=>`<li><b>${esc(c.label)}</b>: ${esc(c.def)}</li>`).join('')}</ul>`:'<p>No misses. Clean round.</p>'}
+ <button class="go" id="again">Play again</button><button class="sec" id="hm">Back to menu</button></div>`;
+ $('again').onclick=()=>start(r.mode);$('hm').onclick=home;run=null}
+document.addEventListener('keydown',e=>{if(keyHandler)keyHandler(e)});
+hud();home();
+</script>
+</body>
+</html>

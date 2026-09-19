@@ -1,0 +1,164 @@
+ConceptID,ConceptLabel,TaxonomyID,Definition,ReviewStatus,ReviewNote
+1,Algebra Fundamentals,FOUND,"Rearranging equations and solving for an unknown symbol, such as turning stress = F/A into A = F/stress.",rewritten,"Qwen described arithmetic, not algebra."
+2,Units and Dimensional Analysis,FOUND,Tracking units through a calculation and converting between them; both sides of an equation must have matching dimensions.,edited,
+3,Significant Figures,FOUND,Counting only the digits in a number that carry meaningful precision about an engineering value.,kept,
+4,Ratios and Percentages,FOUND,"Comparing two quantities as a fraction (ratio) or as parts per hundred (percent), such as 5% of a 200 kN load.",edited,
+5,Reading Plots and Graphs,FOUND,"Reading values, slopes, and trends off a graph, such as load versus displacement, and checking what the axes and units say.",rewritten,Qwen claimed plots predict failure points.
+6,Static Equilibrium,FOUND,"A body at rest: forces sum to zero and moments sum to zero, so it neither moves nor rotates.",rewritten,Qwen left out moments.
+7,Stress and Strain Basics,FOUND,"Stress is force per unit area (Pa or MPa); strain is fractional stretch, change in length divided by original length.",rewritten,Qwen defined stress only.
+8,Beam Bending Basics,FOUND,How a beam curves and develops tension and compression when loaded; maximum bending stress is M times c divided by I.,edited,
+9,Spreadsheet Basics,FOUND,Organizing data in rows and columns to automate repetitive engineering calculations for design checks.,kept,
+10,Tables and CSV Files,FOUND,A table holds records in rows and variables in columns; a CSV file stores one as plain text with values separated by commas.,rewritten,Qwen left out tables.
+11,Using a Chat Assistant,FOUND,Asking an AI chat tool questions in plain language and checking its answers yourself before relying on them.,edited,
+12,Engineering Codes and Standards,FOUND,"Published requirements (codes, often adopted into law) and consensus documents (standards) that set minimum safety and performance criteria for designs.",edited,Qwen merged codes and standards.
+13,Artificial Intelligence,AIF,"Computer systems that perform tasks normally needing human judgment, such as recognizing images or writing text.",rewritten,Qwen conflated AI with machine learning.
+14,Rule-Based Systems,AIF,Computer programs that make decisions using explicit if-then logic written by humans rather than learning from examples.,kept,
+15,Machine Learning,AIF,Algorithms that improve at a task by finding patterns in example data instead of following hand-written rules.,edited,
+16,Training Data,AIF,"The example data a model learns from; its quality, coverage, and bias limit what the model can do.",edited,
+17,Learned Patterns,AIF,Statistical regularities a model extracts from training data; they may not match any cause a person can name.,edited,
+18,Rules Versus Learned Patterns,AIF,"Rules are written by a person and behave predictably; learned patterns come from data, handle messy inputs, but can fail in unwritten ways.",edited,
+19,Measurement and Why It Matters,STAT,"Assigning a number and unit to a physical quantity with an instrument; design decisions rest on these numbers, which are never exact.",edited,
+20,Repeated Measurements,STAT,Measuring the same quantity several times to see how much readings scatter and to average out random variation.,edited,
+21,Range of Readings,STAT,Finding the difference between the highest and lowest values in a set of experimental data points.,kept,
+22,Systematic Error and Accuracy,STAT,"A consistent offset, such as a mis-zeroed scale, that pushes every reading the same way; accuracy is closeness to the true value.",edited,
+23,Uncertainty Propagation,STAT,Working out how the uncertainties in input measurements combine to give the uncertainty of a calculated result.,edited,Qwen said errors always grow.
+24,Instrument Resolution,STAT,"The smallest change a device can detect, limiting the precision of data collected from sensors or gauges.",kept,
+25,Large Language Models and Tokens,LLM,"AI models trained on huge text collections that read and write text in tokens, small chunks of a word (about three-quarters of a word each).",rewritten,Qwen omitted what an LLM is.
+26,Probability Basics,STAT,A number from 0 (never) to 1 (certain) for how likely an event is; the chance of not-A is 1 minus the chance of A.,edited,
+27,Next-Token Prediction,LLM,"How a language model writes: given the text so far, it assigns probabilities to possible next tokens, picks one, and repeats.",rewritten,Qwen implied it always picks the most probable word.
+28,Sampling and Temperature,LLM,"Settings for picking the next token: low temperature favors the top choice (consistent), high temperature adds randomness (varied).",edited,
+29,Prompts,LLM,Text instructions given to an AI model that shape the style and content of what it produces.,edited,
+30,Hallucination,LLM,"When an AI states something false or invented, such as a citation or a number, in a fluent, confident tone.",edited,
+31,Checking Output Against Source,VER,Comparing AI results to a trusted reference to ensure the answer is accurate and grounded in fact.,kept,
+32,Data Sets and Variables,STAT,"A data set is a collection of observations, one per row; each property recorded for them is a variable, one per column.",edited,
+33,Mean,STAT,The average value calculated by summing all measurements and dividing by the total count.,kept,
+34,Variance and Standard Deviation,STAT,Measures of how much data points differ from the average; standard deviation is the square root of variance.,kept,
+35,Coefficient of Variation,STAT,"The ratio of the standard deviation to the mean, used to compare variability between different datasets.",kept,
+36,Sample Versus Population,STAT,"The population is everything you want to know about; the sample is the part you actually measured, used to estimate the whole.",rewritten,Qwen defined only the sample.
+37,Uncertainty From Spread,STAT,"Using the scatter of repeated readings, such as their standard deviation, to state how uncertain a measured value is.",edited,
+38,AI Agent,AGT,"An AI system that works toward a goal you give it by choosing and taking steps, such as running tools, with little step-by-step human input.",edited,Qwen said agents set their own goals.
+39,Tool Use,AGT,"The ability of an AI to trigger external software, like a calculator, to get precise results.",kept,
+40,Multi-Step Planning,AGT,"The process where an AI breaks a complex goal into a sequence of smaller, logical steps.",kept,
+41,Agent Action Loop,AGT,"A cycle where an AI observes a result, thinks about the next step, and acts until a task is done.",kept,
+42,Sensor Data Stream,DATA,"A continuous flow of timestamped readings from a sensor, such as strain or temperature, arriving as the measurement happens.",edited,
+43,Threshold Check,DATA,Comparing a measurement against a set limit to trigger an alert if a value is too high or low.,kept,
+44,Distribution,STAT,"A description of how often each value, or range of values, occurs in a data set.",edited,
+45,Histogram,STAT,A bar graph that shows the frequency of data falling within specific numerical ranges.,kept,
+46,Normal Distribution,STAT,A symmetric bell-shaped distribution with most values near the mean and few far away; described by its mean and standard deviation.,edited,
+47,Skewed Distribution,STAT,"A lopsided distribution with a long tail on one side, so the mean and the median differ.",edited,Qwen's wording was vague about the tail.
+48,Outliers,STAT,"Data points far from the rest; they may be mistakes or real events, so investigate before deleting them.",edited,Qwen implied they are errors.
+49,Auditing an Agent's Analysis,VER,"Checking each step an AI agent took, including its data, code, and numbers, for mistakes before relying on its conclusion.",edited,
+50,AI Bias,BIAS,"Systematic errors in AI output caused by flawed data, leading to incorrect or unfair results.",kept,
+51,Training Data Bias,BIAS,Errors introduced when the data used to teach an AI does not accurately represent the real world.,kept,
+52,Representative Sample,BIAS,A small group that accurately reflects the characteristics of the entire population being studied.,kept,
+53,Distribution Shift,BIAS,When the data an AI encounters in the real world differs from the data it was trained on.,kept,
+54,Out-of-Domain Use,BIAS,Applying an AI to a problem or material it was not specifically designed or trained to handle.,kept,
+55,Training Coverage Gap,BIAS,"A lack of specific scenarios in the training set, leaving the AI unable to handle those cases.",kept,
+56,Scatter Plot,INF,A graph of individual data points plotted on two axes to visualize the relationship between variables.,kept,
+57,Correlation Coefficient,INF,A number between -1 and 1 describing the strength and direction of a linear relationship between variables.,kept,
+58,Linear Regression,INF,Finding the best-fit straight line through data points to predict one variable based on another.,kept,
+59,R-Squared,INF,A value from 0 to 1 showing how much of the variation in data is explained by a model.,kept,
+60,Correlation Versus Causation,INF,The distinction that two things moving together does not mean one actually causes the other to happen.,kept,
+61,Spurious Correlation,INF,A relationship between two variables that looks meaningful but is actually caused by a third factor or random chance.,kept,
+62,AI Overconfidence,BIAS,"When an AI presents a wrong answer with high certainty, which can mislead engineers during safety-critical checks.",kept,
+63,False Precision,BIAS,"Reporting a number with more digits than the measuring tool can actually provide, suggesting a precision that doesn't exist.",kept,
+64,Statistical Basis for a Claim,BIAS,Using probability and data to support a conclusion instead of relying on a single measurement or a guess.,kept,
+65,Random Sampling,INF,Selecting a subset of data by chance so every single member has an equal probability of being picked.,kept,
+66,Sampling Variability,INF,The natural difference in results that occurs when different random subsets are taken from the same population.,kept,
+67,Standard Error,INF,How much a sample mean is expected to vary from the true mean; estimated as s divided by the square root of n.,edited,
+68,The t Multiplier,INF,"The factor, near 2 for large samples and bigger for small ones, that multiplies the standard error to set an interval's width.",edited,
+69,Confidence Interval,INF,A range built from sample data that captures the true mean in a stated share (such as 95%) of repeated samples.,edited,Qwen's wording implied a probability about one interval.
+70,Confidence Level,INF,"How often the interval-building method captures the true value across repeated samples, such as 95% of the time.",edited,Same issue as concept 69.
+71,Significance and P-Values,INF,A p-value is the chance of a result at least this extreme if there were no real effect; small values suggest it isn't chance.,rewritten,Qwen said it determines whether an effect is real.
+72,Dashboard and Metrics,DATA,"A screen showing key measured numbers (metrics), often as charts, so a system's state can be read at a glance.",edited,
+73,Time Series Data,DATA,A sequence of measurements taken at consistent intervals over time to track changes or trends.,kept,
+74,Agent-Built Report,AGT,"A summary document produced by an AI, requiring human verification to ensure the technical conclusions are sound.",kept,
+75,Agent Autonomy,AGT,The ability of an AI to make decisions and execute tasks without needing constant human input.,kept,
+76,Human Review Checkpoint,AGT,A planned stop in an automated process where a human must verify the AI's work before it continues.,kept,
+77,Chart Type Selection,DATA,Picking the most effective visual representation to make data relationships easy to understand.,kept,
+78,Axis Scales and Baselines,DATA,"The range, starting value (baseline), and spacing (linear or log) of a graph's axes, which shape how big a trend looks.",edited,
+79,Misleading Charts,DATA,"Graphs whose scale, baseline, or choice of data leaves the viewer with a false impression, deliberately or not.",edited,Qwen assumed intent to trick.
+80,Critiquing AI-Generated Charts,DATA,Evaluating AI-made visuals for inaccuracies in scale or logic to ensure they don't misrepresent engineering data.,kept,
+81,Data Pipeline,DATA,A system of automated steps that moves raw data from a source to a final destination for analysis.,kept,
+82,Data Ingestion,DATA,The initial process of pulling raw data from sensors or files into a software system.,kept,
+83,Unit and Format Mismatch,DATA,"Errors when values in different units (meters versus feet) or formats (date styles, decimal commas) are mixed as if they matched.",edited,Qwen left out formats.
+84,Data Cleaning,DATA,"The process of fixing or removing incorrect, duplicate, or irrelevant data before analyzing it.",kept,
+85,Missing and Bad Data,DATA,Gaps or incorrect entries in a dataset that can lead to wrong conclusions if not properly addressed.,kept,
+86,Errors Through a Pipeline,DATA,How a mistake made early in a pipeline is carried into every later step and can grow into a large error in the result.,edited,
+87,Variables and Data Types,CODE,"Named containers for data, classified by types such as whole numbers, decimals, or text strings.",kept,
+88,Functions and Imports,CODE,"A function is a named, reusable block of code; an import loads a library of ready-made functions into your program.",edited,
+89,Conditionals and Loops,CODE,A conditional (if/else) picks which code runs based on a test; a loop repeats code for each item or until a test fails.,edited,Qwen blended the two.
+90,Reading Error Messages,CODE,"Reading a program's error message, starting from the last line, to find what failed and where.",edited,
+91,AI Code Generation Internals,CODE,How an AI predicts code by identifying patterns from millions of existing software examples.,kept,
+92,Plausible but Wrong Code,CODE,Code that looks professional and logical but contains hidden errors that can cause engineering failures.,kept,
+93,Python Script,CODE,"A plain-text file of Python instructions that a computer runs from top to bottom, such as to automate a calculation.",edited,
+94,Prompting for Code,CODE,Writing a detailed request to an AI to generate a specific piece of software.,kept,
+95,Running a Script,CODE,Executing a set of saved instructions through a computer program to produce a final result.,kept,
+96,Vibe Coding,CODE,"Building software by describing the desired outcome to an AI, often without reading the code it produces.",edited,Qwen missed the unreviewed-code risk.
+97,Plain-Language Specification,CODE,A detailed description of a program's requirements written in normal English to guide an AI.,kept,
+98,Describe-Generate-Test Loop,CODE,"The cycle of requesting code, testing it for errors, and refining the prompt until it works.",kept,
+99,Test Case,VER,A specific set of inputs and the expected result used to verify a program's accuracy.,kept,
+100,Reading AI-Generated Code,CODE,"Reading code an AI wrote to check that it does what you asked, uses the right formulas and units, and hides no mistakes.",edited,Qwen narrowed it to physics laws.
+101,Agentic Coding Tool,AGT,"AI software that can write, execute, and fix its own code to solve a technical problem autonomously.",kept,
+102,Unit Tests and Test Runner,VER,Small automated checks and the software used to run them to verify that a program works correctly.,kept,
+103,Agent-Written Tests,VER,Automated verification checks created by an AI to test if its own generated code is correct.,kept,
+104,Analytical Solution,VER,"An exact mathematical answer derived from formulas, used to verify that a computer's approximation is accurate.",kept,
+105,Numerical Tolerance,VER,"The small, acceptable difference between a calculated value and the true value, often written as a small decimal.",kept,
+106,Tests Written by the Same AI,VER,"Verification checks created by the same model that wrote the code, which may repeat the same logic errors.",kept,
+107,Known-Answer Check,VER,Comparing a computer's result to a value already proven correct in a textbook or industry standard.,kept,
+108,Hand Calculation Check,VER,Manually solving a simplified version of a problem to ensure a program's logic is sound.,kept,
+109,Unit and Dimension Check,VER,"Confirming that a result comes out in the right units and dimensions, such as newtons for force or pascals for stress.",edited,
+110,Order-of-Magnitude Check,VER,"Quickly checking that a result is the right size, within about a factor of ten, to catch large errors.",edited,
+111,Edge Cases and Limits,VER,Testing a program with extreme or unusual inputs to see if the software crashes or fails.,kept,
+112,Investigating a Discrepancy,VER,Finding the reason why two different calculation methods produced different results for the same problem.,kept,
+113,Software Bug,DBG,A flaw in a computer program that causes it to produce an incorrect or unexpected result.,kept,
+114,Debugging,DBG,The process of identifying and fixing errors in a computer program.,kept,
+115,Isolating a Failing Step,DBG,Breaking a complex process into smaller parts to find exactly where a mistake is happening.,kept,
+116,Multi-Step Agent Workflow,AGT,A sequence of tasks where an AI passes the output of one step as the input for the next.,kept,
+117,Tracing an Agent Failure,DBG,Reviewing the sequence of an AI's decisions to find where its logic went wrong.,kept,
+118,Compounding Workflow Errors,DBG,When a small error in an early step of an automated process creates a larger error in later steps.,kept,
+119,Debugging With AI,DBG,Using an AI assistant to explain error messages and suggest fixes for broken code.,kept,
+120,Giving AI Error Context,DBG,Providing an AI with the specific error message and the current code to help it find a solution.,kept,
+121,Root Cause Versus Symptom,DBG,The difference between the fundamental flaw causing a bug and the visible error it produces.,kept,
+122,Re-Testing After a Fix,DBG,Running a program again after a change to ensure the bug is gone and no new errors were added.,kept,
+123,Scoping a Design Tool,DES,Defining the specific limits and intended uses of a software tool to prevent it from being used incorrectly.,kept,
+124,Iterative Design Loop,DES,"A repetitive cycle of prototyping, testing, and refining a design until it meets all requirements.",kept,
+125,Design Across Load Cases,DES,"Ensuring a structure works under various conditions, such as maximum wind, snow, and seismic loads.",kept,
+126,Parameter Sweep,DES,Running a calculation or simulation many times while varying one or more inputs to see how they affect the result.,edited,Qwen limited it to a single input.
+127,Design Convergence,DES,When repeated design adjustments lead to a stable solution that no longer changes significantly.,kept,
+128,Agent Drift From Requirements,DES,"When an AI slowly deviates from the original project specifications during a long, multi-step process.",kept,
+129,Engineering Calculation Tool,DES,"Software used to perform complex math, such as beam analysis, to speed up the design process.",kept,
+130,Inputs and Outputs,DES,The data entered into a system and the results it produces based on those entries.,kept,
+131,Input Validation,DES,Checking that data entered into a program is within realistic physical limits before processing it.,kept,
+132,Documented Assumptions,DES,"A written record of the assumptions and simplifications behind a design, such as loads and material values, so others can check the logic.",edited,Qwen covered simplifications only.
+133,Validating Against a Reference,DES,Comparing a software's result to a known correct answer from a textbook or lab test.,kept,
+134,AI Research Assistant,AGT,AI that finds and summarizes technical information faster than manual searching; its sources and claims still need checking.,edited,
+135,Literature Summary,DES,A condensed version of research papers that highlights the key findings relevant to a project.,kept,
+136,Citation and Source Verification,VER,Checking that a quoted fact actually exists in the original source and is attributed correctly.,kept,
+137,Design Tradeoff and Objectives,DES,"Balancing competing goals, such as reducing cost while increasing structural strength.",kept,
+138,AI-Assisted Tradeoff Analysis,DES,Using AI to quickly compare different design options to find the best balance of competing goals.,kept,
+139,Engineering Judgment,DES,"Using professional experience and physics knowledge to decide if a result is reasonable, regardless of what a tool says.",kept,
+140,Risk and Consequence,ETH,Assessing the probability of a failure and the potential harm it could cause to people or the environment.,kept,
+141,Failure Mode,ETH,The specific way in which a component or system fails to perform its intended function.,kept,
+142,Autonomous AI Systems,ETH,"Software that makes and executes decisions without human intervention, posing unique safety and legal challenges.",kept,
+143,Human in the Loop,ETH,A requirement that a qualified person must review and approve an AI's decision before implementation.,kept,
+144,Accountability for AI Decisions,ETH,"The principle that the licensed engineer, not the software, answers for a design's safety; exact legal liability depends on the situation.",edited,Qwen stated legal responsibility flatly.
+145,AI Ethics,ETH,"The study of how to use AI responsibly, focusing on safety, fairness, and transparency.",kept,
+146,Explainability,ETH,How well a person can understand and describe why an AI produced a given result; for many models this is only partial.,edited,Qwen said 'exactly'.
+147,Verifying Agent Output,VER,Checking the final work of an AI to ensure it is technically sound and meets all specifications.,kept,
+148,Code Compliance Check,VER,Checking that a design meets the adopted building codes and standards that apply to it.,edited,"Here 'code' means building code, not software."
+149,Independent Verification,VER,"Having a second, unrelated person or team check calculations to catch overlooked errors.",kept,
+150,Verification Checklist,VER,A standardized list of checks to ensure every part of a design has been reviewed and validated.,kept,
+151,Documenting and Tracing Checks,VER,Keeping a written record of every verification step to provide evidence that a design is safe.,kept,
+152,Safety-Critical System,ETH,"A system where a failure could result in serious injury, loss of life, or significant environmental damage.",kept,
+153,Licensure and the PE Stamp,ETH,A state license to offer engineering services to the public; the PE stamp shows a licensed engineer did or directly supervised the work.,rewritten,Qwen overstated it as full legal responsibility. Rules vary by state.
+154,Responsible Charge,ETH,"Direct control and personal supervision of engineering work by a licensed engineer, who cannot simply sign off on work others did.",edited,Wording varies by state.
+155,AI-Assisted Accountability,ETH,The practice of using AI to help document work while maintaining that the human engineer is ultimately responsible.,kept,
+156,Disclosing AI Use,ETH,"Stating when and how AI was used in a project so reviewers, clients, and regulators know what to check.",edited,
+157,Limits of AI,ETH,"What AI cannot be relied on to do, such as guarantee correctness, apply physics it was not shown, or handle new situations.",edited,Qwen made a contested claim about 'truly understanding'.
+158,Missed Failure Modes and Codes,ETH,Situations where AI fails to identify possible failure modes or ignores the building codes that apply.,edited,Aligned 'codes' with concept 148.
+159,Conditions Beyond Training,ETH,"Situations that are so unusual they were not part of the AI's training data, making its predictions unreliable.",kept,
+160,Tacit Knowledge and Physics Gaps,ETH,"Know-how engineers gain from experience that is hard to write down, plus physical understanding that AI pattern-matching may lack.",edited,Qwen omitted what tacit knowledge means.
+161,Judgment Catching AI Errors,ETH,Using professional experience to spot and correct AI mistakes that look plausible but violate physical laws.,kept,
+162,When Not to Use AI,ETH,"Deciding against using AI when the risk of error is too high or when a precise, verifiable manual calculation is required.",kept,
+163,Reflecting on AI Use,ETH,Evaluating how AI influenced a design process to improve future reliability and maintain professional standards.,kept,

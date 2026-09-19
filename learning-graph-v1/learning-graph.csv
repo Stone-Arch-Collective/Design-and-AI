@@ -1,0 +1,231 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Algebra Fundamentals,,FOUND
+2,Units and Dimensional Analysis,,FOUND
+3,Significant Figures,,FOUND
+4,Ratios and Percentages,,FOUND
+5,Reading Plots and Graphs,,FOUND
+6,Static Equilibrium,,FOUND
+7,Stress and Strain Basics,,FOUND
+8,Beam Bending Basics,,FOUND
+9,Spreadsheet Basics,,FOUND
+10,Tables and CSV Files,,FOUND
+11,Using a Chat Assistant,,FOUND
+12,Engineering Codes and Standards,,FOUND
+13,Artificial Intelligence,11,AIF
+14,Rule-Based Systems,1,AIF
+15,Machine Learning,13,AIF
+16,Training Data,15,AIF
+17,Learned Patterns,15|16,AIF
+18,Model Inputs and Outputs,15,AIF
+19,Rules Versus Learned Patterns,14|17,AIF
+20,Statistics for Engineers,4,STAT
+21,Measurement,2|20,STAT
+22,Repeated Measurements,21,STAT
+23,Range of Readings,22,STAT
+24,Random Versus Systematic Error,23|21,STAT
+25,Uncertainty Propagation,23|1,STAT
+26,Instrument Resolution,21|3,STAT
+27,Beam Deflection Measurement,8|22,ENG
+28,Large Language Model,13|15,LLM
+29,Tokens,28,LLM
+30,Probability Basics,4,STAT
+31,Next-Token Prediction,29|30,LLM
+32,Sampling and Temperature,31,LLM
+33,Prompts,28|11,LLM
+34,Hallucination,31,LLM
+35,Checking Output Against Source,34|12,VER
+36,Data Sets and Variables,10|9,STAT
+37,Mean,36|1,STAT
+38,Variance,37,STAT
+39,Standard Deviation,38,STAT
+40,Coefficient of Variation,39|37|4,STAT
+41,Sample Versus Population,36,STAT
+42,Uncertainty From Spread,39|25,STAT
+43,Concrete Cylinder Strength Data,36|7,ENG
+44,AI Agent,28|33,AGT
+45,Tool Use,44,AGT
+46,Multi-Step Planning,44,AGT
+47,Agent Action Loop,45|46,AGT
+48,Context Window,29,LLM
+49,Sensor Data Stream,36,DATA
+50,Threshold Check,14|49,DATA
+51,Agent-Drafted Inspection Flag,47|50,AGT
+52,Distribution,36|30,STAT
+53,Histogram,52|5,STAT
+54,Normal Distribution,52|37|39,STAT
+55,Skewed Distribution,52|37,STAT
+56,Outliers,52|39,STAT
+57,Fatigue Test Data,36|7,ENG
+58,Auditing an Agent's Analysis,47|52|34,VER
+59,AI Bias,15|16,BIAS
+60,Training Data Bias,59|16,BIAS
+61,Representative Sample,16|41,BIAS
+62,Distribution Shift,52|60,BIAS
+63,Out-of-Domain Use,62,BIAS
+64,Damage Detection Model,17|16,ENG
+65,Training Coverage Gap,64|61,BIAS
+66,Scatter Plot,5|36,INF
+67,Correlation Coefficient,66|39,INF
+68,Linear Regression,67|1,INF
+69,R-Squared,67|68,INF
+70,Concrete Mix Design Variables,43,ENG
+71,Multiple Regression,68|70,INF
+72,Correlation Versus Causation,67,INF
+73,Spurious Correlation,72|52,INF
+74,Confounding Variable,72,INF
+75,AI Overconfidence,34|31,BIAS
+76,False Precision,3|75|26,BIAS
+77,Model Calibration,75|30,BIAS
+78,Predicted Fatigue Life,17|57,ENG
+79,Precision Versus Accuracy,24|23,STAT
+80,Statistical Basis for a Claim,39|76,BIAS
+81,Random Sampling,41|30,INF
+82,Sampling Variability,81|39,INF
+83,Standard Error,82,INF
+84,The t Multiplier,83|54,INF
+85,Confidence Interval,37|83|84,INF
+86,Confidence Level,85,INF
+87,Statistical Significance,85|30,INF
+88,P-Value,87,INF
+89,Yield Strength From Coupons,7|36|85,ENG
+90,Dashboard,5|36,DATA
+91,Dashboard Metrics,90|37,DATA
+92,Time Series Data,36|49,DATA
+93,Agent-Built Report,47|90,AGT
+94,Agent Autonomy,47,AGT
+95,Human Review Checkpoint,94|58,AGT
+96,Stale Data,92|90,DATA
+97,Chart Type Selection,5|36,DATA
+98,Axis Scales and Baselines,5,DATA
+99,Logarithmic Scale,98|1,DATA
+100,Misleading Charts,98|97,DATA
+101,Critiquing AI-Generated Charts,100|93,DATA
+102,Frequency of a Signal,92,DATA
+103,Vibration Spectrum,102|92,ENG
+104,Data Pipeline,36|47,DATA
+105,Data Ingestion,104|49,DATA
+106,Unit and Format Mismatch,105|2,DATA
+107,Data Cleaning,36|56,DATA
+108,Missing and Bad Data,107,DATA
+109,Simple Engineering Model,6|7,ENG
+110,Errors Through a Pipeline,104|25,DATA
+111,Variables,1,CODE
+112,Data Types,111,CODE
+113,Functions in Code,111,CODE
+114,Conditionals,111,CODE
+115,Loops,114,CODE
+116,Libraries and Imports,113,CODE
+117,Reading Error Messages,113,CODE
+118,AI Code Generation,28|113,CODE
+119,Code as Predicted Text,31|118,CODE
+120,Code Training Data,16|118,CODE
+121,Plausible but Wrong Code,34|118,CODE
+122,Python Script,113|116|112,CODE
+123,Prompting for Code,33|118,CODE
+124,Running a Script,122,CODE
+125,Deflection Calculation Script,122|8,ENG
+126,Vibe Coding,118|123,CODE
+127,Plain-Language Specification,123|1,CODE
+128,Describe-Generate-Test Loop,126|124,CODE
+129,Iterative Prompt Refinement,123|128,CODE
+130,Test Case,124|1,VER
+131,Reading AI-Generated Code,122|114|115,CODE
+132,Truss Analysis Tool,6|122|127,ENG
+133,Gear Ratio Calculator,122|127,ENG
+134,Agentic Coding Tool,44|118|124,AGT
+135,Unit Test,130|113,VER
+136,Test Runner Pass and Fail,135,VER
+137,Agent-Written Tests,134|135,VER
+138,Analytical Solution,8|1,VER
+139,Cantilever Beam Deflection,138|125,ENG
+140,Numerical Tolerance,3|135,VER
+141,Tests Written by the Same AI,137|75,VER
+142,Known-Answer Check,138|130,VER
+143,Hand Calculation Check,1|2,VER
+144,Unit and Dimension Check,2|122,VER
+145,Order-of-Magnitude Check,1|2,VER
+146,Edge Cases and Limits,130|1,VER
+147,Flow or Stress Calculation Code,7|122|142,ENG
+148,Investigating a Discrepancy,142|143,VER
+149,Software Bug,122,DBG
+150,Debugging,149|117,DBG
+151,Isolating a Failing Step,150|46,DBG
+152,Multi-Step Agent Workflow,47|46|104,AGT
+153,Tracing an Agent Failure,152|117,DBG
+154,Compounding Workflow Errors,152|110,DBG
+155,Thermal Resistance,1|2,ENG
+156,Wall Heat Transfer Model,155|109,ENG
+157,Debugging With AI,150|33|121,DBG
+158,Giving AI Error Context,157|117,DBG
+159,Root Cause Versus Symptom,150|157,DBG
+160,Re-Testing After a Fix,157|135,DBG
+161,Scoping a Design Tool,127|128,DES
+162,Beam Sizing Tool,8|122|125,ENG
+163,HVAC Load Calculator,155|2,ENG
+164,Gear Design Checker,133|122,ENG
+165,Iterative Design Loop,152|127,DES
+166,Load Case,6|7,ENG
+167,Design Across Load Cases,166|165,DES
+168,Parameter Sweep,115|113,DES
+169,Factor of Safety,7|166,ENG
+170,Bracket Design Check,166|8|125|169,ENG
+171,Design Convergence,165|94,DES
+172,Agent Drift From Requirements,165|94|121,DES
+173,Engineering Calculation Tool,122|127|144,DES
+174,Inputs and Outputs,173,DES
+175,Input Validation,174|146,DES
+176,Documented Assumptions,173|174,DES
+177,Footing Size Calculator,173|7|169,ENG
+178,Heat Exchanger Sizing Tool,173|155,ENG
+179,Validating Against a Reference,142|173,DES
+180,AI Research Assistant,44|45,AGT
+181,Literature Summary,180|33,DES
+182,Citation Verification,35|181|34,VER
+183,Source Quality,182,DES
+184,Fabricated References,34|182,LLM
+185,Corroborating Across Sources,183|182,DES
+186,Materials Selection Question,7|181,ENG
+187,Design Tradeoff,169|165,DES
+188,Objective and Constraints,187|1,DES
+189,Weight Versus Strength,187|7,ENG
+190,Cost Versus Energy Efficiency,187|155,ENG
+191,Sensitivity Analysis,187|168,DES
+192,AI-Assisted Tradeoff Analysis,187|152|33,DES
+193,Uncertainty in Tradeoff Inputs,187|85,DES
+194,Engineering Judgment,187|192,DES
+195,Risk and Consequence,30,ETH
+196,Failure Mode,7,ETH
+197,Autonomous AI Systems,44|94,ETH
+198,Self-Monitoring Structure,49|197,ENG
+199,Human in the Loop,197|95,ETH
+200,Accountability for AI Decisions,197|199,ETH
+201,AI Ethics,59|197,ETH
+202,Explainability,201|17,ETH
+203,Verifying Agent Output,58|142|94,VER
+204,Code Compliance Check,12|35,VER
+205,AI-Suggested Design Change,165|204,ENG
+206,Independent Verification,203|141,VER
+207,Traceability of AI Steps,152|153,VER
+208,Verification Checklist,203|145|144,VER
+209,Documenting Verification,208|176,VER
+210,Safety-Critical System,195|196,ETH
+211,Professional Engineer Licensure,12,ETH
+212,PE Stamp,211,ETH
+213,Responsible Charge,212|200,ETH
+214,Standard of Care,211|210,ETH
+215,AI-Assisted Accountability,213|199|203,ETH
+216,Engineering Code of Ethics,201|211,ETH
+217,Disclosing AI Use,215|202,ETH
+218,Limits of AI,75|34|62,ETH
+219,Missed Failure Mode,196|218,ETH
+220,Conditions Beyond Training,63|218,ETH
+221,Physical Reasoning Gaps,218|6,ETH
+222,Missed Code Requirement,204|218,ETH
+223,Tacit and Site Knowledge,218,ETH
+224,Judgment Catching AI Errors,194|219,ETH
+225,When Not to Use AI,218|195|199,ETH
+226,Presenting Technical Work,173|176,DES
+227,Presenting Verification Evidence,226|209|179,DES
+228,Stating Tool Limits,226|218|217,DES
+229,Defending Design Choices,226|194,DES
+230,Reflecting on AI Use,215|225,ETH

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Optional Concepts: ten short cards</title>
+<style>
+:root{--bg:#f9f9f7;--surface:#fcfcfb;--ink:#0b0b0b;--ink2:#52514e;--muted:#6b6a66;--grid:#e1e0d9;--acc:#2a78d6;--ok:#1baf7a;--bad:#eb6834;--codebg:#f0efe9}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d0d0d;--surface:#1a1a19;--ink:#fff;--ink2:#c3c2b7;--muted:#a09f98;--grid:#2c2c2a;--acc:#3987e5;--ok:#199e70;--bad:#d95926;--codebg:#111110}}
+:root[data-theme="dark"]{--bg:#0d0d0d;--surface:#1a1a19;--ink:#fff;--ink2:#c3c2b7;--muted:#a09f98;--grid:#2c2c2a;--acc:#3987e5;--ok:#199e70;--bad:#d95926;--codebg:#111110}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px 64px}
+header{padding:24px 0 8px}
+h1{font-size:24px;margin:0 0 6px;line-height:1.25}
+.sub{color:var(--ink2);margin:0 0 6px}
+.meta{color:var(--muted);font-size:14px}
+.prog{position:sticky;top:0;z-index:5;background:var(--bg);padding:10px 0;border-bottom:1px solid var(--grid);margin-bottom:8px}
+.prog .row{display:flex;justify-content:space-between;font-size:14px;color:var(--ink2);margin-bottom:6px}
+.track{height:8px;background:var(--grid);border-radius:4px;overflow:hidden}
+.fill{height:100%;width:0;background:var(--acc);transition:width .25s}
+section{margin:28px 0;padding-top:4px}
+h2{font-size:19px;margin:0 0 8px;line-height:1.3}
+h2 .n{display:inline-block;min-width:26px;height:26px;border-radius:13px;background:var(--acc);color:#fff;font-size:14px;text-align:center;line-height:26px;margin-right:8px}
+h3{font-size:16px;margin:16px 0 4px}
+p{margin:8px 0}
+code,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px}
+code{background:var(--codebg);padding:1px 5px;border-radius:4px}
+pre{background:var(--codebg);border:1px solid var(--grid);border-radius:8px;padding:10px 12px;overflow-x:auto;margin:10px 0;line-height:1.45}
+pre code{background:none;padding:0}
+.card{background:var(--surface);border:1px solid var(--grid);border-radius:12px;padding:12px 14px;margin:12px 0}
+.card.formula{border-left:4px solid var(--acc)}
+.card.worked{border-left:4px solid var(--ok)}
+.card.warn{border-left:4px solid var(--bad)}
+.card .lab{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:4px}
+table{border-collapse:collapse;width:100%;font-size:14px;margin:8px 0}
+th,td{text-align:left;padding:5px 8px;border-bottom:1px solid var(--grid);vertical-align:top}
+th{color:var(--ink2)}
+.q{background:var(--surface);border:1px solid var(--grid);border-radius:12px;padding:12px 14px;margin:14px 0}
+.q .qt{font-weight:600;margin-bottom:8px}
+.q .qn{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px}
+.opt{display:block;width:100%;text-align:left;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--grid);border-radius:8px;padding:9px 12px;margin:6px 0;cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--acc)}
+.opt:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--bg))}
+.opt.wrong{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 16%,var(--bg))}
+.opt:disabled{cursor:default}
+.numrow{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.numrow input{font:inherit;width:140px;padding:8px 10px;border:1px solid var(--grid);border-radius:8px;background:var(--bg);color:var(--ink)}
+.unit{color:var(--ink2)}
+button.go,button.sec{font:inherit;padding:8px 14px;border-radius:8px;cursor:pointer;border:1px solid var(--acc)}
+button.go{background:var(--acc);color:#fff}
+button.sec{background:var(--surface);color:var(--ink);border-color:var(--grid)}
+.fb{margin-top:8px;padding:8px 10px;border-radius:8px;font-size:15px;display:none}
+.fb.show{display:block}
+.fb.ok{background:color-mix(in srgb,var(--ok) 16%,var(--bg));border:1px solid var(--ok)}
+.fb.no{background:color-mix(in srgb,var(--bad) 16%,var(--bg));border:1px solid var(--bad)}
+.done{border:2px solid var(--ok);border-radius:12px;padding:16px;margin:28px 0;display:none;background:var(--surface)}
+.done.show{display:block}
+.codebox{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:18px;background:var(--codebg);border:1px solid var(--grid);border-radius:8px;padding:10px 12px;margin:10px 0;word-break:break-all}
+.simctl{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;margin:8px 0}
+.simctl input[type=range]{width:200px}
+svg text{fill:var(--ink2);font:11px system-ui,sans-serif}
+svg .bar{fill:var(--acc)}
+svg .axis{stroke:var(--grid)}
+footer{color:var(--muted);font-size:13px;margin-top:32px;border-top:1px solid var(--grid);padding-top:12px}
+@media print{.prog{position:static}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<h1 id="ttl"></h1>
+<p class="sub" id="intro"></p>
+<p class="meta" id="meta"></p>
+</header>
+<div class="prog"><div class="row"><span id="pl">0 of 0 questions done</span><span id="pp">0%</span></div><div class="track"><div class="fill" id="pf"></div></div></div>
+<main id="main"></main>
+<div class="done" id="done" role="status" aria-live="polite"></div>
+<footer id="foot"></footer>
+</div>
+<script>
+const G={"code": "OPT", "title": "Optional Concepts: ten short cards", "minutes": 30, "intro": "Ten ideas that were cut from the required Spring 2027 sequence to make the calendar fit. Each is a short card and one or two checks. Ask your instructor whether any of them appear in an assessment or project; this guide does not assume they do.", "footer": "Draft for SEIS 201 (Spring 2027), written with Claude for Shannon Seaver. Not yet reviewed by a subject-matter expert. This is a self-check: it teaches and gives instant feedback, but the completion code is honor-system and can be shared.", "steps": [{"title": "Calibration", "body": "<p>Two meanings show up in this course. <b>Instrument calibration<\/b>: comparing a device to a known reference and correcting the difference. <b>Confidence calibration<\/b>: whether stated confidence matches how often you are right. Someone who says &ldquo;90% sure&rdquo; should be right about 90 times out of 100. (Confirm with your instructor which meaning the course uses.)<\/p>", "qs": [{"type": "mc", "q": "A scale reads 0.3 kg with nothing on it. What is the problem and the fix?", "options": ["Random noise; take more readings", "A constant offset (bias); re-zero it or subtract 0.3 kg from every reading", "The scale is too heavy", "No problem"], "answer": 1, "why": "A constant error is bias. Averaging more readings will not remove it.", "hints": {}}, {"type": "mc", "q": "An AI assistant says it is &ldquo;90% sure&rdquo; on 20 answers and gets 12 right (60%). It is:", "options": ["Well calibrated", "Overconfident", "Underconfident"], "answer": 1, "why": "Stated confidence (90%) was higher than the hit rate (60%).", "hints": {}}]}, {"title": "Multiple regression", "body": "<p>Regression that predicts one outcome from <b>several<\/b> inputs at once, e.g. <code>y = 5 + 2&middot;x1 &minus; 3&middot;x2<\/code>. Each coefficient is the effect of that input <i>holding the others fixed<\/i>. Caution: if the inputs move together (say, temperature and humidity), the individual coefficients become unreliable even when the overall prediction is fine.<\/p>", "qs": [{"type": "num", "q": "For <code>y = 5 + 2&middot;x1 &minus; 3&middot;x2<\/code>, what is the predicted y when x1 = 4 and x2 = 1?", "answer": 10, "tol": 0.01, "why": "5 + 2&times;4 &minus; 3&times;1 = 5 + 8 &minus; 3 = 10.", "unit": "", "hint": "Substitute both values and compute."}, {"type": "mc", "q": "The coefficient +2 on x1 means:", "options": ["y always equals 2", "Each +1 in x1 raises predicted y by 2 while x2 is held fixed", "x1 causes y"], "answer": 1, "why": "Regression describes association holding other inputs fixed; it does not by itself prove cause.", "hints": {}}]}, {"title": "Log scale", "body": "<p>On a log axis, each gridline is <b>multiplied<\/b> (1, 10, 100, 1000), not added to. Equal distances mean equal <b>ratios<\/b>. Use it when values span orders of magnitude or when percentage change is what matters.<\/p>", "qs": [{"type": "mc", "q": "On a log axis with gridlines at 10 and 1000, a point visually halfway between them is about:", "options": ["500", "100", "505", "50"], "answer": 1, "why": "Halfway in ratio terms: 10 &times; 10 = 100, then &times; 10 = 1000.", "hints": {}}, {"type": "mc", "q": "On a log axis, equal distances mean equal:", "options": ["Differences", "Ratios (multiples)", "Averages"], "answer": 1, "why": "Going from 1 to 10 is the same distance as 10 to 100.", "hints": {}}]}, {"title": "Sensitivity analysis", "body": "<p>Change one input at a time by a fixed percent and see how much the output moves. The inputs that move the output most are the ones to measure carefully and double-check. Example: beam deflection is proportional to L&sup3;, so a 10% change in length has an outsized effect.<\/p>", "qs": [{"type": "num", "q": "Deflection is proportional to L&sup3;. If L increases by 10%, by what percent does deflection increase?", "answer": 33.1, "tol": 0.5, "why": "1.1&sup3; = 1.331, an increase of 33.1%.", "unit": "%", "hint": "Compute 1.1 &times; 1.1 &times; 1.1, then subtract 1."}, {"type": "mc", "q": "The purpose of a sensitivity analysis is to:", "options": ["Prove the model is right", "Find which inputs matter most so you check those first", "Remove outliers"], "answer": 1, "why": "It ranks inputs by how much their uncertainty affects the result.", "hints": {}}]}, {"title": "Standard of care", "body": "<p>A professional standard, not a perfection standard: what a reasonably careful, competent engineer in the same field would do under similar circumstances. Using a tool, including AI, does not move responsibility off the engineer. (General information, not legal advice.)<\/p>", "qs": [{"type": "mc", "q": "The standard of care is best described as:", "options": ["Never making an error", "What a reasonably careful engineer in that field would do in similar circumstances", "Whatever the client accepts", "Whatever the software vendor recommends"], "answer": 1, "why": "It is measured against peers, not against perfection.", "hints": {}}, {"type": "mc", "q": "You paste an AI-generated load calculation into a design without checking it, and it is wrong. Who is responsible?", "options": ["The AI vendor", "The engineer who used it", "No one"], "answer": 1, "why": "The engineer who signs or relies on the work owns the check.", "hints": {}}]}, {"title": "Code of ethics", "body": "<p>Professional societies publish codes; NSPE&rsquo;s is one example (ASCE and ASME are similar). Its fundamental canons include: hold paramount the safety, health, and welfare of the public; perform services only in areas of competence; issue public statements only in an objective and truthful manner; act as faithful agents for employers and clients; avoid deceptive acts; conduct yourself honorably and lawfully.<\/p>", "qs": [{"type": "mc", "q": "Which comes first in the NSPE canons?", "options": ["Maximize client profit", "Hold paramount the safety, health, and welfare of the public", "Meet the deadline", "Use the latest software"], "answer": 1, "why": "Public safety comes first.", "hints": {}}, {"type": "mc", "q": "An AI tool gives you a result on a topic outside your competence. The best next step?", "options": ["Use it; the tool knows more", "Get it reviewed by a qualified engineer, or decline that part of the work", "Hide that AI was used"], "answer": 1, "why": "&ldquo;Only in areas of competence&rdquo; means getting qualified review when you are outside yours.", "hints": {}}]}, {"title": "Corroborating sources", "body": "<p>Check an important claim against two or more <b>independent<\/b> sources. Independent means they did not just copy each other. AI tools can also produce citations that look real but are not, so confirm that a cited source exists and says what is claimed.<\/p>", "qs": [{"type": "mc", "q": "Three websites give the same figure, and all quote the same press release. How many independent sources do you have?", "options": ["Three", "One", "Zero"], "answer": 1, "why": "They all trace to the same origin.", "hints": {}}, {"type": "mc", "q": "An AI gives a citation for a paper. What do you check first?", "options": ["Nothing; citations are reliable", "That the paper exists and actually says what was claimed", "How long the title is"], "answer": 1, "why": "Fabricated citations are a known failure mode.", "hints": {}}]}, {"title": "Context window", "body": "<p>An AI model can only &ldquo;see&rdquo; a limited amount of text at once, measured in <b>tokens<\/b> (roughly 3/4 of an English word each). In a very long chat, early details can fade or drop out. Put key constraints in the message, and restate them or start a fresh chat with a summary when things get long.<\/p>", "qs": [{"type": "num", "q": "About how many tokens is a 3,000-word document (1 token &asymp; 0.75 words)?", "answer": 4000, "tol": 300, "why": "3,000 / 0.75 = 4,000 tokens.", "unit": "tokens", "hint": "Divide words by 0.75."}, {"type": "mc", "q": "Your specs were in message 1 of a very long chat and the assistant now ignores them. Best fix?", "options": ["Nothing; it will remember", "Restate the key constraints, or start a new chat with a short summary", "Type in capitals"], "answer": 1, "why": "The early text may have fallen out of what the model can use.", "hints": {}}]}, {"title": "Stale data", "body": "<p>Stale data was correct once and is out of date now: a price, a code edition, a supplier spec. AI models are trained on text up to a cutoff date and can quote old numbers confidently. Always check the date on anything that changes over time.<\/p>", "qs": [{"type": "mc", "q": "An AI quotes a steel price from its training data. The risk is:", "options": ["The price may be stale", "Steel has no price", "Prices never change"], "answer": 0, "why": "Prices change; check a current source.", "hints": {}}, {"type": "mc", "q": "Which item is the most likely to have gone stale?", "options": ["The value of pi", "A building-code edition number", "The definition of a newton"], "answer": 1, "why": "Codes are revised on a cycle; check the edition your project is under.", "hints": {}}]}, {"title": "Tradeoff uncertainty", "body": "<p>When comparing options you usually trade one goal against another and the numbers carry uncertainty. Compare <b>ranges<\/b>, not single values. If the ranges overlap, you cannot yet say one is better.<\/p>", "qs": [{"type": "mc", "q": "Option A costs 100 &plusmn; 5. Option B costs 90 &plusmn; 20. Is B clearly cheaper?", "options": ["Yes, 90 is less than 100", "No. A spans 95 to 105 and B spans 70 to 110, so the ranges overlap", "Yes, because B has more uncertainty"], "answer": 1, "why": "Overlapping ranges mean the data cannot separate them yet.", "hints": {}}, {"type": "mc", "q": "Best next step in that comparison?", "options": ["Pick B", "Reduce B&rsquo;s uncertainty (better data), or decide on other criteria", "Pick A because 100 is rounder"], "answer": 1, "why": "B&rsquo;s wide range is what blocks the decision, so that is where to spend effort.", "hints": {}}]}]};
+const $=id=>document.getElementById(id);
+function hash(s){let h=7;for(const c of s)h=(h*31+c.charCodeAt(0))%65521;return h.toString(16).toUpperCase().padStart(4,'0')}
+const WIDGETS={
+sim(el){
+ el.innerHTML=`<div class="card"><div class="lab">Try it: sampling variability</div>
+ <p style="margin-top:0">Imagine tensile strength of one steel grade: the true population mean is <b>400 MPa</b>, and individual specimens vary with a standard deviation of <b>20 MPa</b>. Each press of the button takes <b>300 separate samples</b> of size n and plots the mean of each.</p>
+ <div class="simctl"><label>Sample size n = <b id="nv">5</b> <input type="range" id="ns" min="2" max="50" value="5" aria-label="Sample size n"></label><button class="go" id="draw" type="button">Draw 300 samples</button></div>
+ <svg id="hist" viewBox="0 0 600 200" width="100%" role="img" aria-label="Histogram of 300 sample means"></svg>
+ <p id="simout" class="meta" style="margin-bottom:0">Press the button, then change n and press again. The x-axis stays fixed so you can compare.</p></div>`;
+ const ns=el.querySelector('#ns'),nv=el.querySelector('#nv');
+ ns.oninput=()=>nv.textContent=ns.value;
+ const gauss=()=>{let u=0,v=0;while(!u)u=Math.random();v=Math.random();return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v)};
+ el.querySelector('#draw').onclick=()=>{
+  const n=+ns.value,means=[];
+  for(let i=0;i<300;i++){let s=0;for(let j=0;j<n;j++)s+=400+20*gauss();means.push(s/n)}
+  const lo=340,hi=460,B=24,w=(hi-lo)/B,cnt=new Array(B).fill(0);
+  means.forEach(m=>{let b=Math.floor((m-lo)/w);if(b<0)b=0;if(b>=B)b=B-1;cnt[b]++});
+  const mx=Math.max(...cnt),W=600,H=200,L=30,Bt=170,pw=(W-L-10)/B;
+  let svg=`<line class="axis" x1="${L}" y1="${Bt}" x2="${W-10}" y2="${Bt}"/>`;
+  cnt.forEach((c,i)=>{const h=c/mx*(Bt-12);svg+=`<rect class="bar" x="${L+i*pw+1}" y="${Bt-h}" width="${pw-2}" height="${h}"/>`});
+  for(let v=340;v<=460;v+=20){const x=L+(v-lo)/(hi-lo)*(W-L-10);svg+=`<text x="${x}" y="188" text-anchor="middle">${v}</text>`}
+  const x400=L+(400-lo)/(hi-lo)*(W-L-10);svg+=`<line x1="${x400}" y1="6" x2="${x400}" y2="${Bt}" stroke="currentColor" stroke-dasharray="4 3" style="color:var(--ink2)"/>`;
+  el.querySelector('#hist').innerHTML=svg;
+  const mu=means.reduce((a,b)=>a+b)/300,sd=Math.sqrt(means.reduce((a,b)=>a+(b-mu)**2,0)/299);
+  el.querySelector('#simout').innerHTML=`n = ${n}: the 300 sample means have a spread (standard deviation) of <b>${sd.toFixed(1)} MPa</b>. The formula 20 / &radic;${n} predicts <b>${(20/Math.sqrt(n)).toFixed(1)} MPa</b>. One run will be close to the formula, not identical; press again to see it vary. Dashed line = true mean, 400 MPa.`;
+ };
+}};
+const state=[];let total=0;
+function render(){
+ document.title=G.title;$('ttl').textContent=G.title;$('intro').innerHTML=G.intro;
+ total=G.steps.reduce((a,s)=>a+(s.qs||[]).length,0);
+ $('meta').textContent=`About ${G.minutes} minutes · ${total} self-check questions · nothing you enter leaves this page`;
+ $('foot').innerHTML=G.footer;
+ const main=$('main');let qi=0;
+ G.steps.forEach((s,si)=>{
+  const sec=document.createElement('section');sec.id='s'+si;
+  sec.innerHTML=`<h2><span class="n">${si+1}</span>${s.title}</h2>${s.body||''}<div class="widget"></div>`;
+  if(s.widget)WIDGETS[s.widget](sec.querySelector('.widget'));
+  (s.qs||[]).forEach(q=>{const i=qi++;state[i]={done:false,first:false,tries:0};sec.appendChild(qEl(q,i))});
+  main.appendChild(sec)});
+ upd();
+}
+function fb(box,ok,html){box.className='fb show '+(ok?'ok':'no');box.innerHTML=(ok?'<b>Correct.</b> ':'<b>Not quite.</b> ')+html}
+function finish(i,first){state[i].done=true;state[i].first=first;upd()}
+function qEl(q,i){
+ const d=document.createElement('div');d.className='q';
+ d.innerHTML=`<div class="qn">Check ${i+1}</div><div class="qt">${q.q}</div>`;
+ const box=document.createElement('div');
+ if(q.type==='mc'){
+  q.options.forEach((o,k)=>{const b=document.createElement('button');b.type='button';b.className='opt';b.innerHTML=o;
+   b.onclick=()=>{if(state[i].done)return;state[i].tries++;
+    if(k===q.answer){b.classList.add('right');finish(i,state[i].tries===1);d.querySelectorAll('.opt').forEach(x=>x.disabled=true);fb(box,true,q.why)}
+    else{b.classList.add('wrong');b.disabled=true;fb(box,false,(q.hints&&q.hints[k])||'Look at the options again.')}};
+   d.appendChild(b)});
+ }else{
+  const r=document.createElement('div');r.className='numrow';
+  r.innerHTML=`<input type="text" inputmode="decimal" aria-label="Your answer" placeholder="your answer"><span class="unit">${q.unit||''}</span><button class="go" type="button">Check</button>`;
+  const inp=r.querySelector('input'),go=r.querySelector('.go');
+  const reveal=document.createElement('button');reveal.type='button';reveal.className='sec';reveal.textContent='Show the answer';reveal.style.display='none';r.appendChild(reveal);
+  const lock=()=>{inp.disabled=true;go.disabled=true;reveal.style.display='none'};
+  const check=()=>{if(state[i].done)return;const v=parseFloat(inp.value.replace(/,/g,''));
+   if(isNaN(v)){fb(box,false,'Enter a number.');return}
+   state[i].tries++;
+   if(Math.abs(v-q.answer)<=q.tol){lock();finish(i,state[i].tries===1);fb(box,true,q.why)}
+   else{fb(box,false,q.hint||'Check your arithmetic and units.');if(state[i].tries>=2)reveal.style.display=''}};
+  go.onclick=check;inp.onkeydown=e=>{if(e.key==='Enter')check()};
+  reveal.onclick=()=>{lock();inp.value=q.answer;finish(i,false);fb(box,true,'Answer shown (not counted as first-try). '+q.why)};
+  d.appendChild(r);
+ }
+ d.appendChild(box);return d;
+}
+function upd(){
+ const n=state.filter(s=>s.done).length;
+ $('pl').textContent=`${n} of ${total} questions done`;
+ const pct=Math.round(n/total*100);$('pp').textContent=pct+'%';$('pf').style.width=pct+'%';
+ if(n===total){
+  const first=state.filter(s=>s.first).length;
+  const code=`SEIS201-${G.code}-${String(first).padStart(2,'0')}of${String(total).padStart(2,'0')}-${hash(G.code+'|'+first+'|'+total)}`;
+  const el=$('done');
+  el.innerHTML=`<h2 style="margin-top:0">Guide complete</h2><p>You got <b>${first} of ${total}</b> on the first try. Copy this completion code into the course site (LMS):</p><div class="codebox" id="cc">${code}</div><button class="sec" type="button" id="cp">Copy code</button> <span id="cpm" class="meta"></span><p class="meta">The code is generated in your browser. Nothing was sent anywhere. Reloading the page resets your progress.</p>`;
+  el.classList.add('show');
+  $('cp').onclick=()=>{try{navigator.clipboard.writeText(code).then(()=>$('cpm').textContent='Copied.',()=>$('cpm').textContent='Select the code and copy it by hand.')}catch(e){$('cpm').textContent='Select the code and copy it by hand.'}};
+ }
+}
+render();
+</script>
+</body>
+</html>

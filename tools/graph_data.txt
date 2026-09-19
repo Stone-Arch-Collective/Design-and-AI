@@ -1,0 +1,261 @@
+## A0
+alg|Algebra Fundamentals|FOUND|
+units|Units and Dimensional Analysis|FOUND|
+sigfig|Significant Figures|FOUND|
+ratio|Ratios and Percentages|FOUND|
+plotread|Reading Plots and Graphs|FOUND|
+eqbal|Static Equilibrium|FOUND|
+stressstrain|Stress and Strain Basics|FOUND|
+beambend|Beam Bending Basics|FOUND|
+sheet|Spreadsheet Basics|FOUND|
+csvfile|Tables and CSV Files|FOUND|
+chatuse|Using a Chat Assistant|FOUND|
+codestd|Engineering Codes and Standards|FOUND|
+## W1Tu
+ai_def|Artificial Intelligence|AIF|chatuse
+rules|Rule-Based Systems|AIF|alg
+ml|Machine Learning|AIF|ai_def
+trainingdata|Training Data|AIF|ml
+learnpat|Learned Patterns|AIF|ml,trainingdata
+modelio|Model Inputs and Outputs|AIF|ml
+rulesvslearn|Rules Versus Learned Patterns|AIF|rules,learnpat
+## W1Th
+whystat|Statistics for Engineers|STAT|ratio
+meas|Measurement|STAT|units,whystat
+repeatmeas|Repeated Measurements|STAT|meas
+readrange|Range of Readings|STAT|repeatmeas
+syserr|Random Versus Systematic Error|STAT|readrange,meas
+uncprop|Uncertainty Propagation|STAT|readrange,alg
+instrres|Instrument Resolution|STAT|meas,sigfig
+beamdefl|Beam Deflection Measurement|ENG|beambend,repeatmeas
+## W2Tu
+llm|Large Language Model|LLM|ai_def,ml
+token|Tokens|LLM|llm
+*prob|Probability Basics|STAT|ratio
+nextpred|Next-Token Prediction|LLM|token,prob
+temp|Sampling and Temperature|LLM|nextpred
+prompt|Prompts|LLM|llm,chatuse
+halluc|Hallucination|LLM|nextpred
+citecheck|Checking Output Against Source|VER|halluc,codestd
+## W2Th
+dataset|Data Sets and Variables|STAT|csvfile,sheet
+mean|Mean|STAT|dataset,alg
+variance|Variance|STAT|mean
+sd|Standard Deviation|STAT|variance
+cv|Coefficient of Variation|STAT|sd,mean,ratio
+*sampvspop|Sample Versus Population|STAT|dataset
+uncfromsd|Uncertainty From Spread|STAT|sd,uncprop
+cylstrength|Concrete Cylinder Strength Data|ENG|dataset,stressstrain
+## W3Tu
+agent|AI Agent|AGT|llm,prompt
+tooluse|Tool Use|AGT|agent
+plan|Multi-Step Planning|AGT|agent
+agentloop|Agent Action Loop|AGT|tooluse,plan
+ctxwin|Context Window|LLM|token
+sensorstream|Sensor Data Stream|DATA|dataset
+threshold|Threshold Check|DATA|rules,sensorstream
+flagdraft|Agent-Drafted Inspection Flag|AGT|agentloop,threshold
+## W3Th
+distribution|Distribution|STAT|dataset,prob
+histogram|Histogram|STAT|distribution,plotread
+normal|Normal Distribution|STAT|distribution,mean,sd
+skew|Skewed Distribution|STAT|distribution,mean
+outliers|Outliers|STAT|distribution,sd
+fatiguedata|Fatigue Test Data|ENG|dataset,stressstrain
+auditagent|Auditing an Agent's Analysis|VER|agentloop,distribution,halluc
+## W4Tu
+bias|AI Bias|BIAS|ml,trainingdata
+databias|Training Data Bias|BIAS|bias,trainingdata
+samplerep|Representative Sample|BIAS|trainingdata,sampvspop
+distshift|Distribution Shift|BIAS|distribution,databias
+ood|Out-of-Domain Use|BIAS|distshift
+damagemodel|Damage Detection Model|ENG|learnpat,trainingdata
+coveragegap|Training Coverage Gap|BIAS|damagemodel,samplerep
+## W4Th
+scatter|Scatter Plot|INF|plotread,dataset
+corr|Correlation Coefficient|INF|scatter,sd
+regression|Linear Regression|INF|corr,alg
+rsq|R-Squared|INF|corr,regression
+mixdesign|Concrete Mix Design Variables|ENG|cylstrength
+multireg|Multiple Regression|INF|regression,mixdesign
+causation|Correlation Versus Causation|INF|corr
+spurious|Spurious Correlation|INF|causation,distribution
+confounder|Confounding Variable|INF|causation
+## W5Tu
+overconf|AI Overconfidence|BIAS|halluc,nextpred
+falseprec|False Precision|BIAS|sigfig,overconf,instrres
+calib|Model Calibration|BIAS|overconf,prob
+fatiguelife|Predicted Fatigue Life|ENG|learnpat,fatiguedata
+precvsacc|Precision Versus Accuracy|STAT|syserr,readrange
+statbasis|Statistical Basis for a Claim|BIAS|sd,falseprec
+## W5Th
+*randsample|Random Sampling|INF|sampvspop,prob
+*sampvar|Sampling Variability|INF|randsample,sd
+*se|Standard Error|INF|sampvar
+*tmult|The t Multiplier|INF|se,normal
+ci|Confidence Interval|INF|mean,se,tmult
+cilevel|Confidence Level|INF|ci
+sigtest|Statistical Significance|INF|ci,prob
+pvalue|P-Value|INF|sigtest
+yieldcoupon|Yield Strength From Coupons|ENG|stressstrain,dataset,ci
+## W6Tu
+dashboard|Dashboard|DATA|plotread,dataset
+dashmetrics|Dashboard Metrics|DATA|dashboard,mean
+timeseries|Time Series Data|DATA|dataset,sensorstream
+agentreport|Agent-Built Report|AGT|agentloop,dashboard
+agentautonomy|Agent Autonomy|AGT|agentloop
+reviewcheck|Human Review Checkpoint|AGT|agentautonomy,auditagent
+staledata|Stale Data|DATA|timeseries,dashboard
+## W6Th
+chartchoice|Chart Type Selection|DATA|plotread,dataset
+axes|Axis Scales and Baselines|DATA|plotread
+logaxis|Logarithmic Scale|DATA|axes,alg
+misleading|Misleading Charts|DATA|axes,chartchoice
+aichart|Critiquing AI-Generated Charts|DATA|misleading,agentreport
+*freq|Frequency of a Signal|DATA|timeseries
+spectrum|Vibration Spectrum|ENG|freq,timeseries
+## W7Tu
+pipeline|Data Pipeline|DATA|dataset,agentloop
+ingest|Data Ingestion|DATA|pipeline,sensorstream
+unitmismatch|Unit and Format Mismatch|DATA|ingest,units
+cleaning|Data Cleaning|DATA|dataset,outliers
+baddata|Missing and Bad Data|DATA|cleaning
+simplemodel|Simple Engineering Model|ENG|eqbal,stressstrain
+pipeerr|Errors Through a Pipeline|DATA|pipeline,uncprop
+## W7pre
+*variable|Variables|CODE|alg
+*datatype|Data Types|CODE|variable
+*function|Functions in Code|CODE|variable
+*conditional|Conditionals|CODE|variable
+*loop|Loops|CODE|conditional
+*importlib|Libraries and Imports|CODE|function
+*traceback|Reading Error Messages|CODE|function
+## W8Tu
+codegen|AI Code Generation|CODE|llm,function
+codepred|Code as Predicted Text|CODE|nextpred,codegen
+codetrain|Code Training Data|CODE|trainingdata,codegen
+plausiblewrong|Plausible but Wrong Code|CODE|halluc,codegen
+python|Python Script|CODE|function,importlib,datatype
+promptcode|Prompting for Code|CODE|prompt,codegen
+runscript|Running a Script|CODE|python
+deflcalc|Deflection Calculation Script|ENG|python,beambend
+## W8Th
+vibe|Vibe Coding|CODE|codegen,promptcode
+spec|Plain-Language Specification|CODE|promptcode,alg
+dgtloop|Describe-Generate-Test Loop|CODE|vibe,runscript
+iterate|Iterative Prompt Refinement|CODE|promptcode,dgtloop
+testcase|Test Case|VER|runscript,alg
+readgen|Reading AI-Generated Code|CODE|python,conditional,loop
+truss|Truss Analysis Tool|ENG|eqbal,python,spec
+gearratio|Gear Ratio Calculator|ENG|python,spec
+## W9Tu
+agentcode|Agentic Coding Tool|AGT|agent,codegen,runscript
+unittest|Unit Test|VER|testcase,function
+testrun|Test Runner Pass and Fail|VER|unittest
+autotest|Agent-Written Tests|VER|agentcode,unittest
+analyticsol|Analytical Solution|VER|beambend,alg
+cantilever|Cantilever Beam Deflection|ENG|analyticsol,deflcalc
+tolerance|Numerical Tolerance|VER|sigfig,unittest
+circulartest|Tests Written by the Same AI|VER|autotest,overconf
+## W9Th
+knownans|Known-Answer Check|VER|analyticsol,testcase
+handcalc|Hand Calculation Check|VER|alg,units
+unitcheck|Unit and Dimension Check|VER|units,python
+sanity|Order-of-Magnitude Check|VER|alg,units
+edgecase|Edge Cases and Limits|VER|testcase,alg
+calccode|Flow or Stress Calculation Code|ENG|stressstrain,python,knownans
+discrepancy|Investigating a Discrepancy|VER|knownans,handcalc
+## W10Tu
+bug|Software Bug|DBG|python
+debugging|Debugging|DBG|bug,traceback
+isolate|Isolating a Failing Step|DBG|debugging,plan
+agentworkflow|Multi-Step Agent Workflow|AGT|agentloop,plan,pipeline
+tracefail|Tracing an Agent Failure|DBG|agentworkflow,traceback
+errorcompound|Compounding Workflow Errors|DBG|agentworkflow,pipeerr
+*thermalres|Thermal Resistance|ENG|alg,units
+wallmodel|Wall Heat Transfer Model|ENG|thermalres,simplemodel
+## W10Th
+aidebug|Debugging With AI|DBG|debugging,prompt,plausiblewrong
+errctx|Giving AI Error Context|DBG|aidebug,traceback
+rootcause|Root Cause Versus Symptom|DBG|debugging,aidebug
+retest|Re-Testing After a Fix|DBG|aidebug,unittest
+projscope|Scoping a Design Tool|DES|spec,dgtloop
+beamsize|Beam Sizing Tool|ENG|beambend,python,deflcalc
+hvacload|HVAC Load Calculator|ENG|thermalres,units
+geardesign|Gear Design Checker|ENG|gearratio,python
+## W11Tu
+designiter|Iterative Design Loop|DES|agentworkflow,spec
+loadcase|Load Case|ENG|eqbal,stressstrain
+multiload|Design Across Load Cases|DES|loadcase,designiter
+paramsweep|Parameter Sweep|DES|loop,function
+*fos|Factor of Safety|ENG|stressstrain,loadcase
+bracket|Bracket Design Check|ENG|loadcase,beambend,deflcalc,fos
+convergence|Design Convergence|DES|designiter,agentautonomy
+reqdrift|Agent Drift From Requirements|DES|designiter,agentautonomy,plausiblewrong
+## W11Th
+designtool|Engineering Calculation Tool|DES|python,spec,unitcheck
+inputs|Inputs and Outputs|DES|designtool
+inputval|Input Validation|DES|inputs,edgecase
+assumptions|Documented Assumptions|DES|designtool,inputs
+footing|Footing Size Calculator|ENG|designtool,stressstrain,fos
+hx|Heat Exchanger Sizing Tool|ENG|designtool,thermalres
+validate|Validating Against a Reference|DES|knownans,designtool
+## W12Tu
+researchagent|AI Research Assistant|AGT|agent,tooluse
+litsummary|Literature Summary|DES|researchagent,prompt
+citation|Citation Verification|VER|citecheck,litsummary,halluc
+sourcequality|Source Quality|DES|citation
+fabref|Fabricated References|LLM|halluc,citation
+corroborate|Corroborating Across Sources|DES|sourcequality,citation
+materialsel|Materials Selection Question|ENG|stressstrain,litsummary
+## W12Th
+tradeoff|Design Tradeoff|DES|fos,designiter
+objfunc|Objective and Constraints|DES|tradeoff,alg
+wtstrength|Weight Versus Strength|ENG|tradeoff,stressstrain
+costenergy|Cost Versus Energy Efficiency|ENG|tradeoff,thermalres
+sensitivity|Sensitivity Analysis|DES|tradeoff,paramsweep
+aitradeoff|AI-Assisted Tradeoff Analysis|DES|tradeoff,agentworkflow,prompt
+tradeoffunc|Uncertainty in Tradeoff Inputs|DES|tradeoff,ci
+judgment|Engineering Judgment|DES|tradeoff,aitradeoff
+## W13Tu
+risk|Risk and Consequence|ETH|prob
+failuremode|Failure Mode|ETH|stressstrain
+autonomy|Autonomous AI Systems|ETH|agent,agentautonomy
+selfmonitor|Self-Monitoring Structure|ENG|sensorstream,autonomy
+humanloop|Human in the Loop|ETH|autonomy,reviewcheck
+accountability|Accountability for AI Decisions|ETH|autonomy,humanloop
+aiethics|AI Ethics|ETH|bias,autonomy
+transparency|Explainability|ETH|aiethics,learnpat
+## W14Tu
+verifagent|Verifying Agent Output|VER|auditagent,knownans,agentautonomy
+codecomp|Code Compliance Check|VER|codestd,citecheck
+designchange|AI-Suggested Design Change|ENG|designiter,codecomp
+indepcheck|Independent Verification|VER|verifagent,circulartest
+traceability|Traceability of AI Steps|VER|agentworkflow,tracefail
+vchecklist|Verification Checklist|VER|verifagent,sanity,unitcheck
+docverif|Documenting Verification|VER|vchecklist,assumptions
+## W14Th
+safetycrit|Safety-Critical System|ETH|risk,failuremode
+pe|Professional Engineer Licensure|ETH|codestd
+pestamp|PE Stamp|ETH|pe
+respcharge|Responsible Charge|ETH|pestamp,accountability
+stdcare|Standard of Care|ETH|pe,safetycrit
+aiaccount|AI-Assisted Accountability|ETH|respcharge,humanloop,verifagent
+ethicscode|Engineering Code of Ethics|ETH|aiethics,pe
+disclosure|Disclosing AI Use|ETH|aiaccount,transparency
+## W15Tu
+aillimits|Limits of AI|ETH|overconf,halluc,distshift
+missedfailure|Missed Failure Mode|ETH|failuremode,aillimits
+novelcond|Conditions Beyond Training|ETH|ood,aillimits
+physgap|Physical Reasoning Gaps|ETH|aillimits,eqbal
+codemiss|Missed Code Requirement|ETH|codecomp,aillimits
+tacit|Tacit and Site Knowledge|ETH|aillimits
+judgcatch|Judgment Catching AI Errors|ETH|judgment,missedfailure
+whennot|When Not to Use AI|ETH|aillimits,risk,humanloop
+## W15Th
+techcomm|Presenting Technical Work|DES|designtool,assumptions
+presentverif|Presenting Verification Evidence|DES|techcomm,docverif,validate
+statelimits|Stating Tool Limits|DES|techcomm,aillimits,disclosure
+defend|Defending Design Choices|DES|techcomm,judgment
+## W16
+reflect|Reflecting on AI Use|ETH|aiaccount,whennot
