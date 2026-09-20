@@ -301,7 +301,7 @@ Unit 2 teaches students to judge a claim, whether it comes from an AI or from da
 - **In class:** read the training summary. It is almost all highway girder bridges from warm states, and no movable bridges. List what Otter Bend has that the training data never saw: lift machinery, freeze and thaw, road salt.
 - **FOREMAN's designed error:** it rates machinery room photos with the same confidence as girder photos. It was never trained on anything like them and gives no sign of that.
 - **Side beat:** Wes submits a polished memo accepting the machinery rating. Diane passes it without reading closely. It comes back at M13. This is the course's one deliberate burn, and it happens to Wes, not to a student.
-- **Hand in:** note version 2. HW4 assigned.
+- **Hand in:** note version 2 only. HW4 remains parked until M08.
 - **Diane:** believer. "It looked at 400 photos in a minute. Give me a reason not to use it." The student has to defend refusing the tool.
 
 ### M08, Thu Feb 25. It is spring
@@ -312,7 +312,7 @@ Unit 2 teaches students to judge a claim, whether it comes from an AI or from da
 - **Students get:** `feed.csv`, `weather_station.csv`.
 - **In class:** plot strain against date, then strain against air temperature. Fit both lines in a spreadsheet. Temperature drives both the calendar trend and the strain. Steel expands when it warms. Students name the mechanism, not just the pattern.
 - **FOREMAN's designed error:** it read a seasonal temperature effect as damage, and offered a high R-squared as proof of cause.
-- **Hand in:** HW4, a temperature-corrected strain trend and a two-line reply to FOREMAN's claim.
+- **Hand in:** note version 2. HW4 is assigned here: a temperature-corrected strain trend and a two-line reply to FOREMAN's claim.
 - **Diane:** believer. "0.87 sounds high. Put it in the report."
 
 ### M09, Tue Mar 2. To the single cycle
