@@ -163,71 +163,48 @@ or public-safety decisions.
 
 
 def write_student_ask() -> None:
-    handout = """# HW 1B — Measurement judgment at Oak Street Lift Station
+    handout = """**HW1B — Second client: Lift station startup**
+=====================================================
 
-**SEIS 201 Unit 1 | Transfer homework | Suggested effort: 1.5–2 hours**
+## Situation
+You are on ACMEJOB.Ai (Diane PE, Wes EIT, FOREMAN). A municipal pump / lift station for a water utility needs verification before the client invoice. This is a different client from the Otter Bend bridge work in class — do not reuse that dataset. Diane wants an independent accept/reject before the utility is invoiced.
 
-## Your role
+## Materials
+- `sensors_startup.csv`: Sensor readings from the lift station during startup
+- `install_startup_note.md`: Installation notes and documentation
+- `FOREMAN_PASS_report.md`: FOREMAN's initial pass report
 
-You are supporting Diane Halvorsen, PE, and Wes Tanaka, EIT, at ACMEJOB.Ai.
-Their client, Westfield Public Works, is preparing the fictional Oak Street Lift
-Station for startup. FOREMAN v4.2 has reviewed standby pressure readings and
-issued a PASS. Diane wants your independent engineering recommendation before
-she accepts that disposition.
+## Your Job
+Verify the lift station's startup performance within a 10-hour budget. Follow these steps:
 
-This is a transfer from the Otter Bend class case: use the same measurement
-reasoning in a new system. Analyze this case's evidence independently rather
-than repeating the class-case conclusion.
+1. **Review FOREMAN's PASS**: Decide whether to accept or reject FOREMAN's initial pass report.
+2. **Analyze sensor data**: Report values as ranges (or mean ± spread), not single numbers. Identify any systematic problems or random scatter.
+3. **Separate issues**: Log what you skip and why, based on your analysis and the 10-hour verification budget.
+4. **Document your findings**: Create a clear, concise report of your analysis and decisions.
 
-## Files provided
+## Deliverable
+One page maximum, plus a decision log. Due [DUE DATE].
 
-1. `sensors_startup.csv`
-2. `FOREMAN_PASS_report.md`
-3. `install_startup_note.md`
+## Decision Log
+| Check | Hours | Done (Y/N) | Why kept or skipped |
+| --- | --- | --- | --- |
+|  |  |  |  |
 
-## Assignment
+## Grading
+Your reasoning quality and honesty of the record will be evaluated. Please do not attempt to match Diane's expected results.
 
-Prepare a concise technical memo to Diane and Wes. Show enough calculation or
-tabulation that another engineer could check your work. Your memo must:
+**Important Notes**
 
-1. **Describe the measurements.** Summarize the center and spread of the data in
-   a useful way. Report at least one range, scatter measure, or uncertainty
-   consideration, and state what that quantity does—and does not—tell you.
-2. **Check the requirement at the right level.** Identify the acceptance
-   requirement and compare it with the observations. Do not assume that one
-   overall average is the correct test merely because software reports it.
-3. **Distinguish error types.** Explain what evidence would be consistent with
-   random variation and what would be consistent with systematic error. Use
-   “precision” and “accuracy” carefully.
-4. **Make the call.** Decide whether FOREMAN's PASS is acceptable as written.
-   If an average hides a material channel-level result, say so directly and
-   refuse that reasoning. State any hold, check, correction, or retest you
-   recommend and who owns final acceptance.
-5. **Keep a decision log.** Record what you checked, what evidence you used,
-   assumptions you made, tools or calculations you relied on, and what you did
-   not or could not verify. Include unresolved questions rather than silently
-   filling gaps.
+* Files for this assignment are located under `teaching-pack/07-HW-CASE-B-LIFT-STATION/student/`.
+* Do not invent numeric failure thresholds beyond what the files state.
+* Use plain college engineering tone in your report.
 
-Suggested decision-log columns:
+**Constraints**
 
-| Time / step | Check or calculation | Evidence / file | Decision or finding | Not verified / next step |
-|---|---|---|---|---|
+* 10-hour verification budget
+* Keep your report concise and focused on your analysis and decisions
 
-## Submit
-
-- One short engineering memo with your recommendation and supporting results.
-- Your decision log (it may be appended to the memo).
-- Any small analysis file or code needed to reproduce your numbers.
-
-Clarity and engineering judgment matter more than elaborate formatting. Do not
-alter or discard observations without documenting why.
-
----
-
-**SCHEMATIC / INSTRUCTIONAL DATA ONLY.** Westfield Public Works, Oak Street Lift
-Station, its specification, and all measurements are fictional. The materials
-are not verified by a licensed engineer and are not suitable for design,
-construction, operation, or public-safety decisions.
+*If you identify a failing channel, name it and show the check you used. Do not invent limits that are not in the files.*
 """
     (STUDENT_DIR / "HW1B-student-ask.md").write_text(handout, encoding="utf-8")
 
