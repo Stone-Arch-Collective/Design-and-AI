@@ -282,18 +282,52 @@ if set(student_slides) & set(reveal_slides) or set(student_slides + reveal_slide
 
 student = slides_from(prs, student_slides)
 add_speaker_notes(student, [
-    "Open with the job, not the formulas. Students will receive the numerical problem before the vocabulary.",
-    "Read Diane's line without mocking it. She needs brevity; the lesson is what disciplined brevity requires.",
-    "Take a vote: ready to brief, not ready, or unsure. Do not validate a choice and do not disclose any omitted statistic.",
-    "Emphasize that a correct calculation can still be an incomplete summary. Do not name which summary is incomplete yet.",
-    "Transition to the six Week 2 concepts. Students need all three jobs—center, spread, scale—before opening the file.",
-    "Ask students to name one row and one quantitative variable from a familiar CSV before using the core file.",
-    "Keep mean concrete: balance point and same units. Ask what information has vanished when 24 rows become one value.",
-    "Explain why variance has squared units and why SD returns to psi. Do not compute the M04 values on screen.",
-    "CV is dimensionless relative spread. Explicitly reject a universal CV pass/fail cutoff.",
-    "The file is complete as a file but incomplete as the deck. That distinction is the sample/population concept.",
-    "Start the 22-minute hunt. Require each pair to have center, spread, count, and scope before discussion.",
-    "Leave this slide up while pairs prepare two numerically correct sentences. Do not switch decks until students articulate the contrast.",
+    """STORY: The lab file has arrived: 24 Otter Bend deck cores, each with a location and a compressive strength. Open with the job, not the formulas.
+
+[SAY] “The lab sent back 24 cores. Diane and Wes need to turn that file into something a county audience can use. Today you own the first pass.”""",
+    """STORY: Diane asks for one number because the briefing has one line of space. Treat that as a real communication constraint, not a joke.
+
+[SAY] “Diane wants one number. Give her one—but first decide what job that number has to do. A short answer still has to survive the data behind it.”""",
+    """STORY: FOREMAN returns only the mean and calls the concrete adequate. This is the inbox tension; the class has not yet earned a verdict.
+
+[SAY] “FOREMAN filled Diane’s line with the mean. Ready to brief, not ready, or unsure? Vote from the paragraph for now. In a few minutes you will vote from the file.”
+
+[SPOILER GUARD] Do not name an omitted statistic, low result, or sampling limitation.""",
+    """STORY: The hunt is not for a broken formula. It is for information lost when many observations become one number.
+
+[SAY] “One number can be calculated correctly and still be the wrong compression. Your job is to find out what survived—and what disappeared.”
+
+[SPOILER GUARD] Do not say which summary is incomplete.""",
+    """TEACH: Frame the six Week 2 ideas as tools students need before opening cores_2027.csv.
+
+[SAY] “We need three jobs covered: describe the data, locate its center, and describe its spread on a scale we can compare. Then we have to say what this sample represents.”""",
+    """TEACH: Establish row, variable, and context before arithmetic.
+
+[SAY] “One row is one tested core. Strength is quantitative; side, station, and drill zone carry location context. If we strip off those columns, we may also strip off the limits of the claim.”""",
+    """TEACH: Keep mean concrete as a balance point in the original units.
+
+[SAY] “The mean answers where these values balance. It does not show you the path each observation took to get there. Twenty-four values can share a mean and tell very different stories.”
+
+[SPOILER GUARD] Use no computed M04 spread or count.""",
+    """TEACH: Connect variance to squared distances and standard deviation back to engineering units.
+
+[SAY] “Variance does the bookkeeping in squared units. Standard deviation takes the square root and brings the spread back to psi—the same language as the measurements.”""",
+    """TEACH: Present CV as normalized spread, not a pass/fail rule.
+
+[SAY] “Standard deviation tells us how many psi of spread. CV asks how large that spread is relative to the mean. It lets us compare variability across scales; it does not hand us a universal adequacy cutoff.”""",
+    """TEACH: Make sample versus population a claim, not a spreadsheet preference.
+
+[SAY] “This CSV may contain every result the lab returned. That does not make it the whole deck. Choosing .S or .P says what you believe these rows represent.”""",
+    """LAB: Start the hunt in groups with cores_2027.csv and H4-02. Students compute mean, sample SD, CV, range, low-result count, and inspect location fields.
+
+[SAY] “Analyze the file, then choose the single number you would put beside Diane’s requested center—and the single number you would use to summarize spread. Be ready to explain why both jobs matter.”
+
+[SPOILER GUARD] Require center, spread, count, and scope before discussion; confirm formulas, not results.""",
+    """LAB TO REVEAL: Keep this slide visible while groups prepare two numerically correct statements.
+
+[SAY] “Write one sentence that uses the one number FOREMAN chose. Write a second that adds your evidence about variation. Which would you let Diane repeat, and what would you refuse to claim?”
+
+[SPOILER GUARD] Do not open the reveal deck until students articulate the contrast themselves.""",
 ])
 save(student, os.path.join(ROOT, "build", "M04", "M04-student.pptx"))
 

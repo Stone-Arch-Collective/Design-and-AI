@@ -31,45 +31,45 @@ nav{padding:14px 56px;background:#fff;border-bottom:1px solid var(--line);displa
 <section id="run"><div class="rule"><h2>Run of day · 75 minutes</h2></div><div class="timeline">
 <article class="block"><div class="time">00–08 · The one-number brief</div><h3>Take the vote; withhold the verdict.</h3>
   <div class="cue"><b>SLIDE</b><p><strong>Student slides 1–3</strong> — title, Diane’s ask, FOREMAN’s 5,004 psi adequacy sentence.</p></div>
-  <div class="cue say"><b>SAY</b><p>“Diane has one line in a county briefing. FOREMAN has filled it. Is this ready to repeat?”</p></div>
+  <div class="cue say"><b>SAY</b><p>“The lab sent back <code>cores_2027.csv</code>: 24 Otter Bend deck cores, each with a location and a compressive strength. Diane has one line in a county briefing and wants one number. FOREMAN filled that line with the mean. Is this ready to repeat?”</p></div>
   <div class="cue"><b>COLLECT</b><p>M03 HW2 source-check work before opening the new inbox.</p></div>
   <div class="cue"><b>HAND OUT</b><p>H4-01 and H4-03. Take ready / not ready / unsure without endorsing any group.</p></div>
   <div class="cue"><b>WATCH FOR</b><p>FOREMAN’s mean is intentionally visible and correct. The gated answer is what that mean omits.</p></div>
 </article>
 <article class="block"><div class="time">08–23 · Center and spread</div><h3>Three summaries, three jobs.</h3>
   <div class="cue"><b>SLIDE</b><p><strong>Student slides 4–8</strong> — correct-but-incomplete, variables, mean, variance, and SD.</p></div>
-  <div class="cue say"><b>SAY</b><p>“Mean tells us where the values balance. Standard deviation tells us how far observations typically sit from that balance. Neither substitutes for the other.”</p></div>
+  <div class="cue say"><b>SAY</b><p>“One row is one tested core. The mean tells us where those strengths balance. Variance records squared distance from that balance; standard deviation brings the spread back to psi. Twenty-four values can share a center and still tell very different stories.”</p></div>
   <div class="cue"><b>DO</b><p>Make students say the units: mean in psi, variance in psi², SD back in psi.</p></div>
   <div class="cue"><b>WATCH FOR</b><p>Do not calculate the class file aloud. Use an unrelated three-number example if arithmetic support is needed.</p></div>
 </article>
 <article class="block"><div class="time">23–33 · Relative spread and scope</div><h3>CV, then sample versus population.</h3>
   <div class="cue"><b>SLIDE</b><p><strong>Student slides 9–10</strong> — CV and .S versus .P.</p></div>
-  <div class="cue say"><b>SAY</b><p>“CV is spread relative to the mean. It has no universal pass line. And .S is not a software preference—it is a claim that these observations sample something larger.”</p></div>
+  <div class="cue say"><b>SAY</b><p>“Standard deviation tells us how many psi of spread. CV normalizes that spread against the mean, so variability can be compared across scales; it is not a universal pass line. And .S versus .P is not a software preference—it is a claim about whether these 24 cores sample something larger.”</p></div>
   <div class="cue"><b>DO</b><p>Ask why 24 rows can be the entire CSV but still only a sample of the deck.</p></div>
   <div class="cue"><b>WATCH FOR</b><p>Do not call STDEV.P wrong in every context. It answers a different population claim.</p></div>
 </article>
 <article class="block"><div class="time">33–55 · Spreadsheet hunt</div><h3>Require center, spread, count, and scope.</h3>
   <div class="cue"><b>SLIDE</b><p><strong>Student slide 11</strong> — activity. Move to slide 12 for pair reports.</p></div>
-  <div class="cue say"><b>SAY</b><p>“Find two sentences that are both numerically correct. One may use only the mean. The other must put spread and the low-result count back.”</p></div>
+  <div class="cue say"><b>SAY</b><p>“Work in groups. Calculate the mean, sample standard deviation, and coefficient of variation. Then choose the single number you would use to summarize center and the single number you would use to summarize spread. Write two numerically correct sentences: one from FOREMAN’s number alone, and one that puts variation back. Be ready to explain which Diane can safely repeat.”</p></div>
   <div class="cue"><b>HAND OUT</b><p>H4-02 and cores_2027.csv.</p></div>
   <div class="cue"><b>DO</b><p>Pairs compute AVERAGE, VAR.S, STDEV.S, CV, MIN, MAX, and COUNTIF. Fast pairs inspect drill_zone.</p></div>
   <div class="cue"><b>WATCH FOR</b><p>If formulas disagree, ask which range they selected and whether the header entered the range. Do not announce values.</p></div>
 </article>
 <article class="block"><div class="time">55–67 · Reveal the compressed story</div><h3>The mean remains correct.</h3>
   <div class="cue"><b>SLIDE</b><p><strong>Reveal slides 1–5</strong> — all values, statistics table, two sentences, descriptive uncertainty, shoulder-only sample.</p></div>
-  <div class="cue say"><b>SAY</b><p>“The mean is 5,003.75 psi. Sample SD is 554.67 psi; CV is 11.09%; five of 24 results are below 4,500 psi. FOREMAN did not calculate badly. It made one statistic carry an adequacy claim it cannot support.”</p></div>
+  <div class="cue say"><b>SAY</b><p>“Now the reveal. The mean is 5,003.75 psi. Sample SD is 554.67 psi; CV is 11.09%; five of 24 results are below 4,500 psi. The spread introduces uncertainty that the center cannot carry. FOREMAN did not calculate badly—it made one statistic carry an adequacy claim it cannot support.”</p></div>
   <div class="cue"><b>DO</b><p>Ask what drill_zone = shoulder leaves unobserved. Separate descriptive results from any code-compliance determination.</p></div>
   <div class="cue"><b>WATCH FOR</b><p>Never teach “one low core means failure” or “mean above threshold means adequate.” The project value is a comparison, not a complete acceptance standard.</p></div>
 </article>
 <article class="block"><div class="time">67–73 · Write the usable answer</div><h3>Short, qualified, reproducible.</h3>
   <div class="cue"><b>SLIDE</b><p><strong>Reveal slide 6</strong> only after students draft their own response.</p></div>
-  <div class="cue say"><b>SAY</b><p>“Sentence one: center. Sentence two: spread and low count. Sentence three: sampling scope. Then name the check you actually performed.”</p></div>
+  <div class="cue say"><b>SAY</b><p>“Present the finding in three sentences. Sentence one gives Diane the requested center. Sentence two gives SD or CV and the low-result count, and says why variation matters. Sentence three names what this sample can—and cannot—establish about the whole deck. Then name the check you actually performed.”</p></div>
   <div class="cue"><b>HAND OUT</b><p>H4-04 three-sentence brief.</p></div>
   <div class="cue"><b>DO</b><p>Students write independently. Accept equivalent wording that preserves all three jobs and avoids an engineering disposition.</p></div>
 </article>
 <article class="block"><div class="time">73–75 · Mask off</div><h3>Diane needs brevity, not false certainty.</h3>
   <div class="cue"><b>SLIDE</b><p><strong>Reveal slides 7–8</strong> — mask-off and before Tuesday.</p></div>
-  <div class="cue say"><b>SAY</b><p>“Diane is wrong to demand only one number and right that a client needs a short answer. Diane is not the grader. Your check and record are.”</p></div>
+  <div class="cue say"><b>SAY</b><p>“Diane is wrong if ‘one number’ means ‘erase the spread,’ and right that a client needs a short answer. The mean, SD, CV, and sample scope answer different questions. Diane is not the grader. Your reasoning, check, and record are.”</p></div>
   <div class="cue"><b>DO</b><p>Collect H4-04 and have students add the six-hour decision to their semester log.</p></div>
 </article>
 </div></section>
