@@ -1,36 +1,165 @@
-# SEIS 201: AI for CE/ME Engineers (drafts)
+# SEIS 201 — AI for CE/ME Engineers
 
-Course-design work for SEIS 201, University of St. Thomas, Spring 2027 (28 Tue/Thu meetings, 3 credits, 75 minutes). Everything here is a draft. Nothing has been reviewed by an engineering or statistics instructor.
+Course design for **SEIS 201**, University of St. Thomas, Spring 2027. Twenty-eight
+Tuesday/Thursday meetings, 75 minutes, 3 credits. No programming or statistics
+prerequisite — the course builds both from the ground up.
+
+The course runs as **one continuous job at a fictional engineering firm** rather than
+28 unconnected examples. Every lab, dataset, homework and exam comes from the same
+bridge and the same project file, so a number accepted without checking in February
+comes back in April with the student's name on it.
+
+> **Everything here is a draft.** No licensed engineer and no statistics instructor has
+> reviewed the technical content. Items needing review are listed in
+> [`teaching-pack/00-INSTRUCTOR`](teaching-pack/00-INSTRUCTOR) and at the end of
+> [`simulation/simulation-plan-units-1-2.md`](simulation/simulation-plan-units-1-2.md).
+
+---
+
+## The premise
+
+**ACMEJOB.Ai** is a sixty-year-old Minnesota civil and mechanical firm that bolted
+`.Ai` onto its name two years ago and won a county contract partly on that promise.
+Its own principal engineer does not believe a word of it. Students are hired into the
+gap.
+
+The job is the **Otter Bend Lift Bridge** over the Kinnick River: built 1962, vertical
+lift span, now carrying loads it was not designed for. The county has installed strain,
+temperature and vibration sensors and wants an answer by May — rehabilitate or replace.
+
+| Who | What they are | What they generate |
+|---|---|---|
+| Diane Halvorsen, PE | Principal engineer, 27 years. No statistics. Does not trust AI. | *How do you know that's right?* |
+| Wes Tanaka, EIT | Second-year engineer across three projects. Trying. | Late, partial, undocumented handoffs |
+| FOREMAN v4.2 | The firm's AI platform. Fast, fluent, confident. | Every error the course teaches students to catch |
+
+The bridge, the town, the county and the firm are invented. Failure modes are drawn
+from the public engineering literature. **No real collapse or casualty event is
+referenced or dramatised.**
+
+---
 
 ## What is here
 
 | Folder | Contents |
 |---|---|
-| `learning-graph-v1/` | First learning graph built from the syllabus (230 concepts), McCreary-style CSV/JSON, viewer, syllabus findings |
-| `learning-graph-v2/` | Trimmed to fit Spring 2027 (163 concepts, 299 edges, meetings M01-M28), `spring-2027-plan.md`, `definitions.csv` (all 163 defined and reviewed), `graph-viewer.html`, Qwen prompt packet |
-| `guides/` | Four self-check guides: probability and sampling, code-reading primer (Python assumed), engineering reference cards, ten optional concepts. Completion code, nothing collected. See `guides/README.md` |
-| `vocab-lab/` | `vocab-lab.html`, a single-file vocabulary game (five modes, all 163 terms) |
-| `tools/` | Generators. Paths inside point at the original workspace; edit the paths at the top of each script before re-running |
+| [`simulation/`](simulation) | The semester outline, the meeting-by-meeting plan for Units 1–2, and the brand and story canon |
+| [`teaching-pack/`](teaching-pack) | **Built, ready to teach.** Meetings M01–M03: slides, handouts, answer keys, data files, the student brand kit |
+| [`learning-graph-v2/`](learning-graph-v2) | The 163-concept graph fitted to Spring 2027 — schedule, definitions, dependency edges, viewer |
+| [`learning-graph-v1/`](learning-graph-v1) | The first 230-concept graph built straight from the syllabus, kept for the record |
+| [`guides/`](guides) | Four self-check student guides: probability and sampling, code reading, engineering reference cards, optional concepts |
+| [`vocab-lab/`](vocab-lab) | Single-file vocabulary game covering all 163 terms |
+| [`tools/`](tools) | Generators. `tools/teaching-pack/` rebuilds everything in `teaching-pack/` from source |
 
-Open each `.html` file directly in a browser. No server, login, or network needed (the graph viewers load vis-network from a CDN).
+### The teaching pack, in teaching order
 
-## Status (paused)
+```
+teaching-pack/
+  00-INSTRUCTOR/          run of show, prep checklist, continuity, review checklist
+  01-BRAND-KIT/           ACMEJOB-brand-kit.zip — hand this to students
+  02-M01-first-day/       Rules versus learned patterns
+  03-M02-measurement/     Measurement, uncertainty, and the mis-zeroed gauge
+  04-M03-hallucination/   How an LLM generates, and the section that does not exist
+  05-CHARTS/              every chart as a PNG
+```
 
-Work is paused for now. Nothing above is final.
+Start with `00-INSTRUCTOR/INSTRUCTOR-GUIDE-M01-M03.docx`. It carries the
+minute-by-minute run of show for all three meetings, what to print, what students will
+say and how to answer, and what comes back later in the semester.
 
-## Open items
+---
 
-- Technical review: a licensed engineer should check `definitions.csv` rows 144, 153, 154 (accountability, PE stamp, responsible charge; state-dependent) and the reference cards
-- Graph edges and the ten cut concepts have not been validated by an engineer
-- Confirm the course programming language (guides assume Python and pandas) and which meaning of "calibration" the syllabus uses
-- Registrar approval needed for Exam 2 in the finals slot; exam time for a Tue/Thu section unconfirmed
-- Decide whether to restore any cut concepts (buy-back order: calibration, multiple regression, tradeoff uncertainty, standard of care and code of ethics, the rest)
-- ENGR 100 content is still unchecked against the assumed-on-entry list
-- Vocab Lab feedback so far: "ok but a bit boring." Entry-level concepts (statics, stress and strain, beam bending) are inherently easy to recognize. Ideas not built: short application questions for those five, progress that persists across visits, a story or scenario layer
-- Progress in Vocab Lab and the guides resets on reload by design (no storage)
+## What each meeting does
 
-## Method notes
+| Meeting | Teaches | FOREMAN's designed error |
+|---|---|---|
+| **M01** Tue Feb 2 | Rules vs learned patterns (6 concepts) | None. It is right, and cannot say why. |
+| **M02** Thu Feb 4 | Measurement and uncertainty (6) | Averages a failing gauge away; reports six decimals from a 1 µε instrument. |
+| **M03** Tue Feb 9 | LLMs and probability (7) | Fabricates a specification section; turns a *shall* into a *should*. |
 
-- Definitions: first drafts by a local Qwen model, then reviewed. 98 kept, 54 edited, 11 rewritten (see `ReviewStatus` and `ReviewNote` columns)
-- Answer choices in Vocab Lab come from graph neighbors, hand-built look-alike clusters, and shared wording, with 17 hand-listed overlapping pairs kept apart
-- Prompt wording that gives an answer away is masked with blanks
+Every planted error is findable from material the students already hold. None of them
+is a software bug — FOREMAN's arithmetic is correct every time. The error is always in
+**what** it chose to compute, or **whether** it opened the document.
+
+---
+
+## Design rules the material obeys
+
+- **Colour says who is speaking.** Orange is the machine, blue is a person. Every
+  handout, slide and template follows it, so a reader never has to ask.
+- **Grade the reasoning and the record, never the outcome.** A student who made a
+  defensible call on the information they had, and had it go badly, did the job
+  correctly. That is the standard of care the course teaches in Unit 5.
+- **Diane is not the grader.** If her approval reads as the right answer, students
+  optimise for pleasing her and the simulation collapses into a quiz with a job title.
+- **Hours are never points.** The weekly project-hour budget shapes what students
+  choose to verify. Running out of it costs nothing.
+- **A student who ignores the fiction does identical work.** No graded question
+  depends on remembering who Wes is.
+
+---
+
+## Rebuilding the pack
+
+Everything in `teaching-pack/` is generated. The committed files are what you teach
+from; the source is how you change them.
+
+```bash
+cd tools/teaching-pack
+pip install -r requirements.txt
+./build.sh
+```
+
+The build is deterministic — same inputs, same files, every run — and takes about a
+minute. It regenerates the data, the logos, the charts, all nineteen handouts, three
+slide decks, the brand kit and the instructor guide, then assembles them into
+`teaching-pack/`.
+
+Slide builds print `no layout warnings` when every text box fits its content; anything
+that would overflow is reported with the height it needs.
+
+| File | What it does |
+|---|---|
+| `make_data.py` | The keystone. Generates the gauge readings, pin measurements and load-rating numbers, **with the errors planted**, and writes `facts.json` that every other script reads. |
+| `brand.py` / `make_logos.py` | Palette, type, and the logo family as original SVG artwork |
+| `doclib.py` | Branded Word letterheads — ACMEJOB, FOREMAN, Kinnick County, plain course handout |
+| `slidelib.py` | Slide layouts, plus the text-height estimator that catches overflow before rendering |
+| `make_charts.py` | Charts, on a brand-derived palette validated for colour-vision separation |
+| `make_m0*.py` | Handouts and answer keys per meeting |
+| `make_deck_m0*.py` | The three slide decks |
+| `make_kit.py` | The student brand kit and its templates |
+| `make_guide.py` | Instructor guide and file index |
+
+Change a number in `make_data.py` and every handout, slide, chart and answer key that
+quotes it updates on the next build. Nothing is typed twice.
+
+---
+
+## Fonts
+
+Barlow, Barlow Condensed, Caveat and IBM Plex Mono, all under the
+[SIL Open Font License 1.1](tools/teaching-pack/fonts). They are committed so the build
+is reproducible and so students can install them from the brand kit.
+
+Slide **body** text is Arial on purpose: it is metric-predictable everywhere, so a
+podium machine without the brand fonts still lays out correctly. Only display titles
+use Barlow Condensed.
+
+---
+
+## Open decisions
+
+- Exam 2 moving into the finals slot needs registrar approval.
+- Which AI assistant students may use live in class.
+- Whether the library can license a real standard for M03. `KC-MB-12` is invented so
+  students can read all of it and check every claim; the two planted errors port to any
+  document with numbered sections and a *shall*.
+- Classroom measurement equipment for M02. The lab is written for calipers, works with
+  rulers, and falls back to a pre-recorded dataset.
+- ENGR 100 content has not been checked against the assumed-on-entry list.
+
+---
+
+*ACMEJOB.Ai, FOREMAN, Diane Halvorsen, Wes Tanaka, the Otter Bend Lift Bridge and
+Kinnick County are fictional, invented for this course. Any resemblance to a real firm,
+product or structure is coincidental.*
