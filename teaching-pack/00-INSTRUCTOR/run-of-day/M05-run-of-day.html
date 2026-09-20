@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ACMEJOB.Ai · M05 Instructor Run of Day</title>
+<style>
+:root{--blue:#1F3A5F;--orange:#F26B1D;--ink:#2B2F36;--river:#6F8FAF;--line:#E6E8EA;--paper:#fbfaf6;--yellow:#F2C230}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#e9edf0;color:var(--ink);font:16px/1.55 Arial,sans-serif}a{color:var(--blue);font-weight:700;text-underline-offset:3px}.page{max-width:1080px;margin:28px auto;background:var(--paper);box-shadow:0 18px 55px #1f3a5f24}header{position:relative;overflow:hidden;padding:44px 56px 42px;background:var(--blue);color:#fff;border-bottom:9px solid var(--orange)}header:after{content:"03:07";position:absolute;right:15px;bottom:-25px;font:900 145px/1 Georgia,serif;color:#fff08;transform:rotate(-5deg)}.mark{font:900 28px/1 "Arial Narrow",Arial,sans-serif;letter-spacing:.04em}.mark .ai{display:inline-block;margin-left:3px;padding:4px 7px;background:var(--orange);transform:rotate(-3deg)}.eyebrow,.label{font:800 12px/1.2 "Arial Narrow",Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase}h1{position:relative;z-index:1;max-width:790px;margin:36px 0 10px;font:900 clamp(42px,7vw,76px)/.91 Georgia,serif;letter-spacing:-.045em}.dek{position:relative;z-index:1;max-width:760px;margin:0;font:20px/1.45 Georgia,serif;color:#eaf0f6}.chip{position:relative;z-index:1;display:inline-block;margin-top:23px;padding:7px 12px;border:1px solid #ffffff66;border-radius:999px;font-size:13px}
+nav{padding:14px 56px;background:#fff;border-bottom:1px solid var(--line);display:flex;gap:20px;flex-wrap:wrap}nav a{text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:.07em}main{padding:40px 56px 64px}.rule{display:flex;align-items:center;gap:14px;margin:44px 0 22px}.rule h2{margin:0;font:900 31px/1 "Arial Narrow",Arial,sans-serif;color:var(--blue);text-transform:uppercase}.rule:after{content:"";height:3px;flex:1;background:var(--blue)}.human{color:var(--blue)}.machine{color:var(--orange)}.lede{font:21px/1.55 Georgia,serif;max-width:880px}.notice{padding:18px 20px;border-left:6px solid var(--yellow);background:#fff7d8;margin:22px 0}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.asset{padding:16px;background:#fff;border:1px solid var(--line);border-top:4px solid var(--blue)}.asset.machine-edge{border-top-color:var(--orange)}.asset h3{margin:4px 0 7px;font:800 18px/1.2 "Arial Narrow",Arial,sans-serif}.asset p{margin:0 0 9px;font-size:14px}.button{display:inline-block;padding:7px 10px;border-radius:3px;background:var(--blue);color:#fff;text-decoration:none;font-size:12px}.button.machine-button{background:var(--orange)}
+.timeline{border-left:4px solid var(--blue);margin-left:18px}.block{position:relative;padding:0 0 30px 34px}.block:before{content:"";position:absolute;left:-11px;top:4px;width:17px;height:17px;border-radius:50%;background:var(--paper);border:4px solid var(--blue)}.time{font:900 15px/1 "Arial Narrow",Arial,sans-serif;color:var(--blue);letter-spacing:.08em;text-transform:uppercase}.block h3{margin:7px 0 13px;font:700 27px/1.15 Georgia,serif}.cue{display:grid;grid-template-columns:102px 1fr;gap:12px;padding:9px 0;border-top:1px solid var(--line)}.cue b{font:800 11px/1.4 "Arial Narrow",Arial,sans-serif;letter-spacing:.12em;color:var(--blue)}.cue p{margin:0}.cue.say{background:#edf3f8;border:0;padding:13px 14px;margin:7px 0}.cue.say p{font:17px Georgia,serif}.story{margin:28px 0;padding:24px 30px;border-top:3px solid var(--blue);border-bottom:1px solid var(--line);font:italic 22px/1.45 Georgia,serif}.story cite{display:block;margin-top:8px;font:800 11px Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--blue)}.key{border:2px solid var(--orange);background:#fff8f2;padding:18px 20px}.key h3{margin:0 0 8px;color:var(--orange)}footer{padding:24px 56px;background:#152a46;color:#dce5ee;font-size:13px}
+@media(max-width:720px){.page{margin:0}.grid{grid-template-columns:1fr}header,main,nav,footer{padding-left:24px;padding-right:24px}.cue{grid-template-columns:78px 1fr}}@media print{@page{margin:.55in}.page{margin:0;max-width:none;box-shadow:none}header{padding:25px 32px}header:after{font-size:90px}h1{font-size:46px;margin-top:20px}nav{display:none}main{padding:24px 32px}.block,.asset,.notice,.story,.key{break-inside:avoid}.button{border:1px solid var(--blue);color:var(--blue);background:#fff}.button.machine-button{border-color:var(--orange);color:var(--orange)}footer{padding:14px 32px}}
+</style></head>
+<body><div class="page">
+<header><div class="mark">ACMEJOB<span class="ai">.Ai</span></div><div class="eyebrow" style="margin-top:34px">Instructor dispatch · Unit 1: Hired</div><h1>The 3 a.m.<br>alarm.</h1><p class="dek">A scripted, 75-minute trace of an autonomous run: stream, tool calls, one-point average, threshold rule, and the decision that outran its evidence.</p><span class="chip">M05 · Tuesday, February 16, 2027 · SEIS 201</span></header>
+<nav><a href="#prep">Before class</a><a href="#run">Run of day</a><a href="#close">Close + key</a><a href="index.html">All meetings</a></nav>
+<main>
+<p class="lede"><span class="machine"><strong>FOREMAN</strong></span> correctly finds a recorded exceedance, then turns an internal warning into an immediate-closure recommendation without the required repeat, neighbour check, or disposition rule. <span class="human"><strong>Students</strong></span> must locate that handoff. The physical cause stays unresolved until M06.</p>
+<div class="notice"><strong>Instructor only.</strong> Open the student deck before class. Keep the reveal deck and KEY-M05 closed until students write their own note. Do not disclose the M06 traffic match.</div>
+
+<section id="prep"><div class="rule"><h2>Before class · stage the incident</h2></div>
+<div class="grid">
+  <article class="asset"><span class="label">Project first</span><h3>M05 student deck · 13 slides</h3><p>Stops at the exact handoff question. No gated conclusion or M06 cause.</p><a class="button" href="https://raw.githubusercontent.com/Stone-Arch-Collective/Design-and-AI/main/teaching-pack/09-M05-overnight-alarm/M05-student.pptx">Download student deck</a></article>
+  <article class="asset machine-edge"><span class="label machine">Keep closed</span><h3>M05 reveal deck · 7 slides</h3><p>Recorded warning, action-rule mismatch, model note, M06 boundary.</p><a class="button machine-button" href="https://raw.githubusercontent.com/Stone-Arch-Collective/Design-and-AI/main/teaching-pack/09-M05-overnight-alarm/M05-instructor-reveal.pptx">Download reveal</a></article>
+  <article class="asset"><span class="label">Print · one per student</span><h3>H5-01 + H5-03 + H5-04</h3><p>Diane's dispatch, agent-loop worksheet, note v1 and HW3.</p><a class="button" href="https://github.com/Stone-Arch-Collective/Design-and-AI/tree/main/teaching-pack/09-M05-overnight-alarm">Open meeting folder</a></article>
+  <article class="asset machine-edge"><span class="label machine">Print · one per pair</span><h3>H5-02 · alarm report</h3><p>FOREMAN's 3:07 a.m. county draft.</p><a class="button machine-button" href="https://raw.githubusercontent.com/Stone-Arch-Collective/Design-and-AI/main/teaching-pack/09-M05-overnight-alarm/H5-02-FOREMAN-alarm-report.docx">Download report</a></article>
+  <article class="asset"><span class="label">Digital · one copy per pair</span><h3>Run log + threshold config</h3><p>The trace and two action rules. Preserve monospace formatting.</p><a class="button" href="https://raw.githubusercontent.com/Stone-Arch-Collective/Design-and-AI/main/teaching-pack/09-M05-overnight-alarm/FOREMAN-overnight-run.log">Open log</a></article>
+  <article class="asset"><span class="label">Digital · spreadsheet</span><h3>feed.csv</h3><p>First two weeks, eight gauges, 10-minute cadence. Keep the duplicate block unnamed.</p><a class="button" href="https://raw.githubusercontent.com/Stone-Arch-Collective/Design-and-AI/main/teaching-pack/09-M05-overnight-alarm/feed.csv">Download feed</a></article>
+</div></section>
+
+<section id="run"><div class="rule"><h2>Run of day · 75 minutes</h2></div><div class="timeline">
+<article class="block"><div class="time">00–08 · The held draft</div><h3>Start with the action, not the answer.</h3>
+  <div class="cue"><b>SLIDE</b><p><strong>Student 1–3</strong> — title, emergency draft, reconstruction hunt.</p></div>
+  <div class="cue say"><b>SAY</b><p>“The draft did not leave the office. Do not reward that checkpoint by assuming the recommendation was right or wrong. Diane wants the path from feed to sentence.”</p></div>
+  <div class="cue"><b>HAND OUT</b><p>H5-01 and H5-02. Have students underline every distinct claim in the alarm report.</p></div>
+  <div class="cue"><b>WATCH FOR</b><p>Do not ask “was the truck real?” There is no traffic file today. Ask which claim each artifact can test.</p></div>
+</article>
+<article class="block"><div class="time">08–22 · Agent anatomy</div><h3>Plan, tools, observations, decisions.</h3>
+  <div class="cue"><b>SLIDE</b><p><strong>Student 4–9</strong> — action loop, tools, stream, threshold, autonomy.</p></div>
+  <div class="cue say"><b>SAY</b><p>“A chat answer can be wrong. An agent can make a wrong answer consequential by calling a tool. Our unit of audit is every handoff.”</p></div>
+  <div class="cue"><b>DO</b><p>Connect WARN-250 to M01: an explicit rule lives inside a learned system. Distinguish permission to prepare a draft from permission to send it.</p></div>
+  <div class="cue"><b>WATCH FOR</b><p>A true threshold result does not validate the action rule. Keep those on separate lines.</p></div>
+</article>
+<article class="block"><div class="time">22–35 · Label the loop</div><h3>Classify before judging.</h3>
+  <div class="cue"><b>SLIDE</b><p><strong>Student 10</strong> — four-step activity.</p></div>
+  <div class="cue say"><b>SAY</b><p>“Mark every substantive line P, T, O, or D. Draw arrows from observations to the decisions that use them. Circle the first decision you cannot yet reproduce.”</p></div>
+  <div class="cue"><b>HAND OUT</b><p>H5-03 and the overnight log.</p></div>
+  <div class="cue"><b>DO</b><p>Pairs label independently for five minutes, reconcile for five, then compare one disputed line with the room.</p></div>
+  <div class="cue"><b>WATCH FOR</b><p>Students may label the drafted report as a decision. The severity choice is the decision; report.draft is the tool call that executes it.</p></div>
+</article>
+<article class="block"><div class="time">35–57 · Hunt every boundary</div><h3>Feed → correction → average → threshold → action.</h3>
+  <div class="cue"><b>SLIDE</b><p><strong>Student 11–12</strong> — pipeline activity and three separate claims.</p></div>
+  <div class="cue say"><b>SAY</b><p>“For each claim, show me the file, row, field, rule, and arithmetic. If the operation says ten-minute mean, tell me the sample count—not only the window length.”</p></div>
+  <div class="cue"><b>DO</b><p>Filter feed.csv to 03:00. Recompute G6 correction and mean. Read WARN-250 and CLOSE-DRAFT side by side.</p></div>
+  <div class="cue"><b>WATCH FOR</b><p>Do not confirm the key. Ask: “Which rule authorized that next action?” The room should locate the 03:07:06 decision.</p></div>
+</article>
+<article class="block"><div class="time">57–67 · Reveal the handoff</div><h3>The warning is reproducible; the disposition is not.</h3>
+  <div class="cue"><b>SLIDE</b><p><strong>Student 13</strong>, then switch to <strong>Reveal 1–3</strong>.</p></div>
+  <div class="cue say"><b>SAY</b><p>“The value exists. Baseline correction did not create it. WARN-250 is true. But the ten-minute mean contains one reading, and WARN-250 says repeat, inspect neighbours, and hold for review. FOREMAN evaluated one rule and acted as if it had satisfied another.”</p></div>
+  <div class="cue"><b>DO</b><p>Ask for the smallest defensible action. Accept: keep internal flag, next poll, neighbours, independent evidence, PE review.</p></div>
+  <div class="cue"><b>WATCH FOR</b><p>Do not call the value a real truck or a sensor fault. M05 establishes a recorded exceedance, not its cause.</p></div>
+</article>
+<article class="block"><div class="time">67–72 · Write before the model</div><h3>Supports, does not support, next checkpoint.</h3>
+  <div class="cue"><b>SLIDE</b><p>Blank screen or <strong>Reveal 3</strong>. Show <strong>Reveal 4</strong> only after collection.</p></div>
+  <div class="cue say"><b>SAY</b><p>“Three sentences. First: what the evidence supports. Second: what it does not support. Third: the checkpoint you require before external action.”</p></div>
+  <div class="cue"><b>HAND OUT</b><p>H5-04. Collect or photograph note v1 before the model response appears.</p></div>
+</article>
+<article class="block"><div class="time">72–75 · Keep the cause open</div><h3>Assign the file audit and point to M06.</h3>
+  <div class="cue"><b>SLIDE</b><p><strong>Reveal 5–7</strong> — unresolved cause, mask-off, HW3.</p></div>
+  <div class="cue say"><b>SAY</b><p>“A recorded exceedance, a correct threshold comparison, and a real physical event are three different claims. Tonight, audit the timestamps. Thursday, you get the independent record.”</p></div>
+  <div class="cue"><b>DO</b><p>Assign total rows, unique timestamp/gauge pairs, duplicate block, and peak corrected strain by timestamp. Preview the Wes handoff without resolving it.</p></div>
+</article>
+</div></section>
+
+<div class="story">“Show me the handoff where ‘look at this’ became ‘close it.’”<cite>Diane · sharper because the firm's name was almost attached</cite></div>
+<section id="close"><div class="rule"><h2>Close the file</h2></div>
+<div class="key"><h3>Instructor key + M06 boundary</h3><p><a href="https://raw.githubusercontent.com/Stone-Arch-Collective/Design-and-AI/main/teaching-pack/09-M05-overnight-alarm/KEY-M05-answer-key.docx">Download KEY-M05-answer-key.docx</a>. The duplicate block is gated to the instructor key. M06 reveals the physical event through traffic data and ends with the Wes spreadsheet handoff; do not front-load either result.</p></div>
+</section>
+</main><footer>ACMEJOB.Ai · Engineering, est. 1967 · Instructor-only run of day · Trace every handoff.</footer>
+</div></body></html>
