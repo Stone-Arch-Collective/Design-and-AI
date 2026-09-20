@@ -140,7 +140,7 @@ closer(prs, [
 
 student_notes = [
     "INBOX — SAY: “The report is in. No defects found. High confidence. Let's move.” Establish that the report covers Otter Bend towers and machinery as well as familiar fixed-span components.",
-    "INBOX — DIANE: “It looked at 400 photos in a minute. Give me a reason not to use it.” WES: “I'm drafting the memo to accept the machinery rating based on the vendor summary.” STUDENT: “Wait, I need to check the training data source first.”",
+    "INBOX — Diane Halvorsen, PE: “It looked at 400 photos in a minute. Give me a reason not to use it.” Wes Tanaka, EIT: “I'm drafting the memo to accept the machinery rating based on the vendor summary.” STUDENT: “Wait, I need to check the training data source first.”",
     "HUNT — SAY: “Read the training summary closely. Compare the 12 photos with the population the model actually saw. Your answer must name the gap, not merely distrust the tool.”",
     "TEACH TRANSITION — SAY: “Bias begins before the answer: in what the examples include, omit, label, and measure.”",
     "TEACH — SAY: “Bias here is patterned limitation in examples, labels, evaluation, or deployment. It does not require intent.”",
