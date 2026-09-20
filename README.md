@@ -44,7 +44,7 @@ referenced or dramatised.**
 | Folder | Contents |
 |---|---|
 | [`simulation/`](simulation) | The semester outline, the meeting-by-meeting plan for Units 1–2, and the brand and story canon |
-| [`teaching-pack/`](teaching-pack) | **Built, ready to teach.** Meetings M01–M05: slides, handouts, answer keys, data files, and the student brand kit |
+| [`teaching-pack/`](teaching-pack) | **Built, ready to teach.** Unit 1 meetings M01–M06: slides, handouts, answer keys, data files, and the student brand kit |
 | [`learning-graph-v2/`](learning-graph-v2) | The 163-concept graph fitted to Spring 2027 — schedule, definitions, dependency edges, viewer |
 | [`learning-graph-v1/`](learning-graph-v1) | The first 230-concept graph built straight from the syllabus, kept for the record |
 | [`guides/`](guides) | Four self-check student guides: probability and sampling, code reading, engineering reference cards, optional concepts |
@@ -65,13 +65,14 @@ teaching-pack/
   06-BRIDGE/              PowerPoint-ready bridge illustration and general elevation
   07-HW-CASE-B-LIFT-STATION/ M02 transfer homework
   08-M04-one-number/      Descriptive statistics: center, spread, CV, sample scope
-  09-M05-overnight-alarm/ Agentic AI, live sensor stream, threshold alarm, and audit
+  09-M05-overnight-alarm/ Agentic alarm chain and live feed
+  10-M06-alarm-audit/     Distribution audit, decision log, and Wes handoff
 ```
 
-Start with `00-INSTRUCTOR/run-of-day/index.html`. The M01–M05 podium guides link to
-the meeting decks, handouts, answer keys, and data. M05 adds a spoiler-safe student
-deck, gated reveal, eight-hour investigation menu, machine run log, alarm report,
-threshold configuration, two weeks of sensor data, and instructor key.
+Start with `00-INSTRUCTOR/run-of-day/index.html`. M06 has a spoiler-safe student
+deck, gated instructor reveal, FOREMAN reversal, distribution-and-pipeline audit,
+decision log, traffic record, gauge workbook, and explicit handoff packet to Wes.
+The M06 build consumes `09-M05-overnight-alarm/feed.csv` from the preceding meeting.
 
 ---
 
@@ -83,7 +84,8 @@ threshold configuration, two weeks of sensor data, and instructor key.
 | **M02** Thu Feb 4 | Measurement and uncertainty (6) | Averages a failing gauge away; reports six decimals from a 1 µε instrument. |
 | **M03** Tue Feb 9 | LLMs and probability (7) | Fabricates a specification section; turns a *shall* into a *should*. |
 | **M04** Thu Feb 11 | Descriptive statistics (6) | Reports the correct mean, omits spread and low results, and concludes adequacy. |
-| **M05** Tue Feb 16 | Agentic AI and sensor streams (6) | Turns one warning into a closure recommendation without required checks. |
+| **M05** Tue Feb 16 | Agentic AI and sensor streams (6) | Turns a warning into a closure action without required checks. |
+| **M06** Thu Feb 18 | Distributions and agent audit (6) | Assumes normality, then converts “unusual” into “sensor fault” without independent evidence. |
 
 Every planted error is findable from material the students already hold. None of them
 is a software bug — FOREMAN's arithmetic is correct every time. The error is always in
@@ -116,14 +118,15 @@ from; the source is how you change them.
 cd tools/teaching-pack
 pip install -r requirements.txt
 ./build.sh
-# Add the standalone M05 pack (and rebuild M01–M03 prerequisites):
+# After building M05 to supply teaching-pack/09-M05-overnight-alarm/feed.csv:
 ./build_m05.sh
+./build_m06.sh
 ```
 
 The builds are deterministic — same inputs, same files, every run. `build.sh`
-regenerates M01–M04. `build_m05.sh` runs that prerequisite build, then generates the
-M05 feed, log, threshold rules, four student handouts, instructor key, separate student
-and reveal decks, complete file index, and assembled M05 folder.
+regenerates M01–M04, `build_m05.sh` adds M05, and `build_m06.sh` adds M06. Together
+they generate the data, handouts, student and reveal decks, brand kit, instructor
+materials, complete file index, and assembled `teaching-pack/`.
 
 Slide builds print `no layout warnings` when every text box fits its content; anything
 that would overflow is reported with the height it needs.
@@ -136,9 +139,9 @@ that would overflow is reported with the height it needs.
 | `slidelib.py` | Slide layouts, plus the text-height estimator that catches overflow before rendering |
 | `make_charts.py` | Charts, on a brand-derived palette validated for colour-vision separation |
 | `make_m0*.py` | Handouts and answer keys per meeting |
-| `make_deck_m0*.py` | The eight slide files; M02, M04, and M05 build separate student and instructor reveal decks |
-| `make_data_m05.py` | Two-week live feed, duplicate-timestamp callback, threshold config, and overnight run log |
-| `build_m05.sh` | M01–M04 prerequisite build plus M05 generation and assembly |
+| `make_deck_m0*.py` | Meeting decks; M02 and M04–M06 build separate student and instructor reveals |
+| `make_data_m06.py` | Traffic evidence and the spoiler-safe gauge workbook handed to Wes |
+| `build_m06.sh` | Builds and assembles M06 after the M05 feed is present |
 | `make_kit.py` | The student brand kit and its templates |
 | `make_guide.py` | Instructor guide and file index |
 
