@@ -14,7 +14,9 @@ callout(d, "Podium run-of-day pages",
         "Open 00-INSTRUCTOR/run-of-day/index.html for the newsletter-style meeting desk. "
         "M01-run-of-day.html, M02-run-of-day.html and M03-run-of-day.html give exact deck and "
         "slide cues, scripted facilitator language, handout timing, raw file links, keys and "
-        "print-friendly layouts.")
+        "print-friendly layouts. For a faculty or department walkthrough of the course design, "
+        "open 00-INSTRUCTOR/why-this-way.html; it covers the rationale, expected outcomes, "
+        "assessment pattern, anticipated questions and current pilot boundaries.")
 
 # ---------------------------------------------------------------------------
 h2(d, "The shape of the three meetings", before=2)
@@ -321,6 +323,7 @@ for folder, rows in [
         ("INSTRUCTOR-GUIDE-M01-M03.docx", "Run of show, prep, continuity, review checklist"),
         ("FILE-INDEX.docx", "This page"),
         ("BRIDGE-VISUALS.txt", "Four primary bridge assets, optional locator, usage notes"),
+        ("why-this-way.html", "Faculty briefing: rationale, benefits, outcomes, assessment and Q&A"),
         ("run-of-day/index.html", "Newsletter-style podium desk linking M01–M03"),
         ("run-of-day/M01-run-of-day.html", "Exact slides, script and handouts for M01"),
         ("run-of-day/M02-run-of-day.html", "Spoiler-safe deck switch, G6 reveal and Case B"),
