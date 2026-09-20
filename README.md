@@ -59,6 +59,7 @@ teaching-pack/
   01-BRAND-KIT/           ACMEJOB-brand-kit.zip — hand this to students
   02-M01-first-day/       Rules versus learned patterns
   03-M02-measurement/     Measurement, uncertainty, and the mis-zeroed gauge
+                          Project M02-student.pptx first; keep the reveal deck closed
   04-M03-hallucination/   How an LLM generates, and the section that does not exist
   05-CHARTS/              every chart as a PNG
   06-BRIDGE/              PowerPoint-ready bridge illustration and general elevation
@@ -112,8 +113,9 @@ pip install -r requirements.txt
 ```
 
 The build is deterministic — same inputs, same files, every run — and takes about a
-minute. It regenerates the data, the logos, the charts, all nineteen handouts, three
-slide decks, the brand kit and the instructor guide, then assembles them into
+minute. It regenerates the data, the logos, the charts, all nineteen handouts, four
+slide files (including separate M02 student and reveal decks), the brand kit and the
+instructor guide, then assembles them into
 `teaching-pack/`.
 
 Slide builds print `no layout warnings` when every text box fits its content; anything
@@ -127,7 +129,7 @@ that would overflow is reported with the height it needs.
 | `slidelib.py` | Slide layouts, plus the text-height estimator that catches overflow before rendering |
 | `make_charts.py` | Charts, on a brand-derived palette validated for colour-vision separation |
 | `make_m0*.py` | Handouts and answer keys per meeting |
-| `make_deck_m0*.py` | The three slide decks |
+| `make_deck_m0*.py` | The four slide files; M02 builds separate student and instructor reveal decks |
 | `make_kit.py` | The student brand kit and its templates |
 | `make_guide.py` | Instructor guide and file index |
 

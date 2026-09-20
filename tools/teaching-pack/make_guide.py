@@ -120,21 +120,27 @@ para(d, "Concepts 19–24: measurement and why it matters, repeated measurements
         "readings, systematic error and accuracy, uncertainty propagation, instrument "
         "resolution.", size=9, color=GREY, after=8)
 
+callout(d, "Project the student deck first",
+        "Open M02-student.pptx before students arrive. It stops before every gauge answer. "
+        "Keep M02-instructor-reveal.pptx closed until the lab debrief and only advance it after "
+        "students have struggled with the data. Never project the reveal deck early.")
+
 table(d, [
-    ["Min", "What happens", "Slides"],
+    ["Min", "What happens", "Deck · slides"],
     ["0–10", "FOREMAN's PASS on screen. Ask: do we accept the array? Take a show of hands. "
-             "Then say you are not opening the file for forty minutes.", "1–3"],
+             "Then say you are not opening the file for forty minutes.", "Student · 1–3"],
     ["10–22", "Teach measurement: reading, spread, resolution, true value. Then accuracy vs "
-              "precision on the target diagram, and random vs systematic error.", "4–7"],
+              "precision on the target diagram, and random vs systematic error.", "Student · 4–7"],
     ["22–47", "The lab, H2-01. Parts A, B and C. Part B is the one that matters — make sure "
-              "pairs actually swap pins.", "8–10"],
+              "pairs actually swap pins.", "Student · 8–9"],
     ["47–55", "Debrief the lab. Get the sentence out of the room: averaging fixes random error "
-              "and hides systematic error.", "10"],
+              "and hides systematic error. Only now open the reveal deck.", "Reveal · 1"],
     ["55–68", "Open gauges_install.csv together. Per gauge, not in aggregate. Let G6 emerge. "
-              "Then show how FOREMAN's number was built.", "11–15"],
-    ["68–73", "Wes's margin note on the install record. Then the hours.", "16–18"],
-    ["73–75", "Mask off. Assign HW1 and the decision log.", "19–20"],
-], widths=[0.75, 4.55, 0.85], size=9)
+              "Use the student transition slides, then show how FOREMAN's number was built.",
+              "Student · 10–11; Reveal · 2–4"],
+    ["68–73", "Wes's margin note on the install record. Then the hours.", "Reveal · 5–7"],
+    ["73–75", "Mask off. Assign HW1 and the decision log.", "Reveal · 8–9"],
+], widths=[0.75, 4.35, 1.05], size=8.5)
 
 h2(d, "The numbers you will need at the board")
 table(d, [
@@ -323,7 +329,8 @@ for folder, rows in [
         ("H1-06-note-v1-template-rubric.docx", "The note, and how it is graded"),
         ("KEY-M01-answer-key.docx", "Answers and teaching notes")]),
     ("03-M02-measurement", [
-        ("M02-slides-measurement.pptx", "20 slides"),
+        ("M02-student.pptx", "11 slides — project first; contains no gauge answer tables"),
+        ("M02-instructor-reveal.pptx", "9 slides — keep closed until after students struggle"),
         ("H2-01-measurement-lab.docx", "The lab, with ruler and no-instrument fallbacks"),
         ("H2-02-sensor-installation-record.docx", "The install record, with Wes's margin note"),
         ("H2-03-foreman-baseline-check.docx", "FOREMAN's PASS"),

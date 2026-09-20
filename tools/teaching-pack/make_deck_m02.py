@@ -1,5 +1,7 @@
-"""M02 deck — Measure something with your own hands."""
+"""M02 decks — spoiler-safe student projection and instructor reveal."""
 import os, sys, json
+from io import BytesIO
+from pptx import Presentation
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from slidelib import *
 
@@ -245,4 +247,35 @@ closer(prs, [
                 "a language model looks something up"),
 ], title="Before Tuesday")
 
-save(prs, os.path.join(ROOT, "build", "M02", "M02-slides-measurement.pptx"))
+def slides_from(source, slide_numbers):
+    """Return a copy containing only the requested 1-based source slides."""
+    requested = list(slide_numbers)
+    if len(source.slides) != 20:
+        raise ValueError(f"M02 source deck must have 20 slides, found {len(source.slides)}")
+    if len(requested) != len(set(requested)):
+        raise ValueError("M02 split contains duplicate slide numbers")
+    if any(number < 1 or number > len(source.slides) for number in requested):
+        raise ValueError("M02 split contains an out-of-range slide number")
+
+    buffer = BytesIO()
+    source.save(buffer)
+    buffer.seek(0)
+    result = Presentation(buffer)
+    keep = set(requested)
+    for index in reversed(range(len(result.slides))):
+        if index + 1 not in keep:
+            slide_id = result.slides._sldIdLst[index]
+            result.part.drop_rel(slide_id.rId)
+            del result.slides._sldIdLst[index]
+    return result
+
+
+student_slides = list(range(1, 10)) + [11, 12]
+reveal_slides = [10] + list(range(13, 21))
+if set(student_slides) & set(reveal_slides) or set(student_slides + reveal_slides) != set(range(1, 21)):
+    raise ValueError("M02 student and reveal decks must partition all 20 source slides")
+
+save(slides_from(prs, student_slides),
+     os.path.join(ROOT, "build", "M02", "M02-student.pptx"))
+save(slides_from(prs, reveal_slides),
+     os.path.join(ROOT, "build", "M02", "M02-instructor-reveal.pptx"))
