@@ -226,18 +226,33 @@ for filename in ("feed.csv", "threshold_config.csv", "FOREMAN-overnight-run.log"
 # ======================================================= FILE INDEX ==========
 index_out = os.path.join(BUILD, "M05-INSTRUCTOR")
 d = course_doc("M01 – M05", "What is in this pack", kind="FILE INDEX")
-para(d, "Folders are in teaching order. M04 is built in PR #8 and is not duplicated by this "
-        "main-based M05 change; merge that dependency to obtain the uninterrupted M01–M05 pack.",
-     size=9.2, color=GREY, after=10)
+para(d, "Folders are in teaching order. This index covers every folder in the assembled "
+        "M01–M05 teaching pack.", size=9.2, color=GREY, after=10)
 for folder, files in [
     ("00-INSTRUCTOR", [
+        ("INSTRUCTOR-GUIDE-M01-M04.docx", "Run of show, prep, continuity, and review checklist"),
         ("run-of-day/index.html", "Podium desk for the built meetings"),
+        ("run-of-day/M01–M04-run-of-day.html", "Podium pages for the first four meetings"),
         ("run-of-day/M05-run-of-day.html", "M05 exact slides, script, hunt, and gated answer"),
+        ("why-this-way.html", "Faculty brief reflecting Unit 1 M01–M05"),
         ("FILE-INDEX.docx", "This generated file index")]),
-    ("02–04", [("M01–M03 materials", "Existing complete teaching packs on main")]),
-    ("08-M04-one-number (PR #8 dependency)", [
-        ("M04 student/reveal decks, handouts, cores_2027.csv, key",
-         "Merge PR #8; M05 intentionally does not copy unmerged files")]),
+    ("01-BRAND-KIT", [
+        ("ACMEJOB-brand-kit.zip and expanded kit", "Logos, fonts, templates, and brand guide")]),
+    ("02-M01-first-day", [
+        ("M01 slides, H1-01–H1-06, and key", "Rules versus learned patterns")]),
+    ("03-M02-measurement", [
+        ("M02 student/reveal decks, H2 files, data, and key", "Measurement and uncertainty")]),
+    ("04-M03-hallucination", [
+        ("M03 slides, H3-01–H3-05, and key", "Next-token generation and source checking")]),
+    ("05-CHARTS", [
+        ("*.png", "Charts used throughout the meeting decks")]),
+    ("06-BRIDGE", [
+        ("Bridge illustrations, elevation, gauge array, maps, and README", "Reusable visuals")]),
+    ("07-HW-CASE-B-LIFT-STATION", [
+        ("student/ and instructor/", "M02 transfer homework, source files, and key")]),
+    ("08-M04-one-number", [
+        ("M04 student/reveal decks, H4 files, cores_2027.csv, and key",
+         "Center, spread, CV, low count, and sample scope")]),
     ("09-M05-overnight-alarm", [
         ("M05-student.pptx", "13 slides; no gated M05 conclusion or M06 cause"),
         ("M05-instructor-reveal.pptx", "7 slides; open after the hunt"),

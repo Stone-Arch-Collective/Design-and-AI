@@ -1,39 +1,42 @@
-"""Instructor guide for M01-M03."""
+"""Instructor guide for M01-M04."""
 import os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from doclib import *
 
 OUT = os.path.join(BUILD, "00-INSTRUCTOR")
-F, G, P = FACTS["m01"], FACTS["m02"], FACTS["m02_pin"]
+F, G, P, C4 = FACTS["m01"], FACTS["m02"], FACTS["m02_pin"], FACTS["m04"]
+old_guide = os.path.join(OUT, "INSTRUCTOR-GUIDE-M01-M03.docx")
+if os.path.exists(old_guide):
+    os.remove(old_guide)
 
-d = course_doc("M01 – M03", "Instructor Guide", kind="INSTRUCTOR ONLY")
-para(d, "Everything needed to run the first three meetings of SEIS 201, Spring 2027. Draft. No "
+d = course_doc("M01 – M04", "Instructor Guide", kind="INSTRUCTOR ONLY")
+para(d, "Everything needed to run the first four meetings of SEIS 201, Spring 2027. Draft. No "
         "engineer or statistics instructor has reviewed the technical content; the items needing "
         "review are listed on the last page.", size=9.5, italic=True, color=GREY, after=10)
 callout(d, "Podium run-of-day pages",
         "Open 00-INSTRUCTOR/run-of-day/index.html for the newsletter-style meeting desk. "
-        "M01-run-of-day.html, M02-run-of-day.html and M03-run-of-day.html give exact deck and "
+        "M01-run-of-day.html through M04-run-of-day.html give exact deck and "
         "slide cues, scripted facilitator language, handout timing, raw file links, keys and "
         "print-friendly layouts. For a faculty or department walkthrough of the course design, "
         "open 00-INSTRUCTOR/why-this-way.html; it covers the rationale, expected outcomes, "
         "assessment pattern, anticipated questions and current pilot boundaries.")
 
 # ---------------------------------------------------------------------------
-h2(d, "The shape of the three meetings", before=2)
+h2(d, "The shape of the four meetings", before=2)
 table(d, [
-    ["", "M01 — Tue Feb 2", "M02 — Thu Feb 4", "M03 — Tue Feb 9"],
-    ["Teaches", "Rules vs learned patterns (6 concepts)",
-     "Measurement and uncertainty (6)", "LLMs and probability (7)"],
-    ["Hands-on", "Task sort, 12 min", "Measurement lab, 25 min", "Dice activity, 10 min + "
-                                                                 "worksheet, 20 min"],
-    ["FOREMAN's error", "None. It is right, and cannot say why",
-     "Averages a failing gauge away; six decimal places",
-     "Fabricates §4.7; turns a shall into a should"],
-    ["Students hand in", "Note v1", "Note v1, then HW1 assigned", "Note v1, then HW2 assigned"],
-], widths=[1.15, 1.95, 1.95, 1.85], size=8.5)
+    ["", "M01 · Feb 2", "M02 · Feb 4", "M03 · Feb 9", "M04 · Feb 11"],
+    ["Teaches", "Rules vs learned patterns", "Measurement uncertainty",
+     "LLMs and probability", "Descriptive statistics"],
+    ["Hands-on", "Task sort", "Measurement lab", "Dice + source check",
+     "Spreadsheet hunt"],
+    ["FOREMAN's error", "None", "Averages failure away", "Fabricates §4.7",
+     "Mean becomes adequacy"],
+    ["Students hand in", "Note v1", "HW1 assigned", "HW2 assigned",
+     "Three-sentence brief"],
+], widths=[0.9, 1.5, 1.5, 1.5, 1.5], size=7.8)
 
 callout(d, "The one instruction that matters",
-        "In all three meetings, the answer arrives after the students look, not before. Every "
+        "In all four meetings, the answer arrives after the students look, not before. Every "
         "planted error in this pack is findable from material they hold. If you name the error "
         "first, the meeting becomes a lecture about a thing that already happened.")
 
@@ -47,10 +50,12 @@ for i, (t, w) in enumerate([
      "resolution point sharper. If neither, the backup CSV runs the whole lab.", "Before M02"),
     ("Confirm which AI assistant students may use live in class. M03 has a two-minute live "
      "prompt demo that can be cut if the answer is none.", "Before M03"),
+    ("Confirm spreadsheet access and preload cores_2027.csv. M04 requires AVERAGE, VAR.S, "
+     "STDEV.S and COUNTIF; Google Sheets, Excel or LibreOffice Calc all work.", "Before M04"),
     ("Decide whether to hand out the brand kit at M01 or M02. Recommendation: M01, so the note "
      "and HW1 come back on letterhead.", "Before M01"),
     ("Print the handouts listed below. Everything else can be projected.", "Each meeting"),
-    ("Read the three answer keys. They carry the teaching moves, not just the answers.", "Once"),
+    ("Read the four answer keys. They carry the teaching moves, not just the answers.", "Once"),
 ], 1):
     rows.append([str(i), t, w])
 table(d, rows, widths=[0.3, 5.1, 1.5], size=9)
@@ -65,6 +70,8 @@ table(d, [
      "H2-04 HW1 (or print)"],
     ["M03", "H3-01 county spec, H3-04 worksheet", "H3-02 FOREMAN summary, H3-03 dice activity",
      "H3-05 HW2 (or print)"],
+    ["M04", "H4-02 spreadsheet hunt, H4-04 three-sentence brief",
+     "H4-01 Diane ask, H4-03 FOREMAN summary", "cores_2027.csv"],
 ], widths=[0.8, 2.3, 2.2, 1.6], size=8.5)
 para(d, "H3-01, the county specification, is the one thing that must be on paper. The whole "
         "exercise is students physically turning to Section 4 and finding it ends at 4.5.",
@@ -235,8 +242,62 @@ para(d, "Students will call §4.7 “made up”, “invented”, or say “it "
 d.add_page_break()
 
 # ---------------------------------------------------------------------------
+h1(d, "M04 — Thursday, February 11. One number")
+para(d, "Concepts 32–37: data sets and variables, mean, variance and standard deviation, "
+        "coefficient of variation, sample versus population, uncertainty from spread.",
+     size=9, color=GREY, after=8)
+
+callout(d, "Project the student deck first",
+        "M04-student.pptx stops before every spread, low-count and sample-location answer. "
+        "Keep M04-instructor-reveal.pptx closed until pairs report center, spread and count. "
+        "FOREMAN's visible mean is not a spoiler; the omitted story is the hunt.")
+
+table(d, [
+    ["Min", "What happens", "Deck · slides"],
+    ["0–8", "Collect M03 HW2. Diane asks for one number. FOREMAN reports the correct mean and "
+             "calls the deck adequate at 94% confidence. Take a vote without endorsing it.",
+     "Student · 1–3"],
+    ["8–23", "Data sets, variables, mean, variance and sample SD. Keep all worked arithmetic "
+              "off the core file.", "Student · 4–8"],
+    ["23–33", "CV and sample versus population. The complete CSV is still only a sample of the "
+               "physical deck.", "Student · 9–10"],
+    ["33–55", "Spreadsheet hunt, H4-02. Require mean, VAR.S, STDEV.S, CV, range, COUNTIF and "
+               "sampling scope.", "Student · 11–12"],
+    ["55–67", "Only now reveal the strip plot, table and shoulder-only sampling frame. Separate "
+               "descriptive findings from code acceptance.", "Reveal · 1–5"],
+    ["67–73", "Students write H4-04 before seeing the model response.", "Reveal · 6"],
+    ["73–75", "Mask off. Diane needs brevity, not false certainty. Log the six-hour choice.",
+     "Reveal · 7–8"],
+], widths=[0.75, 4.35, 1.05], size=8.4)
+
+h2(d, "The numbers you will need")
+table(d, [
+    ["Quantity", "Value"],
+    ["n", str(C4["n"])],
+    ["Mean", f"{C4['mean_psi']:,.2f} psi"],
+    ["Sample variance", f"{C4['variance_psi2']:,.2f} psi²"],
+    ["Sample standard deviation", f"{C4['sample_sd_psi']:,.2f} psi"],
+    ["Sample coefficient of variation", f"{C4['sample_cv_pct']:.2f}%"],
+    ["Range", f"{C4['minimum_psi']:,}–{C4['maximum_psi']:,} psi"],
+    ["Below 4,500 psi", f"{C4['below_comparison']} of {C4['n']}"],
+    ["Sampling frame", "All 24 are accessible shoulder locations"],
+], widths=[3.0, 3.9], size=9)
+
+h2(d, "Three guardrails")
+bullets(d, [
+    ("Do not reveal the SD or count early. ", "The meeting works when students produce two "
+     "numerically correct sentences and decide what the mean-only sentence erased."),
+    ("Do not invent a CV cutoff. ", "CV is relative spread, not a universal adequacy test."),
+    ("Do not teach a concrete acceptance rule. ", "The 4,500 psi value is a project comparison "
+     "for descriptive-statistics practice. Neither one low core nor an acceptable mean is a "
+     "complete engineering disposition."),
+])
+
+d.add_page_break()
+
+# ---------------------------------------------------------------------------
 h1(d, "Continuity — what comes back")
-para(d, "Nothing in these three meetings is self-contained. Note who does what, because the "
+para(d, "Nothing in these four meetings is self-contained. Note who does what, because the "
         "callbacks are the reason the simulation exists.", after=8)
 table(d, [
     ["Planted here", "Returns at", "As"],
@@ -249,9 +310,11 @@ table(d, [
     ["§3.2, shall vs should (M03)", "M26", "Licensure, the PE stamp, responsible charge"],
     ["§2.4, the omitted clause (M03)", "M14", "The overweight permit is a §2.4 trigger"],
     ["D-15's overlay (M01)", "M07", "Out-of-domain use — the model was trained on girder bridges"],
+    ["cores_2027.csv and shoulder-only sampling (M04)", "M09",
+     "The same data returns when Diane and FOREMAN report too many digits"],
 ], widths=[2.3, 1.1, 3.5], size=8.5)
 
-h2(d, "Grading these three meetings")
+h2(d, "Grading these four meetings")
 bullets(d, [
     ("The note is graded on the check, never the outcome. ", "A student whose number was wrong "
      "but whose check was real and honestly described meets the bar. The rubric is on H1-06."),
@@ -282,7 +345,7 @@ callout(d, "Source note",
         "engineering literature. No real collapse or casualty event is referenced or dramatised.",
         fill="F4F6F8", edge="C9CFD6")
 
-save(d, os.path.join(OUT, "INSTRUCTOR-GUIDE-M01-M03.docx"))
+save(d, os.path.join(OUT, "INSTRUCTOR-GUIDE-M01-M04.docx"))
 
 # ------------------------------------------------------ bridge visuals note --
 open(os.path.join(OUT, "BRIDGE-VISUALS.txt"), "w").write(
@@ -316,18 +379,19 @@ Optional backup:
 """)
 
 # ------------------------------------------------------------- file index --
-d = course_doc("M01 – M03", "What is in this pack", kind="FILE INDEX")
+d = course_doc("M01 – M04", "What is in this pack", kind="FILE INDEX")
 para(d, "Folders are in teaching order.", size=9.5, color=GREY, after=10)
 for folder, rows in [
     ("00-INSTRUCTOR", [
-        ("INSTRUCTOR-GUIDE-M01-M03.docx", "Run of show, prep, continuity, review checklist"),
+        ("INSTRUCTOR-GUIDE-M01-M04.docx", "Run of show, prep, continuity, review checklist"),
         ("FILE-INDEX.docx", "This page"),
         ("BRIDGE-VISUALS.txt", "Four primary bridge assets, optional locator, usage notes"),
         ("why-this-way.html", "Faculty briefing: rationale, benefits, outcomes, assessment and Q&A"),
-        ("run-of-day/index.html", "Newsletter-style podium desk linking M01–M03"),
+        ("run-of-day/index.html", "Newsletter-style podium desk linking M01–M04"),
         ("run-of-day/M01-run-of-day.html", "Exact slides, script and handouts for M01"),
         ("run-of-day/M02-run-of-day.html", "Spoiler-safe deck switch, G6 reveal and Case B"),
-        ("run-of-day/M03-run-of-day.html", "Exact slides, source-check script and reveals")]),
+        ("run-of-day/M03-run-of-day.html", "Exact slides, source-check script and reveals"),
+        ("run-of-day/M04-run-of-day.html", "Spoiler-safe statistics hunt, deck switch and key")]),
     ("01-BRAND-KIT", [
         ("ACMEJOB-brand-kit.zip", "Hand this to students. Fonts, logos, templates, brand guide"),
         ("(unzipped copy)", "Same contents, for you to look through")]),
@@ -359,6 +423,15 @@ for folder, rows in [
         ("H3-04-source-check-worksheet.docx", "Check the ten claims"),
         ("H3-05-HW2-spec-summary-check.docx", "HW2"),
         ("KEY-M03-answer-key.docx", "Claim-by-claim verdicts, teaching notes")]),
+    ("08-M04-one-number", [
+        ("M04-student.pptx", "12 slides — project first; no spread or low-count answers"),
+        ("M04-instructor-reveal.pptx", "8 slides — keep closed through the spreadsheet hunt"),
+        ("H4-01-diane-one-number-ask.docx", "Diane's brief and six-hour menu"),
+        ("H4-02-spreadsheet-hunt.docx", "Center, spread, CV, low count and sample scope"),
+        ("H4-03-foreman-core-summary.docx", "Correct mean, unsupported adequacy conclusion"),
+        ("H4-04-three-sentence-brief.docx", "Student hand-in and note v1"),
+        ("cores_2027.csv", "24 shoulder core strengths; M04 and later M09 input"),
+        ("KEY-M04-answer-key.docx", "Statistics, model brief, guardrails and timing")]),
     ("05-CHARTS", [("*.png", "Every chart used in the decks, if you want them elsewhere")]),
     ("06-BRIDGE", [
         ("otter-bend-lift-bridge-flat-claude.png",
