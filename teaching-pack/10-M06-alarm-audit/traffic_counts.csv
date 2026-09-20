@@ -1,0 +1,14 @@
+timestamp_cst,direction,vehicle_class,axle_count,estimated_gross_weight_lb,source,quality_flag
+2027-02-16 02:30,WB,2-axle passenger,2,3400,Kinnick County bridge traffic counter,OK
+2027-02-16 02:35,EB,2-axle passenger,2,4700,Kinnick County bridge traffic counter,OK
+2027-02-16 02:40,WB,2-axle light truck,2,6000,Kinnick County bridge traffic counter,OK
+2027-02-16 02:45,EB,2-axle passenger,2,3400,Kinnick County bridge traffic counter,OK
+2027-02-16 02:50,WB,2-axle passenger,2,4700,Kinnick County bridge traffic counter,OK
+2027-02-16 02:55,EB,2-axle light truck,2,6000,Kinnick County bridge traffic counter,OK
+2027-02-16 03:00,EB,5-axle heavy vehicle,5,79400,Kinnick County bridge traffic counter,OK
+2027-02-16 03:05,EB,2-axle passenger,2,4700,Kinnick County bridge traffic counter,OK
+2027-02-16 03:10,WB,2-axle light truck,2,6000,Kinnick County bridge traffic counter,OK
+2027-02-16 03:15,EB,2-axle passenger,2,3400,Kinnick County bridge traffic counter,OK
+2027-02-16 03:20,WB,2-axle passenger,2,4700,Kinnick County bridge traffic counter,OK
+2027-02-16 03:25,EB,2-axle light truck,2,6000,Kinnick County bridge traffic counter,OK
+2027-02-16 03:30,WB,2-axle passenger,2,3400,Kinnick County bridge traffic counter,OK
