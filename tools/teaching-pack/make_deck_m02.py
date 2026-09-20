@@ -9,6 +9,86 @@ FACTS = json.load(open(os.path.join(ROOT, "build", "facts.json")))
 G = FACTS["m02"]
 P = FACTS["m02_pin"]
 GA = G["gauges"]
+
+STUDENT_NOTES = [
+    """In ACMEJOB voice, emphasize that measuring the same thing multiple times is not about finding a single “correct” answer but understanding how uncertainty shapes outcomes. Ask the room: What if your first reading was the only one you had? What would you conclude? Highlight that we’re not revealing the full picture of how averages can mislead yet—this is a puzzle to solve together.
+
+[FACILITATION]: Use the phrase “uncertainty is the story” to anchor their thinking early.""",
+    """In ACMEJOB voice, frame the decision as a test of whether human judgment can override a machine’s arithmetic. Ask: If the number is within the margin, does that mean we’re safe? Note that we’re not revealing yet whether the ±25 µε range includes the true value or how Diane’s human oversight might change the outcome.
+
+[FACILITATION]: Use the phrase “machine says yes, human says wait” to create tension.""",
+    """In ACMEJOB voice, stress that the goal is to let students experience firsthand how their own measurements vary. Ask: Why do your readings differ even when you’re measuring the same thing? Note that we’re not revealing yet how averaging might smooth this out or where the real problem lies.
+
+[FACILITATION]: Encourage students to write down their first three readings without discussing them.""",
+    """In ACMEJOB voice, define a measurement as a range of possible values, not a single number. Ask: If you measured something once, how confident would you be in that result? Note that we’re not revealing yet how uncertainty scales with repeated measurements or why multiple readings are necessary.
+
+[FACILITATION]: Use the phrase “a measurement is a story, not a number” to reframe their thinking.""",
+    """In ACMEJOB voice, explain that each reading is a snapshot, and the spread shows how much the true value might vary. Ask: If your five readings all cluster tightly, does that mean the true value is known? Note that we’re not revealing yet how resolution limits precision or how the true value might still be outside the range.
+
+[FACILITATION]: Have students sketch their own spread on paper before discussing.""",
+    """In ACMEJOB voice, contrast precision (tight clustering) with accuracy (closeness to the true value). Ask: Can your data be precise but not accurate? Note that we’re not revealing yet how systematic errors can hide in averages or how precision alone doesn’t guarantee correctness.
+
+[FACILITATION]: Use the phrase “precision is the mirror, accuracy is the target” to anchor the discussion.""",
+    """In ACMEJOB voice, explain that random errors average out, but systematic errors stay hidden. Ask: If you average ten readings, could you miss a flaw in the tool itself? Note that we’re not revealing yet how the invoice cost ties to undetected systematic errors or how Diane’s human check might catch them.
+
+[FACILITATION]: Use the phrase “averaging is a double-edged sword” to highlight the risk.""",
+    """In ACMEJOB voice, outline the lab steps: measure, pause, repeat, and calculate area with uncertainty. Ask: Why must you swap pins between readings? Note that we’re not revealing yet how the backup file connects to the gauges or how the lab’s design tests method accuracy.
+
+[FACILITATION]: Use the phrase “measure, pause, repeat” as a mantra for the lab.""",
+    """In ACMEJOB voice, explain that a 1% error in diameter leads to a 2% error in area. Ask: Why does the error double? Note that we’re not revealing yet how this connects to the gauges or how the backup example’s method might differ from the lab’s.
+
+[FACILITATION]: Use the phrase “error propagates like a chain” to visualize the math.""",
+    """In ACMEJOB voice, direct students to analyze the data but not jump to conclusions. Ask: Why are there eight gauges and twelve readings? Note that we’re not revealing yet how the install day’s conditions or the roadway closure relate to the data’s patterns.
+
+[FACILITATION]: Use the phrase “data is a map, not a destination” to guide their analysis.""",
+    """In ACMEJOB voice, contrast the machine’s speed with the class’s deliberate process. Ask: What if the machine’s answer is wrong? Note that we’re not revealing yet how the hunt will uncover the truth or how the class’s method might outperform the machine’s.
+
+[FACILITATION]: Use the phrase “hunt for the hidden” to frame the activity as a discovery mission.""",
+]
+
+REVEAL_NOTES = [
+    """Reader B’s consistent 33 µm height across all readings reveals a systematic error invisible within its own dataset but glaring when compared to Reader A. This highlights the importance of cross-checking instruments against external references rather than relying solely on internal consistency. Pause here to ask students: “Why might a systematic error go unnoticed within a single dataset?” Emphasize that arithmetic correctness doesn’t guarantee methodological soundness.
+
+[FACILITATION]: Use this moment to contrast internal validation with peer validation.""",
+    """G6’s mean of 187.50 FAILs by ±25, while other gauges (G1–G5, G7, G8) cluster near zero and PASS. This stark contrast underscores the need to isolate outliers for deeper analysis rather than averaging them into compliance. Pause to ask: “What risks arise from averaging a single failure across multiple readings?” Note the false precision of six decimal places versus the 1 µε resolution on the install record.
+
+[FACILITATION]: Highlight the danger of conflating statistical noise with engineering truth.""",
+    """G6’s tight internal spread masks its 7×-over limit mean, illustrating how a dataset can appear “correct” internally while failing externally. This reinforces the principle that consistency within a group doesn’t equate to correctness in context. Pause to ask: “How might a team overlook a critical failure if they only check internal metrics?”
+
+[FACILITATION]: Encourage students to question assumptions about data integrity beyond surface-level checks.""",
+    """The PASS result arose from averaging one failure across eight gauges, diluting the error to 23.06 < 25. This false compliance highlights the perils of statistical sleight-of-hand versus engineering rigor. Pause to ask: “Why is dividing a single failure by eight ethically problematic?” Note the discrepancy between six-decimal precision and the 1 µε resolution on the install record.
+
+[FACILITATION]: Stress that arithmetic alone cannot validate engineering decisions.""",
+    """Wes Tanaka’s margin note says that he watched Northline re-glue G6 and did not see it re-zeroed. That is Wes’s procedural observation; it is not an estimate of anyone’s timeline.
+
+Keep the separate student hour-budget menu distinct: students may spend 1 hour reading the installation record, 2 hours recomputing the eight means, or 0 hours accepting the result. Do not attribute those choices to Wes. Pause to ask: “Which evidence would each student choice uncover, and what would remain unchecked?”
+
+[FACILITATION]: Use this to discuss the difference between field evidence and a student’s verification-budget decision.""",
+    """The mention of a February file with students’ names foreshadows a later workflow where past data will be reused. This emphasizes the need for traceable, well-documented records to avoid future errors. Pause to ask: “Why might a February file be relevant to a later task?”
+
+[FACILITATION]: Encourage students to think about how their current work might impact future projects.""",
+    """HW1 requires one page plus a decision log and hour menu, with HW1B’s lift station being a later transfer case. Clarify that this week’s focus is on immediate tasks, not future ones. Pause to ask: “What’s the difference between this week’s HW1 and the lift station in HW1B?”
+
+[FACILITATION]: Reinforce deadlines and scope to prevent confusion.""",
+    """Hours are never points; nothing was hidden. Students are expected to know what they didn’t check, emphasizing accountability over blame. Pause to ask: “Why is it important to own what you didn’t verify?”
+
+[FACILITATION]: Use this to foster a culture of proactive responsibility.""",
+    """Students must complete HW1 and start the decision log for week 1. On Tuesday, the FOREMAN will summarize county specs and LLM lookup risks. Pause to ask: “What should students prioritize before Tuesday’s session?”
+
+[FACILITATION]: Remind them to align their preparation with the instructor’s agenda.""",
+]
+
+
+def add_speaker_notes(prs, notes):
+    """Populate each slide's PowerPoint notes pane."""
+    if len(prs.slides) != len(notes):
+        raise ValueError(
+            f"M02 notes count ({len(notes)}) does not match slide count ({len(prs.slides)})"
+        )
+    for slide, note in zip(prs.slides, notes):
+        slide.notes_slide.notes_text_frame.text = note.strip()
+
+
 prs = deck()
 
 title_slide(prs, "Meeting 02  ·  Unit 1: Hired",
@@ -275,7 +355,10 @@ reveal_slides = [10] + list(range(13, 21))
 if set(student_slides) & set(reveal_slides) or set(student_slides + reveal_slides) != set(range(1, 21)):
     raise ValueError("M02 student and reveal decks must partition all 20 source slides")
 
-save(slides_from(prs, student_slides),
-     os.path.join(ROOT, "build", "M02", "M02-student.pptx"))
-save(slides_from(prs, reveal_slides),
-     os.path.join(ROOT, "build", "M02", "M02-instructor-reveal.pptx"))
+student_prs = slides_from(prs, student_slides)
+add_speaker_notes(student_prs, STUDENT_NOTES)
+save(student_prs, os.path.join(ROOT, "build", "M02", "M02-student.pptx"))
+
+reveal_prs = slides_from(prs, reveal_slides)
+add_speaker_notes(reveal_prs, REVEAL_NOTES)
+save(reveal_prs, os.path.join(ROOT, "build", "M02", "M02-instructor-reveal.pptx"))
