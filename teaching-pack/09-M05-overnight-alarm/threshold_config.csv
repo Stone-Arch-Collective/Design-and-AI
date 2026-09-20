@@ -1,0 +1,3 @@
+rule_id,input,window,condition,action,human_checkpoint
+WARN-250,corrected_strain_microstrain,10-minute mean by gauge,any gauge > 250 µε,open internal review flag; repeat next poll; inspect neighbours,required before external communication
+CLOSE-DRAFT,WARN-250 result,two consecutive polls,warning persists AND adjacent gauge corroborates OR independent evidence is validated,prepare closure recommendation draft,licensed engineer approval required

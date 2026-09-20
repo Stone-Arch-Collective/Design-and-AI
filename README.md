@@ -44,7 +44,7 @@ referenced or dramatised.**
 | Folder | Contents |
 |---|---|
 | [`simulation/`](simulation) | The semester outline, the meeting-by-meeting plan for Units 1–2, and the brand and story canon |
-| [`teaching-pack/`](teaching-pack) | **Built, ready to teach.** Meetings M01–M04: slides, handouts, answer keys, data files, the student brand kit |
+| [`teaching-pack/`](teaching-pack) | **Built, ready to teach.** Meetings M01–M05: slides, handouts, answer keys, data files, and the student brand kit |
 | [`learning-graph-v2/`](learning-graph-v2) | The 163-concept graph fitted to Spring 2027 — schedule, definitions, dependency edges, viewer |
 | [`learning-graph-v1/`](learning-graph-v1) | The first 230-concept graph built straight from the syllabus, kept for the record |
 | [`guides/`](guides) | Four self-check student guides: probability and sampling, code reading, engineering reference cards, optional concepts |
@@ -63,12 +63,15 @@ teaching-pack/
   04-M03-hallucination/   How an LLM generates, and the section that does not exist
   05-CHARTS/              every chart as a PNG
   06-BRIDGE/              PowerPoint-ready bridge illustration and general elevation
+  07-HW-CASE-B-LIFT-STATION/ M02 transfer homework
   08-M04-one-number/      Descriptive statistics: center, spread, CV, sample scope
+  09-M05-overnight-alarm/ Agentic AI, live sensor stream, threshold alarm, and audit
 ```
 
-Start with `00-INSTRUCTOR/INSTRUCTOR-GUIDE-M01-M04.docx`. It carries the
-minute-by-minute run of show for all four meetings, what to print, what students will
-say and how to answer, and what comes back later in the semester.
+Start with `00-INSTRUCTOR/run-of-day/index.html`. The M01–M05 podium guides link to
+the meeting decks, handouts, answer keys, and data. M05 adds a spoiler-safe student
+deck, gated reveal, eight-hour investigation menu, machine run log, alarm report,
+threshold configuration, two weeks of sensor data, and instructor key.
 
 ---
 
@@ -80,6 +83,7 @@ say and how to answer, and what comes back later in the semester.
 | **M02** Thu Feb 4 | Measurement and uncertainty (6) | Averages a failing gauge away; reports six decimals from a 1 µε instrument. |
 | **M03** Tue Feb 9 | LLMs and probability (7) | Fabricates a specification section; turns a *shall* into a *should*. |
 | **M04** Thu Feb 11 | Descriptive statistics (6) | Reports the correct mean, omits spread and low results, and concludes adequacy. |
+| **M05** Tue Feb 16 | Agentic AI and sensor streams (6) | Turns one warning into a closure recommendation without required checks. |
 
 Every planted error is findable from material the students already hold. None of them
 is a software bug — FOREMAN's arithmetic is correct every time. The error is always in
@@ -112,13 +116,14 @@ from; the source is how you change them.
 cd tools/teaching-pack
 pip install -r requirements.txt
 ./build.sh
+# Add the standalone M05 pack (and rebuild M01–M03 prerequisites):
+./build_m05.sh
 ```
 
-The build is deterministic — same inputs, same files, every run — and takes about a
-minute. It regenerates the data, the logos, the charts, all M01–M04 handouts, six
-slide files (including separate M02 and M04 student/reveal decks), the brand kit and the
-instructor guide, then assembles them into
-`teaching-pack/`.
+The builds are deterministic — same inputs, same files, every run. `build.sh`
+regenerates M01–M04. `build_m05.sh` runs that prerequisite build, then generates the
+M05 feed, log, threshold rules, four student handouts, instructor key, separate student
+and reveal decks, complete file index, and assembled M05 folder.
 
 Slide builds print `no layout warnings` when every text box fits its content; anything
 that would overflow is reported with the height it needs.
@@ -131,7 +136,9 @@ that would overflow is reported with the height it needs.
 | `slidelib.py` | Slide layouts, plus the text-height estimator that catches overflow before rendering |
 | `make_charts.py` | Charts, on a brand-derived palette validated for colour-vision separation |
 | `make_m0*.py` | Handouts and answer keys per meeting |
-| `make_deck_m0*.py` | The six slide files; M02 and M04 build separate student and instructor reveal decks |
+| `make_deck_m0*.py` | The eight slide files; M02, M04, and M05 build separate student and instructor reveal decks |
+| `make_data_m05.py` | Two-week live feed, duplicate-timestamp callback, threshold config, and overnight run log |
+| `build_m05.sh` | M01–M04 prerequisite build plus M05 generation and assembly |
 | `make_kit.py` | The student brand kit and its templates |
 | `make_guide.py` | Instructor guide and file index |
 
