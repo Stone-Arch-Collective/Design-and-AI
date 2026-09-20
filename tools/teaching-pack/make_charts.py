@@ -291,9 +291,10 @@ ax.annotate(f"Mean  {c4['mean_psi']:,.0f} psi", xy=(c4["mean_psi"], 0.19),
 ax.annotate(f"Project comparison  {c4['comparison_psi']:,} psi",
             xy=(c4["comparison_psi"], -0.24), ha="center",
             fontsize=11, color=CRIT, fontweight="bold")
-for ident, value, yy in zip(core_ids, core_vals, y):
+for i, (ident, value, yy) in enumerate(zip(core_ids, core_vals, y)):
     if value < c4["comparison_psi"]:
-        ax.annotate(ident, xy=(value, yy + 0.035), ha="center",
+        ax.annotate(ident, xy=(value, yy), xytext=(0, 8 + 12 * (i % 2)),
+                    textcoords="offset points", ha="center",
                     fontsize=8.5, color=CRIT)
 ax.set_yticks([])
 ax.set_ylim(-0.34, 0.34)

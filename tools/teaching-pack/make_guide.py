@@ -254,8 +254,9 @@ callout(d, "Project the student deck first",
 
 table(d, [
     ["Min", "What happens", "Deck · slides"],
-    ["0–8", "Diane asks for one number. FOREMAN reports the correct mean and calls the deck "
-             "adequate at 94% confidence. Take a vote without endorsing it.", "Student · 1–3"],
+    ["0–8", "Collect M03 HW2. Diane asks for one number. FOREMAN reports the correct mean and "
+             "calls the deck adequate at 94% confidence. Take a vote without endorsing it.",
+     "Student · 1–3"],
     ["8–23", "Data sets, variables, mean, variance and sample SD. Keep all worked arithmetic "
               "off the core file.", "Student · 4–8"],
     ["23–33", "CV and sample versus population. The complete CSV is still only a sample of the "

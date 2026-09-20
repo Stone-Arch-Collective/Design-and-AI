@@ -53,7 +53,7 @@ speaker_card(s, 0.72, y + 0.15, 11.87, 2.05, "DIANE HALVORSEN, PE",
 card(s, 0.72, y + 2.5, 11.87, 1.6, "THE ASK",
      ["One number for center. One number for spread. A count below the 4,500 psi project "
       "comparison. Then three sentences she can repeat."],
-     tint=CREAM, edge=GOLD, label_color=REBAR, body_size=18)
+     tint=CREAM, edge=GOLD, label_color=REBAR, body_size=17)
 text(s, 0.72, y + 4.35, 11.9, 0.55,
      "Six project hours. You choose which parts of the answer to verify.",
      size=17, color=GREY, italic=True)
@@ -69,11 +69,11 @@ speaker_card(s, 0.72, y + 0.15, 11.87, 2.25,
              machine=True, body_size=19)
 card(s, 0.72, y + 2.75, 11.87, 1.5, "YOUR QUESTION",
      ["Is that a good summary of the file? Do not answer from the paragraph. Answer from the "
-      "24 rows."], tint=PAPER, edge=CONCRETE, label_color=GIRDER, body_size=19)
+      "24 rows."], tint=PAPER, edge=CONCRETE, label_color=GIRDER, body_size=17)
 
 # 4
-statement(prs, "A mean can be correct\nand still be a bad summary.",
-          "Today the arithmetic is not the hunt. The information thrown away is.")
+statement(prs, "One number can be correct\nand still be a bad summary.",
+          "Today the hunt is to identify what the compression throws away.")
 
 # 5
 section(prs, "1", "Build the summaries",
@@ -89,9 +89,9 @@ bullet_list(s, 0.95, y + 0.3, 11.4, 3.5, [
     ("Categorical variable  ", "a label such as side or drill zone; it groups observations."),
     ("Dataset  ", "the observations and variables together, plus enough context to interpret them."),
 ], size=18, dot=GIRDER_LT)
-card(s, 0.72, y + 4.05, 11.87, 1.15, "BEFORE ANY FORMULA",
+card(s, 0.72, y + 3.95, 11.87, 1.35, "BEFORE ANY FORMULA",
      ["Say what one row is and which variable you are summarizing."],
-     tint=CREAM, edge=GOLD, label_color=REBAR, body_size=18)
+     tint=CREAM, edge=GOLD, label_color=REBAR, body_size=14)
 
 # 7
 s, y = content(prs, "Mean — where the values balance",
@@ -104,9 +104,9 @@ bullet_list(s, 0.95, y + 1.95, 11.4, 2.0, [
     ("It does not answer: ", "how far apart are they, how many are low, or where the sample came from."),
     ("Units stay the same: ", "psi in, psi out."),
 ], size=19, dot=STICKER)
-card(s, 0.72, y + 4.25, 11.87, 1.0, "SPREADSHEET",
+card(s, 0.72, y + 4.13, 11.87, 1.30, "SPREADSHEET",
      ["=AVERAGE(range)"], tint=PAPER, edge=CONCRETE, label_color=GIRDER,
-     body_size=20, mono=True)
+     body_size=14, mono=True)
 
 # 8
 s, y = content(prs, "Variance and standard deviation",
@@ -140,9 +140,9 @@ bullet_list(s, 0.95, y + 1.95, 11.4, 2.2, [
     ("Coefficient of variation  ", "removes the units. It says how large the spread is relative to the mean."),
     ("Read it as a comparison, not a verdict. ", "CV has no universal pass/fail boundary."),
 ], size=18, dot=STICKER)
-card(s, 0.72, y + 4.35, 11.87, 0.95, "SPREADSHEET",
+card(s, 0.72, y + 4.13, 11.87, 1.30, "SPREADSHEET",
      ["=STDEV.S(range)/AVERAGE(range)  ·  format as percent"],
-     tint=PAPER, edge=CONCRETE, label_color=GIRDER, body_size=18, mono=True)
+     tint=PAPER, edge=CONCRETE, label_color=GIRDER, body_size=14, mono=True)
 
 # 10
 s, y = content(prs, "Sample or population?",
@@ -153,7 +153,7 @@ speaker_card(s, 0.72, y + 0.2, 5.85, 3.25, "SAMPLE  ·  USE .S",
               "Use STDEV.S and VAR.S.",
               "",
               "The n − 1 denominator accounts for estimating spread from a sample."],
-             body_size=17)
+             body_size=15)
 card(s, 6.72, y + 0.2, 5.87, 3.25, "POPULATION  ·  USE .P",
      ["Use only when the file contains every member of the population you intend to describe.",
       "",
@@ -161,7 +161,7 @@ card(s, 6.72, y + 0.2, 5.87, 3.25, "POPULATION  ·  USE .P",
      tint=PAPER, edge=CONCRETE, label_color=GIRDER, body_size=17)
 card(s, 0.72, y + 3.75, 11.87, 1.35, "TODAY",
      ["Twenty-four tested cores are the full file, but they are not the whole deck."],
-     tint=CREAM, edge=GOLD, label_color=REBAR, body_size=19)
+     tint=CREAM, edge=GOLD, label_color=REBAR, body_size=15)
 
 # 11
 activity(prs, "Hunt the story FOREMAN compressed", 22, [
@@ -221,10 +221,10 @@ bullet_list(s, 0.95, y + 0.35, 11.4, 3.1, [
     ("The low tail remains real after averaging. ", "A center summarizes observations; it does not replace them."),
     ("This is descriptive uncertainty. ", "Inference about the whole deck requires attention to how and where the sample was taken."),
 ], size=18, dot=GIRDER_LT)
-card(s, 0.72, y + 3.85, 11.87, 1.35, "DO NOT OVERCLAIM",
+card(s, 0.72, y + 3.78, 11.87, 1.55, "DO NOT OVERCLAIM",
      ["A core below 4,500 psi is not, by itself, a complete code finding. A mean above 4,500 psi "
       "is not, by itself, an adequacy determination."],
-     tint=PEACH, edge=STICKER, label_color=STICKER, body_size=17)
+     tint=PEACH, edge=STICKER, label_color=STICKER, body_size=15)
 
 # 17
 s, y = content(prs, "Twenty-four cores are not the deck",
@@ -232,7 +232,7 @@ s, y = content(prs, "Twenty-four cores are not the deck",
 card(s, 0.72, y + 0.2, 11.87, 1.55, "WHAT THE FILE SAYS",
      ["Every row lists drill_zone = shoulder. Access was easy there. No core in this file came "
       "from a traffic lane, joint, tower interface, or underside."],
-     tint=CREAM, edge=GOLD, label_color=REBAR, body_size=18)
+     tint=CREAM, edge=GOLD, label_color=REBAR, body_size=15)
 bullet_list(s, 0.95, y + 2.15, 11.4, 2.25, [
     ("Population  ", "every location or volume of deck concrete about which the claim is intended."),
     ("Sample  ", "the 24 tested cores."),

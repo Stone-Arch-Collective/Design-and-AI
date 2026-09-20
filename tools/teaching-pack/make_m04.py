@@ -196,7 +196,8 @@ para(d, "Use STDEV.S and VAR.S because the 24 cores are a sample from a larger p
 h2(d, "Timing, 75 minutes")
 table(d, [
     ["Min", "What happens"],
-    ["0–8", "Diane's one-number ask and FOREMAN's 94%-confident adequacy sentence. Take a vote."],
+    ["0–8", "Collect M03 HW2. Then Diane's one-number ask and FOREMAN's 94%-confident "
+            "adequacy sentence. Take a vote."],
     ["8–23", "Data sets, variables, mean, variance, SD, and why units change at variance."],
     ["23–33", "CV and sample versus population. Set up formulas; give no computed answers."],
     ["33–55", "Spreadsheet hunt in pairs. Center, spread, low count, and sampling scope."],
