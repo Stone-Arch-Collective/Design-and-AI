@@ -153,7 +153,7 @@ student_notes = [
     "LAB — ACTION: Mark photos where Otter Bend's bridge type, machinery, freeze–thaw exposure, or road-salt context differs from training. Require an H7-01 citation.",
     "LAB — OBSERVATION: Confidence remains high across the domain shift. Ask: “Why might the model fail to express uncertainty on an out-of-domain input?” Do not give the answer before students write.",
     "NOTE — Students write Note version 2 only: claim, check, result. SAY: “Professional judgment sets the evidence boundary when the model record does not.”",
-    "CLOSE — Collect Note version 2 only. Light hook: “The conditions around a bridge do not stay fixed through the year.” Do not name temperature as damage, thermal expansion, or the M08 mechanism.",
+    "CLOSE — Collect Note version 2 only. Light hook: “The conditions around a bridge do not stay fixed through the year.” Do not explain the M08 mechanism.",
 ]
 add_notes(prs, student_notes)
 save(prs, os.path.join(OUT, "M07-student.pptx"))
