@@ -112,7 +112,7 @@ for sheet in wb.worksheets:
     sheet.sheet_properties.pageSetUpPr.fitToPage = True
     sheet.page_setup.fitToWidth = 1
 
-handoff["A10"].font = Font(bold=True, color=orange)
+handoff["A9"].font = Font(bold=True, color=orange)
 wb.save(os.path.join(OUT, "M06-gauge-audit-and-handoff.xlsx"))
 
 print(f"  wrote M06/traffic_counts.csv ({len(traffic)} rows)")

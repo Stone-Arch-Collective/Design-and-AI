@@ -32,6 +32,7 @@ h2(d, "Method record", color=REBAR)
 table(d, [
     ["Step", "FOREMAN record"],
     ["Population", "Daily maximum corrected strain, February 2–16"],
+    ["Reference fit", "February 2–15 daily peaks; February 16 candidate held out"],
     ["Model", "Normal distribution"],
     ["Outlier rule", "Remove values more than five standard deviations from normal"],
     ["Independent event record", "Not queried"],
@@ -152,6 +153,7 @@ table(d, [
     ["Question", "Key"],
     ["Daily peaks", "15 values; median 110.7 µε; range 104.0–286.1 µε."],
     ["Shape", "Strong right tail. One extreme event; a normal model is not justified by this small, selected set."],
+    ["FOREMAN arithmetic", "Against the Feb 2–15 reference mean and sample SD, 286.1 µε is 39.3 SD high; the arithmetic does not validate the normal model or sensor-fault diagnosis."],
     ["Duplicate block", "Feb 12, 14:00–15:00. It does not create or alter the Feb 16 03:00 event."],
     ["Traffic match", "03:00 CST: 5-axle heavy vehicle, estimated 79,400 lb, quality flag OK."],
     ["Gauge pattern", "All eight corrected gauges rise at 03:00; G6 is highest at 286.1 µε."],
