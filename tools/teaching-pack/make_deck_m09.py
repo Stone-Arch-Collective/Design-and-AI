@@ -134,7 +134,7 @@ activity(prs, "Audit FOREMAN's digits", 10, [
     "Reproduce the mean and subtraction; record the source resolution.",
     "Compute the test minimum, maximum, and sample standard deviation.",
     "Mark the first place where displayed precision outruns the evidence.",
-], note="Do not replace one unsupported exact number with a formal interval; that method begins in M10.")
+], note="Do not replace one unsupported exact number with a method the class has not learned yet.")
 
 activity(prs, "Draw and compare random samples", 12, [
     "Open core_population_200_simulated.csv and your assigned H9-04 draw.",
@@ -165,7 +165,7 @@ closer(prs, [
     ("HAND IN", "H9-02 precision audit, H9-05 frame audit, and H9-06 Note v2."),
     ("RECORD", "Project-hour choice and anything accepted unverified."),
     ("REPORT", "Preserve useful scale; remove digits the evidence cannot defend."),
-    ("BOUNDARY", "No formal interval or significance test is required today."),
+    ("BOUNDARY", "Use only today's precision, spread, and sampling evidence."),
 ], title="Before the gated reveal")
 
 student_notes = [
