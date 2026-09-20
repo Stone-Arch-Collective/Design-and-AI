@@ -56,6 +56,7 @@
   .phase:first-child{border-left:1px solid var(--line)}
   .phase b{display:block;margin:7px 0 8px;color:var(--blue);font:800 20px/1 "Arial Narrow",Arial,sans-serif}
   .phase p{margin:0;font-size:14px}
+  .table-scroll{max-width:100%;overflow-x:auto}
   .assessment{width:100%;border-collapse:collapse;background:#fff;font-size:14px}
   .assessment th,.assessment td{padding:13px 14px;border:1px solid var(--line);text-align:left;vertical-align:top}
   .assessment th{background:var(--blue);color:#fff;font:800 13px/1.2 "Arial Narrow",Arial,sans-serif;letter-spacing:.05em;text-transform:uppercase}
@@ -81,7 +82,7 @@
     .status,.asks{grid-template-columns:1fr}.status>div+div{border-left:0;border-top:1px solid var(--line)}
     .arc{grid-template-columns:1fr}.phase{min-height:0;border-left:1px solid var(--line);border-top:0}.phase:first-child{border-top:1px solid var(--line)}
     header,main,nav,footer{padding-left:24px;padding-right:24px}.argument{grid-template-columns:1fr;gap:7px}
-    .assessment{font-size:13px}.sources ul{columns:1}
+    .assessment{min-width:760px;font-size:13px}.sources ul{columns:1}
   }
   @media print{
     @page{margin:.55in}
@@ -91,7 +92,7 @@
     .grid{grid-template-columns:repeat(3,1fr)}.card{padding:14px}.card h3{font-size:17px}
     .status,.card,.outcome,.argument,.phase,.note,details,.ask{break-inside:avoid}
     .arc{grid-template-columns:repeat(5,1fr)}.phase{min-height:145px;padding:11px}
-    .assessment th,.assessment td{padding:8px}.sources{margin-top:25px}
+    .assessment{min-width:0}.assessment th,.assessment td{padding:8px}.sources{margin-top:25px}
     footer{padding:12px 34px}
   }
 </style>
@@ -212,7 +213,7 @@
 
   <section id="assessment">
     <div class="rule"><h2>What assessment looks like</h2></div>
-    <table class="assessment">
+    <div class="table-scroll"><table class="assessment">
       <thead><tr><th>Component</th><th>Syllabus weight / timing</th><th>What students do in this design</th><th>What is graded</th></tr></thead>
       <tbody>
         <tr>
@@ -252,7 +253,7 @@
           <td>Engagement with the engineering process, not role-play performance.</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
     <div class="note">
       <p><strong>The recurring evidence artifact is the decision log.</strong> It records the item, action, fictional project hours, what was checked, and what was accepted unverified. The “hours” force prioritization but are never grade points.</p>
