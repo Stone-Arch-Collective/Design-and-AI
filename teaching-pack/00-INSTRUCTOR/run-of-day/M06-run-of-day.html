@@ -28,42 +28,42 @@ nav{padding:14px 56px;background:#fff;border-bottom:1px solid var(--line);displa
 <section id="run"><div class="rule"><h2>Run of day · 75 minutes</h2></div><div class="timeline">
 <article class="block"><div class="time">00–08 · The reversal</div><h3>Do not let confidence settle a contradiction.</h3>
   <div class="cue"><b>SLIDE</b><p><strong>Student 1–3</strong> — title, FOREMAN’s final disposition, three-part hunt.</p></div>
-  <div class="cue say"><b>SAY</b><p>“Tuesday, FOREMAN said close it. Today it says delete it. Both answers sound decisive. We are grading the path from evidence to disposition, not which sentence sounds safer.”</p></div>
+  <div class="cue say"><b>SAY</b><p>“While the office slept, FOREMAN completed its overnight batch on feed.csv. Diane reviewed the 3 a.m. alarm and asked Wes for a disposition. Tuesday FOREMAN said close it; today it says delete it. We are auditing the path from evidence to action, not choosing the more decisive sentence.”</p></div>
   <div class="cue"><b>HAND OUT</b><p>H6-01, H6-02, and each student’s workbook copy.</p></div>
   <div class="cue"><b>WATCH FOR</b><p>Do not ask whether a truck crossed. Students do not receive the independent file until minute 48.</p></div>
 </article>
 <article class="block"><div class="time">08–20 · Distribution before diagnosis</div><h3>Unit, shape, model, outlier.</h3>
   <div class="cue"><b>SLIDE</b><p><strong>Student 4–7</strong> — observational unit, normal versus skewed, outlier boundary.</p></div>
-  <div class="cue say"><b>SAY</b><p>“An outlier is unusual relative to a set. Sensor fault is a cause. Those are different claims, and a histogram can support only the first.”</p></div>
+  <div class="cue say"><b>SAY</b><p>“FOREMAN’s orange status is a conclusion, not a cause. Normality is a model choice, not a default. An outlier is unusual relative to a set; sensor drift or structural danger is a diagnosis. A histogram can support the first claim, not the second.”</p></div>
   <div class="cue"><b>DO</b><p>Contrast gauge rows, timestamp maxima, and daily peaks. Ask which population FOREMAN claimed to model.</p></div>
   <div class="cue"><b>WATCH FOR</b><p>Students may call one high bar “skew” without describing the cluster and tail. Require centre, spread, shape, and unusual values.</p></div>
 </article>
 <article class="block"><div class="time">20–35 · Build the histogram</div><h3>Describe first; do not delete.</h3>
   <div class="cue"><b>SLIDE</b><p><strong>Student 8–10</strong> — pipeline claim, reasoning arrows, histogram activity.</p></div>
-  <div class="cue say"><b>SAY</b><p>“Keep all 15 daily peaks while you plot. If a row looks inconvenient, that is a reason to investigate it—not permission to remove it.”</p></div>
+  <div class="cue say"><b>SAY</b><p>“Plot all 15 daily peaks and highlight the alarm point. Describe centre, spread, shape, and tail before choosing normal or skewed. If a row looks inconvenient, that is a reason to investigate it—not permission to remove it.”</p></div>
   <div class="cue"><b>DO</b><p>Students chart the Daily peaks sheet and complete the first half of H6-02. Circulate with questions only.</p></div>
   <div class="cue"><b>WATCH FOR</b><p>Do not confirm right skew or quote the median/range yet. Ask what normality evidence they actually have.</p></div>
 </article>
 <article class="block"><div class="time">35–48 · Test the artifact claim</div><h3>A real duplicate is not a universal explanation.</h3>
   <div class="cue"><b>SLIDE</b><p><strong>Student 11</strong> — trace the 03:00 event through the M05 chain.</p></div>
-  <div class="cue say"><b>SAY</b><p>“You found a duplicated timestamp block in HW3. Show whether that specific defect touches February 16 at 03:00 or changes its daily peak.”</p></div>
+  <div class="cue say"><b>SAY</b><p>“Possible explanations include a real external load, sensor drift, or a pipeline transformation. You found a duplicated block in HW3; show whether that specific defect touches February 16 at 03:00 or changes its daily peak.”</p></div>
   <div class="cue"><b>DO</b><p>Compare all eight 03:00 gauges, the duplicate-block date, the corrected field, and the one-sample window.</p></div>
   <div class="cue"><b>WATCH FOR</b><p>FOREMAN correctly removed the duplicate before daily maxima. Its reasoning error is the unsupported normal model and the leap from unusual to faulty.</p></div>
 </article>
 <article class="block"><div class="time">48–58 · Open the independent record</div><h3>Match time; preserve the boundary.</h3>
   <div class="cue"><b>SLIDE</b><p><strong>Student 12</strong> — traffic-file hunt.</p></div>
-  <div class="cue say"><b>SAY</b><p>“This is a record from a different system. Align the timestamp. A match can corroborate an event; it cannot by itself certify a load estimate, prove causation, or make the bridge safe.”</p></div>
+  <div class="cue say"><b>SAY</b><p>“Wes needs an evidence-bounded answer, so open the record from the independent system and align timestamps. A match can corroborate an event; it cannot by itself certify a load estimate, prove causation, or make the bridge safe.”</p></div>
   <div class="cue"><b>HAND OUT</b><p>traffic_counts.csv. Students finish H6-02 and write the H6-03 disposition before discussion.</p></div>
   <div class="cue"><b>WATCH FOR</b><p>Accept retain or quarantine when justified. Do not accept deletion solely because the value is extreme.</p></div>
 </article>
 <article class="block"><div class="time">58–63 · Reveal the bounded answer</div><h3>Real event; incomplete engineering disposition.</h3>
   <div class="cue"><b>SLIDE</b><p>Switch to <strong>Reveal 1–6</strong> only after collection.</p></div>
-  <div class="cue say"><b>SAY</b><p>“The selected maxima have a strong right tail. The known duplicate is on another day. Every gauge rises at 03:00, and the traffic counter records a heavy vehicle at the same time. Retain and annotate the event. That does not make Tuesday’s closure recommendation correct.”</p></div>
+  <div class="cue say"><b>SAY</b><p>“The selected maxima have a strong right tail; FOREMAN’s normal assumption was wrong. The known duplicate is on another day. Every gauge rises at 03:00, and the traffic counter records a heavy vehicle at the same time. The spike is real enough to retain and annotate—not enough to make Tuesday’s closure recommendation correct.”</p></div>
   <div class="cue"><b>DO</b><p>Separate the data disposition from the bridge action. Name the next review: validate the vehicle estimate and engineering response.</p></div>
 </article>
 <article class="block"><div class="time">63–75 · Mask off and hand the file to Wes</div><h3>Unit 1 closes with a complete record leaving the desk.</h3>
   <div class="cue"><b>SLIDE</b><p><strong>Reveal 7–8</strong>, then return to <strong>Student 13</strong>.</p></div>
-  <div class="cue say"><b>SAY</b><p>“Mask off: Diane is not your grader, hours are not points, and the story can disappear without changing the audit. Which check changed your wording? What did you leave unchecked?”</p></div>
+  <div class="cue say"><b>SAY</b><p>“Mask off: Unit 1, Hired, ends here. Diane is not your grader, hours are not points, and the story can disappear without changing the audit. Which check changed your wording? What did you leave unchecked? Record both, then hand the gauge spreadsheet to Wes.”</p></div>
   <div class="cue"><b>HAND OUT</b><p>H6-04. Students complete the workbook’s Wes handoff sheet, attach the decision-log record, and hand the spreadsheet to Wes.</p></div>
   <div class="cue"><b>DO</b><p>Make the transfer explicit: student states filename, checks completed, limitations, and unchecked items; receiver acknowledges it. Preserve each February workbook unchanged.</p></div>
   <div class="cue"><b>WATCH FOR</b><p>Do not tell students the file returns at M25. The handoff must feel ordinary, complete, and final.</p></div>

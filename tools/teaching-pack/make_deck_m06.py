@@ -112,19 +112,19 @@ closer(prs, [
 ], title="Close Unit 1")
 
 student_notes = [
-    "SAY: “Today we decide whether the alarm evidence was real, an outlier, or a pipeline artifact. At the end, this file leaves your desk.” Keep the reveal deck closed.",
-    "SAY: “FOREMAN changed from emergency to deletion. Confidence did not make either chain complete.” Hand out H6-01.",
-    "SAY: “Three hunts, three kinds of evidence. Do not let an unusual value become a sensor fault by vocabulary alone.”",
-    "SAY: “Before computing anything, name the distribution FOREMAN says it used.”",
-    "SAY: “A histogram answers a question about the unit you counted. Rows, timestamp maxima, and daily peaks are different populations.”",
-    "SAY: “Normality is not the spreadsheet default. Describe visible shape before choosing a model.”",
-    "SAY: “Outlier names a relationship to the rest of a set. It does not tell us truck, fault, or danger.”",
-    "SAY: “To call this a pipeline artifact, point to the transformation that produced it.”",
-    "SAY: “FOREMAN's chain contains arrows. Our job is to test every arrow, not just the first number.”",
-    "SAY: “Keep every row while plotting. Describe first; decide later.” Circulate without confirming the shape.",
-    "SAY: “The duplicate block is real. Test whether it is relevant to this timestamp instead of using it as a general reason to distrust the feed.”",
-    "SAY: “The independent file is now available. Match timestamps, then state the boundary of what a match proves.” Do not announce the matching row.",
-    "SAY: “Write first. Then complete the cover record and physically hand the workbook to Wes.” Collect decisions before opening the reveal.",
+    "SAY: “While the office slept, FOREMAN completed its overnight batch on feed.csv. Today we decide whether the 3 a.m. alarm was a real event, an outlier, or a pipeline artifact. At the end, this file leaves your desk.” Keep the reveal deck closed.",
+    "SAY: “Diane reviewed the overnight record and asked Wes for a disposition. FOREMAN changed from emergency closure to deletion. Confidence does not complete either reasoning chain.” Hand out H6-01.",
+    "SAY: “The orange status tells us what FOREMAN concluded, not what caused the spike. We will test the distribution, the pipeline, and an independent event record before advising Wes.”",
+    "SAY: “Before computing anything, name the distribution FOREMAN assumed. A bell curve is a model choice, not the spreadsheet default.”",
+    "SAY: “A histogram answers a question about the unit you counted. Gauge rows, timestamp maxima, and daily peaks are three different populations.”",
+    "SAY: “Normal data are roughly symmetric. Right-skewed monitoring data have a long high tail because rare loads can occur. Describe the shape you see before choosing either model.”",
+    "SAY: “Outlier means unusual relative to a distribution. It does not mean sensor drift, structural danger, or bad data until another check identifies the cause.”",
+    "SAY: “Possible explanations include a real external load, sensor drift, or a pipeline transformation. To call it an artifact, point to the operation that created or corrupted the value.”",
+    "SAY: “FOREMAN's chain contains two unsupported arrows: unusual to error, then error to delete. Test each arrow independently.”",
+    "SAY: “Plot all 15 daily peaks and highlight the alarm point. Keep every row while plotting; describe centre, spread, shape, and tail before deciding.” Circulate without confirming the shape.",
+    "SAY: “You already found a duplicated block in feed.csv. Show whether that specific defect touches the 3 a.m. timestamp or changes its daily peak.”",
+    "SAY: “Now open the external record and align timestamps. A match can corroborate an event, but it cannot by itself diagnose the bridge or prove the load estimate.” Do not announce the matching row.",
+    "SAY: “Write your decision before the reveal. Then record what you checked, what remains unverified, and physically hand the gauge workbook to Wes. That complete handoff closes Unit 1.”",
 ]
 add_notes(prs, student_notes)
 save(prs, os.path.join(OUT, "M06-student.pptx"))
