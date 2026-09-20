@@ -161,7 +161,7 @@ facts["m04"] = {
 with open(os.path.join(DATA, "cores_2027.csv"), "w", newline="") as f:
     w = csv.DictWriter(f, fieldnames=[
         "core_id", "station_ft", "side", "drill_zone", "strength_psi"
-    ])
+    ], lineterminator="\n")
     w.writeheader()
     w.writerows(core_rows)
 
