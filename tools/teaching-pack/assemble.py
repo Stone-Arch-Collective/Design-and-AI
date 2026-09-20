@@ -4,13 +4,15 @@ B = os.path.join(ROOT, "build")
 OUT = os.path.abspath(os.path.join(ROOT, "..", "..", "teaching-pack"))
 if os.path.exists(OUT): shutil.rmtree(OUT)
 plan = {
- "00-INSTRUCTOR": [("build/00-INSTRUCTOR/*.docx", None)],
+ "00-INSTRUCTOR": [("build/00-INSTRUCTOR/*.docx", None),
+                   ("build/00-INSTRUCTOR/*.txt", None)],
  # The brand kit ships as the zip students receive; no unzipped copy in the repo.
  "01-BRAND-KIT":  [("build/ACMEJOB-brand-kit.zip", None)],
  "02-M01-first-day": [("build/M01/*.docx", None), ("build/M01/*.pptx", None)],
  "03-M02-measurement": [("build/M02/*.docx", None), ("build/M02/*.pptx", None), ("build/M02/*.csv", None)],
  "04-M03-hallucination": [("build/M03/*.docx", None), ("build/M03/*.pptx", None)],
  "05-CHARTS": [("build/charts/*.png", None)],
+ "06-BRIDGE": [("bridge/*", None)],
 }
 n=0
 for folder, items in plan.items():

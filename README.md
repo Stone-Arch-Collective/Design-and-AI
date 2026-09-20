@@ -61,6 +61,7 @@ teaching-pack/
   03-M02-measurement/     Measurement, uncertainty, and the mis-zeroed gauge
   04-M03-hallucination/   How an LLM generates, and the section that does not exist
   05-CHARTS/              every chart as a PNG
+  06-BRIDGE/              PowerPoint-ready bridge illustration and general elevation
 ```
 
 Start with `00-INSTRUCTOR/INSTRUCTOR-GUIDE-M01-M03.docx`. It carries the

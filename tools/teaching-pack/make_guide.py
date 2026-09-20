@@ -271,13 +271,33 @@ callout(d, "Source note",
 
 save(d, os.path.join(OUT, "INSTRUCTOR-GUIDE-M01-M03.docx"))
 
+# ------------------------------------------------------ bridge visuals note --
+open(os.path.join(OUT, "BRIDGE-VISUALS.txt"), "w").write(
+"""OTTER BEND LIFT BRIDGE — SLIDE VISUALS
+========================================
+
+Two PowerPoint-ready assets are in ../06-BRIDGE/:
+
+  otter-bend-lift-bridge.jpg
+    Flat illustration for title, section, or context slides.
+
+  otter-bend-general-elevation.png
+    Dimensioned general elevation drawing 27-114-S01. Keep the red
+    "SCHEMATIC — DIMENSIONS NOT VERIFIED BY A LICENSED ENGINEER" disclaimer
+    fully visible and legible wherever this drawing is used.
+
+The location map for Kinnick County / County Road 9 is still pending. No map is
+included in this pack.
+""")
+
 # ------------------------------------------------------------- file index --
 d = course_doc("M01 – M03", "What is in this pack", kind="FILE INDEX")
-para(d, "Twenty-eight files. Folders are in teaching order.", size=9.5, color=GREY, after=10)
+para(d, "Folders are in teaching order.", size=9.5, color=GREY, after=10)
 for folder, rows in [
     ("00-INSTRUCTOR", [
         ("INSTRUCTOR-GUIDE-M01-M03.docx", "Run of show, prep, continuity, review checklist"),
-        ("FILE-INDEX.docx", "This page")]),
+        ("FILE-INDEX.docx", "This page"),
+        ("BRIDGE-VISUALS.txt", "Slide asset note; location map status")]),
     ("01-BRAND-KIT", [
         ("ACMEJOB-brand-kit.zip", "Hand this to students. Fonts, logos, templates, brand guide"),
         ("(unzipped copy)", "Same contents, for you to look through")]),
@@ -309,6 +329,11 @@ for folder, rows in [
         ("H3-05-HW2-spec-summary-check.docx", "HW2"),
         ("KEY-M03-answer-key.docx", "Claim-by-claim verdicts, teaching notes")]),
     ("05-CHARTS", [("*.png", "Every chart used in the decks, if you want them elsewhere")]),
+    ("06-BRIDGE", [
+        ("otter-bend-lift-bridge.jpg", "Flat illustration, ready for PowerPoint"),
+        ("otter-bend-general-elevation.png",
+         "Dimensioned general elevation; keep the disclaimer visible"),
+        ("README.txt", "PowerPoint placement and disclaimer instructions")]),
 ]:
     h2(d, folder)
     table(d, [["File", "What it is"]] + [[a, b] for a, b in rows],
