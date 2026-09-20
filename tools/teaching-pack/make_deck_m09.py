@@ -222,7 +222,7 @@ speaker_card(s, .72, y + .2, 11.87, 2.7, "MODEL RESPONSE · NOT REQUIRED WORDING
     "The tests show substantial scatter, and the estimate does not quantify component transfer, service loading, environment, or inspection uncertainty."
 ], body_size=17)
 card(s, .72, y + 3.25, 11.87, 1.35, "NOT A FORMAL INTERVAL", [
-    "M09 describes visible spread and reporting scale. Standard error and confidence intervals begin in M10."
+    "M09 describes visible spread and reporting scale; the observed test span is descriptive only."
 ], tint=CREAM, edge=GOLD, body_size=15)
 
 s, y = content(rev, "Random samples produce different means")
