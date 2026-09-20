@@ -10,6 +10,8 @@ plan = {
  "02-M01-first-day": [("build/M01/*.docx", None), ("build/M01/*.pptx", None)],
  "03-M02-measurement": [("build/M02/*.docx", None), ("build/M02/*.pptx", None), ("build/M02/*.csv", None)],
  "04-M03-hallucination": [("build/M03/*.docx", None), ("build/M03/*.pptx", None)],
+ "08-M04-one-number": [("build/M04/*.docx", None), ("build/M04/*.pptx", None),
+                        ("build/M04/*.csv", None)],
  "05-CHARTS": [("build/charts/*.png", None)],
  "06-BRIDGE": [("bridge/*", None)],
 }

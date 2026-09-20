@@ -1,4 +1,4 @@
-"""Generate the Otter Bend project data used by M01-M03, and the numbers the
+"""Generate the Otter Bend project data used by M01-M04, and the numbers the
 handouts and answer keys quote. Deterministic: same seed, same files, every run.
 
 Physical working values are plausible starting assumptions, NOT verified design
@@ -116,6 +116,55 @@ with open(os.path.join(DATA, "pin_measurements_backup.csv"), "w", newline="") as
 # ---------------------------------------------------------------- M03 -------
 # Nothing numeric: the artifact is the spec and FOREMAN's summary of it.
 
+# ---------------------------------------------------------------- M04 -------
+# Twenty-four deck cores drilled from accessible shoulder locations. The mean
+# exceeds the 4,500 psi project comparison value, but five individual cores do
+# not. The 11% sample CV makes spread the finding. This is descriptive teaching
+# data, not a code-compliance determination.
+CORE_STRENGTHS = [
+    3820, 4050, 4200, 4380, 4470, 4650, 4720, 4800,
+    4860, 4910, 4960, 5010, 5060, 5120, 5180, 5230,
+    5290, 5360, 5430, 5510, 5600, 5700, 5820, 5960,
+]
+CORE_SPEC_PSI = 4500
+core_rows = []
+for i, strength in enumerate(CORE_STRENGTHS, 1):
+    side = "west" if i <= 12 else "east"
+    station = 18 + ((i - 1) % 12) * 24
+    core_rows.append({
+        "core_id": f"C-{i:02d}",
+        "station_ft": station,
+        "side": side,
+        "drill_zone": "shoulder",
+        "strength_psi": strength,
+    })
+
+core_mean = st.mean(CORE_STRENGTHS)
+core_sample_sd = st.stdev(CORE_STRENGTHS)
+core_pop_sd = st.pstdev(CORE_STRENGTHS)
+facts["m04"] = {
+    "n": len(CORE_STRENGTHS),
+    "comparison_psi": CORE_SPEC_PSI,
+    "mean_psi": round(core_mean, 2),
+    "sample_sd_psi": round(core_sample_sd, 2),
+    "population_sd_psi": round(core_pop_sd, 2),
+    "sample_cv_pct": round(100 * core_sample_sd / core_mean, 2),
+    "population_cv_pct": round(100 * core_pop_sd / core_mean, 2),
+    "variance_psi2": round(st.variance(CORE_STRENGTHS), 2),
+    "minimum_psi": min(CORE_STRENGTHS),
+    "maximum_psi": max(CORE_STRENGTHS),
+    "range_psi": max(CORE_STRENGTHS) - min(CORE_STRENGTHS),
+    "below_comparison": sum(v < CORE_SPEC_PSI for v in CORE_STRENGTHS),
+    "at_or_above_comparison": sum(v >= CORE_SPEC_PSI for v in CORE_STRENGTHS),
+}
+
+with open(os.path.join(DATA, "cores_2027.csv"), "w", newline="") as f:
+    w = csv.DictWriter(f, fieldnames=[
+        "core_id", "station_ft", "side", "drill_zone", "strength_psi"
+    ])
+    w.writeheader()
+    w.writerows(core_rows)
+
 with open(os.path.join(ROOT, "build", "facts.json"), "w") as f:
     json.dump(facts, f, indent=2)
 
@@ -137,3 +186,8 @@ p = facts["m02_pin"]
 print(f"  mean {p['mean']} mm  sd {p['sd']}  range {p['min']}-{p['max']}")
 print(f"  reader A {p['mean_A']}  reader B {p['mean_B']}  (systematic difference)")
 print(f"  area {p['area_mm2']} mm2  +/- {p['area_abs_mm2']} ({p['area_rel_pct']}%)")
+print("\nM04 deck cores")
+c = facts["m04"]
+print(f"  n {c['n']}  mean {c['mean_psi']:.2f} psi  sample SD {c['sample_sd_psi']:.2f} psi")
+print(f"  sample CV {c['sample_cv_pct']:.2f}%  range {c['minimum_psi']}-{c['maximum_psi']} psi")
+print(f"  below {c['comparison_psi']} psi: {c['below_comparison']} of {c['n']}")

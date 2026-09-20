@@ -44,7 +44,7 @@ referenced or dramatised.**
 | Folder | Contents |
 |---|---|
 | [`simulation/`](simulation) | The semester outline, the meeting-by-meeting plan for Units 1–2, and the brand and story canon |
-| [`teaching-pack/`](teaching-pack) | **Built, ready to teach.** Meetings M01–M03: slides, handouts, answer keys, data files, the student brand kit |
+| [`teaching-pack/`](teaching-pack) | **Built, ready to teach.** Meetings M01–M04: slides, handouts, answer keys, data files, the student brand kit |
 | [`learning-graph-v2/`](learning-graph-v2) | The 163-concept graph fitted to Spring 2027 — schedule, definitions, dependency edges, viewer |
 | [`learning-graph-v1/`](learning-graph-v1) | The first 230-concept graph built straight from the syllabus, kept for the record |
 | [`guides/`](guides) | Four self-check student guides: probability and sampling, code reading, engineering reference cards, optional concepts |
@@ -63,10 +63,11 @@ teaching-pack/
   04-M03-hallucination/   How an LLM generates, and the section that does not exist
   05-CHARTS/              every chart as a PNG
   06-BRIDGE/              PowerPoint-ready bridge illustration and general elevation
+  08-M04-one-number/      Descriptive statistics: center, spread, CV, sample scope
 ```
 
-Start with `00-INSTRUCTOR/INSTRUCTOR-GUIDE-M01-M03.docx`. It carries the
-minute-by-minute run of show for all three meetings, what to print, what students will
+Start with `00-INSTRUCTOR/INSTRUCTOR-GUIDE-M01-M04.docx`. It carries the
+minute-by-minute run of show for all four meetings, what to print, what students will
 say and how to answer, and what comes back later in the semester.
 
 ---
@@ -78,6 +79,7 @@ say and how to answer, and what comes back later in the semester.
 | **M01** Tue Feb 2 | Rules vs learned patterns (6 concepts) | None. It is right, and cannot say why. |
 | **M02** Thu Feb 4 | Measurement and uncertainty (6) | Averages a failing gauge away; reports six decimals from a 1 µε instrument. |
 | **M03** Tue Feb 9 | LLMs and probability (7) | Fabricates a specification section; turns a *shall* into a *should*. |
+| **M04** Thu Feb 11 | Descriptive statistics (6) | Reports the correct mean, omits spread and low results, and concludes adequacy. |
 
 Every planted error is findable from material the students already hold. None of them
 is a software bug — FOREMAN's arithmetic is correct every time. The error is always in
@@ -113,8 +115,8 @@ pip install -r requirements.txt
 ```
 
 The build is deterministic — same inputs, same files, every run — and takes about a
-minute. It regenerates the data, the logos, the charts, all nineteen handouts, four
-slide files (including separate M02 student and reveal decks), the brand kit and the
+minute. It regenerates the data, the logos, the charts, all M01–M04 handouts, six
+slide files (including separate M02 and M04 student/reveal decks), the brand kit and the
 instructor guide, then assembles them into
 `teaching-pack/`.
 
@@ -129,7 +131,7 @@ that would overflow is reported with the height it needs.
 | `slidelib.py` | Slide layouts, plus the text-height estimator that catches overflow before rendering |
 | `make_charts.py` | Charts, on a brand-derived palette validated for colour-vision separation |
 | `make_m0*.py` | Handouts and answer keys per meeting |
-| `make_deck_m0*.py` | The four slide files; M02 builds separate student and instructor reveal decks |
+| `make_deck_m0*.py` | The six slide files; M02 and M04 build separate student and instructor reveal decks |
 | `make_kit.py` | The student brand kit and its templates |
 | `make_guide.py` | Instructor guide and file index |
 

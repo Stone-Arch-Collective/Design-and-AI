@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Rebuild the M01-M03 teaching pack from source.
+# Rebuild the M01-M04 teaching pack from source.
 #
 #   cd tools/teaching-pack && ./build.sh
 #
@@ -21,9 +21,9 @@ PY
 echo "3/7  charts"
 python3 make_charts.py
 echo "4/7  handouts"
-python3 make_m01.py; python3 make_m02.py; python3 make_m03.py
+python3 make_m01.py; python3 make_m02.py; python3 make_m03.py; python3 make_m04.py
 echo "5/7  slides"
-python3 make_deck_m01.py; python3 make_deck_m02.py; python3 make_deck_m03.py
+python3 make_deck_m01.py; python3 make_deck_m02.py; python3 make_deck_m03.py; python3 make_deck_m04.py
 echo "6/7  brand kit + instructor guide"
 python3 make_kit.py; python3 make_guide.py
 echo "7/7  assemble"
