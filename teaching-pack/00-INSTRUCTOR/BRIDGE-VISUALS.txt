@@ -1,7 +1,7 @@
 OTTER BEND LIFT BRIDGE — SLIDE VISUALS
 ========================================
 
-Two PowerPoint-ready assets are in ../06-BRIDGE/:
+Four PowerPoint-ready assets are in ../06-BRIDGE/:
 
   otter-bend-lift-bridge.jpg
     Flat illustration for title, section, or context slides.
@@ -11,5 +11,10 @@ Two PowerPoint-ready assets are in ../06-BRIDGE/:
     "SCHEMATIC — DIMENSIONS NOT VERIFIED BY A LICENSED ENGINEER" disclaimer
     fully visible and legible wherever this drawing is used.
 
-The location map for Kinnick County / County Road 9 is still pending. No map is
-included in this pack.
+  otter-bend-location-map.png
+    ACMEJOB-branded fictional location map for Kinnick County, County Road 9,
+    and Otter Bend. Keep the fictional-site disclaimer visible.
+
+  otter-bend-strain-gauge-array.png
+    M02 strain gauge array G1–G8. G5 and G6 are both at lift-span midspan; G6
+    is the redundant gauge.
