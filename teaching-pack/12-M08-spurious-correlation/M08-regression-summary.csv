@@ -1,4 +1,4 @@
 model,intercept,slope,slope_units,r_squared
-strain ~ date_index,42.828,7.951,microstrain/day,0.891
-strain ~ station_temperature_c,174.887,11.777,microstrain/degree C,0.975
-temperature residual ~ date_index,-2.067,0.172,microstrain/day,0.017
+strain ~ date_index,41.583,8.116,microstrain/day,0.870
+strain ~ station_temperature_c,176.017,11.901,microstrain/degree C,0.933
+temperature residual ~ date_index,-3.071,0.256,microstrain/day,0.013

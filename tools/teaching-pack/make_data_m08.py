@@ -38,7 +38,8 @@ for day in range(N):
     temperature = -12.0 + 0.72 * day + 2.35 * math.sin(day * 0.71) + rng.uniform(-1.05, 1.05)
     airport = temperature + rng.uniform(-0.65, 0.65)
     # Stable structural response plus thermal strain; there is no planted damage trend.
-    strain = 176.0 + 11.8 * temperature + rng.gauss(0, 7.0)
+    # Noise is tuned so the date-only fit rounds to the simulation-plan value, R² = 0.87.
+    strain = 176.0 + 11.8 * temperature + rng.gauss(0, 14.0)
     records.append({
         "timestamp_cst": ts.strftime("%Y-%m-%d %H:%M"),
         "date_index": day,
