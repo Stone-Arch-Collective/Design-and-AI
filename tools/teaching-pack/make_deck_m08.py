@@ -1,8 +1,4 @@
-"""M08 spoiler-safe student deck and gated instructor reveal.
-
-Oli story/SAY is intentionally not present. Every notes pane carries an explicit
-paste hook so the approved text can be folded without rebuilding slide content.
-"""
+"""M08 spoiler-safe student deck and gated instructor reveal with canon Oli SAY."""
 import csv
 import os
 import sys
@@ -15,21 +11,20 @@ with open(os.path.join(OUT, "M08-regression-summary.csv"), newline="") as f:
     models = {row["model"]: row for row in csv.DictReader(f)}
 
 
-def add_pending_notes(prs, hooks):
-    if len(prs.slides) != len(hooks):
-        raise ValueError(f"notes ({len(hooks)}) != slides ({len(prs.slides)})")
-    for slide, hook in zip(prs.slides, hooks):
+def add_canon_notes(prs, notes):
+    if len(prs.slides) != len(notes):
+        raise ValueError(f"notes ({len(notes)}) != slides ({len(prs.slides)})")
+    for slide, note in zip(prs.slides, notes):
         slide.notes_slide.notes_text_frame.text = (
-            "OLI STORY/SAY STATUS: PENDING CLOUD PASS — DO NOT TREAT THIS HOOK AS CANON SAY.\n\n"
-            "PASTE APPROVED SAY HERE, preserving the instructional action below.\n\n"
-            + hook.strip()
+            "OLI CANON SAY — Cloud hard-review PASS.\n\n"
+            + note.strip()
         )
 
 
 # ======================================================= STUDENT DECK =======
 prs = deck()
 title_slide(prs, "Meeting 08  ·  Unit 2: Doubt", "A strong fit can still mislead.",
-            "Correlation, regression, mechanism, and a temperature confound",
+            "Correlation, regression, mechanism, and a hidden driver",
             "Thursday, February 25, 2027  ·  SEIS 201")
 
 s, y = content(prs, "The interim finding", "FOREMAN modeled G4 strain against date")
@@ -153,26 +148,26 @@ closer(prs, [
     ("BOUNDARY", "This meeting tests the trend claim; it does not settle bridge condition."),
 ], title="Before the gated reveal")
 
-student_hooks = [
-    "TITLE HOOK — Introduce M08 and Unit 2's next designed error. Preserve the distinction between a strong relationship and damage evidence.",
-    "INBOX HOOK — Deliver the approved FOREMAN/Diane/Wes story beat here. Preserve: date-model R², deterioration overclaim, Diane in believer mode. Do not add later bearing-wear or exam details.",
-    "HUNT HOOK — Frame the four student actions without disclosing temperature as the answer before the hunt begins.",
-    "TEACH TRANSITION HOOK — Move from story evidence into scatter plots.",
-    "TEACH HOOK — Ask students what they inspect before calculating a coefficient.",
-    "TEACH HOOK — Define correlation coefficient and explicitly separate association from mechanism.",
-    "TEACH HOOK — Connect slope units to an engineering interpretation.",
-    "TEACH HOOK — State that R² is fit in a sample, not a causation score.",
-    "TEACH HOOK — Invite an example of a fitted line that could still tell the wrong story.",
-    "TEACH HOOK — Define spurious correlation as a misleading inference, not fabricated data.",
-    "LAB TRANSITION HOOK — Open the investigation without naming the temperature mechanism.",
-    "LAB A HOOK — Students reproduce FOREMAN's date model and write a noncausal description.",
-    "LAB B HOOK — Release weather_station.csv. Require timestamp and unit checks before modeling.",
-    "LAB C HOOK — After students see the temperature relationship, elicit the thermal expansion mechanism.",
-    "LAB D HOOK — Set up residual correction as HW4's method; preserve the distinction between 'not evidence of damage' and 'proof of no damage.'",
-    "NOTE HOOK — Students commit claim/check/result before the reveal.",
-    "CLOSE HOOK — Assign HW4 here. Insert approved story close when available; do not preview later Unit 2 revelations.",
+student_notes = [
+    "TITLE — M08: “It is spring.” Students investigate whether a strong fitted relationship supports FOREMAN’s damage claim.",
+    "INBOX — FOREMAN reports that midspan strain has risen steadily since February 1, R-squared 0.87 against date, indicating progressive structural deterioration. Diane Halvorsen, PE: “0.87 sounds high. Put it in the report.” Wes Tanaka, EIT is drafting and distracted under schedule pressure; he is not the discoverer.",
+    "HUNT — Students are the hunters. They reproduce the date plot, compare it with the weather record, identify the mechanism driving strain, and prepare HW4. Do not disclose the result before they work.",
+    "TEACH TRANSITION — Concepts: scatter plot, correlation coefficient, linear regression, R-squared, correlation versus causation, and spurious correlation.",
+    "TEACH — Explain how a scatter plot displays the strain-versus-date pairs before a line is fitted.",
+    "TEACH — Explain correlation coefficient as linear association. Keep correlation separate from causation.",
+    "TEACH — Demonstrate fitting a line in a spreadsheet. Connect the slope to its units.",
+    "TEACH — Explain R-squared as model fit. A high R-squared is not proof of cause.",
+    "TEACH — Keep the question open: a fitted pattern is not yet a mechanism.",
+    "TEACH — Explain spurious correlation as an association that misleads about the damage claim.",
+    "LAB TRANSITION — Students receive feed.csv and weather_station.csv. Do not solve the trend for them.",
+    "LAB — Student task: plot strain versus date using feed.csv and fit the line in a spreadsheet.",
+    "LAB — Student task: plot strain versus air temperature using weather_station.csv and fit the line. Students perform the join and comparison.",
+    "LAB — Student task: identify the mechanism driving the strain, not just the pattern. Students find that temperature drives the calendar trend and strain; steel expands when it warms.",
+    "LAB — Students set up the temperature correction and prepare the two-line reply. Preserve the boundary: this trend does not support progressive damage; the correction does not prove no damage.",
+    "NOTE — Students write Note version 2: claim, check, result. Continue the form handed off at M07.",
+    "CLOSE — Assign HW4: temperature-corrected strain trend plus a two-line reply to FOREMAN’s claim. Diane still wants the impressive R-squared in the county-facing report; students leave with the corrected note. Lightly hold rising measurement pressure without naming later concepts.",
 ]
-add_pending_notes(prs, student_hooks)
+add_canon_notes(prs, student_notes)
 save(prs, os.path.join(OUT, "M08-student.pptx"))
 
 
@@ -238,15 +233,15 @@ closer(rev, [
     ("SCOPE", "No later bearing-wear or Exam details enter M08."),
 ], title="Close M08")
 
-reveal_hooks = [
-    "REVEAL TITLE HOOK — Open only after students commit H8-02 and Note v2.",
-    "REVEAL HOOK — Confirm the date-model values. Separate reproducible calculation from unsupported causal interpretation.",
-    "REVEAL HOOK — Confirm the temperature-model values and elicit the physical mechanism.",
-    "REVEAL HOOK — Walk date → temperature → measured strain. Clarify that date is a proxy in this observed window.",
-    "REVEAL HOOK — Show residual model. Use 'no meaningful trend in this extract,' not 'proof of no damage.'",
-    "REVEAL HOOK — State the designed error: FOREMAN treated fit as proof of deterioration.",
-    "MODEL RESPONSE HOOK — Compare student boundaries; accept equivalent evidence-based wording.",
-    "CLOSE HOOK — Assign HW4 and collect Note v2. Approved Oli story close may be pasted here later.",
+reveal_notes = [
+    "REVEAL — Open only after students complete the hunt and commit H8-02 and Note version 2.",
+    "REVEAL — Confirm the date-model result. FOREMAN’s fitted line is reproducible; the progressive-deterioration interpretation is not supported.",
+    "REVEAL — Confirm that strain has a strong relationship with air temperature. Students, not Diane or Wes, identify the thermal-expansion mechanism.",
+    "REVEAL — Temperature drives the calendar trend and the measured strain: date → warming → steel expansion → measured strain.",
+    "REVEAL — Confirm the temperature-corrected result. Use “no meaningful date trend in this extract,” not “proof of no damage.”",
+    "REVEAL — FOREMAN’s designed error is reading the seasonal temperature effect as structural damage and offering high R-squared as proof of cause.",
+    "REVEAL — Compare student replies. The supported conclusion is that this uncorrected trend does not establish progressive structural deterioration.",
+    "CLOSE — HW4 stays at M08: temperature-corrected strain trend plus a two-line reply. Continue Note version 2 from M07. Diane remains in believer mode and students retain the corrected record.",
 ]
-add_pending_notes(rev, reveal_hooks)
+add_canon_notes(rev, reveal_notes)
 save(rev, os.path.join(OUT, "M08-instructor-reveal.pptx"))
