@@ -16,7 +16,7 @@ os.makedirs(OUT, exist_ok=True)
 feed_path = os.environ.get("M05_FEED", os.path.join(M05, "feed.csv"))
 if not os.path.exists(feed_path):
     raise FileNotFoundError(
-        "M06 depends on M05 feed.csv from PR #9. Merge/check out that dependency, "
+        "M06 requires the preceding M05 feed.csv. Run tools/teaching-pack/build_m05.sh, "
         "then rerun tools/teaching-pack/build_m06.sh."
     )
 

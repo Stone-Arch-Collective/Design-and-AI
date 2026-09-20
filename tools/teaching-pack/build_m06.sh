@@ -4,8 +4,8 @@ cd "$(dirname "$0")"
 
 M05="${M05_FEED:-../../teaching-pack/09-M05-overnight-alarm/feed.csv}"
 if [[ ! -f "$M05" ]]; then
-  echo "M06 requires $M05 from open PR #9." >&2
-  echo "Merge or check out PR #9, then rerun this build." >&2
+  echo "M06 requires the preceding M05 feed at $M05." >&2
+  echo "Run ./build_m05.sh, then rerun this build." >&2
   exit 1
 fi
 

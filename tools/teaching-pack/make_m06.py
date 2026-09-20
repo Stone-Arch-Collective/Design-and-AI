@@ -186,17 +186,45 @@ save(d, os.path.join(OUT, "KEY-M06-answer-key.docx"))
 # ======================================================= FILE INDEX ==========
 index_out = os.path.join(BUILD, "M06-INSTRUCTOR")
 d = course_doc("M01 – M06", "What is in this pack", kind="FILE INDEX")
-para(d, "M06 is based on main and depends on M05 PR #9 for feed.csv, the overnight run, "
-        "threshold rules, and the unresolved alarm. M04 PR #8 supplies the preceding descriptive "
-        "statistics meeting but is not a direct file dependency.", size=9.2, color=GREY, after=10)
+para(d, "Folders are in teaching order. This index covers every folder in the assembled "
+        "M01–M06 teaching pack.", size=9.2, color=GREY, after=10)
 for folder, files in [
     ("00-INSTRUCTOR", [
+        ("INSTRUCTOR-GUIDE-M01-M04.docx", "Run of show, prep, continuity, and review checklist"),
         ("run-of-day/index.html", "Podium desk for Unit 1"),
+        ("run-of-day/M01–M05-run-of-day.html", "Podium pages for the first five meetings"),
         ("run-of-day/M06-run-of-day.html", "M06 script, reveal boundary, debrief, and Wes handoff"),
+        ("why-this-way.html", "Faculty brief reflecting Unit 1 M01–M06"),
         ("FILE-INDEX.docx", "This generated index"),
     ]),
-    ("09-M05-overnight-alarm (PR #9 dependency)", [
+    ("01-BRAND-KIT", [
+        ("ACMEJOB-brand-kit.zip and expanded kit", "Logos, fonts, templates, and brand guide"),
+    ]),
+    ("02-M01-first-day", [
+        ("M01 slides, H1-01–H1-06, and key", "Rules versus learned patterns"),
+    ]),
+    ("03-M02-measurement", [
+        ("M02 student/reveal decks, H2 files, data, and key", "Measurement and uncertainty"),
+    ]),
+    ("04-M03-hallucination", [
+        ("M03 slides, H3-01–H3-05, and key", "Next-token generation and source checking"),
+    ]),
+    ("05-CHARTS", [
+        ("*.png", "Charts used throughout the meeting decks"),
+    ]),
+    ("06-BRIDGE", [
+        ("Bridge illustrations, elevation, gauge array, maps, and README", "Reusable visuals"),
+    ]),
+    ("07-HW-CASE-B-LIFT-STATION", [
+        ("student/ and instructor/", "M02 transfer homework, source files, and key"),
+    ]),
+    ("08-M04-one-number", [
+        ("M04 student/reveal decks, H4 files, cores_2027.csv, and key",
+         "Center, spread, CV, low count, and sample scope"),
+    ]),
+    ("09-M05-overnight-alarm", [
         ("feed.csv + run log + threshold_config.csv", "The chain and unresolved event audited in M06"),
+        ("M05 decks, H5 files, and key", "Agentic loop, threshold alarm, and audit"),
     ]),
     ("10-M06-alarm-audit", [
         ("M06-student.pptx", "Spoiler-safe 13-slide hunt deck"),

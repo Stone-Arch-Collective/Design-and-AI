@@ -44,7 +44,7 @@ referenced or dramatised.**
 | Folder | Contents |
 |---|---|
 | [`simulation/`](simulation) | The semester outline, the meeting-by-meeting plan for Units 1–2, and the brand and story canon |
-| [`teaching-pack/`](teaching-pack) | Unit 1 teaching packs: M01–M03 on main, M04 in open PR #8, M05 in open PR #9, and M06 here with #9 as a direct dependency |
+| [`teaching-pack/`](teaching-pack) | **Built, ready to teach.** Unit 1 meetings M01–M06: slides, handouts, answer keys, data files, and the student brand kit |
 | [`learning-graph-v2/`](learning-graph-v2) | The 163-concept graph fitted to Spring 2027 — schedule, definitions, dependency edges, viewer |
 | [`learning-graph-v1/`](learning-graph-v1) | The first 230-concept graph built straight from the syllabus, kept for the record |
 | [`guides/`](guides) | Four self-check student guides: probability and sampling, code reading, engineering reference cards, optional concepts |
@@ -63,15 +63,16 @@ teaching-pack/
   04-M03-hallucination/   How an LLM generates, and the section that does not exist
   05-CHARTS/              every chart as a PNG
   06-BRIDGE/              PowerPoint-ready bridge illustration and general elevation
-  08-M04-one-number/      Descriptive statistics (open PR #8)
-  09-M05-overnight-alarm/ Agentic alarm chain and live feed (open PR #9)
+  07-HW-CASE-B-LIFT-STATION/ M02 transfer homework
+  08-M04-one-number/      Descriptive statistics: center, spread, CV, sample scope
+  09-M05-overnight-alarm/ Agentic alarm chain and live feed
   10-M06-alarm-audit/     Distribution audit, decision log, and Wes handoff
 ```
 
 Start with `00-INSTRUCTOR/run-of-day/index.html`. M06 has a spoiler-safe student
 deck, gated instructor reveal, FOREMAN reversal, distribution-and-pipeline audit,
 decision log, traffic record, gauge workbook, and explicit handoff packet to Wes.
-The M06 build requires `09-M05-overnight-alarm/feed.csv` from PR #9.
+The M06 build consumes `09-M05-overnight-alarm/feed.csv` from the preceding meeting.
 
 ---
 
@@ -82,8 +83,8 @@ The M06 build requires `09-M05-overnight-alarm/feed.csv` from PR #9.
 | **M01** Tue Feb 2 | Rules vs learned patterns (6 concepts) | None. It is right, and cannot say why. |
 | **M02** Thu Feb 4 | Measurement and uncertainty (6) | Averages a failing gauge away; reports six decimals from a 1 µε instrument. |
 | **M03** Tue Feb 9 | LLMs and probability (7) | Fabricates a specification section; turns a *shall* into a *should*. |
-| **M04** Thu Feb 11 | Descriptive statistics (6) | Reports the mean and hides the spread. Open PR #8. |
-| **M05** Tue Feb 16 | Agentic AI and sensor streams (6) | Turns a warning into a closure action without required checks. Open PR #9. |
+| **M04** Thu Feb 11 | Descriptive statistics (6) | Reports the correct mean, omits spread and low results, and concludes adequacy. |
+| **M05** Tue Feb 16 | Agentic AI and sensor streams (6) | Turns a warning into a closure action without required checks. |
 | **M06** Thu Feb 18 | Distributions and agent audit (6) | Assumes normality, then converts “unusual” into “sensor fault” without independent evidence. |
 
 Every planted error is findable from material the students already hold. None of them
@@ -117,15 +118,15 @@ from; the source is how you change them.
 cd tools/teaching-pack
 pip install -r requirements.txt
 ./build.sh
-# After PR #9 supplies teaching-pack/09-M05-overnight-alarm/feed.csv:
+# After building M05 to supply teaching-pack/09-M05-overnight-alarm/feed.csv:
+./build_m05.sh
 ./build_m06.sh
 ```
 
-The build is deterministic — same inputs, same files, every run — and takes about a
-minute. It regenerates the data, the logos, the charts, all nineteen handouts, four
-slide files (including separate M02 student and reveal decks), the brand kit and the
-instructor guide, then assembles them into
-`teaching-pack/`.
+The builds are deterministic — same inputs, same files, every run. `build.sh`
+regenerates M01–M04, `build_m05.sh` adds M05, and `build_m06.sh` adds M06. Together
+they generate the data, handouts, student and reveal decks, brand kit, instructor
+materials, complete file index, and assembled `teaching-pack/`.
 
 Slide builds print `no layout warnings` when every text box fits its content; anything
 that would overflow is reported with the height it needs.
@@ -138,9 +139,9 @@ that would overflow is reported with the height it needs.
 | `slidelib.py` | Slide layouts, plus the text-height estimator that catches overflow before rendering |
 | `make_charts.py` | Charts, on a brand-derived palette validated for colour-vision separation |
 | `make_m0*.py` | Handouts and answer keys per meeting |
-| `make_deck_m0*.py` | The four slide files; M02 builds separate student and instructor reveal decks |
+| `make_deck_m0*.py` | Meeting decks; M02 and M04–M06 build separate student and instructor reveals |
 | `make_data_m06.py` | Traffic evidence and the spoiler-safe gauge workbook handed to Wes |
-| `build_m06.sh` | Builds and assembles M06; fails clearly until the M05 PR #9 dependency is present |
+| `build_m06.sh` | Builds and assembles M06 after the M05 feed is present |
 | `make_kit.py` | The student brand kit and its templates |
 | `make_guide.py` | Instructor guide and file index |
 
