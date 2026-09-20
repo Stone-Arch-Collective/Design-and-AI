@@ -1,0 +1,27 @@
+OTTER BEND LIFT BRIDGE — SLIDE VISUALS
+========================================
+
+Four primary PowerPoint assets are in ../06-BRIDGE/:
+
+  otter-bend-lift-bridge-flat-claude.png
+    Primary flat illustration for title, section, or context slides.
+
+  otter-bend-general-elevation.png
+    Dimensioned general elevation drawing 27-114-S01. Keep the red
+    "SCHEMATIC — DIMENSIONS NOT VERIFIED BY A LICENSED ENGINEER" disclaimer
+    fully visible and legible wherever this drawing is used.
+
+  otter-bend-strain-gauge-array.png
+    M02 strain gauge array G1–G8. G5 and G6 are both at lift-span midspan; G6
+    is the redundant gauge.
+
+  otter-bend-site-location.png
+    Primary site map: Otter Bend (population 3,140), Kinnickville (county seat,
+    11 miles), County Road 9, and the Built 1962 / vertical lift / 320 ft bridge
+    callouts. The map identifies its place names as invented.
+
+Optional backup:
+
+  otter-bend-location-map.png
+    Simpler ACMEJOB-branded locator. Keep its
+    "FICTIONAL SITE — FOR COURSE USE ONLY" disclaimer visible.
