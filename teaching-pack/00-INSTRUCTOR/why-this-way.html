@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ACMEJOB.Ai · Why SEIS 201 Is Taught This Way</title>
+<style>
+  :root{
+    --blue:#1F3A5F;--blue-dark:#152a46;--orange:#F26B1D;--ink:#2B2F36;
+    --river:#6F8FAF;--line:#DCE2E7;--paper:#FBFAF6;--white:#fff;
+    --mist:#EDF3F8;--sand:#F3E9D4;--green:#315C4C
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:#e9edf0;color:var(--ink);font:16px/1.55 Arial,sans-serif}
+  a{color:var(--blue);font-weight:700;text-underline-offset:3px}
+  .page{max-width:1120px;margin:28px auto;background:var(--paper);box-shadow:0 18px 55px #1f3a5f24}
+  header{position:relative;overflow:hidden;padding:48px 58px 46px;background:var(--blue);color:#fff}
+  header:after{content:"";position:absolute;right:-65px;top:-100px;width:330px;height:330px;border:30px solid #ffffff12;transform:rotate(12deg)}
+  .mark{font:900 28px/1 "Arial Narrow",Arial,sans-serif;letter-spacing:.04em}
+  .mark .ai{display:inline-block;margin-left:3px;padding:4px 7px;background:var(--orange);transform:rotate(-3deg)}
+  .eyebrow,.label{font:800 12px/1.2 "Arial Narrow",Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase}
+  h1{position:relative;z-index:1;max-width:880px;margin:38px 0 16px;font:900 clamp(44px,7vw,78px)/.92 Georgia,serif;letter-spacing:-.045em}
+  .dek{position:relative;z-index:1;max-width:800px;margin:0;font:21px/1.48 Georgia,serif;color:#eaf0f6}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}
+  .chip{padding:7px 12px;border:1px solid #ffffff66;border-radius:999px;font-size:13px}
+  nav{position:sticky;top:0;z-index:5;display:flex;gap:18px;flex-wrap:wrap;padding:13px 58px;background:#fff;border-bottom:1px solid var(--line)}
+  nav a{text-decoration:none;font-size:12px;text-transform:uppercase;letter-spacing:.07em}
+  main{padding:42px 58px 68px}
+  .lede{max-width:900px;margin:0 0 28px;font:22px/1.55 Georgia,serif}
+  .status{display:grid;grid-template-columns:1.25fr .75fr;gap:0;margin:28px 0 46px;background:#fff;border:1px solid var(--line);border-left:8px solid var(--blue)}
+  .status>div{padding:22px 24px}.status>div+div{border-left:1px solid var(--line);background:var(--mist)}
+  .status h2{margin:5px 0 8px;font:800 23px/1.1 "Arial Narrow",Arial,sans-serif;color:var(--blue)}
+  .status p{margin:0}.status strong{color:var(--blue)}
+  .rule{display:flex;align-items:center;gap:14px;margin:48px 0 24px}
+  .rule h2{margin:0;font:900 31px/1 "Arial Narrow",Arial,sans-serif;color:var(--blue);text-transform:uppercase;letter-spacing:.02em}
+  .rule:after{content:"";height:3px;flex:1;background:var(--blue)}
+  .subhead{margin:30px 0 10px;font:700 27px/1.15 Georgia,serif;color:var(--blue)}
+  .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+  .card{padding:21px;background:#fff;border:1px solid var(--line);border-top:5px solid var(--blue);break-inside:avoid}
+  .card h3{margin:10px 0 9px;font:800 22px/1.12 "Arial Narrow",Arial,sans-serif;color:var(--blue)}
+  .card p{margin:0}.card ul{margin:9px 0 0;padding-left:19px}.card li+li{margin-top:6px}
+  .number{display:block;font:900 39px/1 Georgia,serif;color:var(--river)}
+  .argument{display:grid;grid-template-columns:170px 1fr;gap:22px;padding:20px 0;border-top:1px solid var(--line)}
+  .argument h3{margin:0;font:800 21px/1.1 "Arial Narrow",Arial,sans-serif;color:var(--blue)}
+  .argument p{margin:0}
+  .machine{color:var(--orange);font-weight:800}
+  .machine-card{border-top-color:var(--orange)}
+  .machine-card h3{color:var(--orange)}
+  .outcomes{counter-reset:item;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .outcome{position:relative;padding:18px 19px 18px 58px;background:#fff;border:1px solid var(--line);break-inside:avoid}
+  .outcome:before{counter-increment:item;content:counter(item);position:absolute;left:18px;top:18px;width:27px;height:27px;border-radius:50%;background:var(--blue);color:#fff;text-align:center;font-weight:800;line-height:27px}
+  .outcome strong{display:block;color:var(--blue);font-family:"Arial Narrow",Arial,sans-serif;font-size:18px}
+  .arc{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));margin:26px 0}
+  .phase{min-height:170px;padding:17px;border:1px solid var(--line);border-left:0;background:#fff}
+  .phase:first-child{border-left:1px solid var(--line)}
+  .phase b{display:block;margin:7px 0 8px;color:var(--blue);font:800 20px/1 "Arial Narrow",Arial,sans-serif}
+  .phase p{margin:0;font-size:14px}
+  .table-scroll{max-width:100%;overflow-x:auto}
+  .assessment{width:100%;border-collapse:collapse;background:#fff;font-size:14px}
+  .assessment th,.assessment td{padding:13px 14px;border:1px solid var(--line);text-align:left;vertical-align:top}
+  .assessment th{background:var(--blue);color:#fff;font:800 13px/1.2 "Arial Narrow",Arial,sans-serif;letter-spacing:.05em;text-transform:uppercase}
+  .assessment td:first-child{width:18%;font-weight:800;color:var(--blue)}
+  .assessment td:nth-child(2){width:17%}
+  .note{margin:20px 0;padding:19px 21px;background:var(--sand);border-left:6px solid var(--blue)}
+  .note p{margin:0}.note p+p{margin-top:8px}
+  .qa{border-top:1px solid var(--line)}
+  details{padding:15px 4px;border-bottom:1px solid var(--line);break-inside:avoid}
+  summary{cursor:pointer;color:var(--blue);font:800 19px/1.3 "Arial Narrow",Arial,sans-serif}
+  details p{max-width:900px;margin:10px 0 2px}
+  .asks{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}
+  .ask{padding:22px;background:var(--blue);color:#fff}
+  .ask h3{margin:5px 0 10px;font:700 26px/1.1 Georgia,serif}.ask p{margin:0}
+  .ask.alt{background:#fff;color:var(--ink);border:1px solid var(--line)}
+  .ask.alt h3{color:var(--blue)}
+  .sources{margin-top:42px;padding-top:22px;border-top:3px solid var(--blue);font-size:14px}
+  .sources h2{margin:0 0 10px;color:var(--blue);font:800 22px "Arial Narrow",Arial,sans-serif}
+  .sources ul{columns:2;margin:0;padding-left:19px}
+  footer{padding:24px 58px;background:var(--blue-dark);color:#dce5ee;font-size:13px}
+  @media(max-width:840px){
+    .page{margin:0}.grid{grid-template-columns:1fr}.outcomes{grid-template-columns:1fr}
+    .status,.asks{grid-template-columns:1fr}.status>div+div{border-left:0;border-top:1px solid var(--line)}
+    .arc{grid-template-columns:1fr}.phase{min-height:0;border-left:1px solid var(--line);border-top:0}.phase:first-child{border-top:1px solid var(--line)}
+    header,main,nav,footer{padding-left:24px;padding-right:24px}.argument{grid-template-columns:1fr;gap:7px}
+    .assessment{min-width:760px;font-size:13px}.sources ul{columns:1}
+  }
+  @media print{
+    @page{margin:.55in}
+    body{background:#fff;font-size:10.5pt}.page{max-width:none;margin:0;box-shadow:none}
+    header{padding:28px 34px}h1{font-size:45px;margin-top:24px}.dek{font-size:16px}.meta{margin-top:14px}
+    nav{display:none}main{padding:25px 34px}.rule{margin:30px 0 16px}.rule h2{font-size:24px}
+    .grid{grid-template-columns:repeat(3,1fr)}.card{padding:14px}.card h3{font-size:17px}
+    .status,.card,.outcome,.argument,.phase,.note,details,.ask{break-inside:avoid}
+    .arc{grid-template-columns:repeat(5,1fr)}.phase{min-height:145px;padding:11px}
+    .assessment{min-width:0}.assessment th,.assessment td{padding:8px}.sources{margin-top:25px}
+    footer{padding:12px 34px}
+  }
+</style>
+</head>
+<body><div class="page">
+<header>
+  <div class="mark">ACMEJOB<span class="ai">.Ai</span></div>
+  <div class="eyebrow" style="margin-top:35px">Faculty field briefing · SEIS 201 · Spring 2027 pilot</div>
+  <h1>Why one job<br>all semester?</h1>
+  <p class="dek">A department walkthrough of the Otter Bend simulation: what it changes, what it preserves, and how it turns AI fluency into engineering judgment.</p>
+  <div class="meta"><span class="chip">Instructor / department copy</span><span class="chip">Print-friendly</span><span class="chip">Evidence-based draft</span></div>
+</header>
+
+<nav>
+  <a href="#case">The case</a><a href="#benefits">Benefits</a><a href="#outcomes">Outcomes</a>
+  <a href="#assessment">Assessment</a><a href="#qa">Q&amp;A</a><a href="#status">Pilot status</a>
+</nav>
+
+<main>
+  <p class="lede">SEIS 201 is not a tour of AI tools. It is practice making engineering decisions when a fast, fluent system can be useful, wrong, or both. A continuous job gives each choice a later consequence—and gives students repeated chances to answer the question that matters: <strong>How do you know that is right?</strong></p>
+
+  <section class="status" id="status">
+    <div>
+      <span class="label">The commitment</span>
+      <h2>The syllabus stays in charge.</h2>
+      <p>The simulation keeps the course’s AI foundations, applied statistics, AI-assisted coding, ethics, exams, project, reflection, and grading weights. Otter Bend is the connective tissue, not a replacement curriculum.</p>
+    </div>
+    <div>
+      <span class="label">Honest build status</span>
+      <h2>Pilot, not finished product.</h2>
+      <p><strong>M01–M03 are fully built.</strong> Units 1–2 are detailed. Units 3–5 are mapped at outline level. Technical values, scenarios, and assessments still require engineering/statistics review before use.</p>
+    </div>
+  </section>
+
+  <section id="case">
+    <div class="rule"><h2>Why teach it this way</h2></div>
+    <div class="argument">
+      <h3>Tools change.<br>Judgment transfers.</h3>
+      <p>A flat tools survey can age as soon as interfaces change. The course instead rehearses durable moves: inspect the source, characterize uncertainty, test against a known answer, document assumptions, and decide what still needs checking.</p>
+    </div>
+    <div class="argument">
+      <h3>Consequences create memory.</h3>
+      <p>One Otter Bend project file follows students across the term. Work accepted in February can return in April. That delayed callback makes traceability, units, and honest decision logs matter in a way an isolated worksheet cannot.</p>
+    </div>
+    <div class="argument">
+      <h3>One asset holds CE and ME.</h3>
+      <p>The fictional lift bridge supplies civil questions—deck, girders, load rating, traffic, concrete—and mechanical questions—motors, gearbox, bearings, ropes, fatigue, vibration, and thermal movement. Department review can rebalance examples without changing the learning sequence.</p>
+    </div>
+    <div class="argument">
+      <h3>The machine has a visible role.</h3>
+      <p><span class="machine">FOREMAN</span> is fast, fluent, and wrong in designed ways. Its arithmetic may be correct while its source, assumption, sample, unit, or conclusion is not. Orange is reserved for the machine; blue identifies people and engineering judgment.</p>
+    </div>
+    <div class="argument">
+      <h3>The story is removable.</h3>
+      <p>No graded answer depends on remembering a character or accepting the fiction. A student who ignores the storyline performs the same calculations, source checks, data analysis, and verification work. Each unit ends with a mask-off debrief.</p>
+    </div>
+
+    <h3 class="subhead">The job in five moves</h3>
+    <div class="arc">
+      <div class="phase"><span class="label">Unit 1</span><b>Hired</b><p>AI foundations, measurement, descriptive statistics. The first verification note is one sentence.</p></div>
+      <div class="phase"><span class="label">Unit 2</span><b>Doubt</b><p>Bias, regression, false precision, intervals, charts, and a same-day permit decision.</p></div>
+      <div class="phase"><span class="label">Unit 3</span><b>Build</b><p>AI-generated Python, tests that can pass while logic is wrong, hand-calculation checks, debugging.</p></div>
+      <div class="phase"><span class="label">Unit 4</span><b>Own</b><p>Iterative design, calculation tools, research claims, and a rehabilitate-or-replace recommendation.</p></div>
+      <div class="phase"><span class="label">Unit 5</span><b>Sign</b><p>Risk, independent verification, professional responsibility, limits, and a public-facing briefing.</p></div>
+    </div>
+  </section>
+
+  <section id="benefits">
+    <div class="rule"><h2>Who benefits—and how</h2></div>
+    <div class="grid">
+      <article class="card">
+        <span class="label">For students</span>
+        <h3>Practice, not just recognition</h3>
+        <ul>
+          <li>Use statistics and AI concepts on a coherent engineering record.</li>
+          <li>Transfer a method from the in-class case to unfamiliar homework.</li>
+          <li>See earlier assumptions return, then correct them without hiding the record.</li>
+          <li>Build confidence through checks, not through a tool’s tone.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <span class="label">For the department</span>
+        <h3>A visible spine for review</h3>
+        <ul>
+          <li>CE and ME examples sit in named slots that faculty can inspect or swap.</li>
+          <li>Scripted errors, clean exam files, and common rubrics improve consistency.</li>
+          <li>The simulation mechanics can be removed if the pilot shows they distract.</li>
+          <li>Open technical-review points are explicit rather than buried.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <span class="label">For PE-bound engineers</span>
+        <h3>A record they can defend</h3>
+        <ul>
+          <li>Separate a tool’s recommendation from the engineer’s decision.</li>
+          <li>Show sources, assumptions, units, uncertainty, independent checks, and limits.</li>
+          <li>Practice refusing unsupported certainty in safety-relevant work.</li>
+          <li>Treat AI assistance as work that remains under human responsibility.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="outcomes">
+    <div class="rule"><h2>Expected outcomes</h2></div>
+    <p>These are grounded in the course description, weekly schedule, and design plan. They translate those documents into observable student performance; they are not new accreditation claims.</p>
+    <div class="outcomes">
+      <div class="outcome"><strong>Explain modern AI at a working level.</strong>Distinguish rule-based and learned-pattern systems; explain next-token generation and agentic loops; identify why fluent output can still be wrong.</div>
+      <div class="outcome"><strong>Reason statistically about engineering data.</strong>Describe spread and uncertainty; interpret distributions, correlation, regression, intervals, and significance without false precision.</div>
+      <div class="outcome"><strong>Audit AI claims against evidence.</strong>Check summaries against source text, question training coverage, detect misleading charts, and trace errors through a data pipeline.</div>
+      <div class="outcome"><strong>Build and verify calculation tools.</strong>Use AI-assisted Python to generate, test, and debug engineering calculations, then compare results with known answers and hand calculations.</div>
+      <div class="outcome"><strong>Use AI in open-ended design work.</strong>Apply AI to research, alternatives, parameter sweeps, and design tradeoffs while keeping requirements and evidence visible.</div>
+      <div class="outcome"><strong>Document professional judgment.</strong>State what was checked, what was not, what assumptions remain, and why the engineer—not the tool—owns the decision.</div>
+      <div class="outcome"><strong>Recognize limits, bias, and risk.</strong>Identify distribution shift, out-of-domain use, automation risk, and situations where AI should not be used.</div>
+      <div class="outcome"><strong>Communicate a defensible recommendation.</strong>Present a concise technical decision to engineering and non-engineering audiences with uncertainty intact.</div>
+    </div>
+  </section>
+
+  <section id="assessment">
+    <div class="rule"><h2>What assessment looks like</h2></div>
+    <div class="table-scroll"><table class="assessment">
+      <thead><tr><th>Component</th><th>Syllabus weight / timing</th><th>What students do in this design</th><th>What is graded</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Weekly homework</td>
+          <td>12 assignments; lowest one dropped; 25%</td>
+          <td>Learn on the in-class Otter Bend file, then transfer the method to a distinct Case B where provided. The built M02 example moves from bridge gauges in class to lift-station pressure channels at home.</td>
+          <td>Correct use of evidence, uncertainty, assumptions, and a concise decision record—not agreement with a character.</td>
+        </tr>
+        <tr>
+          <td>Exam 1</td>
+          <td>Applied practical; syllabus Week 7; 20%</td>
+          <td>Use a clean, common version of a familiar dataset to evaluate a same-day engineering decision, check a claim, describe spread, critique a chart, and recommend with reasons.</td>
+          <td>Reasoning and traceability. More than one final decision may be defensible.</td>
+        </tr>
+        <tr>
+          <td>Exam 2</td>
+          <td>Applied practical; syllabus Week 13; 20%</td>
+          <td>The simulation draft proposes a post-decision review using information available at the time. Its move to finals is an open change requiring approval; until approved, the syllabus timing governs.</td>
+          <td>Verification, ethical reasoning, and defense of the original call without hindsight substitution.</td>
+        </tr>
+        <tr>
+          <td>Capstone project</td>
+          <td>Due Week 15; 25%</td>
+          <td>Build and defend an AI-assisted engineering design or calculation tool. Syllabus examples include beam sizing, HVAC load, and gear design; the simulation frames the team work as a rehabilitation-versus-replacement package.</td>
+          <td>Technical basis, tool behavior, validation against reference results, limitations, and communication.</td>
+        </tr>
+        <tr>
+          <td>Reflection</td>
+          <td>Finals week; 5%</td>
+          <td>Look back across the decision record and explain where AI helped, where it failed, and what verification changed.</td>
+          <td>Specific evidence from the student’s own work and honest limits.</td>
+        </tr>
+        <tr>
+          <td>Participation</td>
+          <td>5%</td>
+          <td>Labs, comparisons, debriefs, review checkpoints, and reasoned discussion of competing choices.</td>
+          <td>Engagement with the engineering process, not role-play performance.</td>
+        </tr>
+      </tbody>
+    </table></div>
+
+    <div class="note">
+      <p><strong>The recurring evidence artifact is the decision log.</strong> It records the item, action, fictional project hours, what was checked, and what was accepted unverified. The “hours” force prioritization but are never grade points.</p>
+      <p>The verification note escalates with instruction: one source-check sentence in Unit 1; claim/check/result in Unit 2; an independent check and unverified-items line in Units 3–4; a traceable verification record in Unit 5.</p>
+    </div>
+  </section>
+
+  <section id="qa">
+    <div class="rule"><h2>Questions Shannon may get</h2></div>
+    <div class="qa">
+      <details open><summary>Is a simulation rigorous, or is this gamification?</summary><p>The rigor is in the unchanged calculations, statistics, source checks, code tests, and applied-practical assessments. The story creates continuity and consequences. No grade depends on role-play, lore, speed, or pleasing Diane; every unit ends with a direct debrief.</p></details>
+      <details><summary>Does the bridge make this too civil-heavy for mechanical students?</summary><p>That is a real design risk, not a solved claim. A lift bridge was chosen because it has both a structure and machinery. Units 1–2 currently lean civil, while machinery supplies measurement, gears, bearings, fatigue, vibration, and thermal behavior. M04, M08, and M10 have identified mechanical alternatives, and the department should help set the final balance.</p></details>
+      <details><summary>Are students replacing hand calculations with AI?</summary><p>No. Students first encounter traceable rules and physical measurement, then use known answers, units, order-of-magnitude checks, and hand-calculation cards to test generated code. A script running cleanly—or tests passing—is explicitly not sufficient evidence.</p></details>
+      <details><summary>How does this address PE ethics without overstating policy?</summary><p>The course teaches the bounded principle supported by its design documents: using AI does not transfer the engineer’s responsibility. Students document sources, checks, assumptions, tool use, and limits. State-specific definitions, stamp language, and technical claims remain review items; this page makes no accreditation or licensure guarantee.</p></details>
+      <details><summary>How can grading be fair if students make different decisions?</summary><p>Common evidence, clean exam files, and a shared rubric score the reasoning and record. The fictional hour budget is not points. A defensible “yes with conditions” and a defensible “no” can both earn full credit if each follows the evidence and states uncertainty.</p></details>
+      <details><summary>How are spoilers controlled?</summary><p>Student and instructor assets are separated. M02 uses an 11-slide student deck first and a 9-slide instructor reveal deck only after students inspect the data. Instructor keys and planted conditions stay outside student navigation and LMS packages.</p></details>
+      <details><summary>Why use a separate Case B for homework?</summary><p>Repeating Otter Bend can reward memory of the reveal. A second fictional system tests transfer: can students recognize the same measurement and averaging failure in unfamiliar data? The M02 Case B is built; later transfer cases should be added only as their source materials and keys are completed.</p></details>
+      <details><summary>Does the simulation replace lecture?</summary><p>No. The current 75-minute pattern combines an inbox prompt, explicit teaching, guided work on the project file, and a written verification note. The scenario supplies the question; instruction supplies concepts and methods; the debrief names what happened.</p></details>
+      <details><summary>What if the storyline distracts students—or the first pilot struggles?</summary><p>Every mechanic is designed to be removable without changing the underlying lab. Students may ignore the fiction. The plan calls for piloting one rich week before building the full semester, watching especially for bookkeeping burden, story overhead, and difficulty separating content problems from simulation problems.</p></details>
+      <details><summary>Is the complete semester ready to teach?</summary><p>No. M01–M03 are the fully built pack. Units 1–2 have meeting-level plans; Units 3–5 are outlines. Engineering values, data, exam scenarios, CE/ME balance, prerequisite assumptions, and some calendar changes still need review or approval.</p></details>
+    </div>
+  </section>
+
+  <section>
+    <div class="rule"><h2>What the department can improve now</h2></div>
+    <div class="asks">
+      <article class="ask"><span class="label">Highest-value review</span><h3>Interrogate the engineering, not the premise.</h3><p>Check whether the structure, working values, simplified calculations, fatigue example, permit scenario, and CE/ME distribution are technically fair for this audience.</p></article>
+      <article class="ask alt"><span class="label">Pilot questions</span><h3>Watch the students’ behavior.</h3><p>Do they transfer the method? Does the decision log reveal reasoning? Does the story clarify stakes without adding cognitive load? Can a mechanic be removed cleanly when it does not help?</p></article>
+    </div>
+  </section>
+
+  <section class="sources">
+    <h2>Evidence trail</h2>
+    <ul>
+      <li>SEIS 201 draft syllabus: course description, weekly topics, assessment structure, and grading weights</li>
+      <li>SEIS 201 Prep &amp; Design Plan: knowledge domains, validation needs, and pilot-build priorities</li>
+      <li>Week–session map: syllabus-to-module alignment</li>
+      <li><a href="../../simulation/acmejob-semester-outline.md">ACMEJOB semester outline</a>: story rules, grading principles, and build status</li>
+      <li><a href="../../simulation/simulation-plan-units-1-2.md">Simulation plan, Units 1–2</a>: meeting detail, assessment mechanics, open decisions, and review list</li>
+      <li><a href="run-of-day/index.html">Instructor run-of-day desk</a>: built M01–M03 classroom execution</li>
+      <li><a href="../07-HW-CASE-B-LIFT-STATION/README.md">Case B instructor README</a>: transfer-homework design and data provenance</li>
+    </ul>
+  </section>
+</main>
+
+<footer>ACMEJOB.Ai · Instructor / department briefing · Fictional instructional simulation · Draft technical content requires review before use</footer>
+</div></body>
+</html>

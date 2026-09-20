@@ -19,7 +19,17 @@ os.makedirs(OUT, exist_ok=True)
 for folder in plan:
     generated = os.path.join(OUT, folder)
     if os.path.exists(generated):
-        shutil.rmtree(generated)
+        if folder == "00-INSTRUCTOR":
+            # This folder also contains hand-authored HTML briefings and the
+            # run-of-day desk. Replace only this build's generated files so a
+            # routine pack rebuild cannot erase those instructor pages.
+            for pattern, _ in plan[folder]:
+                for source in glob.glob(os.path.join(ROOT, pattern)):
+                    target = os.path.join(generated, os.path.basename(source))
+                    if os.path.isfile(target):
+                        os.remove(target)
+        else:
+            shutil.rmtree(generated)
 n=0
 for folder, items in plan.items():
     dst = os.path.join(OUT, folder); os.makedirs(dst, exist_ok=True)
