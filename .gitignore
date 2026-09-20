@@ -1,0 +1,16 @@
+# Build intermediates — the teaching pack is committed, its scratch is not
+tools/teaching-pack/build/
+tools/teaching-pack/kit/
+tools/teaching-pack/__pycache__/
+*.pyc
+
+# Renders produced while checking layout
+*.pdf
+_qa*.jpg
+_qa*.png
+slide-*.jpg
+qa_*.jpg
+
+# OS noise
+.DS_Store
+Thumbs.db
