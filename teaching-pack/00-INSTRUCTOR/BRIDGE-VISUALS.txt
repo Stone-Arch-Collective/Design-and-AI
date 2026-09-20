@@ -1,0 +1,15 @@
+OTTER BEND LIFT BRIDGE — SLIDE VISUALS
+========================================
+
+Two PowerPoint-ready assets are in ../06-BRIDGE/:
+
+  otter-bend-lift-bridge.jpg
+    Flat illustration for title, section, or context slides.
+
+  otter-bend-general-elevation.png
+    Dimensioned general elevation drawing 27-114-S01. Keep the red
+    "SCHEMATIC — DIMENSIONS NOT VERIFIED BY A LICENSED ENGINEER" disclaimer
+    fully visible and legible wherever this drawing is used.
+
+The location map for Kinnick County / County Road 9 is still pending. No map is
+included in this pack.
