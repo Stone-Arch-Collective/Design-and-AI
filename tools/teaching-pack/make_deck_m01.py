@@ -7,6 +7,7 @@ FACTS = json.load(open(os.path.join(ROOT, "build", "facts.json")))
 F = FACTS["m01"]
 P = FACTS["m01_panels"]
 prs = deck()
+BRIDGE = os.path.join(ROOT, "bridge")
 
 # 1 -------------------------------------------------------------------------
 title_slide(prs, "Meeting 01  ·  Unit 1: Hired",
@@ -41,29 +42,38 @@ text(s, 0.72, y + 3.85, 11.9, 0.6,
      size=16, color=GREY, line=1.2)
 
 # 3 -------------------------------------------------------------------------
-s, y = content(prs, "The job", "Kinnick County wants an answer by May")
-card(s, 0.72, y + 0.1, 5.9, 3.9, "THE OTTER BEND LIFT BRIDGE",
-     ["County Road 9 over the Kinnick River.",
-      "Built 1962. Vertical lift span.",
-      "Carrying loads nobody designed it for.",
-      "Strain, temperature and vibration sensors were installed last month.",
-      "",
-      "The question: rehabilitate, or replace?"],
-     tint=PAPER, edge=CONCRETE, body_size=17)
-card(s, 6.92, y + 0.1, 5.67, 3.9, "WHAT THAT MEANS FOR YOU",
-     ["Every lab, every dataset and both exams this semester come from this one bridge.",
-      "",
-      "Work you do in February comes back in April with your name on it.",
-      "",
-      "In May, somebody stamps a recommendation. That is what all of this is for."],
-     tint=RGBColor(0xEE, 0xF3, 0xF8), edge=GIRDER_LT, body_size=17,
-     label_color=GIRDER)
+image_slide(
+    prs, "Here’s the job",
+    os.path.join(BRIDGE, "otter-bend-lift-bridge-flat-claude.png"),
+    kicker="Otter Bend Lift Bridge  ·  County Road 9 over the Kinnick River",
+    caption="Kinnick County wants an answer by May: rehabilitate, or replace?",
+    box_h=4.45,
+)
 
 # 4 -------------------------------------------------------------------------
+image_slide(
+    prs, "Place matters",
+    os.path.join(BRIDGE, "otter-bend-site-location.png"),
+    kicker="Otter Bend, Kinnick County  ·  County Road 9",
+    caption="Every lab, dataset and exam this semester comes back to this one fictional site.",
+    box_h=4.45,
+)
+
+# 5 -------------------------------------------------------------------------
+image_slide(
+    prs, "Read the bridge before the notes",
+    os.path.join(BRIDGE, "otter-bend-general-elevation.png"),
+    kicker="320′ total  ·  140′ lift span  ·  two 90′ approach spans",
+    caption="For now, orient yourself to the lift span and approaches; you do not need every "
+            "drawing callout.",
+    box_h=4.45,
+)
+
+# 6 -------------------------------------------------------------------------
 statement(prs, "Two things happened before\nnine o'clock this morning.",
           "And they do not agree with each other.")
 
-# 5 -------------------------------------------------------------------------
+# 7 -------------------------------------------------------------------------
 s, y = content(prs, "Exhibit A — FOREMAN's demo, 07:41")
 speaker_card(s, 0.72, y + 0.15, 11.87, 2.35, "FOREMAN v4.2 — DECK CONDITION ASSESSMENT",
              ["“Deck is in fair to good condition overall. Mean panel rating 6.8. No panel "
@@ -77,7 +87,7 @@ text(s, 0.72, y + 2.8, 11.9, 0.9,
        ("what would it take to check this?", {"bold": True, "color": GIRDER})]],
      size=19, color=REBAR, line=1.2)
 
-# 6 -------------------------------------------------------------------------
+# 8 -------------------------------------------------------------------------
 s, y = content(prs, "Exhibit B — Diane's orientation memo, 08:30")
 speaker_card(s, 0.72, y + 0.15, 11.87, 1.95, "DIANE HALVORSEN, PE",
              ["“Every number you hand me comes with one sentence: how do you know that "
@@ -94,10 +104,10 @@ card(s, 0.72, y + 3.5, 11.87, 1.75,
       "can check. Both are legitimate engineering. Knowing which one you are holding is the job."],
      tint=CREAM, edge=GOLD, body_size=17, label_color=REBAR)
 
-# 7 -------------------------------------------------------------------------
+# 9 -------------------------------------------------------------------------
 section(prs, "1", "Rules", "Steps somebody wrote down, that anybody can repeat")
 
-# 8 -------------------------------------------------------------------------
+# 10 ------------------------------------------------------------------------
 s, y = content(prs, "A rule: the load rating check",
                "Diane's standard sheet LR-1. This is arithmetic — you do not need to have taken "
                "structures.")
@@ -115,7 +125,7 @@ text(s, 0.95, y + 3.7, 11.4, 0.5,
      [[("Above RF = 1.00 the girder carries the truck. Below it, you post or restrict the bridge.",
         {"bold": True})]], size=18, color=REBAR)
 
-# 9 -------------------------------------------------------------------------
+# 11 ------------------------------------------------------------------------
 s, yend = table_slide(prs, "Worked: Girder G-3, south approach",
                       [["Step", "Substitution", "Result"],
                        ["1.  Capacity minus dead load", "3,920 − 1,455", "2,465 kip-ft"],
@@ -129,7 +139,7 @@ text(s, 0.72, yend + 0.5, 11.9, 0.9,
      [[("That is the entire point of a rule. ", {"bold": True, "color": GIRDER}),
        ("Nobody has to trust Diane. They can redo it.", {})]], size=20, color=REBAR)
 
-# 10 ------------------------------------------------------------------------
+# 12 ------------------------------------------------------------------------
 activity(prs, "Work the rating factor for Girder G-4", 10, [
     "G-4 sits under the wheel line. Its bottom flange has 60 years of section loss, so its "
     "capacity is lower: C = 3,850 kip-ft. D and L are unchanged.",
@@ -139,18 +149,18 @@ activity(prs, "Work the rating factor for Girder G-4", 10, [
 ], note="If you finish early: what happens to the rating if the section loss is worse than "
         "assumed and C drops to 3,500?")
 
-# 11 ------------------------------------------------------------------------
+# 13 ------------------------------------------------------------------------
 s = image_slide(prs, "The answer", "m01-rating-factor.png",
                 kicker=f"RF = {F['RF']}, which is a rating of {F['rating_tons']} tons",
                 caption="G-4 carries the rating truck, with less margin than G-3. Both girders "
                         "pass. Nothing here required judgement — and that is exactly what makes "
                         "it a rule.")
 
-# 12 ------------------------------------------------------------------------
+# 14 ------------------------------------------------------------------------
 section(prs, "2", "Learned patterns",
         "Nobody wrote the steps down. A machine was shown examples until it picked up the pattern.")
 
-# 13 ------------------------------------------------------------------------
+# 15 ------------------------------------------------------------------------
 s, y = content(prs, "How FOREMAN rated the deck",
                "There is no formula in here anywhere")
 steps = [("Training  ", "41,800 photographs of bridge decks, each labelled by an inspector"),
@@ -165,21 +175,21 @@ card(s, 0.72, y + 2.95, 11.87, 2.05, "WHY THIS IS NOT A BAD THING",
       "what you would accept as evidence that it worked."],
      tint=PAPER, edge=CONCRETE, body_size=17, label_color=GIRDER)
 
-# 14 ------------------------------------------------------------------------
+# 16 ------------------------------------------------------------------------
 image_slide(prs, "Same six panels. Two sources.", "m01-deck-ratings.png",
             kicker="FOREMAN's 2027 photo ratings against Diane's 2019 field ratings",
             caption="Five panels agree within a point. One is three points apart.")
 
-# 15 ------------------------------------------------------------------------
+# 17 ------------------------------------------------------------------------
 statement(prs, "Which panel was FOREMAN\nmost confident about?", dark=False, size=48)
 
-# 16 ------------------------------------------------------------------------
+# 18 ------------------------------------------------------------------------
 image_slide(prs, "D-15. At 96 percent.", "m01-confidence-vs-error.png",
             caption="The panel was overlaid with new surfacing in 2018. The photograph shows a "
                     "smooth, clean overlay — so the model was surer, not less sure. Confidence "
                     "went up precisely because the evidence got worse.")
 
-# 17 ------------------------------------------------------------------------
+# 19 ------------------------------------------------------------------------
 s, y = content(prs, "Nobody here is wrong",
                "This is the distinction the whole semester rests on")
 speaker_card(s, 0.72, y + 0.2, 5.9, 3.78, "WHAT FOREMAN DID",
@@ -201,7 +211,7 @@ text(s, 0.72, y + 4.18, 11.9, 0.7,
        ("Remember that when somebody tells you a better model would have caught it.", {})]],
      size=18, color=REBAR, line=1.2)
 
-# 18 ------------------------------------------------------------------------
+# 20 ------------------------------------------------------------------------
 s, yend = table_slide(prs, "Rules and learned patterns, side by side",
                       [["", "A rule", "A learned pattern"],
                        ["Built from", "Steps somebody wrote down", "Examples somebody labelled"],
@@ -216,7 +226,7 @@ text(s, 0.72, yend + 0.45, 11.9, 0.7,
      "Most real work is a mix. The skill is knowing which part you are holding at any moment.",
      size=19, color=REBAR)
 
-# 19 ------------------------------------------------------------------------
+# 21 ------------------------------------------------------------------------
 activity(prs, "Task sort — rule, learned, or both?", 12, [
     "Handout H1-05 lists nine things this firm does on the Otter Bend job.",
     "For each: how would you build it — a rule, a learned pattern, or either?",
@@ -225,7 +235,7 @@ activity(prs, "Task sort — rule, learned, or both?", 12, [
 ], note="Work in pairs. Disagreement is the point — if your pair agrees on all nine, you are "
         "not arguing hard enough about number 9.")
 
-# 20 ------------------------------------------------------------------------
+# 22 ------------------------------------------------------------------------
 s, yend = table_slide(prs, "Where that lands",
                       [["#", "Task", "Answer"],
                        ["1", "Rating factor for a girder", "Rule"],
@@ -240,12 +250,12 @@ s, yend = table_slide(prs, "Where that lands",
                       widths=[0.7, 7.4, 3.3], size=14.5, col_align=["c", "l", "l"],
                       row_colors={8: CREAM, 9: CREAM})
 
-# 21 ------------------------------------------------------------------------
+# 23 ------------------------------------------------------------------------
 statement(prs, "Number 9 is a rule —\nif you open the document.",
           "Next Tuesday we find out what happens when you ask a language model instead. "
           "Do not look it up before then.")
 
-# 22 ------------------------------------------------------------------------
+# 24 ------------------------------------------------------------------------
 s, y = content(prs, "The note", "One sentence. It is due before you leave.")
 rect(s, 0.72, y + 0.2, 11.87, 1.3, fill=CREAM, line=GOLD, radius=0.05)
 text(s, 1.1, y + 0.52, 11.1, 0.8,
@@ -265,7 +275,7 @@ card(s, 6.72, y + 1.75, 5.87, 2.55, "NOT YET",
       "Confidence is not a check. Nothing was compared to anything."],
      tint=RGBColor(0xFA, 0xEA, 0xEC), edge=CRIT, label_color=CRIT, body_size=16)
 
-# 23 ------------------------------------------------------------------------
+# 25 ------------------------------------------------------------------------
 s = blank(prs); bg(s, prs, WHITE)
 head(s, "Mask off — two minutes", "The part where I stop being the firm and go back to being "
                                   "your instructor")
@@ -278,7 +288,7 @@ bullet_list(s, 0.95, 2.1, 11.4, 3.2, [
     ("You are allowed to disagree with her. ", "Doing it with evidence is the assignment."),
 ], size=18, dot=GIRDER_LT)
 
-# 24 ------------------------------------------------------------------------
+# 26 ------------------------------------------------------------------------
 closer(prs, [
     ("Read", "The orientation memo and the deck panel history, if you have not already"),
     ("Thursday", "Bring a ruler or calipers if you own them. We measure something physical "
