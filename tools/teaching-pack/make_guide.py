@@ -276,23 +276,30 @@ open(os.path.join(OUT, "BRIDGE-VISUALS.txt"), "w").write(
 """OTTER BEND LIFT BRIDGE — SLIDE VISUALS
 ========================================
 
-Four PowerPoint-ready assets are in ../06-BRIDGE/:
+Four primary PowerPoint assets are in ../06-BRIDGE/:
 
-  otter-bend-lift-bridge.jpg
-    Flat illustration for title, section, or context slides.
+  otter-bend-lift-bridge-flat-claude.png
+    Primary flat illustration for title, section, or context slides.
 
   otter-bend-general-elevation.png
     Dimensioned general elevation drawing 27-114-S01. Keep the red
     "SCHEMATIC — DIMENSIONS NOT VERIFIED BY A LICENSED ENGINEER" disclaimer
     fully visible and legible wherever this drawing is used.
 
-  otter-bend-location-map.png
-    ACMEJOB-branded fictional location map for Kinnick County, County Road 9,
-    and Otter Bend. Keep the fictional-site disclaimer visible.
-
   otter-bend-strain-gauge-array.png
     M02 strain gauge array G1–G8. G5 and G6 are both at lift-span midspan; G6
     is the redundant gauge.
+
+  otter-bend-site-location.png
+    Primary site map: Otter Bend (population 3,140), Kinnickville (county seat,
+    11 miles), County Road 9, and the Built 1962 / vertical lift / 320 ft bridge
+    callouts. The map identifies its place names as invented.
+
+Optional backup:
+
+  otter-bend-location-map.png
+    Simpler ACMEJOB-branded locator. Keep its
+    "FICTIONAL SITE — FOR COURSE USE ONLY" disclaimer visible.
 """)
 
 # ------------------------------------------------------------- file index --
@@ -302,7 +309,7 @@ for folder, rows in [
     ("00-INSTRUCTOR", [
         ("INSTRUCTOR-GUIDE-M01-M03.docx", "Run of show, prep, continuity, review checklist"),
         ("FILE-INDEX.docx", "This page"),
-        ("BRIDGE-VISUALS.txt", "Four PowerPoint-ready bridge assets and usage notes")]),
+        ("BRIDGE-VISUALS.txt", "Four primary bridge assets, optional locator, usage notes")]),
     ("01-BRAND-KIT", [
         ("ACMEJOB-brand-kit.zip", "Hand this to students. Fonts, logos, templates, brand guide"),
         ("(unzipped copy)", "Same contents, for you to look through")]),
@@ -335,13 +342,16 @@ for folder, rows in [
         ("KEY-M03-answer-key.docx", "Claim-by-claim verdicts, teaching notes")]),
     ("05-CHARTS", [("*.png", "Every chart used in the decks, if you want them elsewhere")]),
     ("06-BRIDGE", [
-        ("otter-bend-lift-bridge.jpg", "Flat illustration, ready for PowerPoint"),
+        ("otter-bend-lift-bridge-flat-claude.png",
+         "Primary flat illustration, ready for PowerPoint"),
         ("otter-bend-general-elevation.png",
          "Dimensioned general elevation; keep the disclaimer visible"),
-        ("otter-bend-location-map.png",
-         "Fictional Kinnick County / County Road 9 location map"),
         ("otter-bend-strain-gauge-array.png",
          "M02 gauge array G1–G8; G5/G6 at midspan, G6 redundant"),
+        ("otter-bend-site-location.png",
+         "Primary site map: Otter Bend, Kinnickville, County Road 9"),
+        ("otter-bend-location-map.png",
+         "Optional backup: simpler fictional-site locator"),
         ("README.txt", "PowerPoint placement and disclaimer instructions")]),
 ]:
     h2(d, folder)
