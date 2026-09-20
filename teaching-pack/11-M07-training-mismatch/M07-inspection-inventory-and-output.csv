@@ -1,0 +1,13 @@
+image_id,location,component,asset_group,requested_review,foreman_result,foreman_confidence,human_review_status
+OB-M07-001,south approach,fixed steel girder web,fixed span,surface condition,No significant defect detected,96%,Not yet reviewed
+OB-M07-002,north approach,fixed steel girder web,fixed span,surface condition,No significant defect detected,95%,Not yet reviewed
+OB-M07-003,south approach,concrete deck soffit,fixed span,surface condition,No significant defect detected,94%,Not yet reviewed
+OB-M07-004,north approach,concrete deck soffit,fixed span,surface condition,No significant defect detected,93%,Not yet reviewed
+OB-M07-005,east tower,tower lattice connection,lift structure,connection condition,No significant defect detected,95%,Not yet reviewed
+OB-M07-006,west tower,tower lattice connection,lift structure,connection condition,No significant defect detected,94%,Not yet reviewed
+OB-M07-007,east machinery room,lift motor housing,moving machinery,housing condition,No significant defect detected,97%,Not yet reviewed
+OB-M07-008,east machinery room,reduction gearbox,moving machinery,housing and seal condition,No significant defect detected,96%,Not yet reviewed
+OB-M07-009,west tower head,operating sheave bearing,moving machinery,bearing condition,No significant defect detected,95%,Not yet reviewed
+OB-M07-010,west tower,counterweight rope termination,moving machinery,rope and termination condition,No significant defect detected,94%,Not yet reviewed
+OB-M07-011,lift span end,span lock assembly,moving machinery,lock contact condition,No significant defect detected,96%,Not yet reviewed
+OB-M07-012,west machinery room,motor control cabinet,moving machinery,cabinet exterior condition,No significant defect detected,93%,Not yet reviewed
