@@ -21,6 +21,7 @@ The student package practices:
 
 ## Package layout
 
+- `student/HW1B-student-ask.md` — one-page student handout and submission ask.
 - `student/sensors_startup.csv` — 96 long-format readings (12 per channel).
 - `student/FOREMAN_PASS_report.md` — automated PASS disposition.
 - `student/install_startup_note.md` — field context and startup record.
