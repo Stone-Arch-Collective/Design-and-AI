@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ACMEJOB.Ai · M01 Instructor Run of Day</title>
+<style>
+  :root{--blue:#1F3A5F;--orange:#F26B1D;--ink:#2B2F36;--river:#6F8FAF;--line:#E6E8EA;--paper:#fbfaf6;--yellow:#F2C230;--rust:#9C4A2F}
+  *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:#e9edf0;color:var(--ink);font:16px/1.55 Arial,sans-serif}
+  a{color:var(--blue);font-weight:700;text-underline-offset:3px} .page{max-width:1080px;margin:28px auto;background:var(--paper);box-shadow:0 18px 55px #1f3a5f24}
+  header{position:relative;overflow:hidden;padding:44px 56px 42px;background:var(--blue);color:white;border-bottom:9px solid var(--orange)}
+  header:after{content:"";position:absolute;right:-55px;top:-85px;width:290px;height:290px;border:26px solid #ffffff12;transform:rotate(12deg)}
+  .mark{font:900 28px/1 "Arial Narrow",Arial,sans-serif;letter-spacing:.04em}.mark .ai{display:inline-block;margin-left:3px;padding:4px 7px;background:var(--orange);transform:rotate(-3deg)}
+  .eyebrow,.label{font:800 12px/1.2 "Arial Narrow",Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase}
+  h1{max-width:760px;margin:36px 0 10px;font:900 clamp(42px,7vw,76px)/.91 Georgia,serif;letter-spacing:-.045em}
+  .dek{max-width:760px;margin:0;font:20px/1.45 Georgia,serif;color:#eaf0f6}.chip{display:inline-block;margin-top:23px;padding:7px 12px;border:1px solid #ffffff66;border-radius:999px;font-size:13px}
+  nav{padding:14px 56px;background:white;border-bottom:1px solid var(--line);display:flex;gap:20px;flex-wrap:wrap} nav a{text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:.07em}
+  main{padding:40px 56px 64px}.rule{display:flex;align-items:center;gap:14px;margin:44px 0 22px}.rule h2{margin:0;font:900 31px/1 "Arial Narrow",Arial,sans-serif;color:var(--blue);text-transform:uppercase;letter-spacing:.02em}.rule:after{content:"";height:3px;flex:1;background:var(--blue)}
+  .human{color:var(--blue)}.machine{color:var(--orange)}.lede{font:21px/1.55 Georgia,serif;max-width:850px}
+  .notice,.missing{padding:18px 20px;border-left:6px solid var(--yellow);background:#fff7d8;margin:22px 0}.notice strong,.missing strong{color:var(--blue)}
+  .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.asset{padding:16px;background:white;border:1px solid var(--line);border-top:4px solid var(--blue)}.asset.machine-edge{border-top-color:var(--orange)}
+  .asset h3{margin:4px 0 7px;font:800 18px/1.2 "Arial Narrow",Arial,sans-serif}.asset p{margin:0 0 9px;font-size:14px}.buttons{display:flex;gap:8px;flex-wrap:wrap}
+  .button{display:inline-block;padding:7px 10px;border-radius:3px;background:var(--blue);color:#fff;text-decoration:none;font-size:12px;letter-spacing:.04em}.button.machine-button{background:var(--orange)}
+  .timeline{border-left:4px solid var(--blue);margin-left:18px}.block{position:relative;padding:0 0 30px 34px}.block:before{content:"";position:absolute;left:-11px;top:4px;width:17px;height:17px;border-radius:50%;background:var(--paper);border:4px solid var(--blue)}
+  .time{font:900 15px/1 "Arial Narrow",Arial,sans-serif;color:var(--blue);letter-spacing:.08em;text-transform:uppercase}.block h3{margin:7px 0 13px;font:700 27px/1.15 Georgia,serif}.cue{display:grid;grid-template-columns:102px 1fr;gap:12px;padding:9px 0;border-top:1px solid var(--line)}.cue b{font:800 11px/1.4 "Arial Narrow",Arial,sans-serif;letter-spacing:.12em;color:var(--blue)}.cue.say{background:#edf3f8;border:0;padding:13px 14px;margin:7px 0}.cue.say p{font-family:Georgia,serif;font-size:17px}
+  .cue p{margin:0}.story{margin:28px 0;padding:24px 30px;border-top:3px solid var(--blue);border-bottom:1px solid var(--line);font:italic 22px/1.45 Georgia,serif}.story cite{display:block;margin-top:8px;font:800 11px Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--blue)}
+  .key{border:2px solid var(--orange);background:#fff8f2;padding:18px 20px}.key h3{margin:0 0 8px;color:var(--orange)} footer{padding:24px 56px;background:#152a46;color:#dce5ee;font-size:13px}
+  @media(max-width:720px){.page{margin:0}.grid{grid-template-columns:1fr}header,main,nav,footer{padding-left:24px;padding-right:24px}.cue{grid-template-columns:78px 1fr}}
+  @media print{@page{margin:.55in}.page{margin:0;max-width:none;box-shadow:none}header{padding:25px 32px}.mark{font-size:21px}h1{font-size:46px;margin-top:20px}nav{display:none}main{padding:24px 32px}.block{break-inside:avoid;padding-bottom:18px}.asset,.notice,.story,.key{break-inside:avoid}a{color:var(--blue);text-decoration:none}.button{border:1px solid var(--blue);color:var(--blue);background:white}.button.machine-button{border-color:var(--orange);color:var(--orange)}footer{padding:14px 32px}}
+</style>
+</head>
+<body><div class="page">
+<header>
+  <div class="mark">ACMEJOB<span class="ai">.Ai</span></div>
+  <div class="eyebrow" style="margin-top:34px">Instructor dispatch · Unit 1: Hired</div>
+  <h1>First day.<br>Two kinds of knowing.</h1>
+  <p class="dek">A scripted, 75-minute field guide to rules, learned patterns, Diane’s question, and the Otter Bend job.</p>
+  <span class="chip">M01 · Tuesday, February 2, 2027 · SEIS 201</span>
+</header>
+<nav><a href="#prep">Before class</a><a href="#run">Run of day</a><a href="#close">Close + keys</a><a href="index.html">All meetings</a></nav>
+<main>
+  <p class="lede"><span class="human"><strong>Blue is a person.</strong></span> <span class="machine"><strong>Orange is a machine.</strong></span> Hold that code all day. Today <span class="machine">FOREMAN</span> is not wrong: it answers the question it was asked and cannot explain why. <span class="human">Diane</span> can explain every line and cannot read a photograph. That tension is the course.</p>
+  <div class="notice"><strong>Instructor only.</strong> Keep this page, its answer key, and rubric links out of student-facing navigation. Do not say “hallucination” today; the class earns that word in M03.</div>
+
+  <section id="prep">
+    <div class="rule"><h2>Before class · pull the file</h2></div>
+    <div class="grid">
+      <article class="asset"><span class="label">Project</span><h3>M01 deck · 26 slides</h3><p>Open on slide 1. Presenter display should show notes only to you.</p><div class="buttons"><a class="button" href="https://raw.githubusercontent.com/Stone-Arch-Collective/Engineering-Design-and-AI-Simulation/main/teaching-pack/02-M01-first-day/M01-slides-first-day.pptx">Download deck</a></div></article>
+      <article class="asset"><span class="label">Project / read aloud</span><h3>H1-01 · Diane’s orientation memo</h3><p>The human side of the opening contradiction.</p><div class="buttons"><a class="button" href="https://raw.githubusercontent.com/Stone-Arch-Collective/Engineering-Design-and-AI-Simulation/main/teaching-pack/02-M01-first-day/H1-01-orientation-memo-halvorsen.docx">Download memo</a></div></article>
+      <article class="asset"><span class="label">Print · one per student</span><h3>H1-02 · Load-rating sheet</h3><p>Worked G-3 and blank G-4 calculation.</p><div class="buttons"><a class="button" href="https://raw.githubusercontent.com/Stone-Arch-Collective/Engineering-Design-and-AI-Simulation/main/teaching-pack/02-M01-first-day/H1-02-load-rating-sheet.docx">Download worksheet</a></div></article>
+      <article class="asset machine-edge"><span class="label machine">Print · one per pair</span><h3>H1-03 + H1-04 · Two sources</h3><p>FOREMAN’s 2027 photo ratings beside Diane’s 2019 field history.</p><div class="buttons"><a class="button machine-button" href="https://raw.githubusercontent.com/Stone-Arch-Collective/Engineering-Design-and-AI-Simulation/main/teaching-pack/02-M01-first-day/H1-03-foreman-deck-assessment.docx">FOREMAN assessment</a><a class="button" href="https://raw.githubusercontent.com/Stone-Arch-Collective/Engineering-Design-and-AI-Simulation/main/teaching-pack/02-M01-first-day/H1-04-deck-panel-history-2019.docx">Diane’s history</a></div></article>
+      <article class="asset"><span class="label">Print · one per pair</span><h3>H1-05 · Task sort</h3><p>Nine tasks: rule, learned pattern, or both.</p><div class="buttons"><a class="button" href="https://raw.githubusercontent.com/Stone-Arch-Collective/Engineering-Design-and-AI-Simulation/main/teaching-pack/02-M01-first-day/H1-05-task-sort-activity.docx">Download activity</a></div></article>
+      <article class="asset"><span class="label">Print · one per student</span><h3>H1-06 · Note v1 + rubric</h3><p>Collect before students leave. Keep the rubric conversation explicit.</p><div class="buttons"><a class="button" href="https://raw.githubusercontent.com/Stone-Arch-Collective/Engineering-Design-and-AI-Simulation/main/teaching-pack/02-M01-first-day/H1-06-note-v1-template-rubric.docx">Download note</a></div></article>
+    </div>
+    <div class="missing"><strong>TODO / physical prep:</strong> install the brand fonts if available; decks fall back safely to Arial. No separate panel photographs ship in the pack—the comparison charts are embedded in the deck.</div>
+  </section>
+
+  <section id="run">
+    <div class="rule"><h2>Run of day · 75 minutes</h2></div>
+    <div class="timeline">
+      <article class="block"><div class="time">00–10 · The hire</div><h3>Open the job; do not resolve the contradiction.</h3>
+        <div class="cue"><b>SLIDE</b><p><strong>M01 deck, slides 1–8</strong> — first day, cast, Otter Bend, then FOREMAN’s demo and Diane’s memo.</p></div>
+        <div class="cue say"><b>SAY</b><p>“You were hired this morning. Kinnick County wants one answer by May: rehabilitate this bridge, or replace it. Before nine o’clock, two things arrived—and they do not agree.”</p></div>
+        <div class="cue"><b>HAND OUT</b><p>H1-01 orientation memo. Hold every other handout.</p></div>
+        <div class="cue"><b>DO</b><p>Put <span class="machine">FOREMAN’s 6.8 / 92% result</span> on screen, then read <span class="human">Diane’s “how do you know?”</span> line. Ask what it would take to check either claim.</p></div>
+        <div class="cue"><b>WATCH FOR</b><p>If students call FOREMAN wrong, say: “We have not checked it yet. Fast and uncheckable is not the same as wrong.”</p></div>
+      </article>
+      <article class="block"><div class="time">10–25 · A rule</div><h3>Make every line visible.</h3>
+        <div class="cue"><b>SLIDE</b><p><strong>Slides 9–11</strong> — Rules; formula; worked Girder G-3.</p></div>
+        <div class="cue say"><b>SAY</b><p>“The arithmetic is not the lesson. The lesson is that a stranger can redo it. Nobody has to trust Diane.”</p></div>
+        <div class="cue"><b>HAND OUT</b><p>H1-02 load-rating sheet.</p></div>
+        <div class="cue"><b>DO</b><p>Work G-3 slowly on the board: RF 1.716; 61.8 tons. Name each source value.</p></div>
+        <div class="cue"><b>WATCH FOR</b><p>Impact belongs on the moving live load, not dead load. Correct the placement, not merely the arithmetic.</p></div>
+      </article>
+      <article class="block"><div class="time">25–35 · Their rule</div><h3>Students work G-4 and write a check.</h3>
+        <div class="cue"><b>SLIDE</b><p><strong>Slides 12–13</strong> — activity prompt, then answer.</p></div>
+        <div class="cue say"><b>SAY</b><p>“Show every substitution. Then write one sentence that says how you know—not who told you.”</p></div>
+        <div class="cue"><b>DO</b><p>Give 7 minutes before revealing slide 13. Answer: RF 1.692; 60.9 tons. Accept RF 1.69–1.70.</p></div>
+        <div class="cue"><b>WATCH FOR</b><p>Do not turn passing RF into an unconditional bridge decision. This is one simplified check on one girder.</p></div>
+      </article>
+      <article class="block"><div class="time">35–50 · A learned pattern</div><h3>Two sources look at the same six panels.</h3>
+        <div class="cue"><b>SLIDE</b><p><strong>Slides 14–16</strong> — learned patterns, training, ratings chart.</p></div>
+        <div class="cue say"><b>SAY</b><p>“Nobody wrote a spalling formula. FOREMAN learned from 41,800 labeled photographs. Now compare its eyes with Diane’s field memory.”</p></div>
+        <div class="cue"><b>HAND OUT</b><p>H1-03 FOREMAN assessment and H1-04 panel history, one set per pair.</p></div>
+        <div class="cue"><b>DO</b><p>Pairs compare panel-by-panel and circle the largest disagreement without explaining it yet.</p></div>
+        <div class="cue"><b>WATCH FOR</b><p>The chart compares different years. Do not let “difference” silently become “model error.” Ask what each source could know.</p></div>
+      </article>
+      <article class="block"><div class="time">50–57 · D-15 lands</div><h3>The highest confidence carries the largest error.</h3>
+        <div class="cue"><b>SLIDE</b><p><strong>Slides 17–19</strong> — confidence question, D-15 reveal, “Nobody here is wrong.”</p></div>
+        <div class="cue say"><b>SAY</b><p>“Which panel was FOREMAN most confident about?” <em>Wait.</em> “D-15. The deck was overlaid in 2018. The photograph shows the overlay, not the deck.”</p></div>
+        <div class="cue"><b>DO</b><p>Let silence do the work before advancing to slide 19.</p></div>
+        <div class="cue"><b>WATCH FOR</b><p>A “better model” still cannot infer hidden material from a surface photo. The limit is the input and question, not a malfunction.</p></div>
+      </article>
+      <article class="block"><div class="time">57–69 · Sort the work</div><h3>Rules, patterns, and the unresolved ninth card.</h3>
+        <div class="cue"><b>SLIDE</b><p><strong>Slides 20–23</strong> — comparison, activity, answers, M03 setup.</p></div>
+        <div class="cue say"><b>SAY</b><p>“If your pair agrees on all nine, argue harder about number 9.”</p></div>
+        <div class="cue"><b>HAND OUT</b><p>H1-05 task sort.</p></div>
+        <div class="cue"><b>DO</b><p>Debrief items 8 and 9 only. Land #9: looking up an interval is a rule <em>if you open the document</em>.</p></div>
+        <div class="cue"><b>WATCH FOR</b><p>Refuse to explain what happens when a language model “looks it up.” Say M03 will return to it and stop.</p></div>
+      </article>
+      <article class="block"><div class="time">69–75 · The note</div><h3>One sentence; then the mask comes off.</h3>
+        <div class="cue"><b>SLIDE</b><p><strong>Slides 24–26</strong> — note template, mask-off, before Thursday.</p></div>
+        <div class="cue say"><b>SAY</b><p>“Diane is a character. She is not your grader. Your note is graded on whether the check was real, not whether the answer later proved right.”</p></div>
+        <div class="cue"><b>HAND OUT</b><p>H1-06 note v1 + rubric. Collect the completed note before dismissal.</p></div>
+        <div class="cue"><b>DO</b><p>Read one strong and one weak note anonymously if time permits. Tell students to bring a ruler or calipers Thursday if they own one.</p></div>
+        <div class="cue"><b>WATCH FOR</b><p>Do not assign HW1 yet. It arrives after the M02 reveal.</p></div>
+      </article>
+    </div>
+  </section>
+
+  <div class="story">“Every number you hand me comes with one sentence: how do you know that is right?”<cite>Diane Halvorsen, PE · the thread that runs through the semester</cite></div>
+
+  <section id="close">
+    <div class="rule"><h2>Close the file</h2></div>
+    <div class="key"><h3>Instructor key + continuity</h3><p><a href="https://raw.githubusercontent.com/Stone-Arch-Collective/Engineering-Design-and-AI-Simulation/main/teaching-pack/02-M01-first-day/KEY-M01-answer-key.docx">Download KEY-M01-answer-key.docx</a>. Record who treats confidence as evidence and who notices the input limit. D-15 returns in M07; task 9 pays off in M03. Do not grade Diane’s approval.</p></div>
+  </section>
+</main>
+<footer>ACMEJOB.Ai · Engineering, est. 1967 · Instructor-only run of day · Technical values are fictional and await engineering review.</footer>
+</div></body></html>

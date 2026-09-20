@@ -10,6 +10,11 @@ d = course_doc("M01 – M03", "Instructor Guide", kind="INSTRUCTOR ONLY")
 para(d, "Everything needed to run the first three meetings of SEIS 201, Spring 2027. Draft. No "
         "engineer or statistics instructor has reviewed the technical content; the items needing "
         "review are listed on the last page.", size=9.5, italic=True, color=GREY, after=10)
+callout(d, "Podium run-of-day pages",
+        "Open 00-INSTRUCTOR/run-of-day/index.html for the newsletter-style meeting desk. "
+        "M01-run-of-day.html, M02-run-of-day.html and M03-run-of-day.html give exact deck and "
+        "slide cues, scripted facilitator language, handout timing, raw file links, keys and "
+        "print-friendly layouts.")
 
 # ---------------------------------------------------------------------------
 h2(d, "The shape of the three meetings", before=2)
@@ -315,7 +320,11 @@ for folder, rows in [
     ("00-INSTRUCTOR", [
         ("INSTRUCTOR-GUIDE-M01-M03.docx", "Run of show, prep, continuity, review checklist"),
         ("FILE-INDEX.docx", "This page"),
-        ("BRIDGE-VISUALS.txt", "Four primary bridge assets, optional locator, usage notes")]),
+        ("BRIDGE-VISUALS.txt", "Four primary bridge assets, optional locator, usage notes"),
+        ("run-of-day/index.html", "Newsletter-style podium desk linking M01–M03"),
+        ("run-of-day/M01-run-of-day.html", "Exact slides, script and handouts for M01"),
+        ("run-of-day/M02-run-of-day.html", "Spoiler-safe deck switch, G6 reveal and Case B"),
+        ("run-of-day/M03-run-of-day.html", "Exact slides, source-check script and reveals")]),
     ("01-BRAND-KIT", [
         ("ACMEJOB-brand-kit.zip", "Hand this to students. Fonts, logos, templates, brand guide"),
         ("(unzipped copy)", "Same contents, for you to look through")]),
