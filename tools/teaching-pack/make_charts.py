@@ -1,4 +1,4 @@
-"""Charts and diagrams for the M01-M03 decks.
+"""Charts and diagrams for the M01-M04 decks.
 
 Chart palette is brand-derived and validated with the dataviz validator:
   node scripts/validate_palette.js "3A7DBF,E8631F" --mode light  -> all PASS
@@ -272,4 +272,38 @@ ax.set_title("The panel it was surest about is the one it got most wrong",
              fontsize=15, fontfamily="Barlow Condensed", fontweight="bold",
              color=INK, loc="left", pad=14)
 finish(fig, "m01-confidence-vs-error.png")
+
+# ------------------------------------------------------ M04 deck cores -----
+core_rows = list(csv.DictReader(open(os.path.join(
+    ROOT, "build", "data", "cores_2027.csv"
+))))
+core_vals = np.array([float(r["strength_psi"]) for r in core_rows])
+core_ids = [r["core_id"] for r in core_rows]
+c4 = FACTS["m04"]
+fig, ax = plt.subplots(figsize=(10.4, 4.1))
+y = np.linspace(-0.13, 0.13, len(core_vals))
+colors = [CRIT if v < c4["comparison_psi"] else SER1 for v in core_vals]
+ax.scatter(core_vals, y, s=88, c=colors, edgecolors=SURF, linewidths=1.5, zorder=3)
+ax.axvline(c4["comparison_psi"], color=CRIT, lw=2, ls=(0, (5, 3)), zorder=1)
+ax.axvline(c4["mean_psi"], color=SER2, lw=3, zorder=2)
+ax.annotate(f"Mean  {c4['mean_psi']:,.0f} psi", xy=(c4["mean_psi"], 0.19),
+            ha="center", fontsize=12, color=SER2, fontweight="bold")
+ax.annotate(f"Project comparison  {c4['comparison_psi']:,} psi",
+            xy=(c4["comparison_psi"], -0.24), ha="center",
+            fontsize=11, color=CRIT, fontweight="bold")
+for i, (ident, value, yy) in enumerate(zip(core_ids, core_vals, y)):
+    if value < c4["comparison_psi"]:
+        ax.annotate(ident, xy=(value, yy), xytext=(0, 8 + 12 * (i % 2)),
+                    textcoords="offset points", ha="center",
+                    fontsize=8.5, color=CRIT)
+ax.set_yticks([])
+ax.set_ylim(-0.34, 0.34)
+ax.set_xlim(3600, 6200)
+ax.set_xlabel("28-day compressive strength (psi)")
+ax.grid(axis="x", color=GRID, lw=0.8)
+ax.set_axisbelow(True)
+ax.set_title("Twenty-four cores do not become one core when you average them",
+             fontsize=15, fontfamily="Barlow Condensed", fontweight="bold",
+             color=INK, loc="left", pad=14)
+finish(fig, "m04-core-spread.png")
 print("charts done")
