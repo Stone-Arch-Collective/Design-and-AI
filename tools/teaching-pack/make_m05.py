@@ -1,13 +1,11 @@
 """M05 handouts, machine artifacts, answer key, and pack file index."""
 import os
-import shutil
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from doclib import *
 
 OUT = os.path.join(BUILD, "M05")
-PACK = os.path.abspath(os.path.join(ROOT, "..", "..", "teaching-pack"))
 
 
 def answer_lines(doc, count=3):

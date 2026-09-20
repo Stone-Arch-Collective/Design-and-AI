@@ -51,7 +51,7 @@ speaker_card(s, .72, y + 2.7, 11.87, 1.55, "DIANE HALVORSEN, PE",
 # 3
 s, y = content(prs, "Your job is not to guess what crossed the bridge",
                "Your job is to reconstruct what the agent did")
-card(s, .72, y + .2, 11.87, 1.55, "THE HUNT",
+card(s, .72, y + .2, 11.87, 1.7, "THE HUNT",
      ["Was the alarm a recorded exceedance, a pipeline artifact, a threshold mistake, an "
       "averaging mistake—or a correct warning followed by an unsupported action?"],
      tint=CREAM, edge=GOLD, label_color=REBAR, body_size=18)
@@ -75,7 +75,6 @@ rows = [
     ["Observation", "What came back?", "Eight rows; max 286.1 µε; threshold true"],
     ["Decision", "What does it mean / what next?", "Choose severity and next action"],
 ]
-table_slide_obj, _ = (s, y)
 gt = s.shapes.add_table(len(rows), 3, Inches(.72), Inches(y + .2),
                         Inches(11.87), Inches(3.5)).table
 for ci, width in enumerate((2.0, 3.2, 6.67)):
@@ -91,7 +90,7 @@ for ri, row in enumerate(rows):
         r.font.size = Pt(15 if ri == 0 else 14)
         r.font.bold = ri == 0
         r.font.color.rgb = WHITE if ri == 0 else REBAR
-card(s, .72, y + 4.0, 11.87, 1.05, "IMPORTANT",
+card(s, .72, y + 3.95, 11.87, 1.32, "IMPORTANT",
      ["The loop label tells you what kind of step it is. It does not tell you the step is justified."],
      tint=PEACH, edge=STICKER, label_color=STICKER, body_size=14)
 
@@ -119,7 +118,7 @@ bullet_list(s, .95, y + .25, 11.4, 3.35, [
     ("Transformation  ", "baseline correction, filtering, aggregation, or unit conversion."),
     ("Quality metadata  ", "what the pipeline knows about missing, suspect, or repeated data."),
 ], size=18, dot=GIRDER_LT)
-card(s, .72, y + 3.95, 11.87, 1.25, "AUDIT RULE",
+card(s, .72, y + 3.92, 11.87, 1.35, "AUDIT RULE",
      ["Never let a transformed value travel without the field name, time window, and sample count."],
      tint=CREAM, edge=GOLD, label_color=REBAR, body_size=15)
 
@@ -196,7 +195,6 @@ rows = [
     ["10-minute mean", "1 sample; mean equals that single reading"],
     ["WARN-250", "286.1 > 250.0 → TRUE"],
 ]
-table_slide(prs, "unused", [], []) if False else None
 gt = s.shapes.add_table(len(rows), 2, Inches(.72), Inches(y + .25),
                         Inches(11.87), Inches(3.0)).table
 gt.columns[0].width = Inches(4.0); gt.columns[1].width = Inches(7.87)

@@ -27,7 +27,7 @@ while ts <= END:
         regular_pulse = 35 + ((ts.day * 11 + ts.hour * 7 + ts.minute) % 72)
     overnight_pulse = 0
     if ts == datetime(2027, 2, 16, 3, 0):
-        overnight_pulse = 272
+        overnight_pulse = 299.5
     for gauge in GAUGES:
         thermal = (temperature + 5) * (2.0 + .12 * int(gauge[1:]))
         noise = rng.uniform(-4.5, 4.5)
