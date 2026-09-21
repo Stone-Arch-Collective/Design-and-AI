@@ -281,7 +281,7 @@ bullets(d, [
     "Do not convert a p-value into the probability that the claim is true.",
     "Do not equate statistical significance with engineering importance or a damage diagnosis.",
     "Do not introduce any Exam 1 scenario details.",
-    "All facilitator SAY remains placeholder text until the separate Oli Cloud PASS arrives.",
+    "Deck notes and the run-of-day use the revised M10 Cloud-PASS canon SAY.",
 ])
 save(d, os.path.join(OUT, "KEY-M10-answer-key.docx"))
 
@@ -315,7 +315,7 @@ table(d, [["Folder", "Purpose"]] + folders, widths=[2.75, 4.15], size=7.4)
 h2(d, "14-M10-deterioration-v-noise")
 table(d, [
     ["File", "What it is"],
-    ["M10-student.pptx", "Spoiler-safe concepts and interval hunt; SAY placeholders"],
+    ["M10-student.pptx", "Spoiler-safe concepts and interval hunt with Cloud-PASS canon SAY"],
     ["M10-instructor-reveal.pptx", "Gated 95%/99% comparison and bounded claim"],
     ["FOREMAN-M10-deterioration-claim.docx", "Designed p-value and significance overclaim"],
     ["H10-01-coupon-interval-warmup.docx", "Six-coupon guided t interval"],
@@ -329,7 +329,7 @@ table(d, [
     ["M10-interval-summary.csv", "Deterministic 95% and 99% calculations"],
     ["M10-test-control-check.csv", "Matched process-control record"],
     ["KEY-M10-answer-key.docx", "Instructor-only calculations and boundaries"],
-    ["../00-INSTRUCTOR/source-notes/M10-story-SAY.md", "Placeholder scaffold; replace only after Cloud PASS"],
+    ["../00-INSTRUCTOR/source-notes/M10-story-SAY.md", "Revised M10 Cloud-PASS canon story and SAY source"],
 ], widths=[3.2, 3.7], size=7.3)
 save(d, os.path.join(index_out, "FILE-INDEX.docx"))
 print("M10 handouts and index done")

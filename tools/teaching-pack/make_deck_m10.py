@@ -1,4 +1,4 @@
-"""M10 spoiler-safe student deck and gated reveal with Oli SAY placeholders."""
+"""M10 spoiler-safe student deck and gated reveal with Cloud-PASS Oli SAY."""
 import csv
 import os
 import sys
@@ -12,15 +12,13 @@ with open(os.path.join(OUT, "M10-interval-summary.csv"), newline="") as f:
 coupon, paired95, paired99 = summaries
 
 
-def add_placeholder_notes(prs, labels):
-    if len(prs.slides) != len(labels):
-        raise ValueError(f"notes ({len(labels)}) != slides ({len(prs.slides)})")
-    for slide, label in zip(prs.slides, labels):
+def add_canon_notes(prs, notes):
+    if len(prs.slides) != len(notes):
+        raise ValueError(f"notes ({len(notes)}) != slides ({len(prs.slides)})")
+    for slide, note in zip(prs.slides, notes):
         slide.notes_slide.notes_text_frame.text = (
-            "OLI SAY PLACEHOLDER — CLOUD PASS PENDING.\n\n"
-            f"Beat: {label}\n"
-            "Do not improvise or treat this scaffold as approved canon. "
-            "Replace only from the Cloud-PASS M10 SAY file on follow-up."
+            "OLI CANON SAY — Cloud hard-review PASS · revised M10.\n\n"
+            + note.strip()
         )
 
 
@@ -164,13 +162,24 @@ closer(prs, [
     ("BOUNDARY", "Keep all Exam 1 scenario details out of M10."),
 ], title="Before the gated reveal")
 
-add_placeholder_notes(prs, [
-    "title and meeting frame", "inbox: Diane, FOREMAN, and schedule pressure",
-    "student hunt", "teach transition", "standard error", "t multiplier",
-    "confidence level", "coupon warm-up", "signal/noise transition", "paired design",
-    "measurement/process/sampling noise", "test-control audit", "paired 95% interval",
-    "p-value and significance language", "99% sensitivity check", "Note v2",
-    "HW5 callback and close",
+add_canon_notes(prs, [
+    "TITLE — SAY: “Did it get worse? Today you will decide what a small change and its interval can honestly support.”",
+    "INBOX — Diane Halvorsen, PE: “Otter Bend deck—worse since 2019? Yes or no. County wants an answer.” FOREMAN: “Mean strain under test truck +6%. Deterioration confirmed. p = 0.04 → 96% chance the deck has deteriorated.” Wes Tanaka, EIT, side thread: “I’m looking at the coupon pairs again. Don’t hang the whole story on that one line.” Wes does not co-solve.",
+    "HUNT — SAY: “Open the coupon and 2019/2027 load-test files. Build the coupon interval, compute the eight paired differences, then compare the 95% and 99% intervals. What can you tell Diane without deleting the uncertainty?”",
+    "TEACH TRANSITION — SAY: “Before we test FOREMAN’s conclusion, separate the estimate, the uncertainty around it, and the engineering claim.”",
+    "TEACH — SAY: “Standard error estimates how much a sample mean would vary from sample to sample. It is not the spread of the individual readings.”",
+    "TEACH — SAY: “For a small sample, the t multiplier reflects both confidence level and degrees of freedom. A higher confidence level requires a larger multiplier and a wider interval.”",
+    "TEACH — SAY: “Confidence describes the long-run performance of the interval-building method. It is not the probability that FOREMAN’s claim is true.”",
+    "LAB — SAY: “Open coupons.csv. Build the interval for the coupon mean using the t-table. Show degrees of freedom and the critical t.”",
+    "LAB TRANSITION — SAY: “Now move from interval mechanics to the Otter Bend question. Pair the same locations before summarizing.”",
+    "TEACH — SAY: “For each matched location, calculate 2027 minus 2019. The observations for this analysis are the eight paired differences—not the 48 passes treated as independent changes.”",
+    "TEACH — SAY: “Audit measurement repeatability, matched test process, and sampling uncertainty separately. A controlled process strengthens the comparison; it does not diagnose a damage mechanism.”",
+    "LAB — SAY: “Verify the matched load, lane, speed, passes, and temperature handling. Name one source reduced by design and one uncertainty that remains.”",
+    "LAB — SAY: “Build the 95% interval on the eight paired differences. Mark whether zero is inside. Commit one supported sentence before the reveal.”",
+    "TEACH — SAY: “A p-value is not the probability that a claim is true. FOREMAN’s ‘96% chance’ line is the misconception you must reject. Statistically significant does not mean confirmed, and it does not mean large.”",
+    "LAB — SAY: “Keep the estimate, standard error, and degrees of freedom fixed. Use the 99% t multiplier. If zero enters, explain why the intervals are not contradictory: higher confidence requires a wider interval.”",
+    "NOTE — SAY: “Write Note version 2: claim, check, result. Include the mean change and an interval. Notebook line: p does not equal P of claim true; significant does not equal confirmed or large.”",
+    "CLOSE — SAY: “HW5 is the confidence interval on mean daily peak strain from the feed. HW3 callback: if duplicate timestamps were not removed, the sample appears larger than it is and the interval comes out too narrow. Say why in one sentence on the HW5 sheet. Eyes outside this project team will soon be on the Otter Bend health record; preserve the uncertainty now.”",
 ])
 save(prs, os.path.join(OUT, "M10-student.pptx"))
 
@@ -250,9 +259,15 @@ closer(rev, [
     ("SPOILER GUARD", "Keep all Exam 1 scenario details out of this meeting."),
 ], title="Close M10")
 
-add_placeholder_notes(rev, [
-    "reveal title", "coupon result", "paired estimate", "95% interval",
-    "99% interval", "confidence-level synthesis", "FOREMAN designed error",
-    "bounded response", "HW5 and close",
+add_canon_notes(rev, [
+    "REVEAL — Open only after students complete the paired hunt. SAY: “The designed error is not the arithmetic alone; it is what FOREMAN claims the arithmetic proves.”",
+    "REVEAL — SAY: “The coupon interval establishes the mechanics: sample mean, standard error, degrees of freedom, critical t, and interval.”",
+    "REVEAL — SAY: “The eight paired differences have a mean of 6.0 microstrain. Same-location pairing and matched controls reduce noise, but the location changes still vary.”",
+    "REVEAL — SAY: “The 95% interval just excludes zero. That supports evidence of a positive mean change at this confidence level—not a complete deterioration diagnosis.”",
+    "REVEAL — SAY: “The 99% interval includes zero because the higher confidence demand widens the interval. The two intervals do not contradict each other.”",
+    "REVEAL — SAY: “The honest synthesis is probably a small real change, with the confidence level stated. Borderline evidence is not no evidence, and it is not a slam-dunk.”",
+    "REVEAL — SAY: “FOREMAN treats p = 0.04 as a 96% chance the claim is true and treats significant as confirmed and large. Both moves are wrong. You learned the opposite during Teach.”",
+    "REVEAL — SAY: “Tell Diane Halvorsen, PE: the matched locations show a small positive mean change; the 95% interval excludes zero, the 99% interval includes it, and these data alone do not confirm a damage mechanism.”",
+    "CLOSE — SAY: “HW5 is the interval on mean daily peak strain. HW3 callback: skipped duplicate-timestamp cleaning makes the apparent sample too large and the interval too narrow. Wes Tanaka, EIT’s quiet check remains continuity, not a co-solve. Eyes are coming to the Otter Bend record; no score or publish decision is named here.”",
 ])
 save(rev, os.path.join(OUT, "M10-instructor-reveal.pptx"))
