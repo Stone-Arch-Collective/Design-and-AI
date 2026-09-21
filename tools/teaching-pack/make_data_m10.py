@@ -29,7 +29,7 @@ coupons = [
     ("CP-04", 48.7), ("CP-05", 51.2), ("CP-06", 49.8),
 ]
 with open(os.path.join(OUT, "coupons.csv"), "w", newline="") as f:
-    writer = csv.writer(f)
+    writer = csv.writer(f, lineterminator="\n")
     writer.writerow(["coupon_id", "yield_strength_ksi"])
     writer.writerows(coupons)
 
@@ -72,13 +72,13 @@ for location, old_mean, change in zip(locations, baseline, changes):
 
 with open(os.path.join(OUT, "loadtest_2019_2027.csv"), "w", newline="") as f:
     fields = list(raw_rows[0])
-    writer = csv.DictWriter(f, fieldnames=fields)
+    writer = csv.DictWriter(f, fieldnames=fields, lineterminator="\n")
     writer.writeheader()
     writer.writerows(raw_rows)
 
 with open(os.path.join(OUT, "M10-paired-location-summary.csv"), "w", newline="") as f:
     fields = list(paired_rows[0])
-    writer = csv.DictWriter(f, fieldnames=fields)
+    writer = csv.DictWriter(f, fieldnames=fields, lineterminator="\n")
     writer.writeheader()
     writer.writerows(paired_rows)
 
@@ -102,10 +102,10 @@ summary_rows = [
      f"{T99_DF7:.3f}", f"{change_stats_99[3]:.3f}", f"{change_stats_99[4]:.3f}"],
 ]
 with open(os.path.join(OUT, "M10-interval-summary.csv"), "w", newline="") as f:
-    csv.writer(f).writerows(summary_rows)
+    csv.writer(f, lineterminator="\n").writerows(summary_rows)
 
 with open(os.path.join(OUT, "M10-test-control-check.csv"), "w", newline="") as f:
-    writer = csv.writer(f)
+    writer = csv.writer(f, lineterminator="\n")
     writer.writerow(["control", "2019", "2027", "comparison"])
     writer.writerow(["reference truck load", "80.0 kips", "80.0 kips", "matched"])
     writer.writerow(["lane offset", "0.0 ft", "0.0 ft", "matched"])
