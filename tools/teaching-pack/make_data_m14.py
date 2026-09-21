@@ -36,7 +36,6 @@ start = wb.active
 start.title = "START_HERE"
 start.append(["item", "value"])
 start_rows = [
-    ["release_status", "READY FOR SHANNON SKIM · NOT LMS PUBLISHED"],
     ["exam", "SEIS 201 Exam 1 · M14"],
     ["job", "Otter Bend Lift Bridge · ACMEJOB Unit 2"],
     ["decision", "Internal screening recommendation for one requested night crossing"],

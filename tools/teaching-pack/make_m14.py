@@ -81,11 +81,6 @@ img.save(chart_path, format="PNG", optimize=False)
 d = foreman_doc("Overweight Permit Screening Recommendation",
                 generated="2027-03-18 08:12 CST")
 callout(
-    d, "RELEASE STATUS",
-    "READY FOR SHANNON SKIM · NOT LMS PUBLISHED",
-    fill="FFF6E5", edge="F2C230",
-)
-callout(
     d, "RECOMMENDATION · YES",
     "Approve the requested night crossing. The projected control-gauge response remains "
     "below the instructional screening trigger.",
@@ -111,11 +106,6 @@ save(d, os.path.join(OUT, "FOREMAN-M14-permit-recommendation.docx"))
 
 # ======================================================== EXAM BOOKLET =====
 d = course_doc("M14", "Exam 1 · Overweight Permit", kind="STUDENT EXAM · 75 MINUTES")
-callout(
-    d, "Release status",
-    "READY FOR SHANNON SKIM · NOT LMS PUBLISHED",
-    fill="FFF6E5", edge="F2C230",
-)
 callout(
     d, "Exam conditions",
     "Use the supplied clean evidence file, FOREMAN recommendation, and reference sheet. "
@@ -216,11 +206,6 @@ save(d, os.path.join(OUT, "EX1-01-student-exam-booklet.docx"))
 # ===================================================== REFERENCE SHEET =====
 d = course_doc("M14", "Exam 1 · Reference Sheet", kind="STUDENT COPY")
 callout(
-    d, "Release status",
-    "READY FOR SHANNON SKIM · NOT LMS PUBLISHED",
-    fill="FFF6E5", edge="F2C230",
-)
-callout(
     d, "Supplied values",
     "For n = 8 valid repeated passes, df = 7 and t* = 2.365 for a two-sided 95% interval.",
     fill="EEF3F8", edge="1F3A5F",
@@ -280,11 +265,11 @@ table(d, [
 save(d, os.path.join(OUT, "EX1-03-instructor-rubric.docx"))
 
 # =============================================================== KEY ======
-d = course_doc("M14", "Exam 1 · Answer Key and Later Review", kind="INSTRUCTOR ONLY")
+d = course_doc("M14", "Exam 1 · Answer Key and Reveal", kind="INSTRUCTOR ONLY")
 callout(
-    d, "CLOUD-PASS CANON FOLDED",
-    "Use this document as a scoring key. Do not run a right-answer debrief or open the "
-    "review deck on exam day; any later review is a separately scheduled session.",
+    d, "SAY HOLD",
+    "No Cloud-PASS SAY has been supplied. Use this document as a scoring key only. "
+    "Do not treat any bracketed hook in the deck or run-of-day as approved spoken language.",
     fill="FFF1E8", edge="F26B1D",
 )
 h2(d, "Worked values")
@@ -351,22 +336,21 @@ folders = [
     ("15-M11-dashboard-publish", "Agent dashboard and human publish checkpoint"),
     ("16-M12-misleading-charts", "Chart selection, axes, HW6, and Exam 1 review"),
     ("17-M13-wes-handoff", "Pipeline trace and Unit 2 debrief"),
-    ("18-M14-exam-1-overweight-permit", "Exam 1 clean file, permit decision, rubric, and later review"),
+    ("18-M14-exam-1-overweight-permit", "Exam 1 clean file, permit decision, rubric, and reveal"),
 ]
 table(d, [["Folder", "Purpose"]] + folders, widths=[2.75, 4.15], size=6.6)
 h2(d, "18-M14-exam-1-overweight-permit")
 table(d, [
     ["File", "What it is"],
-    ["M14-exam-launch.pptx", "Student-facing exam launch and clock with Cloud-PASS SAY"],
-    ["M14-instructor-later-review.pptx", "Worked later-review deck; never open on exam day"],
+    ["M14-exam-launch.pptx", "Student-facing exam launch and clock; placeholder notes only"],
+    ["M14-instructor-reveal.pptx", "Post-collection worked reveal; placeholder notes only"],
     ["EX1-01-student-exam-booklet.docx", "Five-task 75-minute applied practical"],
     ["EX1-02-reference-sheet.docx", "Supplied formulas, t multiplier, and interpretation guards"],
     ["M14-exam-evidence.xlsx / control-gauge CSV", "Same clean source file for every student"],
     ["FOREMAN-M14-permit-recommendation.docx / chart PNG", "Machine recommendation and visual evidence"],
     ["EX1-03-instructor-rubric.docx", "100-point outcome-neutral scoring rubric"],
-    ["KEY-M14-answer-key.docx", "Worked values, defensible calls, and later-review boundaries"],
-    ["STUDENT-PACKET-STATUS.md", "Ready-for-Shannon-skim hold; not LMS published"],
-    ["../00-INSTRUCTOR/source-notes/M14-story-SAY.md", "Cloud-PASS M14 canon story and SAY source"],
+    ["KEY-M14-answer-key.docx", "Worked values, defensible calls, and reveal boundaries"],
+    ["../00-INSTRUCTOR/source-notes/M14-SAY-HOLD.md", "Explicit placeholder hook pending Cloud-PASS file"],
 ], widths=[3.2, 3.7], size=7.0)
 save(d, os.path.join(index_out, "FILE-INDEX.docx"))
 print("M14 exam documents, evidence chart, and index done")

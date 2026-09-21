@@ -13,7 +13,7 @@ TARGET = os.path.join(REPO, "teaching-pack", "18-M14-exam-1-overweight-permit")
 
 expected = [
     "M14-exam-launch.pptx",
-    "M14-instructor-later-review.pptx",
+    "M14-instructor-reveal.pptx",
     "EX1-01-student-exam-booklet.docx",
     "EX1-02-reference-sheet.docx",
     "EX1-03-instructor-rubric.docx",
