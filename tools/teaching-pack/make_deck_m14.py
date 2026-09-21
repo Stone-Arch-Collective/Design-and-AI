@@ -1,4 +1,4 @@
-"""M14 exam launch and post-collection reveal with SAY placeholders only."""
+"""M14 exam launch and later-review reveal with Cloud-PASS canon SAY."""
 import math
 import os
 import statistics
@@ -17,15 +17,16 @@ FACTOR = 104.0 / 80.0
 LOW, HIGH = (MEAN - MARGIN) * FACTOR, (MEAN + MARGIN) * FACTOR
 
 
-def add_placeholder_notes(prs, hooks):
-    if len(prs.slides) != len(hooks):
-        raise ValueError(f"notes ({len(hooks)}) != slides ({len(prs.slides)})")
-    for slide, hook in zip(prs.slides, hooks):
+def add_canon_notes(prs, notes):
+    if len(prs.slides) != len(notes):
+        raise ValueError(f"notes ({len(notes)}) != slides ({len(prs.slides)})")
+    for slide, note in zip(prs.slides, notes):
         slide.notes_slide.notes_text_frame.text = (
-            "M14 SAY HOLD — PLACEHOLDER ONLY — NOT CLOUD-PASS.\n"
-            "Do not deliver this text as canon. Replace only from the attached "
-            "Cloud-PASS file in a follow-up.\n\n"
-            f"RUN-OF-DAY HOOK: {hook}"
+            "M14 CANON SAY — Cloud PASS.\n"
+            "Clock resolution: setup before the timed block; 75 silent-writing minutes; "
+            "collect after time. This follows the course and simulation plan and gives "
+            "5 more silent minutes than the PASS file's soft 'Exam block 70' label.\n\n"
+            + note.strip()
         )
 
 
@@ -76,12 +77,12 @@ closer(prs, [
     ("BEGIN", "Open START_HERE in M14-exam-evidence.xlsx."),
 ], title="Begin Exam 1")
 
-add_placeholder_notes(prs, [
-    "[OPENING / identity check placeholder. State the common-file and 75-minute conditions without adding story detail.]",
-    "[MATERIALS / integrity placeholder. Confirm allowed files and how students submit work.]",
-    "[SCENARIO boundary placeholder. Name Diane Halvorsen, PE as unreachable only if the Cloud-PASS file does so.]",
-    "[TIME checks placeholder. Insert locally approved time announcements; do not coach task content.]",
-    "[COLLECTION placeholder. State stop-work, file naming, and collection procedure.]",
+add_canon_notes(prs, [
+    "SETUP — SAY: “Exam 1 — overweight permit. Same file for everyone. Diane Halvorsen, PE is unreachable. FOREMAN’s rec is in the packet (orange). Phones away. 75 minutes.” Complete the access check before starting the timed block.",
+    "SETUP — Confirm the exam file, FOREMAN recommendation and chart, booklet, and reference sheet. Clarify logistics only—not content. No Wes co-solve and no live Diane.",
+    "EXAM CALL — SAY: “Kinnick County Public Works needs a decision today on an overweight permit for a night crossing at the Otter Bend Lift Bridge. FOREMAN recommends approval and says the crossing is fine. You are the human review checkpoint.”",
+    "SILENT WORK — 75 timed minutes. Make time calls at about 35 minutes remaining and 10 minutes remaining. Clarify logistics only; do not identify a failed claim, chart flaw, or preferred decision branch.",
+    "CLOSE — SAY: “Pens down.” Collect exam-file responses and Note version 2. Do not run a right-answer debrief or open the reveal on exam day.",
 ])
 save(prs, os.path.join(OUT, "M14-exam-launch.pptx"))
 
@@ -89,9 +90,9 @@ save(prs, os.path.join(OUT, "M14-exam-launch.pptx"))
 # =========================================================== REVEAL ========
 rev = deck()
 title_slide(
-    rev, "Meeting 14  ·  Instructor reveal", "The record changes the call",
-    "Open only after every exam is collected",
-    "M14 · Exam 1 · Unit 2 close",
+    rev, "Exam 1  ·  Later review only", "The record changes the call",
+    "Never open on exam day · use only after release is approved",
+    "M14 · Instructor review · Unit 2",
 )
 
 statement(
@@ -150,17 +151,17 @@ closer(rev, [
     ("GRADE", "Reasoning, traceability, uncertainty, assumptions, and scope."),
     ("DO NOT GRADE", "Agreement with FOREMAN, Diane, or one preferred final outcome."),
     ("BOUNDARY", "No later-unit methods, callbacks, or Otter Bend outcomes in this reveal."),
-    ("SAY HOLD", "Speaker language remains empty until a Cloud-PASS file is attached."),
+    ("CANON", "Cloud-PASS SAY is folded; this deck is reserved for a separate later review."),
 ], title="Unit 2 closes on a documented judgment")
 
-add_placeholder_notes(rev, [
-    "[POST-COLLECTION opening placeholder. Confirm all exam materials are secured before reveal.]",
-    "[REVEAL thesis placeholder. Distinguish a completed machine calculation from an engineering record.]",
-    "[SOURCE-check walkthrough placeholder. Invite multiple valid source checks before showing the 1.30 ratio.]",
-    "[DESCRIPTIVE-statistics placeholder. Preserve supported rounding and units.]",
-    "[INTERVAL walkthrough placeholder. State direct scaling as an exam simplification, not a real rating method.]",
-    "[CHART critique placeholder. Accept other consequential critiques grounded in the supplied visual.]",
-    "[DECISION comparison placeholder. Keep YES WITH CONDITIONS and NO / HOLD both gradeable.]",
-    "[UNIT 2 close placeholder. No later-semester spoilers. Restate that Diane is not the grading key.]",
+add_canon_notes(rev, [
+    "LATER REVIEW ONLY — Do not open on exam day. Use only in a separately scheduled review after exam materials are secured and release is approved.",
+    "REVIEW — SAY: “FOREMAN checked a number. Your exam record checked the source, spread, interval, visual, and scope.” Do not frame this as one correct decision reveal.",
+    "SOURCE CHECK — Invite valid source checks before showing the ratio. The permit request gives 104 kip and the test record gives 80 kip; 104 / 80 = 1.30.",
+    "SPREAD — Preserve supported rounding and units. Mean alone is not enough; the record needs spread and the one-gauge / one-condition scope.",
+    "INTERVAL — Walk the supplied t interval and ratio. State that direct load scaling is an exam simplification, not a real bridge rating method.",
+    "CHART — Accept any consequential flaw grounded in the supplied chart. Do not require one phrase when the student explains why the flaw matters to a county reader.",
+    "DECISION — Do not crown one branch. YES WITH CONDITIONS and NO / HOLD are both defensible when the record is honest; unconditioned YES is usually weak.",
+    "CLOSE — Score the reasoning and record. No M13 answers as free points, no Unit 3 content, and no later Otter Bend outcomes.",
 ])
-save(rev, os.path.join(OUT, "M14-instructor-reveal.pptx"))
+save(rev, os.path.join(OUT, "M14-instructor-later-review.pptx"))
