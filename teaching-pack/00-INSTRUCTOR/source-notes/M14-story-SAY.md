@@ -48,9 +48,9 @@ Permit tonnage, gauge IDs, and exact file tables are in the CB exam asset (place
 - FOREMAN (orange, in packet): “Night crossing at Otter Bend — recommend approve. Crossing is fine.” + one chart.
 - No Wes co-solve. No live Diane.
 
-### Exam block 70
+### Exam block 75
 
-- Silent work against the exam file + FOREMAN rec + chart.
+- Silent work against the exam file + FOREMAN rec + chart (**75 writing minutes**, per syllabus).
 - Proctor may clarify logistics only (where to write note v2, time calls) — not content hints.
 - Time calls at ~35 and ~10 remaining.
 
@@ -67,7 +67,7 @@ Student exam packet: do not name which FOREMAN claim fails or what the chart fla
 
 - Fold this SAY into Design-and-AI **after Cloud PASS only**.
 - Assets: one shared exam file (built from Units 1–2 shapes students already know); FOREMAN recommendation (orange); one chart with a real but discoverable flaw; answer booklet / note v2 template.
-- Clock: Inbox/setup 5 → Exam block 70 → Close/collect 5 (75 min exam work inside the period as scheduled).
+- Clock: Inbox/setup 5 → Exam block **75** (syllabus writing minutes) → Close/collect 5. If the room period is only 80, fold setup into the opening of the writing block; do not cut writing below 75.
 - Scaffold pack in parallel is fine; **do not publish student packet** until Cloud PASS + Shannon OK if she wants a final skim.
 - Hold Unit 3 until Shannon directs. M14 is Exam 1 only — 20% grade, applied practical.
 
@@ -83,12 +83,6 @@ Student exam packet: do not name which FOREMAN claim fails or what the chart fla
 
 **Decision branch:** grade does **not** depend on picking a specific yes/no. **Yes with conditions** and **no** are both defensible. Score the reasoning and the record.
 
-## Repository clock resolution
+## Repository clock lock
 
-The PASS file labels a 70-minute silent block plus 5-minute setup and 5-minute collection, which totals 80 minutes, while also saying students have 75 minutes of exam work. The course README and simulation plan define 75-minute meetings and a 75-minute M14 applied practical. This pack therefore uses:
-
-- setup and file-access check before the timed exam;
-- **75 silent-writing minutes**;
-- stop-work and collection immediately after the timed block.
-
-This preserves the syllabus / simulation-plan exam duration. It is 5 minutes more silent writing than the PASS file’s `Exam block 70` label and avoids compressing the five assessed tasks.
+The updated Cloud-PASS file and the simulation plan agree: students receive **75 writing minutes**. Setup and collection are proctor overhead and are not subtracted from writing time. If the room period is only 80 minutes, fold setup into the opening of the writing block; never shorten student writing below 75 minutes.

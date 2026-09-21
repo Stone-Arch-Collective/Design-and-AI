@@ -34,6 +34,6 @@ Instructor entry points:
 - `FILE-INDEX.docx` — generated complete pack inventory
 - [`source-notes/M12-story-SAY.md`](source-notes/M12-story-SAY.md) — Cloud-PASS canon source
 - [`source-notes/M13-story-SAY.md`](source-notes/M13-story-SAY.md) — Cloud-PASS canon source
-- [`source-notes/M14-story-SAY.md`](source-notes/M14-story-SAY.md) — Cloud-PASS canon source plus documented clock resolution
+- [`source-notes/M14-story-SAY.md`](source-notes/M14-story-SAY.md) — updated Cloud-PASS canon source with 75-writing-minute clock lock
 
 M12 timing note: the passed durations (Teach 20, Lab 30, Exam review 25, Note 5) total 80 minutes. The instructor key and run-of-day preserve that conflict rather than nesting review inside Lab or silently shortening a block.

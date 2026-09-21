@@ -23,9 +23,8 @@ def add_canon_notes(prs, notes):
     for slide, note in zip(prs.slides, notes):
         slide.notes_slide.notes_text_frame.text = (
             "M14 CANON SAY — Cloud PASS.\n"
-            "Clock resolution: setup before the timed block; 75 silent-writing minutes; "
-            "collect after time. This follows the course and simulation plan and gives "
-            "5 more silent minutes than the PASS file's soft 'Exam block 70' label.\n\n"
+            "Clock lock: 75 writing minutes per the syllabus. Setup and collection are "
+            "proctor overhead and are not subtracted from student writing time.\n\n"
             + note.strip()
         )
 
