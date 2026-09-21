@@ -1,6 +1,6 @@
 # SEIS 201 Teaching Pack — Table of Contents
 
-The numeric prefixes are stable teaching-order slots. M11 uses folder `15`; M12 uses folder `16`.
+The numeric prefixes are stable teaching-order slots. M11–M13 use folders `15`–`17`.
 
 | Folder | Meeting / purpose | Status |
 | --- | --- | --- |
@@ -21,13 +21,16 @@ The numeric prefixes are stable teaching-order slots. M11 uses folder `15`; M12 
 | `14-M10-deterioration-v-noise` | Confidence intervals and significance | Built |
 | [`15-M11-dashboard-publish`](../15-M11-dashboard-publish) | Agentic dashboard review and human publish checkpoint | Built |
 | [`16-M12-misleading-charts`](../16-M12-misleading-charts) | Chart type, truncated axis, HW6, separate Exam review | Built |
+| [`17-M13-wes-handoff`](../17-M13-wes-handoff) | Late partial data, pipeline trace, and Unit 2 debrief | Built |
 
 Instructor entry points:
 
 - [`run-of-day/index.html`](run-of-day/index.html) — podium table of contents
 - [`run-of-day/M12-run-of-day.html`](run-of-day/M12-run-of-day.html) — M12 clock, cues, files, and spoiler guard
+- [`run-of-day/M13-run-of-day.html`](run-of-day/M13-run-of-day.html) — M13 handoff, pipeline trace, and Unit 2 debrief
 - [`why-this-way.html`](why-this-way.html) — faculty/department rationale and current build boundary
 - `FILE-INDEX.docx` — generated complete pack inventory
 - [`source-notes/M12-story-SAY.md`](source-notes/M12-story-SAY.md) — Cloud-PASS canon source
+- [`source-notes/M13-story-SAY.md`](source-notes/M13-story-SAY.md) — Cloud-PASS canon source
 
 M12 timing note: the passed durations (Teach 20, Lab 30, Exam review 25, Note 5) total 80 minutes. The instructor key and run-of-day preserve that conflict rather than nesting review inside Lab or silently shortening a block.

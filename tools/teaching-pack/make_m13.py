@@ -248,8 +248,8 @@ save(d, os.path.join(OUT, "KEY-M13-answer-key.docx"))
 index_out = os.path.join(BUILD, "M13-INSTRUCTOR")
 d = course_doc("M01 – M13", "What is in this pack", kind="FILE INDEX")
 para(
-    d, "M13 is folder 17 in teaching order. It is designed to follow the separately built "
-    "M11 dashboard and M12 chart packs when those branches land.",
+    d, "M13 is folder 17 in teaching order, following the built M11 dashboard and M12 chart "
+    "packs in folders 15 and 16.",
     size=9.2, color=GREY, after=10,
 )
 folders = [
@@ -269,7 +269,7 @@ folders = [
     ("13-M09-false-precision", "Overconfidence, false precision, sampling, and sample scope"),
     ("14-M10-deterioration-v-noise", "Paired intervals, signal/noise audit, and HW5 callback"),
     ("15-M11-dashboard-publish", "Agent dashboard and human publish checkpoint"),
-    ("16-M12-chart-critique", "Chart selection, axes, and misleading visual claims"),
+    ("16-M12-misleading-charts", "Chart selection, axes, and misleading visual claims"),
     ("17-M13-wes-handoff", "Pipeline ingestion, mixed formats, missing data, and Unit 2 debrief"),
 ]
 table(d, [["Folder", "Purpose"]] + folders, widths=[2.75, 4.15], size=6.8)
