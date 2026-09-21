@@ -1,6 +1,6 @@
 # SEIS 201 Teaching Pack — Table of Contents
 
-The numeric prefixes are stable teaching-order slots. Folder `15` is reserved for M11; M12 uses folder `16`.
+The numeric prefixes are stable teaching-order slots. M11 uses folder `15`; M12 uses folder `16`.
 
 | Folder | Meeting / purpose | Status |
 | --- | --- | --- |
@@ -19,7 +19,7 @@ The numeric prefixes are stable teaching-order slots. Folder `15` is reserved fo
 | `12-M08-spurious-correlation` | Regression and confounding | Built |
 | `13-M09-false-precision` | False precision and sampling | Built |
 | `14-M10-deterioration-v-noise` | Confidence intervals and significance | Built |
-| `15-M11` | Agentic dashboard review | Reserved; no pack in this branch |
+| [`15-M11-dashboard-publish`](../15-M11-dashboard-publish) | Agentic dashboard review and human publish checkpoint | Built |
 | [`16-M12-misleading-charts`](../16-M12-misleading-charts) | Chart type, truncated axis, HW6, separate Exam review | Built |
 
 Instructor entry points:

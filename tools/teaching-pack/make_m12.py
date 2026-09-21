@@ -248,8 +248,8 @@ index_out = os.path.join(BUILD, "M12-INSTRUCTOR")
 os.makedirs(index_out, exist_ok=True)
 d = course_doc("M01 – M12", "What is in this pack", kind="FILE INDEX")
 para(
-    d, "Folders are in teaching order. Folder 15 is reserved for M11; M12 is folder 16 so "
-    "meeting and pack numbering remain stable when the M11 pack lands.", size=9.2, color=GREY,
+    d, "Folders are in teaching order. M11 uses folder 15 and M12 uses folder 16, keeping "
+    "meeting and pack numbering stable.", size=9.2, color=GREY,
 )
 folders = [
     ("00-INSTRUCTOR", "Run-of-day desk, faculty brief, source SAY notes, TOC, and this index"),
@@ -267,7 +267,7 @@ folders = [
     ("12-M08-spurious-correlation", "Regression and the thermal confound"),
     ("13-M09-false-precision", "False precision and sampling variability"),
     ("14-M10-deterioration-v-noise", "Paired intervals and signal/noise audit"),
-    ("15-M11 (reserved)", "Agentic dashboard meeting; pack not present on this branch"),
+    ("15-M11-dashboard-publish", "Agentic dashboard review and human publish checkpoint"),
     ("16-M12-misleading-charts", "Chart-type and truncated-axis hunt, HW6, and separate review"),
 ]
 table(d, [["Folder", "Purpose"]] + folders, widths=[2.75, 4.15], size=7.1)
