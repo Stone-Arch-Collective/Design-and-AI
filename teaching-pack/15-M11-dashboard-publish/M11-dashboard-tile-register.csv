@@ -1,0 +1,6 @@
+tile_id,title,display_value,definition,units,source,source_timestamp,designed_status
+T1,Structural health score,87 / 100,,0–100 scale,,,FAIL_UNDEFINED
+T2,Midspan strain trend,WORSENING ↑,Raw G4 strain plotted against date,microstrain,M08 feed.csv,2027-02-25 14:00 CST,FAIL_RECYCLED_M08_CLAIM
+T3,Weather join coverage,25 / 25,Exact timestamp matches between the M08 feed and airport weather extract,matched rows / feed rows,M08 feed.csv + weather_station.csv,2027-02-25 14:00 CST,CLEANER
+T4,Source quality flags,25 / 25 OK,M08 feed rows whose source-system quality_flag equals OK; not a condition rating,rows,M08 feed.csv,2027-02-25 14:00 CST,CLEANER
+T5,Reporting window,02-01 to 02-25,First and last dates in the daily M08 reference-reading extract,25 daily reference readings,M08 feed.csv,2027-02-25 14:00 CST,CLEANER
