@@ -227,7 +227,7 @@ bullets(d, [
     "Do not imply that correlation is useless; temperature and strain have a real physical relationship.",
     "The spurious part is using the calendar association as evidence of deterioration.",
     "Do not reveal later bearing-wear or exam details.",
-    "Oli story/SAY remains pending. Use the run-of-day hooks, not invented dialogue.",
+    "Deck notes and the run-of-day use the Cloud-passed Oli canon SAY.",
 ])
 save(d, os.path.join(OUT, "KEY-M08-answer-key.docx"))
 
@@ -256,7 +256,7 @@ table(d, [["Folder", "Purpose"]] + folders, widths=[2.7, 4.2], size=7.8)
 h2(d, "12-M08-spurious-correlation")
 files = [
     ["File", "What it is"],
-    ["M08-student.pptx", "Spoiler-safe concept and hunt deck; SAY hooks remain pending"],
+    ["M08-student.pptx", "Spoiler-safe concept and hunt deck with Cloud-passed Oli SAY"],
     ["M08-instructor-reveal.pptx", "Gated model comparison, mechanism, and corrected trend"],
     ["FOREMAN-M08-deterioration-report.docx", "Designed overclaim from strain-versus-date fit"],
     ["H8-01-data-guide.docx", "Source fields, units, join key, and scope"],
@@ -268,7 +268,7 @@ files = [
     ["M08-strain-temperature-analysis.csv", "Joined and corrected analysis exhibit"],
     ["M08-regression-summary.csv", "Deterministic model summary"],
     ["KEY-M08-answer-key.docx", "Instructor-only conclusion and plots"],
-    ["../00-INSTRUCTOR/source-notes/M08-story-SAY-PENDING.md", "Oli SAY intake hook; not approved dialogue"],
+    ["../00-INSTRUCTOR/source-notes/M08-story-SAY.md", "Cloud-passed canon story and SAY source"],
 ]
 table(d, files, widths=[3.15, 3.75], size=7.8)
 save(d, os.path.join(index_out, "FILE-INDEX.docx"))
