@@ -1,0 +1,7 @@
+step,time_cst,operation,input_records,output_records,status,message
+01,2027-03-16 20:01:04,open SENSOR_READINGS,—,12,COMPLETE,schema accepted
+02,2027-03-16 20:01:05,parse lateral_offset numeric token,12,12,COMPLETE,default schema unit=ft
+03,2027-03-16 20:01:06,open WEATHER_STATION,—,10,COMPLETE,schema accepted
+04,2027-03-16 20:01:07,exact timestamp inner join,12 + 10,10,COMPLETE,joined dataset emitted
+05,2027-03-16 20:01:08,apply recorded adjustments,10,10,COMPLETE,thermal + alignment fields written
+06,2027-03-16 20:01:09,send to temperature-correction consumer,10,10,COMPLETE,pipeline run accepted
