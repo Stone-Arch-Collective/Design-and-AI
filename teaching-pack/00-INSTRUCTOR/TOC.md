@@ -22,7 +22,7 @@ The numeric prefixes are stable teaching-order slots. M11–M14 use folders `15`
 | [`15-M11-dashboard-publish`](../15-M11-dashboard-publish) | Agentic dashboard review and human publish checkpoint | Built |
 | [`16-M12-misleading-charts`](../16-M12-misleading-charts) | Chart type, truncated axis, HW6, separate Exam review | Built |
 | [`17-M13-wes-handoff`](../17-M13-wes-handoff) | Late partial data, pipeline trace, and Unit 2 debrief | Built |
-| [`18-M14-exam-1-overweight-permit`](../18-M14-exam-1-overweight-permit) | Exam 1 clean file, overweight-permit decision, rubric, and reveal | Built · SAY hold |
+| [`18-M14-exam-1-overweight-permit`](../18-M14-exam-1-overweight-permit) | Exam 1 clean file, overweight-permit decision, rubric, and later-review deck | Ready for Shannon skim · not LMS published |
 
 Instructor entry points:
 
@@ -34,6 +34,6 @@ Instructor entry points:
 - `FILE-INDEX.docx` — generated complete pack inventory
 - [`source-notes/M12-story-SAY.md`](source-notes/M12-story-SAY.md) — Cloud-PASS canon source
 - [`source-notes/M13-story-SAY.md`](source-notes/M13-story-SAY.md) — Cloud-PASS canon source
-- [`source-notes/M14-SAY-HOLD.md`](source-notes/M14-SAY-HOLD.md) — placeholder hooks only; no Cloud-PASS SAY supplied
+- [`source-notes/M14-story-SAY.md`](source-notes/M14-story-SAY.md) — Cloud-PASS canon source plus documented clock resolution
 
 M12 timing note: the passed durations (Teach 20, Lab 30, Exam review 25, Note 5) total 80 minutes. The instructor key and run-of-day preserve that conflict rather than nesting review inside Lab or silently shortening a block.
