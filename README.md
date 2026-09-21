@@ -44,7 +44,7 @@ referenced or dramatised.**
 | Folder | Contents |
 |---|---|
 | [`simulation/`](simulation) | The semester outline, the meeting-by-meeting plan for Units 1–2, and the brand and story canon |
-| [`teaching-pack/`](teaching-pack) | **Built, ready to teach.** Unit 1 meetings M01–M06: slides, handouts, answer keys, data files, and the student brand kit |
+| [`teaching-pack/`](teaching-pack) | **Pilot teaching packs.** Unit 1 M01–M06 and Unit 2 M07–M10 plus M12: slides, handouts, keys, data, and brand kit |
 | [`learning-graph-v2/`](learning-graph-v2) | The 163-concept graph fitted to Spring 2027 — schedule, definitions, dependency edges, viewer |
 | [`learning-graph-v1/`](learning-graph-v1) | The first 230-concept graph built straight from the syllabus, kept for the record |
 | [`guides/`](guides) | Four self-check student guides: probability and sampling, code reading, engineering reference cards, optional concepts |
@@ -67,6 +67,12 @@ teaching-pack/
   08-M04-one-number/      Descriptive statistics: center, spread, CV, sample scope
   09-M05-overnight-alarm/ Agentic alarm chain and live feed
   10-M06-alarm-audit/     Distribution audit, decision log, and Wes handoff
+  11-M07-training-mismatch/ Training coverage and distribution shift
+  12-M08-spurious-correlation/ Regression and the thermal confound
+  13-M09-false-precision/  False precision and sampling variability
+  14-M10-deterioration-v-noise/ Confidence intervals and significance
+  15-M11/                  Reserved numbering slot; pack not present
+  16-M12-misleading-charts/ Chart critique, HW6 redraws, separate Exam review
 ```
 
 Start with `00-INSTRUCTOR/run-of-day/index.html`. M06 has a spoiler-safe student
@@ -121,6 +127,11 @@ pip install -r requirements.txt
 # After building M05 to supply teaching-pack/09-M05-overnight-alarm/feed.csv:
 ./build_m05.sh
 ./build_m06.sh
+./build_m07.sh
+./build_m08.sh
+./build_m09.sh
+./build_m10.sh
+./build_m12.sh
 ```
 
 The builds are deterministic — same inputs, same files, every run. `build.sh`
@@ -145,8 +156,9 @@ that would overflow is reported with the height it needs.
 | `make_kit.py` | The student brand kit and its templates |
 | `make_guide.py` | Instructor guide and file index |
 
-Change a number in `make_data.py` and every handout, slide, chart and answer key that
-quotes it updates on the next build. Nothing is typed twice.
+Meeting-specific builds regenerate their deterministic data, handouts, slides, charts,
+keys, and current file index. M12 intentionally reserves folder 15 for M11 and assembles
+into folder 16. Change a source number and its generated assets update together.
 
 ---
 
