@@ -24,12 +24,13 @@ remaining = mean_life - 3_000_184
 draw_means = [float(row["sample_mean_psi"]) for row in draws]
 
 
-def add_notes(prs, hooks):
+def add_pending_notes(prs, hooks):
     if len(prs.slides) != len(hooks):
         raise ValueError(f"notes ({len(hooks)}) != slides ({len(prs.slides)})")
     for slide, hook in zip(prs.slides, hooks):
         slide.notes_slide.notes_text_frame.text = (
-            "OLI CANON SAY — revised M09 Cloud hard-review pass.\n\n"
+            "M09 SAY STATUS: HOLD — CLOUD RE-CHECK PASS REQUIRED.\n\n"
+            "PLACEHOLDER ONLY. Do not treat as canon dialogue.\n\n"
             + hook.strip()
         )
 
@@ -168,26 +169,26 @@ closer(prs, [
     ("BOUNDARY", "Use only today's precision, spread, and sampling evidence."),
 ], title="Before the gated reveal")
 
-student_notes = [
-    "TITLE — SAY: “To the single cycle.” Introduce M09 as a hunt for precision that outruns its statistical basis. Do not preview the M10 toolkit.",
-    "INBOX — The simulation clock moves forward from M08. FOREMAN sends an automated Otter Bend sheave-shaft alert: 41,872,316 cycles remaining. Diane Halvorsen, PE stays in BELIEVER mode: “Just give me one number.” Wes Tanaka, EIT flags that the precision implies certainty the fatigue-test scatter does not support.",
-    "HUNT — The class receives the FOREMAN point estimate, the small fatigue-test dataset, and the 200-value sampling demonstrator. Trace the estimate, inspect scatter, compare random samples of eight, then audit the actual shoulder-only cores.",
-    "TEACH TRANSITION — Lead the approved discussion on the statistical basis for claims. Precision without accuracy or range is misleading.",
-    "TEACH — FOREMAN’s designed error is overconfidence: one exact-looking point estimate, no uncertainty bounds, and certainty that the noisy inputs cannot support.",
-    "TEACH — Reproduce the calculation, then separate correct arithmetic from a defensible reporting scale. The single-cycle display is the error target.",
-    "TEACH — The fatigue evidence supports only two or three significant figures. Significant figures preserve evidence-supported scale; they do not create accuracy.",
-    "TEACH — Ask what data, sampling process, variability, and assumptions form the statistical basis for the claim.",
-    "TEACH — SAY: “A single number can be useful only if its limits stay visible.” Diane remains BELIEVER and still wants one number.",
-    "SAMPLING TRANSITION — Move from FOREMAN’s single estimate to repeated samples from one fixed instructional population.",
-    "TEACH — Random sampling is defined by the chance-selection process and sampling frame, not by what the analyst calls the sample afterward.",
-    "TEACH — Introduce sampling variability: each random sample of eight is one realization, so class means should differ.",
-    "LAB A — Students inspect the small fatigue dataset, reproduce the estimate, calculate visible scatter, and mark where the single-cycle precision outruns the evidence.",
-    "LAB B — Students work in pairs with assigned random samples of eight from the 200-value spreadsheet, calculate means, and put the means on the board. Repeat that this file is a demonstrator, not Otter Bend evidence.",
-    "LAB C — Students inspect the real Otter Bend core locations. Every core was drilled from the shoulder where access was easy. Diane stays BELIEVER through the hunt; Wes stays drafting and distracted.",
-    "NOTE — Students finalize Note version 2 only: claim, check, result. No new homework number is assigned.",
-    "CLOSE — Collect Note version 2. Diane still wants one number. Light hook only: someone will ask whether the deck got worse since the earlier readings. Do not name confidence intervals, p-values, or any other M10 method.",
+student_hooks = [
+    "TITLE HOOK — Introduce M09 and the false-precision investigation. Do not preview any later statistical method.",
+    "INBOX HOOK — Paste only Cloud re-check PASS dialogue here. Preserve the locked beat: Diane Halvorsen, PE wants one number; FOREMAN reports 41,872,316 cycles; Diane is in BELIEVER mode. Verify the revised Wes Tanaka, EIT line before folding.",
+    "HUNT HOOK — Frame trace, compare, sample, and report without revealing the supported reporting form. Diane remains BELIEVER throughout the hunt.",
+    "TEACH TRANSITION HOOK — Move from the exact-looking output to the statistical basis for a quantitative claim.",
+    "TEACH HOOK — Define AI overconfidence through formatting, tone, and omitted uncertainty.",
+    "TEACH HOOK — Separate reproducible arithmetic from evidence-supported precision.",
+    "TEACH HOOK — Treat significant figures as evidence-based reporting, not a decimal-counting ritual.",
+    "TEACH HOOK — Ask for the data, variability, and method behind a quantitative claim.",
+    "TEACH HOOK — Contrast calculator output with defensible reporting scale without adding character dialogue.",
+    "SAMPLING TRANSITION HOOK — Move from one estimate to what changes across repeated samples.",
+    "TEACH HOOK — Define random sampling by selection process and sampling frame.",
+    "TEACH HOOK — Define sampling variability before students see the class means.",
+    "LAB A HOOK — Students reproduce the point estimate, inspect resolution and spread, and mark unsupported digits.",
+    "LAB B HOOK — Release the 200-row demonstrator and assigned random draws. Repeat that it is not bridge evidence.",
+    "LAB C HOOK — Return to the actual shoulder-only cores and audit the convenience sampling frame. Diane stays BELIEVER.",
+    "NOTE HOOK — Students commit claim/check/result before reveal; assign no new homework number.",
+    "CLOSE HOOK — Insert only the Cloud re-check PASS close. Do not preview or name the next meeting's statistical methods.",
 ]
-add_notes(prs, student_notes)
+add_pending_notes(prs, student_hooks)
 save(prs, os.path.join(OUT, "M09-student.pptx"))
 
 
@@ -258,16 +259,16 @@ closer(rev, [
     ("SCOPE", "Close without teaching M10's interval or significance methods early."),
 ], title="Close M09")
 
-reveal_notes = [
-    "REVEAL — Open only after students commit the precision audit, sampling-frame audit, and Note version 2.",
-    "REVEAL — Confirm that FOREMAN’s arithmetic produces 41,872,316 cycles. Its designed error is eight significant figures with no range when the fatigue scatter supports only two or three.",
-    "REVEAL — Show the small fatigue-test dataset and visible scatter. Do not turn the descriptive minimum and maximum into a formal interval.",
-    "REVEAL — A defensible response may keep a rounded planning estimate, but it must state the scatter, transfer limits, and need for qualified review.",
-    "REVEAL — Compare the class sample means. One fixed 200-value instructional population produced different n = 8 means: sampling variability.",
-    "REVEAL — Every real Otter Bend core was drilled from the shoulder for easy access. That is a convenience frame and does not establish whole-deck representation. The 200-value demonstrator is not bridge truth.",
-    "REVEAL — Randomness belongs to selection; precision belongs to evidence. Neither can be added after collection.",
-    "NOTE — Compare claim/check/result records. The hand-in is Note version 2 only; do not require tomorrow’s methods.",
-    "CLOSE — Diane remains in BELIEVER mode and still wants one number. Hook only the plain question of whether the deck got worse; do not name confidence intervals, p-values, or later specifics.",
+reveal_hooks = [
+    "REVEAL TITLE HOOK — Open only after students commit the precision audit, sampling-frame audit, and Note version 2.",
+    "REVEAL HOOK — Confirm 41,872,316 cycles and the unsupported single-cycle precision. Add no character dialogue.",
+    "REVEAL HOOK — Show source resolution and fatigue spread; keep the observed span descriptive.",
+    "MODEL RESPONSE HOOK — Accept justified rounding alternatives and keep the estimate explicitly screening-level.",
+    "REVEAL HOOK — Compare the twelve sample means and name sampling variability.",
+    "REVEAL HOOK — Confirm that every actual core is from a shoulder convenience frame; the simulated population is not bridge truth.",
+    "REVEAL HOOK — Tie random sampling to selection and precision to evidence.",
+    "NOTE HOOK — Compare bounded Note v2 responses; assign no new homework number.",
+    "CLOSE HOOK — Paste only Cloud re-check PASS SAY. Diane remains BELIEVER; do not preview or name later methods.",
 ]
-add_notes(rev, reveal_notes)
+add_pending_notes(rev, reveal_hooks)
 save(rev, os.path.join(OUT, "M09-instructor-reveal.pptx"))

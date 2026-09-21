@@ -261,7 +261,7 @@ bullets(d, [
     "Do not turn significant figures into a mechanical decimal-place rule; connect rounding to evidence.",
     "Do not introduce formal standard error, t multipliers, confidence intervals, or p-values before M10.",
     "Do not imply the 200-row demonstrator reveals the true Otter Bend deck population.",
-    "Use only the Cloud-approved M09 SAY in the notes and run-of-day; keep the M10 toolkit out of the close.",
+    "M09 SAY is on HOLD pending Cloud re-check PASS. Use placeholders and do not invent dialogue.",
 ])
 save(d, os.path.join(OUT, "KEY-M09-answer-key.docx"))
 
@@ -292,7 +292,7 @@ table(d, [["Folder", "Purpose"]] + folders, widths=[2.75, 4.15], size=7.55)
 h2(d, "13-M09-false-precision")
 files = [
     ["File", "What it is"],
-    ["M09-student.pptx", "Spoiler-safe precision and sampling deck with approved Oli SAY"],
+    ["M09-student.pptx", "Spoiler-safe precision and sampling deck; SAY placeholders on HOLD"],
     ["M09-instructor-reveal.pptx", "Gated precision audit, sample means, and bounded response"],
     ["FOREMAN-M09-fatigue-life-output.docx", "Designed overprecision from coarse, scattered inputs"],
     ["H9-01-fatigue-evidence-guide.docx", "Fatigue fields, units, resolution, and audit checks"],
@@ -306,7 +306,7 @@ files = [
     ["M09-random-samples-n8.csv", "Deterministic sample IDs and statistics"],
     ["cores_2027.csv", "M04's 24 shoulder cores returned for sampling-frame audit"],
     ["KEY-M09-answer-key.docx", "Instructor-only values, reporting model, and boundaries"],
-    ["../00-INSTRUCTOR/source-notes/M09-story-SAY.md", "Cloud-approved canon SAY with repaired Inbox timing"],
+    ["../00-INSTRUCTOR/source-notes/M09-story-SAY-PENDING.md", "Re-check intake and placeholder boundaries; not canon SAY"],
 ]
 table(d, files, widths=[3.25, 3.65], size=7.45)
 save(d, os.path.join(index_out, "FILE-INDEX.docx"))
