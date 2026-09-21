@@ -1,5 +1,7 @@
 # SEIS 201 M12 — The county reads charts, not appendices
 
+**SEIS 201 M12 — The county reads charts, not appendices**
+
 ## Story Spine (6-8 beats)
 
 1. Continuity from M11: Otter Bend’s interim report still needs charts the county will actually look at — not an appendix nobody opens.
