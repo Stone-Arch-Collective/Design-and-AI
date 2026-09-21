@@ -1,0 +1,9 @@
+metric,value,unit_or_note
+test_count,12,specimens
+mean_cycles_to_crack,44872500,cycles
+sample_sd_cycles,6268749.5,cycles
+coefficient_of_variation,0.1397,ratio
+minimum_cycles_to_crack,35780000,cycles
+maximum_cycles_to_crack,56000000,cycles
+estimated_accumulated_cycles,3000184,cycles
+foreman_remaining_cycles,41872316,point estimate displayed with unjustified precision
