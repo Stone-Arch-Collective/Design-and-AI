@@ -10,9 +10,8 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(ROOT, "build", "M12")
 os.makedirs(OUT, exist_ok=True)
 
-BLUE = "#1F3A5F"
-ORANGE = "#F26B1D"
-RIVER = "#6F8FAF"
+SERIES_1 = "#3A7DBF"
+SERIES_2 = "#E8631F"
 INK = "#2B2F36"
 GRID = "#E6E8EA"
 
@@ -61,7 +60,7 @@ def finish(ax, ylabel):
 labels = [date[5:] for date, _ in strain]
 values = [value for _, value in strain]
 fig, ax = plt.subplots(figsize=(8.4, 4.8), dpi=160)
-ax.plot(labels, values, "o-", color=ORANGE, linewidth=2.5, markersize=5)
+ax.plot(labels, values, "o-", color=SERIES_2, linewidth=2.5, markersize=5)
 ax.set_ylim(99.5, 104.5)
 finish(ax, "Peak strain (microstrain)")
 ax.set_title("Daily peak strain is swinging sharply", loc="left", color=INK, weight="bold", fontsize=14)
@@ -74,7 +73,8 @@ hour_labels = [row[0] for row in traffic]
 totals = [sum(row[1:]) for row in traffic]
 fig, ax = plt.subplots(figsize=(8.4, 4.8), dpi=160)
 ax.pie(totals, labels=hour_labels, autopct="%1.0f%%", startangle=90,
-       colors=plt.cm.Blues([0.35 + i * 0.065 for i in range(len(totals))]),
+       colors=[SERIES_1, SERIES_2] * 4,
+       wedgeprops={"edgecolor": "white", "linewidth": 1},
        textprops={"fontsize": 8})
 ax.set_title("Hourly traffic · share of observed vehicles", loc="left", color=INK, weight="bold", fontsize=14)
 fig.tight_layout()
@@ -83,7 +83,7 @@ plt.close(fig)
 
 fig, ax = plt.subplots(figsize=(8.4, 4.8), dpi=160)
 ax.bar([row[0] for row in classes], [row[1] for row in classes],
-       color=[BLUE, RIVER, ORANGE])
+       color=SERIES_1)
 ax.set_ylim(bottom=0)
 finish(ax, "Vehicles counted, 06:00–13:00")
 ax.set_title("Traffic volume by vehicle class", loc="left", color=INK, weight="bold", fontsize=14)
@@ -92,7 +92,7 @@ fig.savefig(os.path.join(OUT, "M12-tile-C.png"), facecolor="white")
 plt.close(fig)
 
 fig, ax = plt.subplots(figsize=(8.4, 4.8), dpi=160)
-ax.plot(labels, values, "o-", color=BLUE, linewidth=2.5, markersize=5)
+ax.plot(labels, values, "o-", color=SERIES_1, linewidth=2.5, markersize=5)
 ax.set_ylim(0, 110)
 finish(ax, "Peak strain (microstrain)")
 ax.set_title("Daily temperature-corrected peak strain", loc="left", color=INK, weight="bold", fontsize=14)
@@ -102,7 +102,7 @@ fig.savefig(os.path.join(OUT, "M12-fix-A-honest-scale.png"), facecolor="white")
 plt.close(fig)
 
 fig, ax = plt.subplots(figsize=(8.4, 4.8), dpi=160)
-ax.bar(hour_labels, totals, color=RIVER)
+ax.bar(hour_labels, totals, color=SERIES_1)
 ax.set_ylim(bottom=0)
 finish(ax, "Vehicles per hour")
 ax.set_title("Hourly traffic volume", loc="left", color=INK, weight="bold", fontsize=14)
