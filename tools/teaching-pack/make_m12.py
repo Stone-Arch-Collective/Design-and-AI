@@ -208,6 +208,12 @@ callout(
     "redraws. Tile C is an acceptable comparison chart and prevents the hunt from being a wipeout.",
     fill="FFF1E8", edge="F26B1D",
 )
+callout(
+    d, "Gated materials",
+    "Distribute H12-01 and H12-02 first. Keep H12-03, the source CSVs, H12-04, this key, and the "
+    "reveal deck closed until every student has committed all three initial dispositions.",
+    fill="FFF6E5", edge="F2C230",
+)
 table(d, [
     ["Tile", "Disposition", "Reason", "Model repair"],
     ["A", "FIX / PULL", "99.5–104.5 µε y-axis magnifies ordinary variation and supports a failure-sounding title",
