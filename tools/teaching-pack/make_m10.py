@@ -93,7 +93,7 @@ table(d, [
     ["File / field", "Meaning", "Unit / role"],
     ["loadtest_2019_2027.csv", "48 pass-level records: 8 locations × 2 years × 3 passes", "source"],
     ["analysis_strain_microstrain", "temperature-corrected response under the reference truck", "µε"],
-    ["reference_load_kips", "matched test load; not a permit-load exercise", "80.0 kips"],
+    ["reference_load_kips", "matched reference test load", "80.0 kips"],
     ["lane_offset_ft / speed_mph", "matched process controls", "0.0 ft / 5.0 mph"],
     ["M10-paired-location-summary.csv", "year means, paired change, and repeatability SD", "analysis"],
 ], widths=[2.2, 3.65, 1.05], size=7.8)
@@ -280,7 +280,7 @@ bullets(d, [
     "Keep the reveal closed until students commit H10-03.",
     "Do not convert a p-value into the probability that the claim is true.",
     "Do not equate statistical significance with engineering importance or a damage diagnosis.",
-    "Do not introduce Exam 1 load, scaling, chart, or permit details.",
+    "Do not introduce any Exam 1 scenario details.",
     "All facilitator SAY remains placeholder text until the separate Oli Cloud PASS arrives.",
 ])
 save(d, os.path.join(OUT, "KEY-M10-answer-key.docx"))

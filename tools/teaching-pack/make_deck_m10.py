@@ -161,7 +161,7 @@ closer(prs, [
     ("HAND IN", "H10-03 and H10-06 after committing the paired claim."),
     ("ASSIGNED", "HW5: audit duplicate timestamps before building the peak-strain interval."),
     ("RECORD", "Project-hour choice and anything accepted unverified."),
-    ("BOUNDARY", "No Exam 1 load, scaling, chart, or permit details enter M10."),
+    ("BOUNDARY", "Keep all Exam 1 scenario details out of M10."),
 ], title="Before the gated reveal")
 
 add_placeholder_notes(prs, [
@@ -247,7 +247,7 @@ closer(rev, [
     ("HW5", "Audit duplicate timestamps before calculating the peak-strain interval."),
     ("NOTE v2", "Include the estimate and interval in claim/check/result."),
     ("DIANE", "Her demand for yes/no is schedule pressure—not the grading key."),
-    ("SPOILER GUARD", "Keep all Exam 1 permit details out of this meeting."),
+    ("SPOILER GUARD", "Keep all Exam 1 scenario details out of this meeting."),
 ], title="Close M10")
 
 add_placeholder_notes(rev, [

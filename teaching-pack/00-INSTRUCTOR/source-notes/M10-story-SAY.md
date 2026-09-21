@@ -17,7 +17,7 @@ Do not treat this file, deck notes, or run-of-day SAY boxes as approved Ollamma 
 - FOREMAN error: interprets p = 0.04 as a 96% chance the claim is true; treats significant as confirmed and large
 - Diane mode: believer under schedule pressure; wants yes or no
 - Assignment: HW5 interval on mean daily peak strain; duplicated timestamps can make the interval too narrow
-- Spoiler guard: no Exam 1 overweight-load, scaling, chart, or permit-decision details
+- Spoiler guard: no Exam 1 scenario details
 
 ## Canon
 

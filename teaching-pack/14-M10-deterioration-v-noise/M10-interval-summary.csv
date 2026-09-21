@@ -1,0 +1,4 @@
+analysis,n,mean,sd,standard_error,confidence_level,t_multiplier,lower,upper
+coupon yield strength (ksi),6,49.500,1.223,0.499,95%,2.571,48.216,50.784
+paired strain change (microstrain),8,6.000,6.824,2.413,95%,2.365,0.294,11.706
+paired strain change (microstrain),8,6.000,6.824,2.413,99%,3.499,-2.442,14.442

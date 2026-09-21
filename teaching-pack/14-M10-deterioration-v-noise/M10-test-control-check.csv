@@ -1,0 +1,7 @@
+control,2019,2027,comparison
+reference truck load,80.0 kips,80.0 kips,matched
+lane offset,0.0 ft,0.0 ft,matched
+target speed,5.0 mph,5.0 mph,matched
+temperature correction,applied,applied,matched
+passes per location,3,3,matched
+instrument resolution,1 microstrain,1 microstrain,matched
