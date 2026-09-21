@@ -173,7 +173,7 @@ save(d, os.path.join(OUT, "H10-04-concepts-and-language.docx"))
 # ========================================================= H10-05 / HW5 =====
 d = course_doc("M10", "HW5 · Peak-Strain Interval Audit", kind="ASSIGNMENT")
 callout(
-    d, "Callback",
+    d, "HW3 CALLBACK IN HW5",
     "Build an interval on mean daily peak strain from the previously issued feed file. First "
     "audit timestamp uniqueness. A duplicated block makes the sample look larger than it is and "
     "can make the interval too narrow.",
